@@ -1,6 +1,9 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { ValidationError } from 'meteor/mdg:validation-error';
 import { Technologies } from './technologies.js';
-import { TechnologySchema } from './schema.js';
+import {
+  TechnologySchema,
+} from './schema.js';
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
@@ -26,8 +29,7 @@ export const update = new ValidatedMethod({
   }).validator(),
   run({ _id, modifier }) {
     checkPermissions();
-    console.log(modifier)
-    return Technologies.upsert(_id, modifier);
+    return Technologies.update(_id, modifier);
   }
 });
 
@@ -139,3 +141,19 @@ export const updateShowcasedImage = new ValidatedMethod({
     });
   }
 });
+
+// export const shouldUpdateStatus = new ValidatedMethod({
+//   name: 'technologies.shouldUpdateStatus',
+//   validate: new SimpleSchema({
+//     _id: {
+//       type: String
+//     },
+//     status: {
+//       type: String
+//     }
+//   }).validator(),
+//   run() {
+//     console.log('Error')
+//     throw new Meteor.Error(412, 'Invalid');
+//   }
+// });
