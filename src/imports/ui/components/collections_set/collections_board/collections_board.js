@@ -16,9 +16,9 @@ Template.collectionsBoard.events({
     popups.removeConfirmation(text, () => {
       Collections.methods.remove.call({_id}, (err, res) => {
         if (err) {
-          popups.removeConfirmationError();
+          popups.removeError();
         } else {
-          popups.removeConfirmationSuccess(`The ${type} ${name} has been removed successfully.`);
+          popups.removeSuccess(`The ${type} ${name} has been removed successfully.`);
         }
       });
     });
