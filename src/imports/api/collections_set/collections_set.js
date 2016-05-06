@@ -7,7 +7,7 @@ import { Projects } from '../projects/Projects';
 
 export const CollectionsSet = new Mongo.Collection('collectionsSet');
 
-CollectionsSet.attachSchema(Schemas.CollectionsSet);
+CollectionsSet.attachSchema(CollectionsSetSchema);
 CollectionsSet.attachBehaviour('timestampable');
 
 CollectionsSet.helpers({

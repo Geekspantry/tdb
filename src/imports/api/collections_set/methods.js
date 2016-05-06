@@ -5,6 +5,7 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { Projects } from '../projects/Projects';
 import { CollectionsSetSchema } from './schema.js';
+import { CollectionsSet } from './collections_set.js';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 function checkPermissions() {
@@ -24,7 +25,7 @@ export const insert = new ValidatedMethod({
 });
 
 export const remove = new ValidatedMethod({
-  name: 'CollectionsSet.methods.remove',
+  name: 'collectionsSet.remove',
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
     check(_id, String);

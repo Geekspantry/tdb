@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
-import Modal from 'meteor/peppelg:bootstrap-3-modal';
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 
+import './collections_set_item';
 import './collections_set_list.html';
 
 Template.collectionsSetList.events({

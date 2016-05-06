@@ -36,3 +36,12 @@ import '../../ui/components/projects/projects_tech_stash/tech_stash_item';
 import '../../ui/components/projects/projects_tech_stash/tech_stash_add';
 import '../../ui/components/projects/projects_tech_stash/tech_stash_add_item';
 
+
+/**
+ * CollectionsSet
+ */
+
+import '../../ui/components/collections_set/collections_board/collections_board';
+import '../../ui/components/collections_set/collections_set_add/collections_set_add';
+import '../../ui/components/collections_set/collections_set_entry/collections_set_entry';
+import '../../ui/components/collections_set/collections_set_list/collections_set_list';

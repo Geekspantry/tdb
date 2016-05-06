@@ -1,4 +1,4 @@
-import { swal } from 'meteor/kevohagan:sweetalert';
+import 'meteor/kevohagan:sweetalert';
 
 function removeConfirmation(text = 'Are you sure you want to delete this?', callback) {
   swal({
@@ -24,7 +24,7 @@ function removeError(text = 'Something went wrong and your document has not been
 }
 
 export default {
-  removeConfirmationPopup,
+  removeConfirmation,
   removeSuccess,
   removeError
 };

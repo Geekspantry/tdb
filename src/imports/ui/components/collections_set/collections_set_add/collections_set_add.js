@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { AutoForm } from 'meteor/aldeed:autoform';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
-import toastr from 'meteor/chrismbeckett:toastr';
+import 'meteor/chrismbeckett:toastr';
 
 import './collections_set_add.html';
 
@@ -19,6 +19,7 @@ AutoForm.hooks({
     },
     onError(formType, error) {
       toastr.error(error.toString(), 'Error');
+      console.log(error);
     }
   }
 });

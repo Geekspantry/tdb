@@ -17,3 +17,10 @@ import '../../api/projects/methods.js';
 import '../../api/projects/server/hooks.js';
 import '../../api/projects/server/es_config.js';
 import '../../api/projects/server/publications.js';
+
+/**
+ * CollectionsSet
+ */
+
+import '../../api/collections_set/methods.js';
+import '../../api/collections_set/server/publications.js';

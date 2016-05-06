@@ -2,7 +2,9 @@ import { Template } from 'meteor/templating';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import popups from '../../common/popups/popups';
 
-import './collections_set_item';
+console.log(popups);
+
+import './collections_set_item.html';
 
 Template.collectionsSetItem.helpers({
   getProjectId() {

@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-import { popups } from '../../common/popups/popups';
+import popups from '../../common/popups/popups';
 
 import { Technologies } from '../../../../api/technologies/technologies';
 import { pullTechnologiesStash } from '../../../../api/projects/methods.js';
