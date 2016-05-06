@@ -1,0 +1,89 @@
+<template name="projectsAboutBox">
+  <div class="ibox card-box cards-item">
+    <div class="ibox-content no-padding card-label">
+      {{> safeImg 
+        url=(CloudinaryHelpers.aboutBox (s3pathImages image)) 
+        class="img-responsive margin-auto" 
+        width='500' height='500'}}
+      <div class="card-description">
+        <h5 class="card-name"><span class="card-id">{{evId}}</span> {{name}}</h5>
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </div>
+  <table class="table table-truncated">
+    <tbody>
+      <tr>
+        <td>
+          <strong>Status</strong>
+        </td>
+        <td>
+          {{> projectStatus}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>{{technologiesStashCount}}</strong> Technologies
+        </td>
+        <td>
+          <strong>{{#if Template.subscriptionsReady}}{{techReviewCount}}{{/if}}</strong> Under Review
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>{{collectionsSetCount}}</strong> Collections Sets
+        </td>
+        <td>
+          <strong>{{collectionsCount}}</strong> Collections
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Created</strong>
+        </td>
+        <td>
+          {{moFromNow createdAt}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Last updated</strong>
+        </td>
+        <td>
+          {{moFromNow updatedAt}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Organizations</strong>
+        </td>
+        <td>
+          {{#each getOrganizations}}
+          <a href="#/organizations/entry" class="btn btn-xs btn-outline btn-primary">{{name}}</a>
+          {{/each}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Participants</strong>
+        </td>
+        <td class="project-people">
+          {{#each getParticipants}}
+            <a href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{identification}}">
+              {{> safeImg url=(getUserThumb (s3pathImages profile.imageId)) class="img-circle"}}
+            </a>
+          {{/each}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>URL</strong>
+        </td>
+        <td>
+          <a href="{{url}}" target="_blank">{{url}}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="{{pathFor 'projects.edit' id=_id}}" class="btn btn-primary btn-block btn-outline btn-sm">Edit</a>
+</template>

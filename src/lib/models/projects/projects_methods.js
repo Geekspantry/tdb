@@ -1,4 +1,4 @@
-import { Technologies } from '../../../imports/api/technologies/technologies';
+/*import { Technologies } from '../../../imports/api/technologies/technologies';
 
 Projects.methods = {};
 
@@ -99,3 +99,4 @@ Projects.methods.pullTechnologiesStash = new ValidatedMethod({
     });
   }
 });
+*/

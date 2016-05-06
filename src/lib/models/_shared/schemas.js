@@ -1,6 +1,20 @@
 Schemas = {};
 Meteor.isClient && Template.registerHelper('Schemas', Schemas);
 
+Schemas.validatedMethodUpdateSchema = new SimpleSchema({
+  _id: {
+    type: String
+  },
+  modifier: {
+    type: Object,
+    blackbox: true
+  }
+});
+
+Schemas.validatedMethodRemoveSchema = new SimpleSchema({
+  _id: { type: String }
+});
+
 
 Schemas.Description = new SimpleSchema({
   _id: {

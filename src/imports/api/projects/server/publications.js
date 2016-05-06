@@ -4,7 +4,7 @@ import { check } from 'meteor/check';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
-import { Projects } from '../technologies.js';
+import { Projects } from '../Projects.js';
 import { Technologies } from '../../technologies/technologies.js';
 
 /**

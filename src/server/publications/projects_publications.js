@@ -1,4 +1,4 @@
-import { Technologies } from '../../imports/api/technologies/technologies';
+/*import { Technologies } from '../../imports/api/technologies/technologies';
 
 Meteor.publishComposite('projects.single', function(projectId) {
   check(projectId, String);
@@ -119,3 +119,4 @@ Meteor.publish('last-project-added', function() {
     limit: 1
   });
 });
+*/

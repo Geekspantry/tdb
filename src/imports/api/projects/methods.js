@@ -5,7 +5,7 @@
 import { Technologies } from '../technologies/technologies.js';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
-import { ProjectsSchema } from './schema.js';
+import { ProjectSchema } from './schema.js';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 function checkPermissions() {
@@ -26,7 +26,7 @@ function checkPermissions() {
  */
 export const insert = new ValidatedMethod({
   name: 'projects.insert',
-  validate: Schemas.Project.validator(),
+  validate: ProjectSchema.validator(),
   run(doc) {
     checkPermissions();
     return Projects.insert(doc);
