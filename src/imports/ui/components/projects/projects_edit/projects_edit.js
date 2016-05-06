@@ -5,6 +5,8 @@ import { Projects } from '../../../../api/projects/Projects';
 
 import { toastr } from 'meteor/chrismbeckett:toastr';
 
+import './projects_edit.html';
+
 AutoForm.hooks({
   updateProjectsForm: {
     onSuccess() {

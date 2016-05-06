@@ -1,3 +1,10 @@
+import { AutoForm } from 'meteor/aldeed:autoform';
+import { Projects } from '../../../../api/projects/Projects';
+import { toastr } from 'meteor/chrismbeckett:toastr';
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
+
+import './projects_edit_modal.html';
+
 AutoForm.hooks({
   updateProjectsModalForm: {
     onSuccess() {

@@ -1,4 +1,4 @@
-buildRegExp = function(searchText) {
+/*buildRegExp = function(searchText) {
   let words = searchText.trim().split(/[ \-\:\.]+/);
   let exps = _.map(words, function(word) {
     return `(?=.*${word})`;
@@ -32,3 +32,4 @@ Template.techStash.helpers({
     }
   }
 });
+*/
