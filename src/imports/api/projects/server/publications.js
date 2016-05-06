@@ -1,5 +1,21 @@
-import { Technologies } from '../../imports/api/technologies/technologies';
+import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
 
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Counts } from 'meteor/tmeasday:publish-counts';
+
+import { Projects } from '../technologies.js';
+import { Technologies } from '../../technologies/technologies.js';
+
+/**
+ * Publish as single project
+ * - Publishes related CollectionsSet
+ * - Publishes related Organizations
+ * - Publishes related Technologies
+ * - Publishes related Collections
+ * - Publishes related Users
+ * @param  {String} projectId The project _id.
+ */
 Meteor.publishComposite('projects.single', function(projectId) {
   check(projectId, String);
   this.unblock();
@@ -62,6 +78,11 @@ Meteor.publishComposite('projects.single', function(projectId) {
   };
 });
 
+/**
+ * Publish a quickList for projects
+ * - This is used to populate simple select inputs with {label: name, value: _id}
+ */
+
 Meteor.publish('projects.quickList', function() {
   return Projects.find({}, {
     fields: {
@@ -71,9 +92,16 @@ Meteor.publish('projects.quickList', function() {
 });
 
 
+/**
+ * Publish a set of counters
+ * - projects-total:    Total number of Projects
+ * - projects-prospect: Total number of Projects with status: prospect
+ * - projects-open:     Total number of Projects with status: open
+ * - projects-closed:   Total number of Projects with status: closed
+ */
+
 Meteor.publish('projects-status-counter', function() {
   Counts.publish(this, 'projects-total', Projects.find());
-
   Counts.publish(this, 'projects-prospect', Projects.find({
     status: 'prospect'
   }));
@@ -84,6 +112,13 @@ Meteor.publish('projects-status-counter', function() {
     status: 'closed'
   }));
 });
+
+/**
+ * Publish a set of counters
+ * - project-collections-<projectId>        : Total number of related Collections of <projectId>
+ * - project-technologies-stash-<projectId> : Length of the array technologiesStash of <projectId>
+ * - project-attachments-<projectId>        : Length of the array attachmentsId of <projectId>
+ */
 
 Meteor.publish('project-relations-counter', function(projectId) {
   check(projectId, String);
@@ -98,6 +133,9 @@ Meteor.publish('project-relations-counter', function(projectId) {
   }), { countFromFieldLength: 'attachmentsId' });
 });
 
+/**
+ * I dont remember why this is here.
+ */
 
 Meteor.publish('project-tech-stash', function(projectId) {
   check(projectId, String);
@@ -110,6 +148,10 @@ Meteor.publish('project-tech-stash', function(projectId) {
 
   Counts.publish(this, 'project-tech-stash-review', cursor);
 });
+
+/**
+ * Publish a single project, the last created one.
+ */
 
 Meteor.publish('last-project-added', function() {
   return Projects.find({}, {

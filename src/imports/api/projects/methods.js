@@ -1,12 +1,12 @@
 /**
- * Projects
+ * Projects Methods
  */
 
 import { Technologies } from '../technologies/technologies.js';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
 import { ProjectsSchema } from './schema.js';
-import { validatedMethodUpdateSchema, validatedMethodRemoveSchema } from '../shared/schemas';
+import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
@@ -35,7 +35,7 @@ export const insert = new ValidatedMethod({
 
 export const update = new ValidatedMethod({
   name: 'projects.update',
-  validate: validatedMethodUpdateSchema.validator(),
+  validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
     checkPermissions();
     return Projects.update(_id, modifier);
@@ -44,7 +44,7 @@ export const update = new ValidatedMethod({
 
 export const remove = new ValidatedMethod({
   name: 'projects.remove',
-  validate: validatedMethodRemoveSchema.validator(),
+  validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
     checkPermissions();
     Projects.remove({
