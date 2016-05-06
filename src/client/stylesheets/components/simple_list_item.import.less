@@ -1,0 +1,34 @@
+/*The .simpleListItem simply holds a .feed-element */
+.simple-list-item {
+  list-style-type: none;
+  border-bottom: @border-simple-list-item;
+
+  &:last-of-type {
+    border-bottom: none;
+  } 
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
+
+  h5 {
+    margin: 0; /*Leaving the padding/margin stuff for the .feed-element, since it has flex */
+    font-size: 13px;
+  }
+
+  .feed-element{
+    .flex;
+    .y-center-flex;
+    padding: 10px;
+
+    /*Applying these settings, so the image remains small, even if not a img with .img-circle class*/
+    img {
+      width: @img-simple-list-item;
+      height: @img-simple-list-item;
+    }
+  }
+}
+

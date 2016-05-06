@@ -1,0 +1,17 @@
+<template name="dashboardStat">
+  {{#panelContainer class="dashboard-ibox"}}
+    {{#panelTitle}}
+      <h2>
+        <i class="{{icon}}"></i> {{title}}
+       </h2>
+    {{/panelTitle}}
+    {{#panelContent}}
+      <p>
+        <a href="{{pathFor pathForAdd}}" class="btn btn-primary btn-block"> 
+          Add a new {{pluralize title 1}} 
+        </a>        
+      </p>
+      {{> UI.contentBlock}}
+    {{/panelContent}}
+  {{/panelContainer}}
+</template>

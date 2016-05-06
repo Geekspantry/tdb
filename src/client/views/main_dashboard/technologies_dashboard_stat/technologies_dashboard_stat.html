@@ -1,0 +1,38 @@
+<template name="technologiesDashboardStat">
+  {{#dashboardStat icon=Icons.collections.technologies title='Technologies'}}
+    {{#if Template.subscriptionsReady}}
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>We have <b>{{totalCount}}</b> Technologies on TDB</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{publishedCount}}</strong> of them are <a href="" class="label label-primary">Published</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{reviewCount}}</strong> of them are <a href="" class="label label-warning">Under Review</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{draftCount}}</strong> of them are <a href="" class="label label-danger">Drafts</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{#with lastTechnologyAdded}}
+              The newest one is {{> technologyLabel status=status name=name hasIcon=false _id=_id}}
+              {{/with}}
+            </td>
+          </tr>
+        </tbody>
+      </table>    
+    {{else}}
+      <p>Loading...</p>
+    {{/if}}
+  {{/dashboardStat}}
+</template>
+

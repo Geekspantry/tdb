@@ -1,0 +1,103 @@
+{{> navbar}}
+<div class="row border-bottom white-bg page-heading">
+  <div class="col-lg-12">
+    <ol class="breadcrumb">
+      <li>
+        Attachments
+      </li>
+      <li class="active">
+        <strong>Dashboard</strong>
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="wrapper-content">
+  <div class="row tooltip-demo">
+    {{!-- About Box --}}
+    <div class="col-lg-3 col-sm-5">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Attachments Overview</h5>
+        </div>
+        <div class="ibox-content dashboard-ibox">
+          <p><a href="technologyAdd.php" class="btn btn-block btn-primary">Add a new attachment</a></p>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  We have <strong>123</strong> Attachments on TDB
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>80</strong> of them are <a href="" class="label label-primary label-outline">Articles</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>20</strong> of them are <a href="" class="label label-primary label-outline">Media</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>20</strong> of them are <a href="" class="label label-primary label-outline">News</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>20</strong> of them are <a href="" class="label label-primary label-outline">Whitepapers</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  The newest one is <a class="label label-outline" href="#/attachments/attachmentEntry"><i class="icon fa fa-paperclip"></i> Skin Patch</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Recent updates --}}
+    <div class="col-lg-9 col-sm-7">
+      {{> latestUpdates }}
+    </div>
+  </div>
+  <!-- fim -->
+  <div class="row tooltip-demo">
+    <!-- About box -->
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <div class="search-source-display-mode">
+            <div class="search-source">
+              <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-search refresh"></i>
+                  </span>
+                <input class="form-control" placeholder="Search for something..." name="search" type="text" id="search-text">
+              </div>
+            </div>
+            <div class="display-mode">
+              <button class="btn btn-default" type="button" id="toggle-list">
+                <i class="fa fa-list"></i>
+              </button>
+              <button class="btn btn-primary" type="button" id="toggle-grid">
+                <i class="fa fa-th"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row cards-box">
+            <div class="cards-size"></div>
+            {{#each attachments}}
+              {{> attachmentCard this }}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

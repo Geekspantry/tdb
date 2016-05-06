@@ -1,0 +1,21 @@
+<template name="usersDashboard">
+  <div class="row">
+    <!-- About box -->
+    <div class="col-lg-3 col-sm-5">
+      {{> usersDashboardStat}}
+    </div>
+    <!-- fim do about box -->
+    <div class="col-lg-9 col-sm-7">
+      {{> recentUpdates counterId='userDashboard' selector=userRecentUpdatesSelector initialCount=10 countIncrement=5}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      {{#panelContainer class='elastic-search' }}
+        {{#panelContent}}
+          {{> searchSourceDisplay source=SearchSources.userSearch types="users" displayMode='userSearch'}}
+        {{/panelContent}}
+      {{/panelContainer}}
+    </div>
+  </div>
+</template>

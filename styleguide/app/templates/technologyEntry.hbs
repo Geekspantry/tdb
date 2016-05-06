@@ -1,0 +1,149 @@
+{{> navbar}}
+<div class="row border-bottom white-bg page-heading">
+  <div class="col-lg-12">
+    <ol class="breadcrumb">
+      <li>
+        <a href="#/technologies">Technologies</a>
+      </li>
+      <li class="active">
+        <strong>Drone Delivery</strong>
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="wrapper-content">
+  <div class="row tooltip-demo">
+    <div class="col-lg-3">
+      {{> technologyCard_add }}
+      <table class="table small">
+        <tr>
+          <td>
+            <strong>Created</strong>
+          </td>
+          <td>
+            Dec 13, 2013
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Last updated</strong>
+          </td>
+          <td>
+            Dec 13, 2015
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Tags</strong></td>
+          <td>
+            <span class="tag label label-primary">Drone</span>
+            <span class="tag label label-primary">UAV</span>
+            <span class="tag label label-primary">Air</span>
+            <span class="tag label label-primary">Automation</span>
+            <span class="tag label label-primary">Artificial Intelligence</span>
+        </tr>
+        <tr>
+          <td><strong>Status</strong></td>
+          <td><span class="label label-primary">Published</span></td>
+        </tr>
+      </table>
+      <a href="#/technologies/edit" class="btn btn-primary btn-block btn-outline btn-sm">Edit</a>
+    </div>
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-sm-7">
+          <div class="ibox">
+            <div class="ibox-title">
+              <h1>Description</h1>
+            </div>
+            <div class="ibox-content" style="height:284px;">
+              <p>Relatively cheap drones with advanced sensors and imaging capabilities are giving farmers new ways to increase yields and reduce crop damage.</p>
+              <p>This description can be a lot longer and rich in text</p>
+              <ul>
+                <li>We can have bullet lists</li>
+                <li>Other things</li>
+              </ul>
+              <p>and nice formating</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="ibox">
+            <div class="ibox-content" style="max-height:340px; overflow-y: scroll;">
+              <ul class="thumbnails">
+                <li><img src="http://emsowue.cloudimg.io/s/crop/500x300/http://si.wsj.net/public/resources/images/BN-AS240_gerdro_G_20131209114324.jpg" class="img-responsive img-thumbnail" />
+                  <p style="text-align:center;">This is the Description</p>
+                </li>
+                <li><img src="http://emsowue.cloudimg.io/s/crop/500x300/http://si.wsj.net/public/resources/images/BN-AS240_gerdro_G_20131209114324.jpg" class="img-responsive img-thumbnail" />
+                  <p style="text-align:center;">This is the Description</p>
+                </li>
+                <li><img src="http://emsowue.cloudimg.io/s/crop/500x300/http://si.wsj.net/public/resources/images/BN-AS240_gerdro_G_20131209114324.jpg" class="img-responsive img-thumbnail" />
+                  <p style="text-align:center;">This is the Description</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h1>
+                            <i class="fa fa-paperclip"></i>
+                            Organizations
+                            </h1>
+          <div class="ibox-tools">
+            <a href="#" id="manage-org-attachments">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row cards-box cards-responsive">
+            <div class="cards-size"></div>
+            {{#each organizations}}
+              {{> organizationCard this }}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h1><i class="fa fa-folder"></i> Projects</h1>
+          <div class="ibox-tools">
+            <a href="#" id="manage-org-projects">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row cards-box cards-responsive">
+            <div class="cards-size"></div>
+            {{#each projects}}
+              {{> projectCard this }}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h1>
+                            <i class="fa fa-paperclip"></i>
+                            Attachments
+                            </h1>
+          <div class="ibox-tools">
+            <a href="#" id="manage-org-attachments">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row cards-box cards-responsive">
+            <div class="cards-size"></div>
+            {{#each attachments}}
+              {{> attachmentCard this }}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

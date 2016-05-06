@@ -1,0 +1,37 @@
+  <div class="ibox card-box cards-item">
+    <div class="ibox-content no-padding card-label {{status}}">
+      <div class="card-tools">
+        <div class="btn-group">
+          <button data-toggle="dropdown" class="btn btn-xs btn-white dropdown-toggle" aria-expanded="false"><i class="fa fa-gear"></i> <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Add to Project</a></li>
+            <li><a href="#">Add to Collection</a></li>
+            <li><a href="#">Add an Attachment</a></li>
+            <li><a href="#">Change status</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Add a comment</a></li>
+            <li><a href="#">Edit status</a></li>
+            <li class="divider"></li>
+            <li><a href="#/technologies/edit">Edit technology</a></li>
+            <li><a href="#">Delete technology</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#/technologies/entry"><img src="{{src}}" class="img-responsive" /></a>
+      <div class="card-description">
+          <h5 class="card-name"><a href="#/technologies/entry"><span class="card-id">{{evID}}</span> {{name}}</a></h5>
+          <div class="btn-group btn-xs btn-addons">
+            <button class="btn btn-xs btn-outline btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Readiness: 4"><i class="fa fa-bullseye"></i> 4</button>
+            <button class="btn btn-xs btn-outline btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Average Industry Impact: 4"><i class="fa fa-rocket"></i> 4</button>
+          </div>
+        <p>{{description}}</p>
+        <div class="btn-group">
+          <button class="btn btn-xs btn-outline btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View Entry"><a href="#/technologies/entry"><i class="fa fa-eye"></i></a></button>
+          <button class="btn btn-xs btn-outline btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Status is {{status}}">{{status}}</button>
+          <button class="btn btn-xs btn-outline btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="11 attachments"><i class="fa fa-paperclip"></i> 11</button>
+          <button class="btn btn-xs btn-outline btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="02 projects"><i class="fa fa-folder-o"></i> 2</button>
+          <button class="btn btn-xs btn-outline btn-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="04 organizations"><i class="fa fa-building"></i> 4</button>
+        </div>
+      </div>
+    </div>
+  </div>

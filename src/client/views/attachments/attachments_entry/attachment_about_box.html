@@ -1,0 +1,100 @@
+<template name="attachmentAboutBox">
+  {{#panelContainer class='float-e-margins attachment-about-box' }}
+    {{#panelTitle}}
+      <h3>
+        <i class="{{Icons.collections.attachments}}"></i> {{name}}
+      </h3>
+      {{#panelTools}}
+        <a href="#" id="attachment-edit">
+          <i class="fa fa-pencil"></i>
+        </a>
+      {{/panelTools}}
+    {{/panelTitle}}
+    {{#panelContent}}
+      {{> attachmentThumbnail attachment=this class='preview' height="400" width="600" crop="fill"}}
+    {{/panelContent}}
+    {{#panelContent}}
+      <div class="description">
+        <header>
+          <h4>Description</h4>
+          <p>
+            {{#if description}}
+              {{description}}
+            {{else}}
+              No description
+            {{/if}}
+          </p>
+        </header>
+      </div>
+    {{/panelContent}}
+    {{#panelContent}}
+      <table class="table">
+        <tr>
+          <td><b>Type</b></td>
+          <td>
+            <div class="label label-success">{{type}}</div>
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td><b>From</b></td>
+          <td>
+            <div class="label label-default">{{from}}</div>
+          </td>
+        </tr>
+        <br>
+        {{#if isFromWeb}}
+          <tr>
+            <td><b>Web</b></td>
+            <td><a href="{{web.sourceUrl}}" target="blank">Visit Page</a></td>
+          </tr>
+        {{else}}
+          <tr>
+            <td><b>File</b></td>
+            <td>
+              <a href="{{awsUrl}}" download>Download</a>
+            </td>
+          </tr>
+        {{/if}}
+        <br>
+        <tr>
+          <td><b>Upload Date</b></td>
+          <td>{{moFormat createdAt 'DD/MM/YYYY'}}</td>
+        </tr>
+        <br>
+        <tr>
+          <td><b>Created By</b></td>
+          <td> <a href="{{pathFor 'users.entry' id=user._id}}">{{> safeImg url=(getUserThumb (s3pathImages user.profile.imageId)) class="img-circle m-t-xs link"}} </a></td>
+        </tr>
+      </table>
+    {{/panelContent}}
+    {{#panelContent}}
+      <div class="related-links">
+        <h5><i class="{{Icons.collections.projects}}"></i> Related Projects </h5>
+        {{#each relatedProjects}}
+          <a href="{{pathFor 'projects.edit' id=_id}}">{{name}} &nbsp;</a>
+          {{else}}
+            No related projects
+        {{/each}}
+      </div>
+      <hr />
+      <div class="related-links">
+        <h5><i class="{{Icons.collections.technologies}}"></i> Related Technologies</h5>
+        {{#each relatedTechnologies}}
+          <a href="{{pathFor 'technologies.edit' id=_id}}">{{name}} &nbsp;</a>
+          {{else}}
+            No related technologies
+        {{/each}}
+      </div>
+      <hr />
+      <div class="related-links">
+        <h5><i class="{{Icons.collections.organizations}}"></i> Related Organizations </h5>
+        {{#each relatedOrganizations}}
+          <a href="{{pathFor 'organizations.entry' id=_id}}">{{name}} &nbsp;</a>
+          {{else}}
+            No related organizations
+        {{/each}}
+      </div>
+    {{/panelContent}}
+  {{/panelContainer}}
+</template>

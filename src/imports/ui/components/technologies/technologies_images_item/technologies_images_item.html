@@ -1,0 +1,20 @@
+<template name="technologiesImagesItem">
+  <div 
+  	data-template="technologies-images-item"
+  	class="{{#if isShowcased}}showcased{{/if}}">
+    {{#with image src}}
+    	<img 
+    		src="{{getCloudinaryCard (s3pathImages _id) imageOptions}}" 
+    		class="img-responsive"
+        data-action="set-showcased" 
+    		alt="Set showcased image">
+    {{/with}}
+    {{#unless isShowcased}}
+      <span class="caption">Set Showcased</span>
+    {{/unless}}
+    
+    <span data-action="delete-image" data-toggle="tooltip" data-placement="top" title="Remove">
+      <i class="fa fa-trash-o"></i>
+    </span>
+  </div>
+</template>

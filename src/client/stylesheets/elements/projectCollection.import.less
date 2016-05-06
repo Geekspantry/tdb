@@ -1,0 +1,157 @@
+.collectionSubColumn {
+  width: 300px;
+  float: none;
+  display: inline-block;
+  white-space: normal;
+  padding: 0px;
+  vertical-align: top;
+  margin-right: 4px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  .ibox-title {
+    border-style: solid solid none;
+    border-width: 3px 0 0;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 5px 15px 3px;
+    min-height: 38px;
+  }
+  .ibox-content {
+    padding-bottom: 5px;
+    p {
+      display: block;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.collection-ibox {
+  .ibox-title {
+    border-width: 0 0 0 0;
+    h2 {}
+  }
+  .ibox-content {
+    padding: 10px 10px 10px 10px;
+  }
+  .collectionsub {
+    display: inline-block;
+    clear: both;
+    margin-left: -20px;
+    margin-right: -20px;
+    z-index: 1;
+    .ibox {
+      margin-bottom: 10px;
+      z-index: 1;
+    }
+  }
+  .agile-list li {
+    background: #FAFAFB;
+    border: 1px solid #e7eaec;
+    margin: 0px 0 10px 0;
+    padding: 8px;
+    border-radius: 2px;
+  }
+  .collectionSetBox {
+    /* overflow-x: scroll; */
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin: 0 0px 0 0px;
+    .panel {
+      width: 300px;
+      float: none;
+      display: inline-block;
+      white-space: normal;
+      padding: 0px;
+      vertical-align: top;
+      .panel-body {
+        padding-bottom: 0px;
+      }
+      ul {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+#techStash {
+  position: absolute;
+  left: 0px;
+  padding-left: -300px;
+  height: 90%;
+  display: block;
+  width: 300px;
+  background-color: white;
+  border-right: 4px solid lightgray;
+  overflow-y: scroll;
+  .sortable-list {
+    z-index: 1;
+    min-height: 800px;
+    width: 300px;
+    overflow-y: scroll;
+  }
+}
+
+// 2 Line card mode
+.ibox-technologystash {
+  margin-bottom: 10px;
+  .card-box {
+    .card-label {
+      a img {
+        //  width: 30%;
+        float: left;
+        margin-right: 10px;
+      }
+      .card-tools {
+        display: none;
+      }
+      .card-description {
+        padding: 4px;
+        height: 55px;
+        h5.card-name {
+          margin: 0px 0 -5px 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding-top: 5px;
+          &:hover,
+          &:focus {
+            color: #1ab394;
+          }
+          a {}
+        }
+        .card-id {}
+        .btn-group {
+          display: none;
+        }
+        .btn-addons {}
+        p {
+          white-space: nowrap;
+          width: 65%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+// Reduced design card view
+#ibox-subcollection {
+  .card-description {
+    p {
+      display: block;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+    .btn-group {
+      display: none;
+    }
+  }
+}

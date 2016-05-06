@@ -1,0 +1,10 @@
+<template name="masonryGrid">
+  <div class="row cards-box cards-responsive">
+    <div class="cards-size"></div>
+    	{{#each items}}
+      	<div class="card-box cards-item">
+      		{{> Template.dynamic template=template}}
+     		</div>
+     {{/each}}
+  </div>
+</template>

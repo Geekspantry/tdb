@@ -1,0 +1,139 @@
+/* Only demo */
+
+@media (max-width: 1000px) {
+  .welcome-message {
+    display: none;
+  }
+}
+
+.margin-auto {
+  margin: auto;
+}
+.truncate-text {
+  padding: 5px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.close-canvas-menu {
+  display: none;
+}
+
+.canvas-menu .close-canvas-menu {
+  display: block;
+}
+
+.light-navbar .navbar.navbar-static-top {
+  background-color: #fff;
+}
+
+.lightBoxGallery {
+  text-align: center;
+}
+
+.lightBoxGallery img {
+  margin: 5px;
+}
+
+.logo-login {
+  width: 300px;
+  height: auto;
+}
+
+.middle-box {
+  padding-top: 120px;
+}
+
+.mini-navbar .nav-second-level {
+  //background: red;
+}
+
+.nav > li > a {
+  //color: @text-color;
+}
+
+.modal-body {
+  overflow: visible !important;
+}
+
+em {
+  background-color: #F0FF67;
+  font-style: normal;
+}
+
+
+/*Making this global, since it will be used in many other places*/
+
+.ibox-title {
+  .flex;
+  .y-center-flex;
+  .x-between-flex;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    display: inline-block;
+    /*To align icon with heading tag inside the same line*/
+    float: left;
+    /*To align heading tags inside ibox-title that has ibox-tools as well*/
+    /*Just setting a default size, that way you can set heading tag by semantic meaning without changing the layout*/
+    font-size: 16px;
+  }
+  i {
+    margin: 0 7px;
+  }
+}
+
+/*MOBILE SETTINGS*/
+
+.body-small {
+  .top-navbar,
+  .page-heading {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+  }
+  .ibox {
+    margin-bottom: 10px;
+  }
+  .wrapper-content {
+    padding: 10px 5px 15px;
+  }
+  #page-wrapper {
+    padding: 0px;
+  }
+}
+
+
+/*This is the class that sets the default settings for userAboutBox and orgAboutBox */
+
+.about-box {
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      .flex;
+      .x-between-flex;
+      .y-center-flex;
+      padding: 5px 0;
+    }
+    p {
+      display: inline-block;
+      margin: 0;
+      /*Leaving the padding/margin stuff for the <li>, since it has flex */
+      /*It only matches IF the <li>'s firts-child is a <p>*/
+      &:first-child {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+.contact-box{
+  height: 275px;
+  padding: 18px;
+}

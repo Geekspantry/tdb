@@ -1,0 +1,21 @@
+<template name="technologiesDescriptionsPanel">
+  <div data-template="technologies-descriptions-panel">
+  	{{#panelContainer}}
+      {{#panelTitle}}
+        <h3>Description</h3>
+        {{#panelTools}}
+          <span data-action="create-new-draft">
+            <i class="fa fa-plus"></i>
+          </span>
+        {{/panelTools}}
+      {{/panelTitle}}
+      {{#if hasDescriptions}}
+        {{> technologiesDescriptionsTabs this}}
+      {{else}}
+        <div class="ibox-content" style="text-align: center">
+          <h4>There's no descriptions yet. Click <a data-action="create-new-draft">here</a> and add the first draft :)</h4>
+        </div>
+      {{/if}}
+    {{/panelContainer}}
+  </div>
+</template>

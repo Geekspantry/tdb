@@ -1,0 +1,27 @@
+<template name="organizationsDashboard">  
+  <div class="row tooltip-demo">
+    <!-- About box -->
+    <div class="col-lg-3 col-sm-5">
+      {{> organizationsDashboardStat}}
+    </div>
+    <!-- fim do about box -->
+    <!-- Início tech stash -->
+    <div class="col-lg-9 col-sm-7">
+      {{> recentUpdates 
+        counterId='organization' 
+        selector=organizationSelector
+        hasIcon=true 
+        initialCount=10 
+        countIncrement=5}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      {{#panelContainer class='elastic-search' }}
+        {{#panelContent}}
+          {{> searchSourceDisplay source=SearchSources.globalSearch types="organizations" displayMode='organizationSearch'}}
+        {{/panelContent}}
+      {{/panelContainer}}
+    </div>
+  </div>
+</template>

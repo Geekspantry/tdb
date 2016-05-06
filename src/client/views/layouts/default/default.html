@@ -1,0 +1,24 @@
+<template name="defaultLayout">
+  <!-- Wrapper-->
+  <div id="wrapper">
+    {{#if Template.subscriptionsReady}}
+      {{> loadedContent}}
+    {{else}}
+      {{> spinner color='#fff'}}
+    {{/if}}
+  </div>
+  <!-- End wrapper-->
+</template>
+
+<template name="loadedContent">
+  <div id="page-wrapper" class="gray-bg">
+    {{> topNavigation }} 
+    {{#if pageHeading}}
+      {{> pageHeading}}
+    {{/if}}
+    <!-- {{> pageHeading}} -->
+    <div class="wrapper wrapper-content {{#if noPadding}}no-padding{{/if}}">
+      {{> Template.dynamic template=main}}
+    </div>
+  </div>
+</template>

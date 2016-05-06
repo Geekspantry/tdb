@@ -1,0 +1,15 @@
+<template name="collectionsSetAdd">
+  {{#modal}}
+    {{#modalHeader}}
+      {{> modalHeaderContent title="Create new Collection Set" icon="fa fa-folder" subtitle="A Collection Set will hold Collections."}}
+    {{/modalHeader}}
+    {{#modalBody}}
+      {{#autoForm id="insertCollectionsSetForm" collection="CollectionsSet" type="method" meteormethod="CollectionsSet.methods.add" projectId=projectId class="form-horizontal"}}
+        {{> afQuickField name="name" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+        <!--{{> afQuickField name="collections" label-class="col-sm-2" input-col-class="col-sm-9"}} -->
+
+          {{> submit texto="Create" buttonClass="col-sm-9" offsetClass="col-sm-offset-2"}}
+      {{/autoForm}}
+    {{/modalBody}}
+  {{/modal}}
+</template>

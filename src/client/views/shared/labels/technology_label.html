@@ -1,0 +1,9 @@
+<template name="technologyLabel">
+    <a href="{{pathFor 'technologies.edit' id=_id}}" 
+      class="label label-{{techColor status}}">
+      {{#if hasIcon}}
+        <i class="{{Icons.collections.technologies}}"></i>
+      {{/if}} 
+      {{name}}
+    </a>
+</template>

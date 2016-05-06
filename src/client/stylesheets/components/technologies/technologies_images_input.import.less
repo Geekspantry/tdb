@@ -1,0 +1,54 @@
+[data-template="technologies-images-input"] {
+  height: 100%;
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
+  .upload {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    border: 2px dotted #D9D9D9;
+    color: #D9D9D9;
+    transition: all 0.3s ease;
+    &:hover {
+      border: 2px dotted #467ec1;
+    }
+    .input-wrapper {
+      text-align: center;
+      color: #D9D9D9;
+      text-align: center;
+      width: inherit;
+      transition: all 0.3s ease;
+      &:hover {
+        color: #467ec1;
+      }
+      i {
+        font-size: 37px;
+      }
+      span {
+        display: block;
+        font-size: 18px;
+      }
+      input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        width: 100%;
+        display: block;
+      }
+      input[type="file"]::-webkit-file-upload-button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<template name="collectionsAdd">
+  {{#modal}}
+    {{#modalHeader}}
+      {{> modalHeaderContent title="New Collection" icon="fa fa-plus" subtitle="You must save changes before closing."}}
+    {{/modalHeader}}
+    {{#autoForm 
+      collection="Collections" 
+      id="insertCollectionsForm" 
+      type="method" 
+      meteormethod="Collections.methods.add" 
+      class="form-horizontal"
+      projectId=projectId
+      collectionsSetId=collectionsSetId
+      parentId=parentId}}
+      {{#modalBody}}
+        {{> afQuickField name="name" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+        {{> afQuickField name="description" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+      {{/modalBody}}
+      {{#modalFooter}}
+        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>      
+      {{/modalFooter}}
+    {{/autoForm}}
+  {{/modal}}  
+</template>

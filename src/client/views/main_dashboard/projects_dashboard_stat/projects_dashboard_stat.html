@@ -1,0 +1,42 @@
+<template name="projectsDashboardStat">
+  {{#dashboardStat icon=Icons.collections.projects title='Projects' total=total}}
+    {{#if Template.subscriptionsReady}}
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>We have <b>{{totalCount}}</b> Projects on TDB</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{openCount}}</strong> of them are active
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{prospectCount}}</strong> of them are prospect
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{closedCount}}</strong> of them are closed
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{#with lastProjectAdded}}
+                The newest one is
+                <a href="{{pathFor 'projects.edit' id=_id}}" class="label label-outline">
+                  <i class="{{Icons.collections.projects}}"></i> {{name}}
+                </a>
+              {{else}}
+                <i>No projects were added on TDB yet.</i>
+              {{/with}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    {{else}}
+      <p>Loading...</p>
+    {{/if}}
+  {{/dashboardStat}}
+</template>

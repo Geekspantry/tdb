@@ -1,0 +1,35 @@
+<template name="projectsCardTools">
+  <div class="btn-group card-tools">
+    <button data-toggle="dropdown" class="btn btn-xs btn-white dropdown-toggle" aria-expanded="false">
+      <i class="{{Icons.collections.projects}}"></i> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="#">Add to Project</a>
+      </li>
+      <li>
+        <a href="#">Add to Collection</a>
+      </li>
+      <li>
+        <a href="#">Add an Attachment</a>
+      </li>
+      <li>
+        <a href="#">Change status</a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="#">Add a comment</a>
+      </li>
+      <li>
+        <a href="#">Edit status</a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="{{pathFor 'projects.edit' id=_id}}">Edit Project</a>
+      </li>
+      <li>
+        <a href="#" class='delete'>Delete Project</a>
+      </li>
+    </ul>
+  </div>
+</template>

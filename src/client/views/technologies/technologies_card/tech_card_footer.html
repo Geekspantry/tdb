@@ -1,0 +1,19 @@
+<template name="techCardFooter">
+  <div class="btn-group card-footer">
+    {{#btnTooltip text="View Entry" onClick=onClickView}}
+      <i class="fa fa-eye"></i>
+    {{/btnTooltip}}
+    {{#btnTooltip text="Status is Review" }}
+      Review
+    {{/btnTooltip}}
+    {{#btnTooltip text=(concat attachmentsCount " attachments") }}
+      <i class="{{Icons.collections.attachments}}"></i> {{attachmentsCount}}
+    {{/btnTooltip}}
+    {{#btnTooltip text=(concat projectsCount " projects") }}
+      <i class="{{Icons.collections.projects}}"></i> {{projectsCount}}
+    {{/btnTooltip}}
+    {{#btnTooltip text=(concat organizationsCount " organizations") }}
+      <i class="{{Icons.collections.organizations}}"></i> {{organizationsCount}}
+    {{/btnTooltip}}
+  </div>
+</template>

@@ -1,0 +1,46 @@
+.item-showcased-shadow {
+  -webkit-box-shadow: 0px 0px 0px 5px rgba(70, 126, 193, 1);
+  -moz-box-shadow: 0px 0px 0px 5px rgba(70, 126, 193, 1);
+  box-shadow: 0px 0px 0px 5px rgba(70, 126, 193, 1);
+}
+
+[data-template="technologies-images-item"] {
+  transition: all 0.3s ease;
+  &.showcased {
+    &:extend(.item-showcased-shadow);
+  }
+  &:hover {
+    cursor: pointer;
+    &:extend(.item-showcased-shadow);
+    [data-action="delete-image"] {
+      opacity: 1;
+    }
+    .caption {
+      opacity: 1;
+    }
+  }
+  img {
+    border-radius: 3px;
+  }
+  .caption {
+    opacity: 0;
+    position: absolute;
+    bottom: 14px;
+    left: 32px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  [data-action="delete-image"] {
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease;
+    font-size: 22px;
+    color: white;
+    top: 3px;
+    right: 10px;
+    &:hover {
+      font-size: 26px;
+    }
+  }
+}

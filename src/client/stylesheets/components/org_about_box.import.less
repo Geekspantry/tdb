@@ -1,0 +1,37 @@
+.org-about-box {
+  table {
+    tr {
+      border-bottom: 1px solid #ddd;
+      &:last-child {
+        border-bottom: none;
+      }
+      td {
+        padding: 10px 0;
+        &:first-child {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .change-logo-image {
+    margin: auto;
+    cursor: pointer;
+  }
+  .img-circle {
+    width: @people-img-size;
+    height: @people-img-size;
+  }
+  a.add-people {
+    .img-circle;
+    margin-bottom: 0;
+    /*Removing the default margin-bottom of btn class*/
+    border-radius: 50%;
+    background-color: @add-people-button-color;
+    color: #fff;
+    /*icon will inherit this color*/
+    .inline-flex;
+    .x-center-flex;
+    .y-center-flex;
+  }
+}

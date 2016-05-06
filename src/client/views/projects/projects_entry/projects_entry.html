@@ -1,0 +1,30 @@
+<template name="projectsEntry">
+{{#if Template.subscriptionsReady}}
+  {{#with project}}
+    <div class="wrapper-content">
+      <div class="row">
+        <div class="col-lg-3">
+          {{> projectsAboutBox}}
+        </div>
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-sm-12">
+              {{> techStash
+                projectId=_id}}
+            </div>
+            <div class="col-sm-12">
+              {{> collectionsSetList}}
+            </div>
+          </div>            
+        </div>
+      </div>
+    </div>
+  {{/with}}
+{{else}}
+  {{> spinner}}
+{{/if}}
+  <!-- {{#with project}}
+  {{> collectionsSetList projectId=project._id collectionsSet=getCollectionsSet}}
+  {{> collectionsSetAdd projectId=project._id}}
+{{/with}} -->
+</template>

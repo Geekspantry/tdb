@@ -1,0 +1,74 @@
+.out-mini-card {
+  .ibox-content {
+    background-color: rgba(255,0,0,0.2);
+  }
+}
+.tech-stash {
+  .stash {
+    height: 800px;
+  }
+  .ps-container {
+    height: 100%;
+    position:relative;
+  }
+}
+
+.collections-board {
+  //height: 800px;
+
+  .ps-container {
+    position:relative;
+    height: 100%;
+  }
+
+  .top-collections {
+    display: flex;
+    flex-direction: row;
+
+    .collection-card {
+      /* min-width: 600px; */
+      margin-right: 20px;
+      
+      .ps-container {
+        position: relative;
+        height: 100%;
+        margin: 40px -20px -20px -20px;
+      }
+
+      .sub-collections-board {
+        min-width: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        .sub-collection-drag-area {
+          min-height: 300px
+        }
+
+
+
+        .sub-collection-card {
+          border:1px solid lightgray;
+          min-width: 400px;
+          margin-right: 10px;
+
+          width: 300px;
+          margin-right: 4px;
+          border-radius: 4px;
+          border: 1px solid lightgray;
+          .ibox-title {
+            border-style: solid solid none;
+            border-width: 3px 0 0;
+            color: inherit;
+            margin-bottom: 0;
+            padding: 5px 15px 3px;
+            min-height: 38px;
+          }
+          .ibox-content {
+            padding-bottom: 5px;
+          }          
+        }
+      }         
+    }
+  }
+}

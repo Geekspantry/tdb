@@ -1,0 +1,37 @@
+<template name="technologiesAdd">
+  <div class="row" data-template="technologies-add-page">
+    <div class="col-lg-3">
+      <div style="position: fixed; width: 22.5%">
+        {{> technologiesInformationCard tech}}
+      </div>
+    </div>
+    <div class="col-lg-9">
+      {{#panel title="Basic Information"}}
+        {{#autoForm 
+          id="insert-technologies-form"
+          class="form-horizontal" 
+          collection=technologiesCollection
+          type="method"
+          meteormethod="technologies.insert"
+          singleMethodArgument=true}} 
+
+          {{> afQuickField name="status" label-class="col-sm-2" input-col-class="col-sm-10" value="draft" type="hidden"}}
+          {{> afQuickField name="name" label-class="col-sm-2" input-col-class="col-sm-10"}}
+          <div class="col-sm-10 col-sm-offset-2" style="margin-top:-20px">
+            <ol>
+              <li>Use "Title Case": <i>Capitalize All Important Words</i>.</li>
+              <li>Avoid plural titles: <i>"Solar Panels", "Self-driving Vehicles"</i></li>
+              <li>Avoid empty words: <i>"Smart Car", "Next-gen Keychain", "Health 3.0"</i></li>
+              <li>Avoid product names: <i>"Powerwall" → "Wall-mounted Household Battery"</i></li>
+            </ol>
+          </div>
+
+          <div class="from-group" style="text-align: right;">
+            <a href="{{pathFor 'technologies.dashboard'}}" class="btn btn-default">Cancel</a>
+            <button type="submit" class="btn btn-success">Create</button>
+          </div>
+        {{/autoForm}}
+      {{/panel}}
+    </div>
+  </div>
+</template>

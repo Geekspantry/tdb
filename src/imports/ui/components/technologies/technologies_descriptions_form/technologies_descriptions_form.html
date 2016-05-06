@@ -1,0 +1,54 @@
+<template name="technologiesDescriptionsForm">
+	<div data-template="technologies-descriptions-form" class="animated fadeInLeft">
+		{{#autoForm doc=this 
+	    collection="TechnologiesDescriptions" 
+	    id="update-technologies-descriptions-form" 
+	    type="method-update"
+	    meteormethod="technologies_descriptions.update" 
+	    singleMethodArgument=true
+	    class="form-horizontal"}} 
+
+	  {{> afFieldInput name="technologyId" type="hidden" value=currentDescription.technologyId}}
+	  {{> afQuickField name="shortText" label-class="col-sm-2" input-col-class="col-sm-9"}}
+	  <span class="shortText-counter">{{shortTextCounter}} / 140</span>
+	  <!-- <div class="col-sm-10 col-sm-offset-2">
+	    <span class="help-block m-b-none">
+				      This description will be used in the cards inside TDB and FutureKit. It has a 140 characters limit.
+				     </span>
+	  </div> -->
+	  {{> afQuickField name="longText" label-class="col-sm-2" input-col-class="col-sm-9"}}
+	  <!-- <div class="col-sm-10 col-sm-offset-2" style="margin-top:-20; padding-left:5px">
+	    <span class="help-block m-b-none">
+				      Avoid starting description with technology Title. Try keeping description to ±3 sentences, highlighting: Technical (What is it?), Relevance (What does it do?) & Importance (Why does is matter?).
+				    </span>
+	  </div> -->
+	  <div class="col-sm-9 col-md-offset-2">
+	    <div class="btn-group btn-block">
+	      <button 
+	      	class="btn btn-sm btn-primary btn-outline" 
+	      	type="button" 
+	      	data-action="publish-description">
+	        Publish
+	      </button>
+	      <button 
+	      	class="btn btn-sm btn-primary btn-outline" 
+	      	type="submit">
+	      	Save draft
+	      </button>
+	      <button 
+	      	class="btn btn-sm btn-outline btn-primary" 
+	      	type="button"
+	      	data-action="hide-form">
+	      	Cancel
+	      	</button>
+	      <button 
+	      	class="btn btn-sm btn-outline btn-primary"
+	        type="button" 
+	        data-action="delete-description">
+	        Delete
+	      </button>
+	    </div>
+	  </div>
+	  {{/autoForm}} 	
+	</div>
+</template>

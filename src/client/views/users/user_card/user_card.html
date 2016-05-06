@@ -1,0 +1,81 @@
+<template name="userCard">
+  {{#unless isDeleted}}
+    <div class="contact-box">
+      <div class="ibox-tools">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+          <i class="fa fa-chevron-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+          <li><a href="#" class="change-permissions"><i class="fa fa-key"></i> Change Permissions</a>
+          </li>
+          <li><a href="#" class="edit"><i class="fa fa-edit"></i> Edit</a>
+          </li>
+          <li><a href="#" class="delete"><i class="fa fa-trash"></i> Delete</a>
+          </li>
+        </ul>
+      </div>
+      <a href="{{pathFor 'users.entry' id=_id}}">
+        <div class="col-xs-4">
+          <div class="text-center">
+            {{> safeImg url=(getUserThumb (s3pathImages user.profile.imageId)) class="img-circle m-t-xs img-responsive link"}}
+            <div class="m-t-xs font-bold">
+              {{#if username}}
+                {{{username}}}
+              {{/if}}
+              {{#if user.roles}}
+                <p>{{{formatRole user.roles.[0] true}}}</p>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <h3>
+          {{#if Template.subscriptionsReady}}
+            {{#with user.status}}
+              {{#if online}}
+                <i class='fa fa-circle' style='color:#F8B459;'></i>
+              {{else}}
+                <i class='fa fa-circle' style='color:red;'></i>
+              {{/if}}
+            {{/with}}
+            <strong>{{user.profile.fullName}}</strong>
+          {{/if}}
+
+        </h3>
+          {{#if user.profile.affiliation}}
+            <h4>{{user.profile.affiliation}}</h4>
+          {{/if}}
+          <address>
+            {{#if user.profile.country}}
+              <p> {{{getCountryFlag user.profile.country}}} {{getCountryName user.profile.country}}</p>
+            {{/if}}
+            <p><i class='fa fa-envelope'></i> {{user.emails.[0].address}}</p>
+            {{#if user.profile.address}}
+              <p><i class="fa fa-map-marker"></i> {{user.profile.address}}</p>
+            {{/if}}
+            {{#if user.profile.contactInfo.phone}}
+              <p><i class='fa fa-phone'></i> {{user.profile.contactInfo.phone}}</p>
+            {{/if}}
+            {{#if user.profile.contactInfo.mobile}}
+              <p><i class='fa fa-mobile'></i> {{user.profile.contactInfo.mobile}}</p>
+            {{/if}}
+            {{#if Template.subscriptionsReady}}
+              {{#with user.status}}
+                {{#with lastLogin}}
+                  <p>
+                    <b>Last login:</b> {{moFormat date 'DD MMM YYYY HH:mm:ss'}}
+                  </p>
+            {{else}}
+              <p>
+                <i>Never logged in</i>
+              </p>
+                {{/with}}
+              {{/with}}
+            {{/if}}
+          </address>
+        </div>
+        <div class="clearfix"></div>
+      </a>
+    </div>
+  {{/unless}}
+</template>

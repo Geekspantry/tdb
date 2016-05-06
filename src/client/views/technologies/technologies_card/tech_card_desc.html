@@ -1,0 +1,16 @@
+<template name="techCardDesc">
+  <h5 class="card-name">
+    <a href="{{pathFor 'technologies.entry' id=_id}}">
+      <span class="card-id">{{{techId}}}</span> {{{name}}}
+    </a>
+  </h5>
+  <div class="btn-group btn-xs btn-addons">
+    {{#btnTooltip text=(concat "Readiness:" '4')}}
+      <i class="{{Icons.collections.readiness}}"></i> 4
+    {{/btnTooltip}}
+    {{#btnTooltip text=(concat "Average Industry Impact:" '4')}}
+      <i class="{{Icons.collections.impact}}"></i> 4
+    {{/btnTooltip}}
+  </div>
+  <p>{{{shortDescription}}}</p>
+</template>

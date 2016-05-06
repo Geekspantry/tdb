@@ -1,0 +1,16 @@
+<template name="orgCard">
+  {{#unless isDeleted}}
+    <div class="ibox card-box">
+      <div class="ibox-content no-padding">
+        {{> orgCardTools}}
+        <a href="{{pathFor 'organizations.entry' id=_id}}">
+        {{> safeImg url=(getCloudinaryCard (s3pathImages logo)) class='img-responsive'}}
+        </a> 
+        <div class="card-body">
+          {{> orgCardDesc}}
+          {{> orgCardFooter}}
+        </div>
+      </div>
+    </div>
+  {{/unless}}  
+</template>

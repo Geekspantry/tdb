@@ -1,0 +1,45 @@
+<template name="technologiesImagesInput">
+  <span class="input-group-btn" data-template="technologies-images-input">
+    {{#unless isUploading}}
+    <span class="btn upload browse">
+      <div class="input-wrapper">
+        <i class="fa fa-plus"></i>
+        <span>Add Photos</span>
+        <input type="file">
+      </div>
+    </span>
+    {{else}}
+    <span class="btn upload">
+      <div class="input-wrapper">
+        {{> spinnerWave}}
+        <span>Uploading...</span>
+      </div>
+    </span>
+    {{/unless}}
+  </span>
+
+
+  <!-- <div class="input-group">
+      <input type="text" class="form-control file-path" value= {{fileNameText}} readonly>
+      <span class="input-group-btn">
+        {{#unless isUploading}}
+          <span id="btn-file" class="btn btn-default browse">
+              {{btnFileText}} <input type="file">
+          </span>
+      {{else}}
+        <span class="btn btn-danger cancel">
+            Cancel upload...
+          </span>
+        {{/unless}}
+        {{#unless uploadOnFileSelected}}
+          {{#if isFileSelected}}
+            {{#unless isUploading}}
+              <button class="btn btn-primary btn-upload" data-loading-text="Uploading file...">
+                Upload file
+              </button>
+            {{/unless}}
+          {{/if}}
+        {{/unless}}
+        </span>
+    </div> -->
+</template>

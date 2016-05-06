@@ -1,0 +1,52 @@
+<template name="technologiesDescriptionsTabs">
+  <div class="tabs-container" data-template="technologies-descriptions-tabs">
+    <div class="tabs-left">
+      <ul class="nav nav-tabs">
+        {{#each descriptionsByModifiedAt}} 
+        <li class="{{#if isActive _id}}active{{/if}}">
+          <a data-action="switch-tab" href="#tab-{{_id}}">
+            {{capitalizeFirstLetter status}} <span style="color:#c2c2c2; font-weight:300; font-style: italic; font-size:85%;"> – {{moFromNow modifiedAt true}}</span>
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+      <div class="tab-content">
+        <div id="tab-{{_id}}" class="tab-pane active">
+          <div class="panel-body">
+            {{#if Template.subscriptionsReady}}
+              {{#if isEditing}}
+                {{> technologiesDescriptionsForm currentDescription}}
+              {{else}}
+                <div class="row animated fadeInLeft" >
+                  <label class="col-sm-2">Summary</label>
+                  <div class="col-sm-9">
+                    <p>{{currentDescription.shortText}}</p>
+                  </div>
+                  <label class="col-sm-2">Description</label>
+                  <div class="col-sm-9">
+                    {{{renderMarkdown currentDescription.longText}}}
+                  </div> 
+                  <div class="col-sm-9 col-md-offset-2">
+
+                    <p class="text-right">
+                      <small>
+                        <i>
+                          Latest edit done by 
+                          {{currentDescription.modifiedByUser.profile.fullName}} 
+                          {{moFromNow currentDescription.modifiedAt}}
+                        </i>
+                      </small> 
+                    </p>
+                    <button type="button" class="btn btn-primary btn-outline btn-sm btn-block" data-action="show-form">Edit</button>
+                  </div>
+                </div> 
+              {{/if}}
+            {{else}}
+              {{> spinnerWave}}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

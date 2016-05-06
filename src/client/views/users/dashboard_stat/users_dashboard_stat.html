@@ -1,0 +1,38 @@
+<template name="usersDashboardStat">
+  {{#dashboardStat icon=Icons.collections.users title='Users' pathForAdd=(pathFor 'users.invite')}}
+    {{#if Template.subscriptionsReady}}
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>We have <b>{{total}}</b> {{title}} Users on TDB</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{adminCount}}</strong> of them are <a href="" class="label label-primary">Admin</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{editorCount}}</strong> of them are <a href="" class="label label-warning">Editor</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>{{viewerCount}}</strong> of them are <a href="" class="label label-danger">Viewer</a>
+            </td>
+          </tr>
+          <!-- <tr>
+            <td>
+              {{#with lastTechnologyAdded}}
+              The newest one is {{> technologyLabel}}
+              {{/with}}
+            </td>
+          </tr> -->
+        </tbody>
+      </table>    
+    {{else}}
+      <p>Loading...</p>
+    {{/if}}
+  {{/dashboardStat}}
+</template>
+

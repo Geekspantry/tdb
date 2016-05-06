@@ -1,0 +1,61 @@
+.brief-card {
+  .deleted {
+    background-color: #FF918F;
+  }
+  .updated {
+    background-color: #F6FF99;
+  }
+  h3 {
+    margin: 0;
+    /*Leaving the padding/margin stuff to the .title-tools since it has flex*/
+    font-size: 12px;
+    font-weight: 600;
+  }
+  h5 {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .ibox-content {
+    padding: 10px 15px 5px;
+    /*Reducing a little bit, to fits better in griedView of search*/
+    // min-height: 72px;
+  }
+  .link {
+    cursor: pointer;
+    &:hover {
+      color: @blue;
+    }
+  }
+  /*This class was created to hold title and ibox-tools at the same line (just needed it 'cause it's within ibox-content, not ibox-title)*/
+  .title-tools {
+    .flex;
+    .x-between-flex;
+    .y-center-flex;
+    padding: 5px 0;
+    i {
+      margin: 0 3px;
+    }
+  }
+  .brief-img {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .icon-brief-box {
+      .flex;
+      .x-center-flex;
+      .y-center-flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+      /*If you want more space to the block corners, add some padding*/
+      background-color: @navy;
+      i {
+        color: #fff;
+      }      
+    }
+
+  }
+}

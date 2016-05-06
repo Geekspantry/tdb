@@ -1,0 +1,36 @@
+<template name="attachmentsEdit">
+  {{#modal}}
+    {{#modalHeader}}
+      {{> modalHeaderContent title="Edit Attachment" icon="fa fa-edit" subtitle="You must save changes before closing."}}
+    {{/modalHeader}}
+    {{#if Template.subscriptionsReady}}
+      {{#autoForm
+        collection="Attachments"
+        id="updateAttachmentsForm" 
+        type="method-update" 
+        doc=attachment
+        singleMethodArgument=true
+        meteormethod="Attachments.methods.update" 
+        class="form-horizontal"}}
+        {{#modalBody}}
+
+            {{> afQuickField name="name" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+            {{> afQuickField name="type" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+            {{> afQuickField name="description" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+
+            {{#if attachment.isFromWeb}}
+            {{> afQuickField name="web.thumbnailUrl" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+            {{/if}}
+        {{/modalBody}}
+        {{#modalFooter}}
+            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Update</button>
+        {{/modalFooter}}
+      {{/autoForm}}
+    {{else}}
+      <div class="modal-body">
+        {{> spinner}}
+      </div>
+    {{/if}}
+  {{/modal}}
+</template>

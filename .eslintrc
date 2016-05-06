@@ -147,7 +147,7 @@
     "new-cap": [2, {                 // http://eslint.org/docs/rules/new-cap
       "newIsCap": true,
         "capIsNewExceptions": [
-            "Match", "Any", "Object", "ObjectIncluding", "OneOf", "Optional", "Where", "DataTable", "ES", "FS", "Cloudinary"
+            "Match", "Any", "Object", "ObjectIncluding", "OneOf", "Optional", "Maybe", "Where", "DataTable", "ES", "FS", "Cloudinary"
         ]      
     }],
     "no-multiple-empty-lines": [2, { // http://eslint.org/docs/rules/no-multiple-empty-lines

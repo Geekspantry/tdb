@@ -1,0 +1,61 @@
+<template name="topNavigation">
+  <div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="navbar-header">
+        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+          <i class="fa fa-reorder"></i>
+        </button>
+        <a href="{{pathFor 'dashboard'}}" class="navbar-brand">TDB</a>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar">
+        <ul class="nav navbar-nav">
+          <!--  <form role="search" class="navbar-form-custom" action="search_results.html">
+            <div class="form-group">
+              <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+            </div>
+          </form> -->
+          <li class="{{isActiveRoute regex='search'}}">
+            <a href="{{pathFor 'search'}}"><i class="fa fa-search"></i> <span class="nav-label">Search</span></a>
+          </li>
+          <li class="{{isActiveRoute regex='technologies'}}">
+            <a href="{{pathFor 'technologies.dashboard'}}"><i class="fa fa-gear"></i> <span class="nav-label">Technologies</span></a>
+          </li>
+          <li class="{{isActiveRoute regex='projects'}}">
+            <a href="{{pathFor 'projects.dashboard'}}"><i class="fa fa-folder"></i> <span class="nav-label">Projects</span></a>
+          </li>
+          <li class="{{isActiveRoute regex='organizations'}}">
+            <a href="{{pathFor 'organizations.dashboard'}}"><i class="fa fa-building"></i> <span class="nav-label">Organizations</span></a>
+          </li>
+          <li class="{{isActiveRoute regex='attachments'}}">
+            <a href="{{pathFor 'attachments.dashboard'}}"><i class="fa fa-paperclip"></i> <span class="nav-label">Attachments</span></a>
+          </li>
+        </ul>
+        <ul class="nav navbar-top-links navbar-right">
+          <li>
+            <a href="{{pathFor 'users.dashboard'}}">
+              <span class="fa fa-users"></span>
+            </a>
+          </li>
+          <li>
+            <span class="m-r-sm text-muted welcome-message">
+              {{currentUser.identification}}
+            </span>
+          </li>
+          <li>
+            <a href="#" id="logout"><span class="fa fa-sign-out"></span></a>
+          </li>
+        </ul>
+        <!-- <ul class="nav navbar-top-links navbar-right">
+          <li>
+            <span class="m-r-sm text-muted welcome-message">Welcome to TechDB</span>
+          </li>
+          <li>
+            <a id="logout" href="">
+              <i class="fa fa-sign-out"></i> Log out
+            </a>
+          </li>
+        </ul> -->
+      </div>
+    </nav>
+  </div>
+</template>

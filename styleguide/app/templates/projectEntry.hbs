@@ -1,0 +1,191 @@
+{{> navbar }}
+<div class="row border-bottom white-bg page-heading">
+  <div class="col-lg-12">
+    <ol class="breadcrumb">
+      <li>
+        <a href="#/projects">Projects</a>
+      </li>
+      <li class="active">
+        <strong>Futuro da Medicina</strong>
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="wrapper-content">
+  <div class="row tooltip-demo">
+    <!-- About box -->
+    <div class="col-lg-3">
+      {{#with projects.[0]}} {{> projectCard_add this}} {{/with}}
+      <table class="table small">
+        <tbody>
+          <tr>
+            <td>
+              <strong>Status</strong>
+            </td>
+            <td>
+              <span class="label label-primary">Open</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>23</strong> Technologies
+            </td>
+            <td>
+              <strong>05</strong> Under Review
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>03</strong> Collections Sets
+            </td>
+            <td>
+              <strong>12</strong> Collections
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Created</strong>
+            </td>
+            <td>
+              Dec 13, 2013
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Last updated</strong>
+            </td>
+            <td>
+              Dec 13, 2015
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Organizations</strong>
+            </td>
+            <td>
+              <a href="#/organizations/entry" class="btn btn-xs btn-outline btn-primary">One Health</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Participants</strong>
+            </td>
+            <td class="project-people">
+              <a href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Arthur Soares"><img alt="image" class="img-circle" src="../images/a3.jpg"></a>
+              <a href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Michell Zappa"><img alt="image" class="img-circle" src="../images/a1.jpg"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>URL</strong>
+            </td>
+            <td>
+              <a href="#">http://futurodamedicina.com.br</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="#/projects/edit" class="btn btn-primary btn-block btn-outline btn-sm">Edit</a>
+    </div>
+    <!-- fim do about box -->
+    <!-- Início tech stash -->
+    <div class="col-lg-9">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h1>Technology Stash</h1>
+          <div class="ibox-tools">
+            <a class="#">
+              <i class="fa fa-plus"></i>
+            </a>
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="row">
+            <div class="col-sm-12">
+              <input type="text" placeholder="Search" class="input-sm form-control">
+            </div>
+          </div>
+          <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="8">
+            <thead>
+              <tr>
+                <th data-toggle="true">Name</th>
+                <th>Status</th>
+                <th>Added by</th>
+                <th>Date</th>
+                <th>Collections</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a herf="#">Drone Delivery</a></td>
+                <td><span class="label label-primary">Published</span></td>
+                <td><a href="#">Arthur S</a></td>
+                <td>Dec 15, 2015</td>
+                <td><a href="#" class="btn btn-xs btn-outline btn-primary">Energy</a> <a href="#" class="btn btn-xs btn-outline btn-primary">Production</a></td>
+                <td>
+                  <a href="#"><i class="fa fa-arrows-alt fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-search fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td><a herf="#">Drone Delivery</a></td>
+                <td><span class="label label-danger">Draft</span></td>
+                <td><a href="#">Michell Z</a></td>
+                <td>Dec 17, 2015</td>
+                <td></td>
+                <td>
+                  <a href="#"><i class="fa fa-arrows-alt fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-search fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td><a herf="#">Drone Delivery</a></td>
+                <td><span class="label label-warning">Review</span></td>
+                <td><a href="#">Arthur S</a></td>
+                <td>Dec 15, 2015</td>
+                <td><a href="#" class="btn btn-xs btn-outline btn-primary">Production</a></td>
+                <td>
+                  <a href="#"><i class="fa fa-arrows-alt fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-search fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td><a herf="#">Drone Delivery</a></td>
+                <td><span class="label label-primary">Published</span></td>
+                <td><a href="#">Arthur S</a></td>
+                <td>Dec 15, 2015</td>
+                <td><a href="#" class="btn btn-xs btn-outline btn-primary">Energy</a> <a href="#" class="btn btn-xs btn-outline btn-primary">Production</a></td>
+                <td>
+                  <a href="#"><i class="fa fa-arrows-alt fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-search fa-fw"></i></a>
+                  <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="6">
+                  <ul class="pagination pull-right"></ul>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- fim -->
+    <div class="col-sm-9">
+      <div class="ibox">
+        <h2>Collection Sets</h2>
+      </div>
+      <div class="row-fluid">
+        {{#each collectionSet}} {{> projectCollection_element this}} {{/each}}
+      </div>
+    </div>

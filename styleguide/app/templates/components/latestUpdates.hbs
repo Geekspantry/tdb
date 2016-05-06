@@ -1,0 +1,30 @@
+
+  <div class="ibox float-e-margins recent-updates">
+    <div class="ibox-title">
+      <h1><i class="fa fa-bell"></i>Latest Updates</h1>
+    </div>
+    <div class="ibox-content no-padding">
+      <div class="ps-container ps-active-y" data-ps-id="bfec20ef-6bd4-83ea-d878-a97cfeaaefe8">
+        <ul class="list-group">
+          {{#each latestUpdates}}
+            <li class="list-group-item">
+              <a href="{{url}}" class="label label-success"><i class="icon fa fa-{{type}}"></i> {{object}}</a>
+              <p>{{action}} <a href="#/users/entry"> {{author}}</a></p>
+              <span class="label label-primary label-time">{{time}}</span>
+            </li>
+          {{/each}}
+        </ul>
+        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+          <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; height: 142px;">
+          <div class="ps-scrollbar-y" style="top: 0px; height: 60px;"></div>
+        </div>
+      </div>
+      <!--</div>-->
+    </div>
+    <div class="ibox-footer">
+      <span class="pull-right"><a class="text-info" id="view-more">View more... (40 / 128)</a></span>
+      <a class="text-info" id="view-less">View less</a>
+    </div>
+  </div>

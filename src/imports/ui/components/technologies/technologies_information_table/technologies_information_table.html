@@ -1,0 +1,38 @@
+<template name="technologiesInformationTable">
+  <table class="table small" data-template="technologies-information-table">
+    <tbody>
+      <tr>
+        <td>
+          <strong>Created</strong>
+        </td>
+        <td>
+          {{moFormat createdAt 'MMM Do YYYY'}}
+        </td>
+      </tr>
+      {{#if updatedAt}}
+	      <tr>
+	        <td>
+	          <strong>Updated</strong>
+	        </td>
+	        <td>
+	          {{moFormat updatedAt 'MMM Do YYYY'}}
+	        </td>
+	      </tr>
+      {{/if}} 
+      {{#if tags}}
+	      <tr>
+	        <td><strong>Tags</strong></td>
+	        <td>
+	          {{#each tags}}
+	          	<span class="tag label label-primary">{{this}}</span> 
+	          {{/each}}
+	        </td>
+	      </tr>
+      {{/if}}
+      <tr>
+        <td><strong>Status</strong></td>
+        <td><span class="label label-{{status}}">{{status}}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</template>

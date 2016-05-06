@@ -1,0 +1,48 @@
+.manage-user-role {
+  table {
+    background-color: white;
+    margin-bottom: 0px;
+  }
+
+  .search-source {
+    margin-bottom: 15px;
+  }
+
+  .ps-container{
+    position: relative;
+    max-height: 400px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .manage-user-role-item {
+    /*this will select only the <td>'s of the first .manage-user-role-item*/
+    &:first-of-type {
+      td {
+        border-top: none;
+      }
+    }
+
+    td {
+      vertical-align: middle;
+    }
+
+    /* td:first-child {width: @img-size-manage-user-role-item;} Possible configuration if want to set more space for username*/ 
+
+    /*This is assuming that the 2nd td is the username column*/
+    td:nth-child(2) {
+      text-align: center;
+    }
+
+    /*This is assuming that the the last td is the role buttons*/
+    td:last-child {
+      text-align: right;
+    }
+
+    img {
+      width: @img-size-manage-user-role-item;
+      height: @img-size-manage-user-role-item;
+    }
+  }
+
+}
+
+

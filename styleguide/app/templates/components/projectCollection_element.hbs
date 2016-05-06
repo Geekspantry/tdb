@@ -1,0 +1,33 @@
+ {{!-- Inicio coleção --}}
+<div class="ibox collection-ibox">
+  <div class="ibox-title">
+    <h2>{{name}}</h2>
+    <div class="ibox-tools">
+      <a href="#/projects/collection">Browse</a>
+    </div>
+  </div>
+  <div class="ibox-content collectionSetBox">
+    <p>{{description}}</p>
+    {{#each collection}}
+    <div class="panel panel-default">
+      <div class="panel-heading">{{title}}</div>
+      <div class="panel-body">
+        <p>{{description}}</p>
+        <ul class="sortable-list connectList agile-list">
+          {{#each subCollection}}
+          <li>{{title}} <a href="#" class="pull-btn pull-right btn-xs btn-white"> {{ technologies.length }}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="panel-footer">
+        <div class="ibox-tools">
+          <a href="#" alt="Edit Collection"><i class="fa fa-edit"></i></a>
+          <a href="#" alt="Copy collection"><i class="fa fa-copy"></i></a>
+          <a href="#" alt="Delete Collection"><i class="fa fa-trash"></i></a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+{{!-- Fim collection Set --}}

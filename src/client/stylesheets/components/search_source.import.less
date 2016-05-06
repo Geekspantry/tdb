@@ -1,0 +1,43 @@
+/*This is the div that holds the .search-source and .search-toggle*/
+
+.search-source-display-mode {
+  .flex;
+  .x-between-flex;
+  .y-top-flex;
+  margin: 10px 0;
+
+  .display-mode {
+    .inline-flex;
+    button {
+      margin-left: 3px;
+    }
+  }
+}
+
+.search-source {
+  .flex-grow(1);
+}
+
+.metadata {
+  .flex;
+  .x-right-flex;
+  font-size: 11px;
+}
+
+/*MOBILE MEDIA QUERY*/
+.body-small {
+  .search-source-display-mode {
+    .flex-direction-column; /*Separating search-source and display-mode in 2 rows*/
+    .y-bottom-flex; /*Putting display-mode at the right. This is actually working with X,Y axis reversed. Flex-direction-column cause it. */
+  }
+
+  .display-mode {
+    margin: 8px 0;
+    button {
+      .inline-flex;
+      .x-center-flex;
+      width: @display-mode-button-size-mobile;
+      height: @display-mode-button-size-mobile;
+    }
+  }
+}

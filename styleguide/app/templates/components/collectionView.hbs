@@ -1,0 +1,33 @@
+{{!-- ToDo: Aqui precisa de um Javascript para ajustar a largura de acordo com a quantidade de colunas --}}
+<div class="col-lg-9" style="width: 1300px;">
+  <div class="panel panel-default">
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+      <p>{{description}}</p>
+      <div class="collectionsub">
+        {{#each subCollection}}
+        <div class="collectionSubColumn">
+          <div class="ibox-title">
+            <h3>{{title}}</h3>
+            <div class="ibox-tools">
+              <a class="#"><i class="fa fa-chevron-down"></i></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></a>
+              <ul class="dropdown-menu dropdown-user">
+                <li><a href="#">Edit Title</a></li>
+                <li><a href="#">Edit Description</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ibox-content">
+            <p>{{description}}</p>
+            <p><a><span class="small pull-right">See more</span></a></p>
+          </div>
+          <div class="sortable-list connectList" id="ibox-technologystash" >
+            {{#each technologies}} {{> technologyCard this}} {{/each}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

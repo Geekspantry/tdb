@@ -1,0 +1,52 @@
+<template name="collectionsSetItem">
+  {{#panelContainer}}
+    {{#panelTitle}}
+      <h2>{{name}}</h2>
+      <div class="ibox-tools">
+        <a href="{{pathFor 'collectionsSet.entry' id=getProjectId cSetId=_id}}">Browse</a>
+      </div>
+    {{/panelTitle}}
+
+    {{#panelContent class="collectionSetBox"}}
+     {{#if collections.count}}
+        {{#each collections}}
+          <div class="panel panel-default">
+            <div class="panel-heading">{{name}}</div>
+            <div class="panel-body">
+              <p>
+                {{description.longText}}
+              </p>
+              <ul class="sortable-list connectList agile-list ui-sortable">
+              {{#each childCollections}}
+                <li class="ui-sortable-handle">{{name}} <a href="#" class="pull-btn pull-right btn-xs btn-white"> {{techCount}}</a></li>
+              {{/each}}
+              </ul>
+            </div>
+            <div class="panel-footer">
+              <div class="ibox-tools">
+                <a href="#" alt="Edit Collection" data-action="edit-collection"><i class="fa fa-edit"></i></a>
+                <a href="#" alt="Copy collection" data-action="copy-collection"><i class="fa fa-copy"></i></a>
+                <a href="#" alt="Delete Collection" data-action="delete-collection"><i class="fa fa-trash"></i></a>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="empty-message">
+          <i class='fa fa-frown-o'></i>
+          <h3>
+            Empty Collection Set
+          </h3>
+        </div>
+      {{/if}}     
+    {{/panelContent}}
+
+    {{#panelFooter}}
+      {{#panelTools}}
+        <a data-action="delete-collection-set" data-type='sub-collection'>
+          <i class="fa fa-trash"></i>
+        </a>
+      {{/panelTools}}    
+    {{/panelFooter}}
+  {{/panelContainer}}
+</template>

@@ -1,0 +1,12 @@
+.page-heading {
+  .btn {
+    @media (min-width: 1200px) {
+      margin-top: 14px;
+      float: right;
+    }
+
+    @media (max-width: 783px){
+    	margin-bottom: 11px;
+    }
+  }
+}

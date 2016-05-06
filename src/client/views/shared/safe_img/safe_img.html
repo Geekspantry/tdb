@@ -1,0 +1,33 @@
+<!--
+<template name="safeImg">
+  <img src="{{src}}" class="{{class}}">
+</template>
+-->
+
+<template name="safeImg">
+  {{#if url}}
+    {{#if loadingImg}}
+      {{#if $and width height}}
+        <div style="width: {{width}}px; height: {{height}}px">
+          {{> spinnerWave}}
+        </div>
+      {{else}}
+        {{> spinnerWave}}
+      {{/if}}
+    {{/if}}
+    
+    {{#unless error}}
+    <img src="{{url}}" 
+      class="safe-img {{class}}" 
+      id="{{id}}"
+      style="{{#if loadingImg}}visibility:hidden; display:none;{{/if}}" 
+      onerror="this.style.display='none';" />
+    {{else}}
+    <img src="https://placehold.it/{{width}}x{{height}}" 
+      class="{{class}}" />
+    {{/unless}}
+  {{else}}
+    <img src="https://placehold.it/{{width}}x{{height}}" 
+      class="{{class}}">
+  {{/if}}
+</template>

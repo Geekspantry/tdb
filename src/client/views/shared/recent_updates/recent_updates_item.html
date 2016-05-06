@@ -1,0 +1,26 @@
+<template name="recentUpdatesItem">
+  {{#if Template.subscriptionsReady}}
+    <li class="list-group-item">
+      {{#if ($eq collection 'technologies')}}
+        {{#with tech}}
+          {{> technologyLabel status=status name=../docName hasIcon=../hasIcon _id=../docId}}
+        {{/with}}
+      {{else}}
+        <a href="{{pathFor routeName id=docId}}" class="label label-default">
+          {{#if hasIcon}}<i class="icon {{icon}}"></i> {{/if}}
+          {{docName}} 
+        </a>
+      {{/if}}
+      <p>
+        {{getText}}
+        <!--was {{description}} by-->
+        <a href="{{pathFor 'users.entry' id=userId }}"> 
+          {{userIdentification}}
+        </a>
+      </p>
+      <span class="label label-primary label-time">
+        {{moFromNow createdAt}}
+      </span>
+    </li>
+  {{/if}}
+</template>

@@ -1,0 +1,14 @@
+{
+  "name": "tdb",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "dragula": "^3.6.8",
+    "elasticsearch": "^11.0.1",
+    "meteor-node-stubs": "~0.2.0",
+    "node-metainspector": "^1.2.0",
+    "remove-markdown": "^0.1.0"
+  }
+}
