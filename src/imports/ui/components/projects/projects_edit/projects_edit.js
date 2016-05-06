@@ -3,7 +3,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { AutoForm } from 'meteor/aldeed:autoform';
 import { Projects } from '../../../../api/projects/Projects';
 
-import { toastr } from 'meteor/chrismbeckett:toastr';
+import 'meteor/chrismbeckett:toastr';
 
 import './projects_edit.html';
 

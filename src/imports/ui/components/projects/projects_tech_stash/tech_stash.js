@@ -1,8 +1,9 @@
 import { Template } from 'meteor/templating';
 import { Technologies } from '../../../../api/technologies/technologies';
+import { Projects } from '../../../../api/projects/Projects';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
-import { regexHelpers } from '../../../lib/regex_helpers/regex_helpers.js';
+import { multiWordRegex } from '../../../lib/regex_helpers/regex_helpers.js';
 
 import './tech_stash.html';
 
@@ -20,10 +21,11 @@ Template.techStash.events({
 
 Template.techStash.helpers({
   filteredTechnologiesStash() {
-    let filteredProject = Projects.findOne({
+    let project = Projects.findOne({
       _id: this.projectId
     });
-    return filteredProject.technologiesStash.filter(stash => regexHelpers.multiWordRegex(Template.instance().filter.get()).test(stash.techName));
+    let filter = Template.instance().filter.get();
+    return project.technologiesStash.filter(stash => multiWordRegex(filter).test(stash.techName));
   },
   getTechnology() {
     return Technologies.findOne(this.technologyId);

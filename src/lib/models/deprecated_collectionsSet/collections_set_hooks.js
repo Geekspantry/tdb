@@ -1,3 +1,5 @@
+/*import { Projects } from '../../../imports/api/projects/Projects';
+
 CollectionsSet.after.insert(function(userId, doc) {
   let projectId = doc.projectId;
   Projects.update({
@@ -19,3 +21,4 @@ CollectionsSet.after.remove(function(userId, doc) {
     }
   });
 });
+*/

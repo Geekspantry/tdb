@@ -1,4 +1,4 @@
-CollectionsSet = new Mongo.Collection('collectionsSet');
+/*CollectionsSet = new Mongo.Collection('collectionsSet');
 Schemas.CollectionsSet = new SimpleSchema({
   name: {
     type: String
@@ -33,3 +33,4 @@ CollectionsSet.helpers({
 
 CollectionsSet.attachSchema(Schemas.CollectionsSet);
 CollectionsSet.attachBehaviour('timestampable');
+*/
