@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
-import { toastr } from 'meteor/chrismbeckett:toastr';
+import 'meteor/chrismbeckett:toastr';
 
 import { Projects } from '../../../../api/projects/Projects';
 //  import { regex } from '../../../lib/regex_helpers/regex_helpers.js';

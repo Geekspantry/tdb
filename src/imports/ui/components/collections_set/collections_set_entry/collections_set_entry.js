@@ -2,7 +2,7 @@ import dragula from 'dragula';
 import { Template } from 'meteor/templating';
 import { CollectionsSet } from '../../../../api/collections_set/collections_set';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
-import toastr from 'meteor/chrismbeckett:toastr';
+import 'meteor/chrismbeckett:toastr';
 
 import './collections_set_entry.html';
 

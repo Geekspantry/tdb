@@ -10,8 +10,7 @@ AutoForm.hooks({
 
         doc.collectionsSetId = data.collectionsSetId;
         doc.projectId = data.projectId;
-        console.log(data);
-        console.log(doc);
+
         return doc;
       }
     },

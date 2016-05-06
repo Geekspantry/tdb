@@ -1,9 +1,8 @@
 import { Template } from 'meteor/templating';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import popups from '../../common/popups/popups';
-
-console.log(popups);
-
+import { CollectionsSet } from '../../../../api/collections_set/collections_set';
+import { remove } from '../../../../api/collections_set/methods.js';
 import './collections_set_item.html';
 
 Template.collectionsSetItem.helpers({
@@ -18,7 +17,7 @@ Template.collectionsSetItem.events({
     let _id = this._id;
     let text = `Are you sure you want to delete <b>${name}</b>? You will not be able to undo this action.`;
     popups.removeConfirmation(text, () => {
-      CollectionsSet.methods.remove.call({_id}, (err, res) => {
+      remove.call({_id}, (err, res) => {
         if (err) {
           popups.removeError();
         } else {
@@ -40,6 +39,7 @@ Template.collectionsSetItem.events({
       _id
     }, (err, res) => {
       if (err) {
+        console.dir(err);
         toastr.error('Could not copy the collection', 'Error');
       } else {
         toastr.success('Collection copied!', 'Success');
