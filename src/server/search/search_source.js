@@ -125,7 +125,7 @@ SearchSource.defineSource('globalSearch', function(searchText, {
   };
 
   let search = esClient.prettySearch({
-    index: 'techdb',
+    index: Meteor.settings.public.elasticSearch.index,
     type: types.join(','), // filter types
     body: {
       from: from,
@@ -243,7 +243,7 @@ SearchSource.defineSource('userSearch', function(searchText, {
   };
 
   let search = esClient.prettySearch({
-    index: 'techdb',
+    index: Meteor.settings.public.elasticSearch.index,
     type: 'users',
     body: {
       query: finalQuery,

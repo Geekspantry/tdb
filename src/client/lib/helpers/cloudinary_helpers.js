@@ -62,8 +62,8 @@ Cloudinary.helpers = {
   },
   getS3MappingFolder: function(cloudinaryId, collectionName) {
     if (!cloudinaryId) return '';
-    if (!Meteor.settings.public.Cloudinarys3MappingFolder) throw new Error('Must configure s3mappingFolder');
-    return `${Meteor.settings.public.Cloudinarys3MappingFolder}/${collectionName}/${cloudinaryId}`;
+    if (!Meteor.settings.public.cloudinary.s3MappingFolder) throw new Error('Must configure s3mappingFolder');
+    return `${Meteor.settings.public.cloudinary.s3MappingFolder}/${collectionName}/${cloudinaryId}`;
   }
 };
 

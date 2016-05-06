@@ -1,3 +1,3 @@
 $.cloudinary.config({
-  cloud_name: Meteor.settings.public.CloudinaryName,
+  cloud_name: Meteor.settings.public.cloudinary.name,
 });

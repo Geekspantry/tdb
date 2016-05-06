@@ -36,7 +36,7 @@ Schemas.Collection = new SimpleSchema({
  */
 Collections.attachSchema(Schemas.Collection);
 Collections.attachBehaviour('timestampable');
-Meteor.isServer && Collections.esDriver(esClient, 'techdb', 'organizations');
+Meteor.isServer && Collections.esDriver(esClient, 'organizations');
 
 
 /**

@@ -145,7 +145,7 @@ Schemas.Organization = new SimpleSchema({
  */
 Organizations.attachSchema(Schemas.Organization);
 Organizations.attachBehaviour('timestampable');
-Meteor.isServer && Organizations.esDriver(esClient, 'techdb', 'organizations');
+Meteor.isServer && Organizations.esDriver(esClient, 'organizations');
 
 
 /**

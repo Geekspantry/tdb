@@ -167,4 +167,4 @@ Schemas.Attachment = new SimpleSchema({
 
 Attachments.attachSchema(Schemas.Attachment);
 Attachments.attachBehaviour('timestampable');
-Meteor.isServer && Attachments.esDriver(esClient, 'techdb', 'attachments');
+Meteor.isServer && Attachments.esDriver(esClient, 'attachments');

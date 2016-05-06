@@ -1,6 +1,6 @@
 import { Technologies } from '../technologies.js';
 
-Technologies.esDriver(esClient, 'techdb', 'technologies', (cleanedDoc, doc, hook) => {
+Technologies.esDriver(esClient, 'technologies', (cleanedDoc, doc, hook) => {
   let tDoc = hook.transform();
   let publishedDescription = tDoc.getPublishedDescription();
   if (publishedDescription && publishedDescription.longText) {

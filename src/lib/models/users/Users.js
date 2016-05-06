@@ -258,7 +258,7 @@ Schemas.Users = new SimpleSchema({
 
 Meteor.users.attachSchema(Schemas.Users);
 Meteor.users.attachBehaviour('timestampable');
-Meteor.isServer && Meteor.users.esDriver(esClient, 'techdb', 'users');
+Meteor.isServer && Meteor.users.esDriver(esClient, 'users');
 
 //                                       //
 //                 EXTENSIONS            //

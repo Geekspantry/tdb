@@ -129,7 +129,7 @@ Schemas.Project = new SimpleSchema({
  */
 Projects.attachSchema(Schemas.Project);
 Projects.attachBehaviour('timestampable');
-Meteor.isServer && Projects.esDriver(esClient, 'techdb', 'projects');
+Meteor.isServer && Projects.esDriver(esClient, 'projects');
 
 
 Projects.helpers({
