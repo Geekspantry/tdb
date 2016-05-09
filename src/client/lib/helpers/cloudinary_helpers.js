@@ -18,7 +18,7 @@ Cloudinary.helpers = {
   getMiniCard(cloudinaryId, options = {}) {
     if (cloudinaryId) {
       let baseOptions = {
-        width: 85,
+        width: 50,
         height: 50,
         crop: 'fill',
         gravity: 'center'
@@ -29,7 +29,7 @@ Cloudinary.helpers = {
       };
       return $.cloudinary.url(cloudinaryId, finalOptions);
     }
-    return 'https://placehold.it/100x55';
+    return 'https://placehold.it/50x50';
   },
   getThumb(cloudinaryId) {
     if (cloudinaryId) {

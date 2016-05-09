@@ -12,6 +12,7 @@ aldeed:simple-schema@1.5.3
 aldeed:tabular@1.6.1
 aldeed:template-extension@4.0.0
 allow-deny@1.0.4
+andrei:autoform-raty@0.0.1
 arillo:flow-router-helpers@0.5.1
 audit-argument-checks@1.0.7
 autoupdate@1.2.9
@@ -148,7 +149,9 @@ mongo-livedata@1.0.12
 mpowaga:jquery-fileupload@9.11.2
 mpowaga:jquery-ui-widget@1.11.4
 mpowaga:string-template@0.1.0
+mquandalle:jade@0.4.1
 mquandalle:perfect-scrollbar@0.6.5_2
+mrt:jquery-raty@2.7.2
 msavin:jetsetter@1.5.2
 msavin:mongol@1.6.2
 natestrauser:animate-css@3.5.1

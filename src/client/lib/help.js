@@ -1,4 +1,4 @@
-removeConfirmation = function(name, callback) {
+/*removeConfirmation = function(name, callback) {
   swal({
     title: 'Are you sure?',
     text: 'You will not be able to recover this document <b>"' + name + '"</b>.',
@@ -50,3 +50,4 @@ handleTableClick = function(event, callback) {
     if (!rowData) return; // Won't be data if a placeholder row is clicked
     callback(rowData);
 };
+*/

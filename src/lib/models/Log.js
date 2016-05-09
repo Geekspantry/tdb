@@ -1,4 +1,5 @@
 import { Technologies } from '../../imports/api/technologies/technologies.js';
+import { Projects } from '../../imports/api/projects/Projects';
 
 
 Logs = new Mongo.Collection('logs');
