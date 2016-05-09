@@ -5,12 +5,28 @@ Collections = new Mongo.Collection('collections');
  * Schema
  *
  */
+
+Schemas.CollectionDescriptionSchemaWithStar = new SimpleSchema([
+  {
+    status: {
+      type: Number,
+      autoform: {
+        type: 'raty',
+        ratyOptions: {}
+      }
+    }
+  },
+  Schemas.Description.pick(['userId', 'createdAt', 'longText'])
+]);
+
+Schemas.CollectionDescriptionSchema = Schemas.Description.pick(['userId', 'createdAt', 'status', 'longText']);
+
 Schemas.Collection = new SimpleSchema({
   name: {
     type: String
   },
   description: {
-    type: Schemas.Description.pick(['userId', 'createdAt', 'status', 'longText'])
+    type: Schemas.CollectionDescriptionSchema
   },
   projectId: {
     type: String
@@ -36,7 +52,7 @@ Schemas.Collection = new SimpleSchema({
  */
 Collections.attachSchema(Schemas.Collection);
 Collections.attachBehaviour('timestampable');
-Meteor.isServer && Collections.esDriver(esClient, 'techdb', 'organizations');
+Meteor.isServer && Collections.esDriver(esClient, 'organizations');
 
 
 /**

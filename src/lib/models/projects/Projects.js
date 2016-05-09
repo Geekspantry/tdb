@@ -1,4 +1,4 @@
-Projects = new Mongo.Collection('projects');
+/*Projects = new Mongo.Collection('projects');*/
 
 
 /**
@@ -6,7 +6,7 @@ Projects = new Mongo.Collection('projects');
  * Schema
  *
  */
-
+/*
 Schemas.Project = new SimpleSchema({
   name: {
     type: String,
@@ -120,16 +120,16 @@ Schemas.Project = new SimpleSchema({
     logDriver: true,
     optional: true
   }
-});
+});*/
 
 /**
  *
  * Behaviours
  *
  */
-Projects.attachSchema(Schemas.Project);
+/*Projects.attachSchema(Schemas.Project);
 Projects.attachBehaviour('timestampable');
-Meteor.isServer && Projects.esDriver(esClient, 'techdb', 'projects');
+Meteor.isServer && Projects.esDriver(esClient, 'projects');
 
 
 Projects.helpers({
@@ -158,3 +158,4 @@ Projects.helpers({
     });
   }
 });
+*/

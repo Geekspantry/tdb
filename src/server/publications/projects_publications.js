@@ -1,24 +1,4 @@
-import { Technologies } from '../../imports/api/technologies/technologies';
-
-Meteor.publishComposite('tabularProjectsList', function(tableName, ids, fields) {
-  check(tableName, String);
-  check(ids, Array);
-  check(fields, Match.Optional(Object));
-  this.unblock();
-  return {
-    find() {
-      this.unblock();
-      return Projects.find({
-        _id: {
-          $in: ids
-        }
-      }, {
-        fields: fields
-      });
-    },
-  };
-});
-
+/*import { Technologies } from '../../imports/api/technologies/technologies';
 
 Meteor.publishComposite('projects.single', function(projectId) {
   check(projectId, String);
@@ -138,26 +118,5 @@ Meteor.publish('last-project-added', function() {
     },
     limit: 1
   });
-});
-
-
-/*Meteor.publishComposite('projects.techStash', function(projectId) {
-  check(projectId, String);
-  return {
-    find() {
-      return Projects.find({
-        _id: projectId
-      }, {
-        fields: {
-          technologiesStash: 1
-        }
-      });
-    },
-    children: [{
-      find(project) {
-
-      }
-    }]
-  };
 });
 */

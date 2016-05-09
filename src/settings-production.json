@@ -1,7 +1,12 @@
 {
   "public": {
-    "CloudinaryName": "envisioning",
-    "Cloudinarys3MappingFolder": "s3-production",
+    "elasticSearch": {
+      "index": "tdb"
+    },
+    "cloudinary": {
+      "name": "envisioning",
+      "s3MappingFolder": "s3-production"
+    },
     "allowContentTypes": [
       "image/*", 
       "application/pdf", 

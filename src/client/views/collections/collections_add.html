@@ -1,5 +1,5 @@
 <template name="collectionsAdd">
-  {{#modal}}
+  {{#modal large="true"}}
     {{#modalHeader}}
       {{> modalHeaderContent title="New Collection" icon="fa fa-plus" subtitle="You must save changes before closing."}}
     {{/modalHeader}}
@@ -7,8 +7,8 @@
       collection="Collections" 
       id="insertCollectionsForm" 
       type="method" 
-      meteormethod="Collections.methods.add" 
-      class="form-horizontal"
+      template="bootstrap3"
+      meteormethod="Collections.methods.add"
       projectId=projectId
       collectionsSetId=collectionsSetId
       parentId=parentId}}

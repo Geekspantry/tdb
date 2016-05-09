@@ -1,4 +1,4 @@
-import { Technologies } from '../../../imports/api/technologies/technologies';
+/*import { Technologies } from '../../../imports/api/technologies/technologies';
 
 Projects.methods = {};
 
@@ -34,18 +34,6 @@ Meteor.methods({
     throw new Meteor.Error(403, 'Not authorized');
   }
 });
-
-
-/*Projects.methods.pushCollectionsSet = new ValidatedMethod({
-  name: 'Projects.methods.pushCollectionsSet',
-  validate: Schemas.validatedMethodUpdateSchema.validator(),
-  run({ _id, modifier }) {
-    if (Roles.userIsInRole(Meteor.user(), ['admin'])) {
-      return Projects.update(_id, modifier);
-    }
-    throw new Meteor.Error(403, 'Not authorized');
-  }
-});*/
 
 Projects.methods.pushTechnologiesStash = new ValidatedMethod({
   name: 'Projects.methods.pushTechnologiesStash',
@@ -107,23 +95,6 @@ Projects.methods.pullTechnologiesStash = new ValidatedMethod({
       },
       $inc: {
         technologiesStashCount: -1
-      }
-    });
-  }
-});
-
-/*Projects.methods.pushCollectionsSet = new ValidatedMethod({
-  name: 'Projects.methods.pushCollectionsSet',
-  validate({projectId, collectionsSet}) {
-    check(projectId, String);
-    check(collectionsSet, Schemas.CollectionsSet);
-  },
-  run({projectId, collectionsSet}) {
-    return Projects.update({
-      _id: projectId
-    }, {
-      $push: {
-        collectionsSet: collectionsSet
       }
     });
   }

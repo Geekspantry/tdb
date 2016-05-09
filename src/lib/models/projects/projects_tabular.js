@@ -1,4 +1,4 @@
-TabularTables.Projects = new Tabular.Table({
+/*TabularTables.Projects = new Tabular.Table({
   name: 'ProjectsList',
   collection: Projects,
   sub: new SubsManager(),
@@ -18,3 +18,4 @@ TabularTables.Projects = new Tabular.Table({
   }],
   bPaginate: true
 });
+*/

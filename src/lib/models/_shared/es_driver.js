@@ -71,10 +71,10 @@ if (Meteor.isServer) {
   };
 
 
-  Mongo.Collection.prototype.esDriver = function(esConn, index, type, transformFunction) {
+  Mongo.Collection.prototype.esDriver = function(esConn, type, transformFunction) {
     this.es = {};
     this.es.conn = esConn;
-    this.es.index = index;
+    this.es.index = Meteor.settings.public.elasticSearch.index;
     this.es.type = type;
     this.es.transformFunction = transformFunction;
     //

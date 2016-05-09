@@ -1,3 +1,5 @@
+import { Projects } from '../../../imports/api/projects/Projects';
+
 Collections.after.insert(function(userId, doc) {
   let projectId = doc.projectId;
   Projects.update({

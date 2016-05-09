@@ -1,39 +1,6 @@
 Schemas = {};
 Meteor.isClient && Template.registerHelper('Schemas', Schemas);
 
-Schemas.StashedTech = new SimpleSchema({
-  technologyId: {
-    type: String,
-    autoform: {
-      type: 'universe-select',
-      uniPlaceholder: 'Search by technology title...',
-      options: () => Technologies.quickList({})
-    }
-  },
-  techName: {
-    type: String,
-    optional: true,
-    autoform: {
-      omit: true
-    }
-  },
-  addedAt: {
-    type: Date,
-    optional: true
-  },
-  addedBy: {
-    type: String,
-    optional: true,
-    autoValue() {
-      if (Meteor.userId()) {
-        return Meteor.userId();
-      } else {
-        this.unset();
-      }
-    }
-  }
-});
-
 Schemas.validatedMethodUpdateSchema = new SimpleSchema({
   _id: {
     type: String
@@ -42,6 +9,10 @@ Schemas.validatedMethodUpdateSchema = new SimpleSchema({
     type: Object,
     blackbox: true
   }
+});
+
+Schemas.validatedMethodRemoveSchema = new SimpleSchema({
+  _id: { type: String }
 });
 
 

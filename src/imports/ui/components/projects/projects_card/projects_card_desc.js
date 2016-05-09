@@ -1,0 +1,1 @@
+import './projects_card_desc.html';

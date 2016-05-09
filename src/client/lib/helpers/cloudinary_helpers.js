@@ -18,7 +18,7 @@ Cloudinary.helpers = {
   getMiniCard(cloudinaryId, options = {}) {
     if (cloudinaryId) {
       let baseOptions = {
-        width: 85,
+        width: 50,
         height: 50,
         crop: 'fill',
         gravity: 'center'
@@ -29,7 +29,7 @@ Cloudinary.helpers = {
       };
       return $.cloudinary.url(cloudinaryId, finalOptions);
     }
-    return 'https://placehold.it/100x55';
+    return 'https://placehold.it/50x50';
   },
   getThumb(cloudinaryId) {
     if (cloudinaryId) {
@@ -62,8 +62,8 @@ Cloudinary.helpers = {
   },
   getS3MappingFolder: function(cloudinaryId, collectionName) {
     if (!cloudinaryId) return '';
-    if (!Meteor.settings.public.Cloudinarys3MappingFolder) throw new Error('Must configure s3mappingFolder');
-    return `${Meteor.settings.public.Cloudinarys3MappingFolder}/${collectionName}/${cloudinaryId}`;
+    if (!Meteor.settings.public.cloudinary.s3MappingFolder) throw new Error('Must configure s3mappingFolder');
+    return `${Meteor.settings.public.cloudinary.s3MappingFolder}/${collectionName}/${cloudinaryId}`;
   }
 };
 

@@ -60,7 +60,7 @@
 
 <template name="modal">
   <div class="modal inmodal {{class}}" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog {{#if large}}modal-lg{{/if}}">
       <div class="modal-content animated fadeIn">
         {{> UI.contentBlock}}
       </div>
