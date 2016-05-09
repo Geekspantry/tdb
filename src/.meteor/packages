@@ -114,3 +114,5 @@ standard-minifier-css
 standard-minifier-js
 rubaxa:sortable
 mdg:validation-error
+andrei:autoform-raty
+mrt:jquery-raty

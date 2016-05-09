@@ -7,7 +7,7 @@ import { Technologies } from '../../../../api/technologies/technologies';
 import './collections_board.html';
 
 Template.collectionsBoard.events({
-  'click [data-action="delete-collection"]': function(event, template) {
+  'click [data-action="delete-collection"]'(event, template) {
     let el = $(event.target);
     let type = el.data('type');
     let name = this.name;
@@ -23,11 +23,17 @@ Template.collectionsBoard.events({
       });
     });
   },
-  'click [data-action="add-sub-collection"]': function(event, template) {
+  'click [data-action="add-sub-collection"]'(event, template) {
     Modal.show('collectionsAdd', {
       projectId: FlowRouter.getParam('id'),
       collectionsSetId: FlowRouter.getParam('cSetId'),
       parentId: this._id
+    });
+  },
+  'click [data-action="edit-collection"]'(event, template) {
+    event.preventDefault();
+    Modal.show('collectionsEdit', {
+      collectionId: this._id
     });
   }
 });
