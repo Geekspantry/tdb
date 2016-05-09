@@ -2,7 +2,7 @@
  * Projects Methods
  */
 
-import { Projects } from './Projects';
+import { Projects } from './projects';
 import { Technologies } from '../technologies/technologies.js';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';

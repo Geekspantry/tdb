@@ -3,7 +3,7 @@
  */
 
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { Projects } from './Projects';
+import { Projects } from './projects';
 import { StashedTechSchema } from '../shared/schemas';
 
 export const ProjectSchema = new SimpleSchema({

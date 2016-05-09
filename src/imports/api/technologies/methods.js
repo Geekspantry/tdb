@@ -16,7 +16,7 @@ export const insert = new ValidatedMethod({
   name: 'technologies.insert',
   validate: TechnologySchema.validator(),
   run(doc) {
-    checkPermissions();
+    // checkPermissions();
     return Technologies.insert(doc);
   }
 });
@@ -28,7 +28,7 @@ export const update = new ValidatedMethod({
     modifier: { type: Object, blackbox: true }
   }).validator(),
   run({ _id, modifier }) {
-    checkPermissions();
+    // checkPermissions();
     return Technologies.update(_id, modifier);
   }
 });
