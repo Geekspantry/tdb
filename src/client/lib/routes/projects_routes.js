@@ -1,3 +1,5 @@
+//import { CollectionsSet } from '../../../imports/api/collections_set/collections_set';
+
 let projectsRoutes = FlowRouter.group({
   prefix: '/projects',
   name: 'Projects'
@@ -56,7 +58,7 @@ projectsRoutes.route('/:id/edit', {
 });
 
 projectsRoutes.route('/:id/collections-set/:cSetId', {
-  name: 'collectionsSet.entry',
+  name: 'projects.collectionsSet.entry',
   parent: 'projects.entry',
   title() {
     let collectionSet = CollectionsSet.findOne({

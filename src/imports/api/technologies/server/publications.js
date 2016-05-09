@@ -8,7 +8,7 @@ import { Technologies } from '../technologies.js';
 import { TechnologiesDescriptions } from '../../technologies_descriptions/technologies_descriptions';
 
 /**
- * Publish as sigle technology
+ * Publish as single technology
  * @param  {String} technologyId The technology _id.
  * @param  {Boolean} options.organizations  If {true}, publish the related organizations. Default {false}.
  * @param  {Boolean} options.projects If {true}, publish the related projects. Default {false}.
