@@ -3,7 +3,7 @@
  */
 
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
-import { Projects } from '../projects/Projects';
+import { Projects } from '../projects/projects';
 import { CollectionsSetSchema } from './schema.js';
 import { CollectionsSet } from './collections_set.js';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';

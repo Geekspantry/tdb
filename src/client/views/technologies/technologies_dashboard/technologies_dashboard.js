@@ -17,3 +17,4 @@ Template.technologiesDashboard.helpers({
     };
   }
 });
+

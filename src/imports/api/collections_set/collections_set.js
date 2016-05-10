@@ -3,7 +3,7 @@
  */
 import { Mongo } from 'meteor/mongo';
 import { CollectionsSetSchema } from './schema.js';
-import { Projects } from '../projects/Projects';
+import { Projects } from '../projects/projects';
 
 export const CollectionsSet = new Mongo.Collection('collectionsSet');
 

@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Technologies } from '../../../../api/technologies/technologies';
-import { Projects } from '../../../../api/projects/Projects';
+import { Projects } from '../../../../api/projects/projects';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import { multiWordRegex } from '../../../lib/regex_helpers/regex_helpers.js';
