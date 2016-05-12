@@ -1,0 +1,4233 @@
+{
+	"techs": [{
+		"id": 10001,
+		"type": "tech",
+		"name": "Chat UI",
+		"description": "Conversational, natural language based interfaces that allow users to simply talk to a product or service. Users will able to request money to be sent or balances to be displayed via text or voice. Chat interfaces may exist as applications inside existing messaging platforms.",
+		"text": "-",
+		"score": [5, 5, 4.5, 3.5, 4, 2, 4, 5, 4, 4],
+		"viability": 4.31802604523646,
+		"readiness": 3.83444917833232,
+		"importance": 3.44827586206897,
+		"industries": [2, 2, 1, 4, 1, 2, 3, 1, 3, 1, 3, 3, 2],
+		"companies": [0, 1, 2],
+		"references": [0, 1, 2],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e365f0d0856beecfc61500/1280x854/bdad9302f09969ab9b14ba72547ff025/quartz-app-025-2.0.0.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10002,
+		"type": "tech",
+		"name": "International Remittance",
+		"description": "Much of the cost associated with remittances comes in the form of physical kiosks that accept and distribute cash and in the regulatory environment. Leveraging blockchain, international remittances can be made possible at a fraction of the cost of current methods greatly benefitting many people in underbanked economies.",
+		"text": "-",
+		"score": [4, 5, 4, 3.5, 3, 3.5, 2, 3, 4, 3.5],
+		"viability": 3.79061371841155,
+		"readiness": 3.3626901521217,
+		"importance": 3.02158273381295,
+		"industries": [1, 3, 3, 4, 1, 1, 1, 4, 1, 2, 2, 1, 4],
+		"companies": [3, 4, 5],
+		"references": [3, 4],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e3627c15bc60ba231dd72b/1000x842/4db8ccc4defcc271dd5c9b7652e32db3/remittance.png",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10003,
+		"type": "tech",
+		"name": "Branded Currency",
+		"description": "Individual organizations and companies will create and mint their own digital currencies that are tradable and interoperable. The new nature of these currencies will allow them to be managed the way people currently manage their money (setting budgets, investing, loaning).",
+		"text": "-",
+		"score": [4, 5, 3.5, 2.5, 2.5, 2, 3, 3, 3, 3.5],
+		"viability": 3.25581395348837,
+		"readiness": 3.01075268817204,
+		"importance": 2.8,
+		"industries": [2, 3, 3, 4, 2, 4, 2, 4, 2, 2, 4, 2, 1],
+		"companies": [6, 7],
+		"references": [5, 6],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e231bff2270a5c8f2a2c57/1920x1079/8587fc44124c1f5fe269419a13ec81cb/branded_currency.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10004,
+		"type": "tech",
+		"name": "Private Blockchain",
+		"description": "Distributed ledger databases that are specific to a single company or consortium. These blockchains have controlled 'write-permissions' that will allow companies such as banks or other financial institutions to utilize the efficiencies of blockchain without giving up total control. ",
+		"text": "-",
+		"score": [3, 5, 4, 3.5, 3, 3, 2, 3, 2, 4],
+		"viability": 3.56536502546689,
+		"readiness": 3.012912482066,
+		"importance": 2.60869565217391,
+		"industries": [1, 1, 1, 2, 1, 3, 4, 1, 1, 1, 4, 3, 1],
+		"companies": [8, 9],
+		"references": [7, 8, 9],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e366b32a8ca3e70ec874da/1300x776/8e9a46ae8dd385d5fbc4b647783b3a9d/KPCB-Edge-Publicly-Launches-Edgecoin.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10005,
+		"type": "tech",
+		"name": "Crypto-Escrow",
+		"description": "Allows the transfer of assets between two independent blockchains or crypto-currencies. This new model removes the need for each party to trust the market maker not to steal or loose the assets. Because of this, legal contracts are not needed to mediate the exchange.",
+		"text": "-",
+		"score": [3, 4.5, 4, 3, 3, 3.5, 2, 3, 3, 3],
+		"viability": 3.39622641509434,
+		"readiness": 3.0694275274056,
+		"importance": 2.8,
+		"industries": [4, 1, 4, 1, 2, 2, 1, 3, 3, 2, 4, 4, 4],
+		"companies": [10, 11],
+		"references": [10, 11, 12],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e2373f9e0eb20d9059b809/1038x794/0e4c91377e96a235921d3e714042f5a9/how-it-works%402x.png",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10006,
+		"type": "tech",
+		"name": "Blockchain Prediction Market",
+		"description": "Uses the power of the crowd to forecast and predict events by allowing for the buying and selling of shares in a specific outcome. Enabled by decentralized public ledgers, event forecasting by consensus can have effects on everything from finance to healthcare to governance.",
+		"text": "-",
+		"score": [3, 4, 3, 3.5, 3, 3, 2, 3, 5, 2.5],
+		"viability": 3.25581395348837,
+		"readiness": 3.0281182408075,
+		"importance": 2.83018867924528,
+		"industries": [4, 3, 1, 1, 4, 3, 2, 4, 4, 1, 4, 2, 2],
+		"companies": [12, 13],
+		"references": [13, 14, 15],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e234062c0d5cf1954da80c/1000x667/c6ab5363b52b854b1f9aa61c87d092e4/market-rate.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10007,
+		"type": "tech",
+		"name": "Asset Digitization",
+		"description": "Using to little to no Bitcoin, one can create assets and trade them in a peer-to-peer fashion. In addition to providing efficiencies and security to existing asset classes, this opens up the ability to create entirely new types of digital assets for everything from concert tickets to gift card vouchers.",
+		"text": "-",
+		"score": [4, 4.5, 3, 3, 3, 2, 3, 3, 5, 2.5],
+		"viability": 3.39622641509434,
+		"readiness": 3.08747855917667,
+		"importance": 2.83018867924528,
+		"industries": [2, 3, 4, 4, 1, 2, 4, 3, 1, 2, 1, 4, 2],
+		"companies": [14, 15],
+		"references": [16, 17],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e23759ec27501d793e9c75/1536x1536/5d55e85c589683c1fa00dbea9b14a5ec/Customer_20experience_20design_1536x1536_Original.ashx.jpeg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10008,
+		"type": "tech",
+		"name": "Quantum Encryption",
+		"description": "Makes digital information and transactions ultra-secure. In a world where nefarious hackers have access to quantum computers, a quantum based encryption algorithm will be needed. These algorithms use the unique keys that leverage quantum particle superpositions.",
+		"text": "-",
+		"score": [3, 3, 2, 3.5, 1.5, 1.5, 2, 2, 3, 1.5],
+		"viability": 2.35955056179775,
+		"readiness": 2.08955223880597,
+		"importance": 1.875,
+		"industries": [3, 2, 4, 2, 1, 2, 4, 3, 3, 4, 1, 3, 4],
+		"companies": [16, 17, 18],
+		"references": [18, 19, 20],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e22f206ab1a2af6b7f033e/2000x1000/d2db57386bf26cd5dc587cd049bef361/Encryption.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10009,
+		"type": "tech",
+		"name": "Crypto-Identity",
+		"description": "Cryptographically secure identification records that allow for users to control the transmission and visibility of data to third parties. Enabled by the blockchain, crypto-ID also allows for a single identity source to serve as the user login for a number of applications eliminating redundancies across databases and companies. Using a combination of cryptography and a blockchain ledger, an ID can be verified in real time by anyone.",
+		"text": "-",
+		"score": [4, 4, 2.5, 3, 3, 3.5, 3, 3, 4, 3.5],
+		"viability": 3.19148936170213,
+		"readiness": 3.27357755261107,
+		"importance": 3.36,
+		"industries": [4, 1, 2, 3, 2, 4, 1, 1, 4, 4, 1, 4, 2],
+		"companies": [19, 20],
+		"references": [21, 22, 23],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e2355ef00e5391a7936966/989x1026/4f98fba5e0aa76e2ad5c16e04d595c74/ShoCard-in-Hand.png",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10010,
+		"type": "tech",
+		"name": "Smart Contract",
+		"description": "Executable and automatically enforceable contracts that need no third party. Property that is embedded with a digital component such as a smart appliance can use and enforce smart contracts without the need for authorization by a user for example. Because these digital contracts are  publicly viewable and auditable, and distributed in blockchain, they are able to self-regulate and execute automatically if their programmed conditions are met.",
+		"text": "-",
+		"score": [5, 4, 3, 3.5, 3.5, 3.5, 3, 3, 4, 3],
+		"viability": 3.69068541300527,
+		"readiness": 3.45963756177924,
+		"importance": 3.25581395348837,
+		"industries": [3, 4, 1, 4, 1, 4, 4, 1, 1, 2, 4, 4, 3],
+		"companies": [21, 22, 23],
+		"references": [24, 25, 26],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e23204ebd34604a358b30c/2606x1552/9ccd349dee18bad612b42b04579a726e/smartcontracts.png",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10011,
+		"type": "tech",
+		"name": "Cognitive Financial Advice",
+		"description": "Systems that can provide financial advice by developing deep domain insights and translating this information in a user friendly way. Additionally, these systems can contextualize insights with regard to a specific user's information. These systems learn and grow over time and are far more powerful in the mining of 'big data' than traditional systems. ",
+		"text": "-",
+		"score": [3, 4, 3, 4, 3, 2.5, 2, 4, 3, 2],
+		"viability": 3.33333333333333,
+		"readiness": 2.87081339712919,
+		"importance": 2.52100840336135,
+		"industries": [3, 3, 2, 1, 4, 4, 4, 4, 1, 1, 2, 2, 2],
+		"companies": [18, 24],
+		"references": [27, 28, 29],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e22aa515a2625447e6cbec/800x600/f47477752c1a032df01fcf30da03d180/cognitive_finance.jpg, https://trello-attachments.s3.amazonaws.com/56e22aa515a2625447e6cbec/1081x1072/cbe690cc0ed62a308eb608c5ef5776fc/whatwedo_computer.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10012,
+		"type": "tech",
+		"name": "Digital Wallet",
+		"description": "Software wallets today already do more than their leather counterparts; they are streamlining transactions, and moving a host of new currencies and economies. Smartphones can use scanning technology to scan 2D barcodes, NFC components to make payments, and location services to develop relationships with nearby merchants. Expect a crop of apps and services that let you store, synchronise, track and share the contents of your wallet across devices, and let you pay in a multitude of units from Google Credits, Canadian Cryptodollars to Facebook shares.",
+		"text": "-",
+		"score": [5, 5, 5, 3, 4.5, 2.5, 4, 4, 3, 4],
+		"viability": 4.32692307692308,
+		"readiness": 3.78947368421053,
+		"importance": 3.37078651685393,
+		"industries": [3, 3, 1, 3, 2, 4, 1, 2, 2, 2, 3, 2, 1],
+		"companies": [25, 16],
+		"references": [30],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56ddddf82ef1ce85d1dda289/1024x576/f06345856379817440cb6c520b1e509c/apple-sep2014-event-09.png",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10013,
+		"type": "tech",
+		"name": "Sharing Economy",
+		"description": "Powered by network technologies and peer communities, collaborative consumption is a new economic model geared toward increasing access, not ownership. Through online platforms, consumers are able to lend, swap, barter, share and gift products or services on an unprecedented scale. Massive networks for social lending, car sharing and peer-to-peer travel have already established themselves as major economic forces for sustainability.",
+		"text": "-",
+		"score": [5, 5, 5, 4.5, 5, 3.5, 4, 5, 4, 4.5],
+		"viability": 4.89130434782609,
+		"readiness": 4.48398576512456,
+		"importance": 4.13929040735874,
+		"industries": [4, 3, 1, 4, 4, 3, 3, 3, 1, 3, 4, 1, 1],
+		"companies": [26, 27, 28],
+		"references": [103],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de18c1a9a6f87d2b61b7e7/804x536/bdb61fbd7615d0297a10dc4782e87428/airbnb.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10014,
+		"type": "tech",
+		"name": "Peer-To-Peer Economy",
+		"description": "Peer-to-peer economies occur when the production, transaction and consumption of goods happen between individuals, not companies, allowing small suppliers to compete with traditional providers of goods or services. These kind of transactions aren't new, but the internet has allowed more people to connect and trade in convenient and trustworthy markets, using tools such as search and matching algorithms, pricing, and reputation systems.",
+		"text": "-",
+		"score": [5, 5, 5, 4.5, 5, 4, 5, 5, 5, 4],
+		"viability": 4.89130434782609,
+		"readiness": 4.71204188481675,
+		"importance": 4.54545454545455,
+		"industries": [3, 1, 1, 3, 4, 3, 3, 1, 4, 1, 2, 4, 4],
+		"companies": [29, 26, 30],
+		"references": [31],
+		"A1": 2,
+		"photo": "http://www.interchangerevelation.com/wp-content/uploads/2015/04/shutterstock_134309027.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10015,
+		"type": "tech",
+		"name": "Universal Card",
+		"description": "Allows people to combine an unlimited number of debit, credit and loyalty cards into one physical payment card. The original card details of the holder are never revealed to any merchant, online or in-store. It also connects to the users smartphone through a secure Bluetooth channel, which is meant to prevent unauthorised people from being able to use it or transmit information from it without access to the user’s smartphone. ",
+		"text": "-",
+		"score": [4, 4.5, 3.5, 3.5, 4, 3.5, 3, 5, 3, 3.5],
+		"viability": 3.86503067484663,
+		"readiness": 3.66066240557815,
+		"importance": 3.47682119205298,
+		"industries": [1, 1, 2, 3, 3, 2, 3, 4, 2, 4, 4, 2, 1],
+		"companies": [31, 32, 33],
+		"references": [104],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56c9f2447ce4f94524c0f21c/1280x720/de68dd2f91130bc70f76ac2a4af08865/maxresdefault.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10016,
+		"type": "tech",
+		"name": "Crowdfunding",
+		"description": "Crowdfunding draws on the power of crowds and networks to solicit investments, usually in small amounts, for particular projects. It is a departure from the traditional model of investment, which relies on a select investor or firm. Though not a new concept, the internet and its platforms has expanded and accelerated funding to extraordinary degree. Beyond providing more access to resources, it reduces costs, increases engagement, shifts mindsets on organisational possibilities and empowers small endeavours.",
+		"text": "-",
+		"score": [5, 5, 5, 5, 4.5, 4, 5, 5, 5, 4],
+		"viability": 4.89130434782609,
+		"readiness": 4.71204188481676,
+		"importance": 4.54545454545455,
+		"industries": [4, 2, 1, 3, 2, 2, 2, 3, 4, 4, 3, 1, 2],
+		"companies": [34, 35, 36],
+		"references": [105],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de1ff519796692ce52367f/1280x854/792801ba039214581894a0ef3e4a87aa/kickstarter-badge-funded.0.0.png",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10017,
+		"type": "tech",
+		"name": "Social Sentiment Analysis",
+		"description": "The mining of subjective information that is being published across the internet (especially on social media). Determine if anything from a document to a tweet is positive, negative, or neutral with respect to an entity and if that content will have an affect on things such as investor confidence.",
+		"text": "-",
+		"score": [5, 4, 3.5, 3.5, 4, 4, 3, 3, 4, 4],
+		"viability": 3.93258426966292,
+		"readiness": 3.72010628875111,
+		"importance": 3.52941176470588,
+		"industries": [4, 1, 3, 3, 2, 4, 3, 3, 3, 2, 3, 3, 2],
+		"companies": [37, 38, 39],
+		"references": [32, 33, 34],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e230d2fa5a011ca339265f/810x430/cf07039a9fccc9e6621ab50c33cb5d4b/social_sentiment.png, https://trello-attachments.s3.amazonaws.com/56e230d2fa5a011ca339265f/1920x1080/51ff0de020e5af98cc5319b28a4bc3db/1666F43C4DEB7F9240615D.jpeg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10018,
+		"type": "tech",
+		"name": "BitCoin Miner",
+		"description": "Computers equipped with native hardware or software which enables access to streams of bitcoin, making it easier for people without programming skills to participate in the mining process of the blockchain. This facilitation has the potential to globalize cryptocurrencies faster, and to exponentiate their usage. ",
+		"text": "-",
+		"score": [4, 5, 4.5, 3, 4, 2.5, 2, 2, 2, 4.5],
+		"viability": 3.98230088495575,
+		"readiness": 2.96052631578947,
+		"importance": 2.35602094240838,
+		"industries": [4, 1, 3, 3, 4, 2, 3, 3, 2, 1, 2, 1, 4],
+		"companies": [40],
+		"references": [35, 36],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de0d504c39f50ad8fa7824/1600x1200/6b0f7367916b01f61179e40ad695eb09/img_device.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10019,
+		"type": "tech",
+		"name": "Universal Exchange Rate",
+		"description": "Currency-exchange is an enormous business with trillions of dollars crossing borders each year, and historically an extremely inefficient and opaque one. New peer-to-peer platforms for transferring money abroad for a lower cost than currently offered by banks are starting to change that scenario. It saves customers on the hidden costs of currency transactions by using the mid-market rate – that is the mid-point between the buy and sell price – which generally isn’t available to retail customers.",
+		"text": "-",
+		"score": [4, 5, 3, 4, 3, 3, 2, 3, 3, 3],
+		"viability": 3.65853658536585,
+		"readiness": 3.125,
+		"importance": 2.72727272727273,
+		"industries": [3, 1, 4, 4, 1, 1, 2, 1, 3, 2, 2, 4, 3],
+		"companies": [41, 42, 43],
+		"references": [37, 38, 39],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de0591313453d8b9288ebf/1440x900/00b4a564cd477ee059091ef7e34edb61/eODM4-LzGnYEzkbv2EmqMMUzpowvxoWS-t_z6X_-pT3LBF-SXnKBlsTCc5V6qiM1HNhu%3Dh900.png",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10020,
+		"type": "tech",
+		"name": "AI Assistant",
+		"description": "Populating any device connected to the internet and learning through a variety of inputs such as conversations, preferences and habits, these personal assistants will be able to predict and answer tasks as if their owner was doing it. From shopping to scheduling meetings, these context-aware intelligent AI will be hyper personal.",
+		"text": "-",
+		"score": [3, 4.5, 3, 3.5, 3, 1.5, 3, 5, 3, 3.5],
+		"viability": 3.31578947368421,
+		"readiness": 3.00572519083969,
+		"importance": 2.74869109947644,
+		"industries": [3, 1, 3, 4, 1, 3, 3, 4, 1, 2, 4, 3, 1],
+		"companies": [44],
+		"references": [40],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56c9f10ea20a44a55d299961/56c9ffa48721a4aca3b2f0b4/x/7d36abd8747e5a55c594509c10791ebb/ex-machina.jpg, https://trello-attachments.s3.amazonaws.com/56c9f10ea20a44a55d299961/56c9ffa48721a4aca3b2f0b4/x/f11a8a4477760e6a5aedb86ecddc1bd6/toastAI.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10021,
+		"type": "tech",
+		"name": "Blockchain",
+		"description": "Online database that stores information across a network of personal computers, making it not just decentralized but distributed. This means no central company or person owns the database, yet everyone in the network can use and help run it, but not tamper with it. The most popular use of this technology today is bitcoin, but is just the beginning. In the future, blockchains that manage and verify online data will launch companies entirely run by algorithms, help us protect our online identities, and track the billions of devices on the Internet of Things.",
+		"text": "-",
+		"score": [5, 5, 5, 5, 4.5, 4, 3, 4, 5, 4],
+		"viability": 4.89130434782609,
+		"readiness": 4.33734939759036,
+		"importance": 3.8961038961039,
+		"industries": [3, 4, 2, 1, 4, 4, 1, 1, 3, 4, 3, 4, 3],
+		"companies": [21, 45, 46, 47],
+		"references": [106, 107],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56f017c8687edfeecdb6b45c/710x412/43997d79abbcf0e20a349b32c6de4c6a/1z5h1L8w-KYIYwoqYgdFPXkes5yE2Br8B0LnubnjJ88%3D.jpeg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10022,
+		"type": "tech",
+		"name": "Collaborative B2B Commerce",
+		"description": "Real-time data platforms which records information of each step of supply chains in order to show stakeholders their current state. By using a blockchain logic, it is possible to track any asset with their unique identification key. This new logic of open and accessible information have the potential to revolutionize how brands and companies deal with their whole supply ecosystem. ",
+		"text": "-",
+		"score": [4, 5, 4, 3.5, 4, 2.5, 3, 4, 5, 3],
+		"viability": 4.04624277456647,
+		"readiness": 3.63321799307958,
+		"importance": 3.2967032967033,
+		"industries": [2, 1, 4, 3, 3, 4, 4, 4, 1, 4, 3, 1, 4],
+		"companies": [48, 49],
+		"references": [41, 42, 43],
+		"A1": 3,
+		"photo": "http://www.edelman.com/post/blockchain-technology/, https://trello-attachments.s3.amazonaws.com/56eaceac89505ff416ed73ba/620x315/75e7fad570dd83a29accc86c6800d119/BC4-cropped-1.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10023,
+		"type": "tech",
+		"name": "Cryptocurrency Insurance",
+		"description": "Although the blockchain network is almost incorruptible, the same cannot be said about its users - cryptocurrency are prone to be stolen and fraud. In order to ensure the safety of these digital coins, there will be a growing need of development of cybersecurity. Services which store safety for bitcoins also could offer insurance with a liability based on the fluctuating price of cryptocurrencies. ",
+		"text": "-",
+		"score": [4, 4, 2.5, 3, 2.5, 1.5, 2, 2, 3, 2],
+		"viability": 3.06122448979592,
+		"readiness": 2.41935483870968,
+		"importance": 2,
+		"industries": [1, 2, 2, 4, 1, 4, 2, 3, 4, 2, 2, 1, 4],
+		"companies": [50, 51, 52],
+		"references": [44, 45],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbcbb851ae0705651240ad/630x220/4912efc2e5ebcf4849cd74c7a6b0383f/Insuring-Bitcoins-and-Other-Cryptocurrencies.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10024,
+		"type": "tech",
+		"name": "Drone Insurance",
+		"description": "Flying drones can be used for a huge variety of operations, and all these uses need commercial drone liability insurance because of the potential accidents which can happen. There will be the need for a seamless stream of data and automation of the policies, especially because of the paperwork and bureaucracy involved with this technology.  Pre-flight checklists, logbooks, post-flight checks - there is potential to deal with the standardization of insurance packages. ",
+		"text": "-",
+		"score": [3, 4.5, 2.5, 2, 2.5, 1.5, 3, 2, 2, 2],
+		"viability": 2.69461077844311,
+		"readiness": 2.29591836734694,
+		"importance": 2,
+		"industries": [1, 1, 3, 4, 1, 2, 2, 4, 1, 3, 4, 1, 2],
+		"companies": [53, 54, 55],
+		"references": [46, 47, 48],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbcc0c08ebbc7e43a32b18/700x270/d3cc6076fbce132be39974ba9115b010/uas-1.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10025,
+		"type": "tech",
+		"name": "Internet Of Things Insurance",
+		"description": "As devices are increasingly more connected to the Internet, there will be a need from insurance companies to make 'connected coverages'. With the help of data gathered from IoT, it will be possible for insurers to identify trends and patterns in behavior, leveraging policies and pricing. It will be possible to analyze new information and cross-reference it with historical information and change their model from a reactive one, to a preventive model. ",
+		"text": "-",
+		"score": [3, 4.5, 2, 2.5, 1.5, 1.5, 1, 3, 2, 2],
+		"viability": 2.35602094240838,
+		"readiness": 1.95227765726681,
+		"importance": 1.66666666666667,
+		"industries": [4, 2, 3, 4, 3, 4, 2, 4, 3, 3, 1, 1, 4],
+		"companies": [56, 57, 58],
+		"references": [49],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbcbe8c22c8b17e6fa19f0/738x554/9c098000ef8344d62892a65224439b2b/internetofthings.png",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10026,
+		"type": "tech",
+		"name": "Real-Time Micro Insurance",
+		"description": "This type of service can be done as quickly as an online transaction, because it uses instantaneous data from an event in order to choose the best policy available for the insured. Features can be tailored to offer protection for the shortest period of time by mining both public and private data, creating personalized products on-the-go. ",
+		"text": "-",
+		"score": [3, 4, 3, 3.5, 2.5, 2.5, 2, 4, 4, 3],
+		"viability": 3.12035661218425,
+		"readiness": 2.99785867237687,
+		"importance": 2.88461538461539,
+		"industries": [1, 4, 1, 1, 3, 3, 1, 2, 2, 2, 3, 2, 3],
+		"companies": [59, 60, 61],
+		"references": [50, 51],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbc30f61a6fba523affbe7/738x439/8349ce7157fbfe70b1ac4ee6bb0b8967/uber-metromile.png",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10027,
+		"type": "tech",
+		"name": "Insurance Telematics",
+		"description": "Telematics refers to devices (such as cars) which merges telecommunications and infomatics. For insurance companies, solutions such as a GPS connected directly to the internet, or sensors which collect data from the driver will enable tailored policies for each driver based on their risks and behavior. Further uses could be to improve security by calling the emergency right after an accident or fraud prevention. ",
+		"text": "-",
+		"score": [3, 4.5, 3, 3.5, 2.5, 2, 2, 4, 2, 2.5],
+		"viability": 3.17540322580645,
+		"readiness": 2.68484977626252,
+		"importance": 2.32558139534884,
+		"industries": [1, 2, 1, 1, 4, 4, 3, 4, 1, 4, 4, 4, 4],
+		"companies": [112113114],
+		"references": [52, 53],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e3652ac4bd5093eb7047a7/950x524/92b5e47eca49e2d85a8e6a86fb82e660/telematicspc.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10028,
+		"type": "tech",
+		"name": "Blockchain Notary",
+		"description": "Services that anonymously secure and store an online distributed proof of existence for any document. Documents or files are timestamped within the blockchain, but not stored inside it so it is impossible for them to be tampered or modified. This creates a 'digital footprint' easily traceable, adding a layer of security that proves data ownership without revealing actual data.",
+		"text": "-",
+		"score": [5, 5, 3.5, 5, 3, 2, 2, 3, 3, 2.5],
+		"viability": 4.1015625,
+		"readiness": 3.04347826086957,
+		"importance": 2.41935483870968,
+		"industries": [3, 1, 3, 3, 4, 2, 4, 4, 2, 4, 3, 3, 3],
+		"companies": [62, 63, 64],
+		"references": [54, 55, 56],
+		"A1": 3,
+		"photo": "http://www.edelman.com/post/blockchain-technology/, https://trello-attachments.s3.amazonaws.com/56eace8a86a90e1d35a0ed9d/620x315/925b1227c0e8daaf3a4b5979fe24d17a/BC4-cropped-1.jpg, https://trello-attachments.s3.amazonaws.com/56eace8a86a90e1d35a0ed9d/290x179/2ccb391874153c630a0487921070547a/ResizedImage290179-eID.png, https://trello-attachments.s3.amazonaws.com/56eace8a86a90e1d35a0ed9d/1200x630/2d0a3426b038612c6c62b7cf9a872523/e-residency.png",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10029,
+		"type": "tech",
+		"name": "Autonomous Organization",
+		"description": "Financial entities without a centralized owner which work like a blockchain, running independently and paying for its own resources inside the cyberspace. After these organizations are scripted, they will be able to keep running alone and adapt by using computer deep learning. Because the autonomous organizations are powered by thousands of computers, they produce results of high reliability and security.",
+		"text": "-",
+		"score": [5, 4, 3, 3.5, 2.5, 2, 2, 3, 2, 3],
+		"viability": 3.40356564019449,
+		"readiness": 2.75049115913556,
+		"importance": 2.30769230769231,
+		"industries": [1, 3, 4, 2, 2, 3, 1, 3, 1, 1, 3, 3, 1],
+		"companies": [21],
+		"references": [57, 58, 59],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fae41fd5daac77830733bd/743x356/96ca2630158c831d89e586f10a6f35ce/Ethereum.png",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10030,
+		"type": "tech",
+		"name": "Open-Source Investment Algorithm",
+		"description": "Most investment algorithms are proprietary and managed by large investment firms. Following the volatility of the financial markets and loss of confidence in institutions, there has been a rise in platforms to drive open-source algorithms. Built by a community, they are constantly adapting and evolving. This could provide opportunities for traders to develop algorithms for their own needs, and quickly test new ideas in investments.",
+		"text": "-",
+		"score": [3, 4.5, 3.5, 3.5, 3, 2.5, 3, 2, 3, 3],
+		"viability": 3.42391304347826,
+		"readiness": 2.97590930562116,
+		"importance": 2.63157894736842,
+		"industries": [4, 2, 3, 1, 4, 4, 3, 1, 4, 4, 1, 2, 1],
+		"companies": [65, 66, 67],
+		"references": [60, 61, 62],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56ddbbef227591328ca5f577/2878x1918/1aca36c1c786b73ec3869b83fedc0c65/Forex.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10031,
+		"type": "tech",
+		"name": "Omniscient ATM",
+		"description": "Working 24/7, futuristic ATMs will recognize its user with a set of biometrical sensors - being able to tell if the person making a transaction is tense or sad, and fire alerts depending on their status. There will be no need to use cards or pins, because the authentication will be completed entirely with biometric credentials. For people that are far away from a bank, live bank tellers via webcam or digital assistants will help with any needs, making a trip to the agency practically unnecessary. ",
+		"text": "-",
+		"score": [3, 4, 2.5, 2, 1.5, 1.5, 3, 5, 2, 1.5],
+		"viability": 2.32558139534884,
+		"readiness": 2.2140221402214,
+		"importance": 2.11267605633803,
+		"industries": [2, 2, 2, 4, 3, 2, 3, 4, 2, 3, 1, 4, 3],
+		"companies": [68, 69],
+		"references": [63],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56df630c03f3d9fed03cdcb0/601x800/b2343766c4469a552e05d254e2a28734/280123.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10032,
+		"type": "tech",
+		"name": "Data-Mining Credit Scoring Model",
+		"description": "In order to provide instantaneous credit score assessment, search algorithms will be able to look into big data to understand borrowers' credit worthiness. . By using information which exceeds payment history, such as online reputation, professional connections or demographic characteristics, it will be possible to predict risks related to credit obligations. ",
+		"text": "-",
+		"score": [3, 4, 4, 3.5, 3.5, 2, 2, 4, 3, 2],
+		"viability": 3.55932203389831,
+		"readiness": 2.86689419795222,
+		"importance": 2.4,
+		"industries": [2, 3, 2, 2, 2, 3, 3, 1, 4, 1, 3, 4, 3],
+		"companies": [70, 71, 72],
+		"references": [64, 65, 66],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de0d08517dd9a29ca91a13/700x394/2e52a5e482f17ad84e74bfa3595c10f1/ofu7k5mv4hybpiimr7ck.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10033,
+		"type": "tech",
+		"name": "Streamlined Payment",
+		"description": "Without asking for a credit card or money, services that handle customers' payments and charge only after the service is concluded or the product sucessfully shipped could potentially augment conversion rates for many digital services. As credit assessment gets more reliable and people without financial institutions get access to the internet, the need for a simplistic and reliable form of payment will drive the need for e-commerces to look for alternatives from direct online payment. ",
+		"text": "-",
+		"score": [4, 5, 4, 3, 3, 2.5, 2, 4, 3, 2],
+		"viability": 3.65853658536585,
+		"readiness": 2.98507462686567,
+		"importance": 2.52100840336135,
+		"industries": [1, 4, 4, 2, 1, 3, 4, 3, 3, 2, 3, 4, 3],
+		"companies": [73, 74],
+		"references": [67, 68],
+		"A1": 1,
+		"photo": "https://www.klarna.com/application/files/2414/2841/2905/Klarna_DesktopMovie_us.mp4, https://trello-attachments.s3.amazonaws.com/56de0881155a0a09443b5a59/914x1140/cd6d010e4819c7068b407d7b1b2b3532/headerhand.png",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10034,
+		"type": "tech",
+		"name": "Big Data Optmization",
+		"description": "By processing large volumes of data, financial institutions will be able to leverage huge amounts of information in order to gather insights about their operations. Big data usage have the potential to transform business and market operations if the analytics tools used are integrated within management decisions.  ",
+		"text": "-",
+		"score": [3, 5, 4, 4, 4.5, 3, 3, 4, 3, 3.5],
+		"viability": 3.98230088495575,
+		"readiness": 3.5825988058004,
+		"importance": 3.25581395348837,
+		"industries": [2, 1, 2, 3, 1, 3, 2, 3, 3, 1, 3, 4, 2],
+		"companies": [75, 76],
+		"references": [69, 70, 71],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56df09815475f310d1bc1aeb/1200x656/eed5bbd566cdcb4092c1b420be1451d8/0617_big_data_Cog.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10035,
+		"type": "tech",
+		"name": "Metasearch AI",
+		"description": "As the number of offers for pretty much any type of product or service increases, the use of aggregators in order to search for the best price/quality will potentially become the first place to go instead of the native place. The search tool will use the personal information data from the user and match it with the search engine's data in order to get results which will satisfy both the buyer and the seller. Results will be taylored especifically for the needs of each user, and can be modified using the configurations. ",
+		"text": "-",
+		"score": [3, 4.5, 3.5, 4, 3, 1.5, 4, 4, 4, 3.5],
+		"viability": 3.50974930362117,
+		"readiness": 3.19796954314721,
+		"importance": 2.93706293706294,
+		"industries": [3, 2, 4, 1, 1, 3, 1, 1, 2, 3, 4, 3, 3],
+		"companies": [77, 16],
+		"references": [72],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56df0b2bca3bcde7a98ca33b/550x300/b34364bf78a1e10eb9f8fd68adbfb7fd/metasearch-hotel.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10036,
+		"type": "tech",
+		"name": "Banking Omnichannel",
+		"description": "By integrating financial services into any device connected to the internet, a bank could be available to the customer on a variety of touchpoints, instead of exclusive ones (such as a ATM or an agency). Devices such as wearables or appliances with sensor technology could improve the banking experience by giving more data. Consumers could be able to perform their transactions in any device they have available and their device could respond depending on their context. ",
+		"text": "-",
+		"score": [3, 5, 4, 4, 4, 3, 3, 4, 5, 3.5],
+		"viability": 3.8961038961039,
+		"readiness": 3.72340425531915,
+		"importance": 3.56536502546689,
+		"industries": [1, 3, 3, 2, 1, 1, 2, 2, 4, 2, 1, 3, 4],
+		"companies": [78],
+		"references": [73],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de089e2d559301eab6aca8/640x360/a22e5f9e49a582513c90009319cbebc5/mobile-banking-640.jpg__640x360_q85_crop.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10037,
+		"type": "tech",
+		"name": "Latency Intelligence Monitoring Software",
+		"description": "A software able to quantify sources of latency for capital markets industry, helping customers to minimize latency in trade execution and market data flow in real-time. As trading becomes more accurate and change faster in a connected world, there will be a need for transactions with highly accurate nanosecond time-stamping technology.",
+		"text": "-",
+		"score": [3, 5, 4, 2.5, 3.5, 2.5, 2, 2, 3, 2.5],
+		"viability": 3.40356564019449,
+		"readiness": 2.77594183740912,
+		"importance": 2.34375,
+		"industries": [4, 4, 1, 1, 2, 2, 2, 3, 2, 4, 1, 4, 2],
+		"companies": [79, 80],
+		"references": [74],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56df05ba60cc09d1e44290bc/625x351/3d20901fa4ae4b7091490d6a5708bb40/Data-Points-numbers-625x351.png",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10038,
+		"type": "tech",
+		"name": "Physiological Bank",
+		"description": "As health tracking becomes easier and cheaper with the use of wearables and smart sensors, the amount of information it is possible to gather from someone increases. By connecting well being and health with financial services, it would be possible to provide for customers rewards for keeping healthy habits or to give spending advices based on their overall physiological needs. As for consuming habits, data could be synced with habits in order to understand how hormones impacts purchasing decisions, for example. ",
+		"text": "-",
+		"score": [4, 4, 2, 3, 1.5, 1, 1, 2, 3, 1],
+		"viability": 2.5,
+		"readiness": 1.71428571428571,
+		"importance": 1.30434782608696,
+		"industries": [2, 3, 3, 2, 2, 1, 2, 4, 4, 2, 2, 1, 4],
+		"companies": [81, 82, 83, 84],
+		"references": [75, 76],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56d896172893fde723522415/1224x568/c4037e1ded46f6a376735ed96652e55c/Screen_Shot_2016-03-11_at_2.23.28_PM.png",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10039,
+		"type": "tech",
+		"name": "Robo-Viser",
+		"description": "Management softwares will make automated investment much cheaper and easier. By managing the users' investment account 24/7, robo advisors will choose which portfolio is best depending on personal financial history. By using big data and real time analytics, money can be automatically invested or withdrawn as the market or conditions change. Investing, tax optimization, reinvesting - everything can be tailored specifically to the behavior and the needs of the investor. ",
+		"text": "-",
+		"score": [3, 4, 3, 4, 2.5, 1.5, 3, 3, 4, 3],
+		"viability": 3.19148936170213,
+		"readiness": 2.87081339712919,
+		"importance": 2.60869565217391,
+		"industries": [4, 2, 4, 2, 3, 3, 1, 2, 2, 1, 2, 3, 4],
+		"companies": [85, 86, 87],
+		"references": [77, 78, 79],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de0e2c4c39f50ad8fa7b04/4521x2260/2168c65bb3256dc0601343b304da80b1/150326_adv_roboadvisor01_lede.jpg, https://trello-attachments.s3.amazonaws.com/56de0e2c4c39f50ad8fa7b04/1012x676/afdcac8bc703f7994e96abee77219664/150326_adv_roboadvisor01.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10040,
+		"type": "tech",
+		"name": "Real Time Pricing",
+		"description": "By harnessing the data available from sets such as customer interactions, competitors pricing or even availability of inventory, retailers will be able to set algorithms to change prices in real time or even charge differently to each buyer. Systematic pricing will make online retailers charge by behavior alongside other economical factors. ",
+		"text": "-",
+		"score": [4, 4, 4, 4.5, 2.5, 2.5, 2, 4, 4, 3.5],
+		"viability": 3.64372469635628,
+		"readiness": 3.2701790812354,
+		"importance": 2.96610169491525,
+		"industries": [3, 1, 3, 2, 3, 1, 4, 4, 2, 3, 4, 4, 2],
+		"companies": [88, 89, 115],
+		"references": [80, 81],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de07365ce2954999427d72/450x337/51d88460c0b3af44fce8dffa2ffdcc16/v2002-25a.jpg, https://trello-attachments.s3.amazonaws.com/56de07365ce2954999427d72/700x492/a3ee6cfe43f854e432b5e2bed596e23a/notification_cut_2.png",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10041,
+		"type": "tech",
+		"name": "Identity Wearable",
+		"description": "Accessories and clothing connected to the cloud and to other applications have the potential to become an authenticator for transactions, especially when connected to unique biometric authenticators such as heart beat or voice. Near field communication (NFC), location and scanning technologies on smartphones are powering contactless in-store transactions. tap their phone on a NFC machine, or check in with a nearby merchant to autorize transactions from linked accounts. This streamlines payment systems, reduces infrastructure and lowers costs. Credentials can be easily programmed into the wearables and because the communication between devices is cryptographed, it is possible to perform payments or enable access using simply bluetooth or proximity.  ",
+		"text": "-",
+		"score": [4, 4.5, 4, 3, 3.5, 4, 3, 3, 3, 3.5],
+		"viability": 3.72781065088757,
+		"readiness": 3.47586206896552,
+		"importance": 3.25581395348837,
+		"industries": [4, 2, 2, 2, 1, 3, 2, 2, 2, 4, 1, 2, 4],
+		"companies": [90, 91, 92],
+		"references": [82, 83],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e41c0b7b6cd4b0ebd97cde/977x488/ff4e4c5f2451e29db2aeefecd71f3fd3/usingnb_physical.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10042,
+		"type": "tech",
+		"name": "Equity Crowdfunding",
+		"description": "Startups, companies and creators are opening up their shares, even before they become public, in order to raise capital faster. With new regulations, it will become easier for non-accredited investors own part of companies and projects, choosing how much they want and can invest. The value of the shares follows the venture’s growth, creating a mutual relationship based on success with the shareholders.  As this type of funding becomes global, interesting ideas will sprout much faster based on how interesting they are to the community. ",
+		"text": "-",
+		"score": [4, 5, 4, 4, 3, 4, 3, 3, 4, 3.5],
+		"viability": 3.8961038961039,
+		"readiness": 3.65535248041776,
+		"importance": 3.44262295081967,
+		"industries": [2, 4, 4, 1, 3, 1, 2, 2, 4, 4, 2, 2, 3],
+		"companies": [93, 94, 34],
+		"references": [84, 85, 86],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de109ef77f9b9a17c990fb/1460x560/9d379987e05bbeb75bcdf17ad62a897b/Growing_investment.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10043,
+		"type": "tech",
+		"name": "Healthy Lifestyle Coach",
+		"description": "By gathering personal data and health stats from wearables or sensors, artificial intelligence have the potential to replicate live coaches or doctors, giving personalized advices and tips to users in order for them to improve healthy behaviors that could affect various types of insurance policies or help inform financial behavior. This type of coach can permeate a variety of devices, from simple smartphones to complex virtual-reality systems, enabling the general population access to affordable and easy wellness education.",
+		"text": "-",
+		"score": [3, 4, 4, 3, 3.5, 2, 3, 3, 4, 3.5],
+		"viability": 3.44262295081967,
+		"readiness": 3.16981132075472,
+		"importance": 2.93706293706294,
+		"industries": [3, 2, 3, 4, 3, 4, 4, 3, 3, 1, 2, 1, 3],
+		"companies": [95, 97, 96],
+		"references": [87, 88],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbbadd769af4acc7785bc6/404x301/cab40a4b01f23fabcdfc1dec9e80c2bc/img-ipad-01.jpg, https://trello-attachments.s3.amazonaws.com/56fbbadd769af4acc7785bc6/750x485/764cca1aa905d2d09267e9d080649c12/How-Diet-and-Exercise-Can-Affect-Your-Quality-of-Life-472087436-750x485.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10044,
+		"type": "tech",
+		"name": "Sharing Economy Insurance",
+		"description": "As the number of users of sharing economy services grow, these companies will need to offer protection and liability insurance to their stakeholders, in order to keep their services stable and sheltered from unexpected outcomes. Primary coverage should protect both parties involved in a transaction, so no side is left harmed in a negotiation. ",
+		"text": "-",
+		"score": [4, 5, 4, 3, 3, 4, 3, 3, 4, 3],
+		"viability": 3.65853658536585,
+		"readiness": 3.48837209302326,
+		"importance": 3.33333333333333,
+		"industries": [4, 3, 2, 1, 2, 3, 3, 3, 3, 4, 3, 2, 2],
+		"companies": [98, 30, 26],
+		"references": [89, 90, 91],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbcb784078682144e672f0/311x162/de1376619c3cd4ba219b743463ddc988/images.png, https://trello-attachments.s3.amazonaws.com/56fbcb784078682144e672f0/1280x720/185a84627993380cfcca4c4ba5259499/3027355-poster-p-1-pixel-dimed-on-not-getting-by-in-the-sharing-economy.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10045,
+		"type": "tech",
+		"name": "Mutual Authentication Fraud-Proof Server",
+		"description": "Malware and hackers which target banks and digital services could be stopped by using a combination of offline and online security methods. One of the techniques with the biggest potential for security could be the  isolation of the server through virtualization or quantum key distribution. As security improves, it will become harder for fraudsters to avoid the secure barries done physically and digitally. ",
+		"text": "-",
+		"score": [3, 4, 3, 2.5, 2, 2.5, 2, 3, 3, 2],
+		"viability": 2.75229357798165,
+		"readiness": 2.57510729613734,
+		"importance": 2.41935483870968,
+		"industries": [3, 3, 1, 2, 3, 2, 3, 3, 4, 2, 3, 1, 3],
+		"companies": [100101102],
+		"references": [92, 93, 94],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56df095df0eb61f1ad65aaff/728x450/33bdea8f1d5f434eadb7b45671d6b988/50636-credit-card-hacking.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10046,
+		"type": "tech",
+		"name": "Emotional Money",
+		"description": "As financial services becomes more digitized, it will be easier to sync it with more layers of data, such as an avatar or a virtual assistant. This way, this type of services could give advice depending on the personal necessities of each user, looking for their overall financial status. Money which exhibited intelligence and emotion, and acted upon its use depending on their context could improve decision-making processes of buying or spending. ",
+		"text": "-",
+		"score": [4, 3, 1.5, 2, 1, 1, 1, 2, 2, 1],
+		"viability": 1.81818181818182,
+		"readiness": 1.48148148148148,
+		"importance": 1.25,
+		"industries": [2, 3, 2, 2, 4, 1, 3, 3, 3, 2, 3, 1, 2],
+		"companies": [103],
+		"references": [95],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de03c42c481d9fad752f62/1800x1000/3c26b1debeb5d459f1e2cf71c986f442/17-Insights-when-it-comes-to-money-we-are-wired-to-emotional-bias.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10047,
+		"type": "tech",
+		"name": "Ethical AI",
+		"description": "Policies written by computers have the potential to adapt their algorithms depending on the background or necessities of the user, such as financial needs, making personalized experiences. With machine learning, the policies or contracts have the potential to evolve as their decisions are inspected by a crowd of specialists. Ethical values such as responsibility, transparency, auditability, incorruptibility can be thought as algorithimic and programmed to work as such.",
+		"text": "-",
+		"score": [3, 3, 2, 2, 1.5, 1, 2, 3, 3, 2],
+		"viability": 2.14285714285714,
+		"readiness": 2,
+		"importance": 1.875,
+		"industries": [4, 3, 2, 1, 2, 4, 3, 3, 1, 2, 3, 4, 4],
+		"companies": [104, 105, 16],
+		"references": [96, 97],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbc1018c5051c674d9872f/950x534/cfcdeb17f568065c0f0a9ac4f6fd5f90/robot2.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10048,
+		"type": "tech",
+		"name": "Peer To Peer Lending",
+		"description": "Online platforms and marketplaces which bypass banks by matching up lenders with individuals or small businesses that need to borrow money. These platforms are data-driven, and are able to check for the financial status of a borrower in minutes, approving or disapproving the loan instantly. The whole process is automated, creating a whole ecosystem of circulating capital. ",
+		"text": "-",
+		"score": [4, 5, 4, 4, 3.5, 3.5, 4, 4, 4, 4],
+		"viability": 4.04624277456647,
+		"readiness": 3.96600566572238,
+		"importance": 3.88888888888889,
+		"industries": [3, 2, 1, 2, 3, 3, 1, 2, 4, 4, 2, 1, 1],
+		"companies": [106107108],
+		"references": [98],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de0c9bd76eec4a9cb9e5c5/660x412/4bfa2c635594ca529ebf2c0b851c1264/p2p_lending.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10049,
+		"type": "tech",
+		"name": "Unbundled Insurance Products",
+		"description": "New insurance carries which provide quick, event-related insurance are going to disrupt the market by saving money to customers because of its reduced comprehensiveness. For example, pay-per-mile car insurance or even disease health insurance. Transactions can be done entirely online, making it no-touch or low-touch - and with the use of sensors or wearables, it will be even easier to make the process as precise as needed. ",
+		"text": "-",
+		"score": [4, 5, 4, 3.5, 3, 3.5, 3, 4, 3, 3.5],
+		"viability": 3.79061371841155,
+		"readiness": 3.56234096692112,
+		"importance": 3.36,
+		"industries": [3, 4, 1, 2, 3, 4, 4, 4, 3, 4, 1, 1, 4],
+		"companies": [109, 60],
+		"references": [99],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbcbfd55fd125ce69ace3d/2500x1661/64bb60a28a81129dc9f4a4fb57805104/metromile_.jpeg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10050,
+		"type": "tech",
+		"name": "Decentralized Document Notary",
+		"description": "Powered by blockchain databases, documents can now be certified and verified using cryptography rather than by a third party. This will streamline the process and combat fraud reducing the overhead on traditional banking. ",
+		"text": "-",
+		"score": [4, 4.5, 4, 5, 3, 3.5, 2, 2, 3, 3],
+		"viability": 3.98230088495575,
+		"readiness": 3.11726867887185,
+		"importance": 2.5609756097561,
+		"industries": [3, 3, 3, 2, 3, 4, 2, 1, 3, 1, 1, 1, 3],
+		"companies": [110, 11],
+		"references": [100, 101, 102],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e23304e771d8a016f9649f/5616x3744/a3ca825959abe53bef955ec0ccca9f48/shutterstock_104542022.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10051,
+		"type": "tech",
+		"name": "AI Banker",
+		"description": "Instead of an account being run by a personal banker, decisions have the potential to be done directly by artificial intelligence. By analyzing not only  banking history, but all the personal data about a user, AI can tailor banking experiences and offer personalized financial products. The whole process can be automated, as the digital banker have the potential to improve standardization of process workflow and reduce error rates. ",
+		"text": "",
+		"score": [3, 4, 3, 3.5, 2.5, 1.5, 2, 3, 4, 2.5],
+		"viability": 3.12035661218425,
+		"readiness": 2.66497461928934,
+		"importance": 2.32558139534884,
+		"industries": [4, 2, 3, 3, 4, 3, 1, 2, 1, 4, 2, 4, 2],
+		"companies": [18, 96],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de078fc703a4ca0c7326ee/480x360/0b4d039f3a1fd263520c0dfb63e7c4de/hqdefault.jpg, https://trello-attachments.s3.amazonaws.com/56de078fc703a4ca0c7326ee/3600x2400/73206ec9c35e4e8b8bd5d14668e35a14/shutterstock_267582539.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10052,
+		"type": "tech",
+		"name": "Algorithm Marketplace",
+		"description": "Most organisations can’t afford a team of highly-paid developers with unlimited time to create, test and refine their algorithms and process data. As a result, data competitions have been organised first and now communities of developers that have started offering up their algorithms for sale in dedicated marketplaces.",
+		"text": "",
+		"score": [4, 5, 4, 3.5, 3, 3, 3, 3, 4, 3.5],
+		"viability": 3.79061371841155,
+		"readiness": 3.50291909924938,
+		"importance": 3.25581395348837,
+		"industries": [4, 3, 4, 2, 4, 2, 1, 1, 4, 1, 2, 1, 1],
+		"companies": [116124],
+		"references": [],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56c9f10ea20a44a55d299961/56c9fe747b5213659eebd455/x/e65cd7d81bb0cd5960920064fb344958/poisson-disc-voronoi.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10053,
+		"type": "tech",
+		"name": "Attention Economy",
+		"description": "We've turned a corner toward an economy where an increasing number of workers are no longer involved directly in the production, transportation, and distribution of material goods, but instead earn their living managing or dealing with information in some form. Since information is abundant, but attention to it isn't, the last one can be transformed into capital when it's paid, spent, given, taken or transacted, creating a new type of economy, typical from the cyberspace.",
+		"text": "",
+		"score": [5, 5, 4.5, 4, 4.5, 3.5, 4, 4, 5, 4],
+		"viability": 4.56852791878173,
+		"readiness": 4.29155313351499,
+		"importance": 4.04624277456647,
+		"industries": [2, 1, 3, 1, 3, 3, 1, 2, 3, 1, 1, 2, 4],
+		"companies": [22, 159, 0],
+		"references": [],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56ddadbfe14c13e62b4861fa/900x591/111aff7ed2e4f7f598750516749211bc/Reasons_20Your_20Business_20Needs_20a_20Mobile_20App.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10054,
+		"type": "tech",
+		"name": "Autonomous Device",
+		"description": "Devices that are connected to the cloud but run their own software, collect and mine their own data, and make decisions in real-time rather than simply being displays of information. Autonomous devices can conduct their own transactions and be independent profit centers as well, for example a smart home power supply may buy and sell energy as it is needed.",
+		"text": "",
+		"score": [4, 5, 3, 3, 2.5, 2, 2, 3, 5, 4],
+		"viability": 3.2967032967033,
+		"readiness": 3.03030303030303,
+		"importance": 2.80373831775701,
+		"industries": [2, 3, 3, 1, 1, 1, 1, 4, 4, 1, 1, 4, 2],
+		"companies": [16136153],
+		"references": [],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e36423193a3422328d883c/2048x1360/9ede9240c53158cf6899fd1640d7a39b/Autonomy-Pros-01.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10055,
+		"type": "tech",
+		"name": "Behavioural Money",
+		"description": "Financial services and smart products which use predictive analytics learned from big data could find patterns in user behaviour in order to tailor experiences on an individual level. This way, money could adapt to customer's needs and context, and also be trackable because of their unique habits - making it impossible to suffer fraud or to be stolen. ",
+		"text": "",
+		"score": [4, 3.5, 2.5, 2, 1, 1, 1, 2, 4, 1],
+		"viability": 2.05278592375367,
+		"readiness": 1.61662817551963,
+		"importance": 1.33333333333333,
+		"industries": [3, 1, 4, 4, 2, 2, 2, 3, 2, 1, 4, 1, 1],
+		"companies": [139],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56d8982b59b94b958f59be66/644x369/049ee5354107c003f0ab4d0a4d260d07/personality1-644.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10056,
+		"type": "tech",
+		"name": "Blackbox Algorithmic Trading",
+		"description": "Stock trading based on algorithms with predefined buy and sell conditions. The algorithms used in this trading method allow traders to trade at volumes and speeds impossible for humans. Many traders have been using prebuilt algorithms to compensate for their lack of trading industry knowledge.",
+		"text": "",
+		"score": [4, 5, 3.5, 3.5, 3, 3.5, 2, 3, 5, 2.5],
+		"viability": 3.69068541300527,
+		"readiness": 3.25329202168861,
+		"importance": 2.90858725761773,
+		"industries": [1, 2, 1, 2, 3, 2, 4, 3, 3, 1, 3, 4, 4],
+		"companies": [146, 65],
+		"references": [],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e230484765cbb9673cf3ff/1600x1067/3a5cd25ab4d9483599ce185b71fefec0/automated-trading.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10057,
+		"type": "tech",
+		"name": "Compliance As A Service",
+		"description": "Companies working in heavily regulated industries such as financial services will outsource their compliance to cloud-based third parties. An increasing number of data breaches and hacks are also causing a constantly shifting regulatory environment meaning that it will become a full time business just managing the legal side of holding customer data.",
+		"text": "",
+		"score": [3, 5, 3.5, 3, 3.5, 2.5, 3, 3, 3, 4],
+		"viability": 3.47682119205298,
+		"readiness": 3.23824209714726,
+		"importance": 3.03030303030303,
+		"industries": [4, 3, 3, 4, 4, 1, 4, 1, 3, 4, 2, 4, 2],
+		"companies": [157162130],
+		"references": [],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/5702748c856194ab755935ab/1349x890/3774456865b567969cc7ddf35b2097f3/compliance.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10058,
+		"type": "tech",
+		"name": "Crypto-Currency Debit Card",
+		"description": "Helping to bridge the gap between fiat currency and crypto-currency, these cards will allow crypto-accounts to operate within the traditional payment infrastructure. Cards may support a number of different currency types and will function the same as traditional debit cards, converting currencies on the backend.",
+		"text": "",
+		"score": [4, 5, 4, 2.5, 3, 3.5, 3, 3, 2, 3],
+		"viability": 3.48837209302326,
+		"readiness": 3.10650887573964,
+		"importance": 2.8,
+		"industries": [3, 2, 2, 2, 2, 3, 4, 4, 3, 1, 2, 1, 4],
+		"companies": [149, 51, 122],
+		"references": [],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56cf0561c80f8320377ebb2c/1280x700/46516bae75cfbbfc3b8f535045dca5b4/coinbase-shiftcard-bitcoin-cryptocurrency-digital-money.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10059,
+		"type": "tech",
+		"name": "Cyber Insurance",
+		"description": "The growing threat of cyber attacks has created a need for this new class of insurance. Cyber insurance protects companies against hanks and data breaches that are not typically covered under Commercial General Liability policies. Cyber Insurance will become a must for any company dealing with digital transactions and storing customer data. ",
+		"text": "",
+		"score": [4, 5, 3.5, 3, 2, 1.5, 2, 3, 4, 3],
+		"viability": 3.1866464339909,
+		"readiness": 2.73794002607562,
+		"importance": 2.4,
+		"industries": [1, 4, 2, 4, 4, 4, 3, 1, 3, 2, 3, 1, 1],
+		"companies": [164123],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/57016f94666a062f88f0bd2e/1910x1000/656058115b71f69b83a5bb30f89ad790/101614672-176217375.1910x1000.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10060,
+		"type": "tech",
+		"name": "Digital Security Trading",
+		"description": "Trades of assets such as shares are settled by peer confirmation using blockchains. This cuts down on much of the overhead involved in regulating and mediating these trades by cutting out the need for auditors and clearinghouses. This in turn gives more access to users wishing to trade shares and greatly increases the speed and volume of transactions. ",
+		"text": "",
+		"score": [3, 5, 3.5, 3, 2.5, 3, 2, 2, 4, 3.5],
+		"viability": 3.22085889570552,
+		"readiness": 2.92275574112735,
+		"importance": 2.67515923566879,
+		"industries": [3, 3, 1, 3, 3, 2, 3, 1, 3, 1, 3, 2, 1],
+		"companies": [15123],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e2369a26bf98c68e1ceab6/3888x2592/a77d17ea2724f4ebec2f079ad8987bee/shutterstock_268543904.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10061,
+		"type": "tech",
+		"name": "Hypermedia Distribution Protocol",
+		"description": "Enables the creation of completely distributed applications. Connects all computing devices with a single shared system of files. This type of protocol could potentially replace HTTP and create permanent, distributed web where websites are not dependent on a central entity or host to continue existing.",
+		"text": "",
+		"score": [3, 5, 3.5, 2.5, 2.5, 3, 2, 2, 2, 2],
+		"viability": 3.08823529411765,
+		"readiness": 2.53012048192771,
+		"importance": 2.14285714285714,
+		"industries": [4, 2, 4, 1, 2, 1, 1, 2, 4, 2, 3, 3, 3],
+		"companies": [165],
+		"references": [],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/5702d49a08f2b0272e4fcb4c/1398x932/f18b19609a7dd31af42da2e475e27d48/linksweb.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10062,
+		"type": "tech",
+		"name": "Identity Insurance",
+		"description": "As cybercrimes become more common, companies and individuals will have to protect themselves against data security breaches. Unique identifications and digital information will converge between devices and services in a exponential speed, so insurance against loss or theft of this type of data will also have an increased importance. ",
+		"text": "",
+		"score": [3, 4.5, 4, 2.5, 2, 1.5, 3, 3, 3, 3],
+		"viability": 2.93159609120521,
+		"readiness": 2.69865067466267,
+		"importance": 2.5,
+		"industries": [3, 1, 2, 1, 2, 1, 3, 2, 2, 3, 2, 2, 2],
+		"companies": [131132137],
+		"references": [],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbcb90e0aaa2765b6f659c/615x409/493b5e58ad8aa41010b8eb4203de6b1d/Computer-hacker.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10063,
+		"type": "tech",
+		"name": "Intention Economy",
+		"description": "An economy in which demand will drive supply far more directly, efficiently, and compellingly than ever before, where vendors must respond to the actual intentions of customers instead of vying for the attention of many. Driven by the use of analytics and big data, business will offer products and services for specific personal needs stored in the cloud.",
+		"text": "",
+		"score": [5, 4.5, 4, 4.5, 3.5, 3.5, 3, 3, 4, 3.5],
+		"viability": 4.23671822461332,
+		"readiness": 3.74776918500892,
+		"importance": 3.36,
+		"industries": [4, 4, 3, 1, 3, 4, 4, 4, 4, 3, 1, 2, 4],
+		"companies": [125],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56de1fb1d80525ab225c9175/1280x598/acf8ed4c1e0f05de65f95e4c8e7bb542/1836004-doc-searls-on-becoming-part-of-the-intention-economy-rotator.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10064,
+		"type": "tech",
+		"name": "Live Spending Broadcast",
+		"description": "By syncing credit cards or bitcoins to social media, people will be able to broadcast what they are spending, requesting feedback to their network or simply showcasing their purchases. This could lead to behavioral changes towards what should be bought or not, depending on what people want to share. ",
+		"text": "",
+		"score": [3, 5, 3.5, 2, 2, 4, 2, 4, 2, 3],
+		"viability": 2.74869109947644,
+		"readiness": 2.73794002607562,
+		"importance": 2.72727272727273,
+		"industries": [2, 2, 3, 3, 4, 2, 3, 4, 2, 1, 2, 4, 4],
+		"companies": [133],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56d896a332f58e12b376683f/316x180/5df186fab7c308d40207eb2494f670a1/privacy2-316.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10065,
+		"type": "tech",
+		"name": "Nano-Payment",
+		"description": "Payments below the traditional denominational thresholds. These payments are typically fractions of a cent. New technologies have reduced friction payments and reduced costs in processing now making a new class payment equitable. Nano-costs could be appended to social media likes, advertisement clicks, and the sending of emails among other use cases. ",
+		"text": "",
+		"score": [4, 5, 3.5, 4, 1.5, 2.5, 3, 4, 4, 3],
+		"viability": 3.02593659942363,
+		"readiness": 3.10650887573965,
+		"importance": 3.19148936170213,
+		"industries": [1, 4, 4, 3, 2, 1, 3, 1, 2, 2, 2, 2, 2],
+		"companies": [147141],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/5702d743c13afc5dd54c8482/1300x776/17741ccfee52297106d0c340bf0ee3a7/Gov-backed-mint-chip-acquired-by-nanopay.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10066,
+		"type": "tech",
+		"name": "Online Only Bank",
+		"description": "A model conceived in the mid-90s for lower operational costs. This enables higher interest rates, lower fees and minimum requirements. Based online, they can problem-solve and innovate easily with technology – deposits are done via smartphone photos and customer service is available immediately through online chatting. This model will prevail over traditional banking.",
+		"text": "",
+		"score": [5, 5, 5, 5, 4.5, 3, 4, 5, 3, 4],
+		"viability": 4.89130434782609,
+		"readiness": 4.18604651162791,
+		"importance": 3.65853658536585,
+		"industries": [1, 1, 3, 1, 4, 2, 3, 3, 2, 3, 2, 1, 1],
+		"companies": [144151143],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56ddb9babfa6bf5612d0bc06/1040x585/0521e4582f83c99b3741b019ec92af3c/17152648466634.jpg",
+		"url": "",
+		"category": 1,
+		"cluster": 2
+	}, {
+		"id": 10067,
+		"type": "tech",
+		"name": "Online-Only Insurance Company",
+		"description": "By selling all its products online along with handling claims, this new breed of companies aim to reshape traditional insurance by applying internet thinking across the insurance value chain from product design to claims servicing. They use, for example, big data and analytics support to ensure accurate product pricing and risk control. Furthermore, this online model has lower operating and distribution costs. ",
+		"text": "",
+		"score": [4, 5, 5, 4, 4, 3, 4, 5, 3, 4],
+		"viability": 4.34782608695652,
+		"readiness": 3.97350993377483,
+		"importance": 3.65853658536585,
+		"industries": [1, 4, 4, 1, 1, 2, 4, 3, 2, 2, 3, 1, 2],
+		"companies": [145, 59],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbc19d8488f2a7f197f070/1430x616/ee322061d863830ea2346ae78d0d0360/online-only-devices.png",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10068,
+		"type": "tech",
+		"name": "Open Data Analytics",
+		"description": "As technology enables more real-time access to more data, there ismore opportunity for analysis and improved decision-making. A raft of applications have emerged to evaluate transaction patterns, anticipate outcomes and progress. Individuals will be able to measure themselves against large swaths of the population and have a clearer understanding of their position. Soon, personal related to income, spending and debt, will transition to become applications.",
+		"text": "",
+		"score": [3, 5, 4, 4.5, 4.5, 2.5, 3, 3, 3, 4],
+		"viability": 4.07239819004525,
+		"readiness": 3.47490347490348,
+		"importance": 3.03030303030303,
+		"industries": [1, 1, 3, 4, 4, 4, 2, 4, 1, 3, 1, 1, 1],
+		"companies": [152138],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56ddbaf6d02d442b45adacbc/1700x1121/3a88c7dc798d4e3a97d32b1425aef9f0/lod-cloud_colored.png, https://trello-attachments.s3.amazonaws.com/56ddbaf6d02d442b45adacbc/600x600/0282a86986da8a370d8716435f446697/Strategic-busines-Analytics-logo.jpg",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10069,
+		"type": "tech",
+		"name": "Peer To Peer Insurance",
+		"description": "By disrupting the business model of insurance companies, which normally gain from denying claims, peer to peer insurance will pool insurance premiums with small groups of policy holders.  Distribution of funds, claims records keeping, etc are handled by smart contracts and the insurance 'company' functions as a decentralized autonomous corporation on the blockchain. By using behavioral science in order to decrease fraud, any money left at the end of the policy period is refunded and  larger reinsurers provide backup in case damages exceed available funds.  Peer-to-peer insurance is the sharing economy model applied to insurance.",
+		"text": "",
+		"score": [4, 5, 4.5, 3.5, 3, 2.5, 3, 4, 4, 3.5],
+		"viability": 3.87215734480639,
+		"readiness": 3.55831685964417,
+		"importance": 3.29153605015674,
+		"industries": [2, 4, 1, 1, 1, 1, 1, 4, 1, 1, 2, 1, 3],
+		"companies": [59156129],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56eab6475032070648d23b46/587x310/2064c757f14587c248111a31e09bad84/atelier-p2p.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10070,
+		"type": "tech",
+		"name": "Quantum Cash",
+		"description": "Physical monetary notes that are either embedded with or linked to special quantum particles. These particles allow each note to have a unique unforgeable attribute making the notes impossible to counterfeit.",
+		"text": "",
+		"score": [3, 3, 2, 2, 1, 1, 2, 2, 2, 1.5],
+		"viability": 1.875,
+		"readiness": 1.71428571428571,
+		"importance": 1.57894736842105,
+		"industries": [2, 1, 2, 1, 4, 2, 2, 3, 3, 1, 2, 4, 4],
+		"companies": [140],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e21e9c9808b40fd9981ff9/695x554/b5435647d11b135fe1374c64088b7877/Quantum_Cash.jpg, https://trello-attachments.s3.amazonaws.com/56e21e9c9808b40fd9981ff9/1920x1080/08a077f3942cd1066d08bfa295cca744/Cash-Flow-is-King.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10071,
+		"type": "tech",
+		"name": "Secure-Adaptive Architecture",
+		"description": "With more digital businesses come more hackers, and with the birth of a new threat landscape we're seeing the death of antivirus software. A new type of security tools will be available to go on the offensive, leveraging predictive modeling, allowing apps to protect themselves for example.",
+		"text": "",
+		"score": [3, 4, 3, 3.5, 2.5, 1, 2, 3, 3, 3.5],
+		"viability": 3.12035661218425,
+		"readiness": 2.46623605402231,
+		"importance": 2.03883495145631,
+		"industries": [2, 2, 2, 3, 2, 1, 1, 1, 1, 2, 1, 4, 3],
+		"companies": [121],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56c9f10ea20a44a55d299961/56c9fe7d3008661d693ca307/x/fab554f60364c691d85addb5252e7d68/Magnifying_20glass_20on_20danger-650-80.jpg, https://trello-attachments.s3.amazonaws.com/56c9fe7d3008661d693ca307/3413x1667/ce264ffc5a942b09fded6b2384d81507/redskyblogpostgraphic.png",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10072,
+		"type": "tech",
+		"name": "Self-Driving Car Insurance",
+		"description": "New insurance models will be needed for self-driving cars, in order to to allow for compensation from auto accidents. New paradigms will be needed to be incorporated in policies such as: manufacturer no-fault compensation, increased price for complex components, decreased automobile ownership regulatory permissions and data management.",
+		"text": "",
+		"score": [4, 4.5, 2.5, 2, 1.5, 1, 2, 5, 3, 2],
+		"viability": 2.45231607629428,
+		"readiness": 2.18712029161604,
+		"importance": 1.97368421052632,
+		"industries": [3, 2, 4, 3, 3, 3, 4, 1, 4, 3, 1, 4, 4],
+		"companies": [135],
+		"references": [],
+		"A1": 4,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fbcbcece6b9400c54890e9/960x595/79e89a5b0ba96d53dcc57d81d92cf51c/960x0.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10073,
+		"type": "tech",
+		"name": "Selfie Pay",
+		"description": "As people become more mobile, and automation and digital technologies more pervasive, security becomes increasingly important. Online services migrate towards two-step authentication, instead of only passwords, whereas identity documents include biometric data. New wave of such technologies, relying on face recognition, found its way into payments, border agencies and automated access systems. All in order to facilitate the flow of people and data, without compromising security.",
+		"text": "",
+		"score": [4, 4, 4, 3, 3, 4, 4, 4, 4, 3],
+		"viability": 3.52941176470588,
+		"readiness": 3.63636363636364,
+		"importance": 3.75,
+		"industries": [1, 1, 2, 3, 1, 1, 1, 3, 2, 4, 4, 1, 3],
+		"companies": [78],
+		"references": [],
+		"A1": 3,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56c9f10ea20a44a55d299961/56c9ff241bdcb89675cb9d16/x/2ee175e04d3057667d2de878d795b780/selfie-authentication-en-1.jpg, https://trello-attachments.s3.amazonaws.com/56c9f10ea20a44a55d299961/56c9ff241bdcb89675cb9d16/x/95058f00cd275288279acaa3ca6f334c/payment.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10074,
+		"type": "tech",
+		"name": "Side-Chain",
+		"description": "A specific type of blockchain that operates with other blockchains. Users of one blockchain can effectively leverage the benefits or features of another blockchain without needing to use the other blockchains native tokens. Side chains also allow developers to create new blockchains with new features that utilize the scale of other blockchains without compromising them.",
+		"text": "",
+		"score": [3, 5, 4, 3.5, 2.5, 3.5, 2, 3, 3, 4],
+		"viability": 3.40356564019449,
+		"readiness": 3.15315315315315,
+		"importance": 2.93706293706294,
+		"industries": [3, 1, 1, 1, 1, 1, 1, 1, 3, 4, 3, 4, 1],
+		"companies": [120],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e3677179708e09aa1a5dec/1629x615/5225c9f55e2b7bacd468ae2a03bb0a3b/sidechains.jpg",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10075,
+		"type": "tech",
+		"name": "Smart Assets",
+		"description": "Connected appliances and other enterprise assets that have the ability to monitor themselves. This monitoring allows the devices to make decisions based on data such as reordering toner before it runs too low based on previous consumption habits or scheduling maintenance checks when it detects a certain probability of potential compromise. Devices will be given the ability to manage a financial account in order to pay for their consumables and services.",
+		"text": "",
+		"score": [4, 5, 4, 3.5, 3, 2.5, 3, 5, 4, 4],
+		"viability": 3.79061371841155,
+		"readiness": 3.63321799307958,
+		"importance": 3.48837209302326,
+		"industries": [3, 4, 3, 2, 1, 4, 2, 3, 2, 4, 2, 2, 3],
+		"companies": [128],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56e3664e022e8aa35d2f15f9/1536x960/8baeb425caee555ed2dd6d69f0701866/clbi10_frth.ashx.jpeg, https://trello-attachments.s3.amazonaws.com/56e3664e022e8aa35d2f15f9/460x276/ad93b890520f27aac87855526eb05a6c/The-LG-smart-fridge-commu-007.jpg, https://trello-attachments.s3.amazonaws.com/56e3664e022e8aa35d2f15f9/1357x810/1b03d6b4cc672e8a15344ace2d36b0eb/Comexio-Smart-Home-Automation-System.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10076,
+		"type": "tech",
+		"name": "Smart-Bond",
+		"description": "Self-paying financial instruments that have automated risk-free interest rates and payment streams. These instruments, being facilitated by smart-contracts, eliminate the need for third parties such as Central Counter Parties, Central Security Depositories, Custodian Banks and more, reducing costs associated with trading and distribution.",
+		"text": "",
+		"score": [3, 4.5, 3, 4, 3, 2.5, 2, 3, 3, 3],
+		"viability": 3.39622641509434,
+		"readiness": 2.96540362438221,
+		"importance": 2.63157894736842,
+		"industries": [2, 2, 3, 4, 2, 4, 4, 2, 4, 3, 1, 1, 2],
+		"companies": [160],
+		"references": [],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/5702db3799e02418f644d121/1920x1200/b60fbe9fb6323bf1d44e978f131c3d12/blog-FinTech.png",
+		"url": "",
+		"category": 0,
+		"cluster": 1
+	}, {
+		"id": 10077,
+		"type": "tech",
+		"name": "Social Credit",
+		"description": "An IT-based mechanism similar to credit rating has been proposed for evaluation of citizens' demeanor. Certain online behaviors, such as criticizing the government online, buying foreign products or socializing with 'fringe elements', could be penalized by delaying paperwork, restricting access to jobs or reducing internet speeds.",
+		"text": "",
+		"score": [4, 4.5, 3, 4, 3, 2.5, 3, 4, 1, 2.5],
+		"viability": 3.6,
+		"readiness": 2.65095729013255,
+		"importance": 2.0979020979021,
+		"industries": [2, 1, 2, 3, 3, 1, 2, 2, 2, 4, 1, 1, 2],
+		"companies": [155117],
+		"references": [],
+		"A1": 2,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56c9f10ea20a44a55d299961/56c9ff071c1b875e619080b2/x/47f87fb96f68a809ec98813a09cd50a1/2.png",
+		"url": "",
+		"category": 3,
+		"cluster": 4
+	}, {
+		"id": 10078,
+		"type": "tech",
+		"name": "Triple-Entry Accounting",
+		"description": "An alternative to double-entry bookkeeping where a transaction is recorded in three locations: the buyer's book, the seller's book, and a cryptographically secure third book. Triple-entry accounting solves the problem of being able to trust an given entity's books, eliminating the need for auditing.",
+		"text": "",
+		"score": [3, 4.5, 4, 3, 3, 2.5, 2, 3, 2, 2.5],
+		"viability": 3.39622641509434,
+		"readiness": 2.77349768875193,
+		"importance": 2.34375,
+		"industries": [4, 4, 4, 3, 3, 3, 2, 4, 3, 4, 3, 2, 2],
+		"companies": [118],
+		"references": [],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/5702d8a57bd69e296d05e2b6/1024x680/084d81711b0e2d9195a1d39f5495b8ec/triple-entry-bookkeeping-bitcoin.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10079,
+		"type": "tech",
+		"name": "Ultra-Secure Smartphone",
+		"description": "Smartphones that provide not only end-to-end data encryption but also a variety of other security measures such as voice encryption, location masking, microphone jamming, etc. This technology will become a must for high-profile business people who conduct much of their business from their phones and across internet connections from a range of less developed regions where security is more vulnerable.",
+		"text": "",
+		"score": [4, 4.5, 4, 3.5, 3.5, 2, 3, 3, 3, 4],
+		"viability": 3.86503067484663,
+		"readiness": 3.28552803129074,
+		"importance": 2.85714285714286,
+		"industries": [2, 3, 3, 2, 3, 2, 1, 1, 4, 3, 3, 3, 1],
+		"companies": [150163158],
+		"references": [],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/57028590b44923412725630c/2000x1333/822ea44182031e259fca2a3436690574/smartphone-privacy-security-4.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}, {
+		"id": 10080,
+		"type": "tech",
+		"name": "Video Appraisal",
+		"description": "Insurance companies will be able to settle claims faster by appraising the damage via video. Customers will be able to talk to a virtual or live assistant in real time, saving both the insurer and the insured time and travel. Doubts and next steps can be discussed instantly, and the claimant will be able to get an electronic payment to settle the claim without the bureaucracy. ",
+		"text": "",
+		"score": [3, 5, 3.5, 3.5, 3, 4, 3, 4, 4, 3],
+		"viability": 3.47682119205298,
+		"readiness": 3.50291909924937,
+		"importance": 3.52941176470588,
+		"industries": [3, 4, 4, 3, 2, 4, 3, 2, 4, 3, 4, 1, 4],
+		"companies": [127119161],
+		"references": [],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56fd84d2e73d3c4103cdb6ce/630x386/601823ea546d6f1c446590e91db6e917/esurance.jpg",
+		"url": "",
+		"category": 2,
+		"cluster": 3
+	}, {
+		"id": 10081,
+		"type": "tech",
+		"name": "Voice ID Security",
+		"description": "With a rise in conversational interfacing in the form of digital personal assistants such as Siri, Cortana, and others, voice as an interaction medium is growing. With this comes the ability to ID users, allow access, and authorize actions based on the unique identifiers in a users voice, seamlessly integrating the 'log-in' experience into the product. ",
+		"text": "",
+		"score": [4, 5, 4.5, 4.5, 3, 4, 4, 4, 4, 3.5],
+		"viability": 4.07239819004525,
+		"readiness": 3.97852857593937,
+		"importance": 3.88888888888889,
+		"industries": [4, 2, 2, 3, 4, 4, 2, 1, 1, 1, 2, 2, 2],
+		"companies": [148142],
+		"references": [],
+		"A1": 1,
+		"photo": "https://trello-attachments.s3.amazonaws.com/56c9f4d0275b52a4b55d1762/4800x3200/a6f4b43a93a070262d498371e5249aa9/shutterstock_125814494.jpg, https://trello-attachments.s3.amazonaws.com/56c9f4d0275b52a4b55d1762/1000x667/792b80dc74aa7790f037e593d0cb08ff/Voice-Array-2.jpg",
+		"url": "",
+		"category": 4,
+		"cluster": 5
+	}],
+	"categories": [{
+		"id": 0,
+		"label": "A",
+		"type": "categ",
+		"name": "After Cash",
+		"description": "Artificial intelligence will soon revolutionize how we make all the decisions in our daily routines, and how we deal with money isn't different. Systems that more deeply understand who we are and how we behave will have the ability to assist us in making financial decisions to better achieve our goals. ",
+		"color": "e76f7a",
+		"icon": "<circle cx='0' cy='6.72' r='1.35'/><path d='M4.16-6.29a0.31,0.31,0,0,0-.27-0.28,32.61,32.61,0,0,0-7.78,0,0.31,0.31,0,0,0-.27.28A72,72,0,0,0-4.18,4a0.29,0.29,0,0,0,.27.29H3.9A0.29,0.29,0,0,0,4.17,4,65.7,65.7,0,0,0,4.16-6.29Zm-3.55,8V2.5a0.52,0.52,0,0,1-.55.41H-0.38A0.52,0.52,0,0,1-.93,2.5V1.71a8.25,8.25,0,0,1-1.8-.32A0.33,0.33,0,0,1-3,.92l0.2-.56A0.59,0.59,0,0,1-2.09.19,5.76,5.76,0,0,0-.45.52C0.44,0.54.85,0.36,0.86,0S0.53-.48-0.35-0.65C-1.8-.92-2.91-1.26-2.91-2.43c0-1,.92-1.48,2.18-1.61V-5A0.52,0.52,0,0,1-.18-5.36H0.26A0.52,0.52,0,0,1,.8-5V-4a6.63,6.63,0,0,1,1.36.22,0.32,0.32,0,0,1,.24.46l-0.2.52a0.72,0.72,0,0,1-.77.17,4.58,4.58,0,0,0-1.3-.2c-0.63,0-1,.1-1,0.38S-0.69-2,.19-1.87C1.61-1.61,2.93-1.33,2.93,0,2.93,0.9,2.22,1.54.6,1.69Z' /><path d='M0-15A15,15,0,0,0-15,0,15,15,0,0,0,0,15,15,15,0,0,0,15,0,15,15,0,0,0,0-15ZM6.49,7.16a1.83,1.83,0,0,1-1.58,1.7A36.57,36.57,0,0,1,0,9.14a36.58,36.58,0,0,1-4.92-.27A1.83,1.83,0,0,1-6.5,7.16a125,125,0,0,1,0-14.27,1.83,1.83,0,0,1,1.58-1.7,36.69,36.69,0,0,1,9.83,0,1.83,1.83,0,0,1,1.58,1.7A120.83,120.83,0,0,1,6.49,7.16Z' />",
+		"photo": "http://i.imgur.com/viAfOmT.png"
+	}, {
+		"id": 1,
+		"label": "B",
+		"type": "categ",
+		"name": "Fall of Fiat",
+		"description": "Banks and governments have created scarcity by centralizing money, but this scarcity is artificial. A wealth of startups and communities are working around the limitations of money-as-a-system by developing technology-backed alternatives for currencies and transactions.",
+		"color": "5bb9ce",
+		"icon": "<path d='M0-15A15,15,0,0,0-15,0,15,15,0,0,0,0,15,15,15,0,0,0,15,0,15,15,0,0,0,0-15ZM-1.55-8.14A1.16,1.16,0,0,1-.24-8.93H0.81a1.15,1.15,0,0,1,1.31.79v1.78a13.69,13.69,0,0,1,2.94.49c0.65,0.18.91,0.65,0.59,1L5-4.07a2,2,0,0,1-1.83.39A10.51,10.51,0,0,0,.39-4H0.2L-1.55-7.38V-8.14ZM0.34,8.92H-0.71A1.15,1.15,0,0,1-2,8.14V6.62a20.28,20.28,0,0,1-4.29-.73C-7,5.7-7.22,5.22-6.93,4.83L-6.31,4a1.63,1.63,0,0,1,1.67-.37A13.72,13.72,0,0,0-1,4.19L1.3,8.66A1.77,1.77,0,0,1,.34,8.92ZM-6.61-2.71a2.86,2.86,0,0,1,.94-2.18l3,5.77C-5,.28-6.61-0.64-6.61-2.71ZM5.28,9.43H2.87a0.61,0.61,0,0,1-.56-0.34L-6.75-8.52a0.62,0.62,0,0,1,.56-0.92h2.42a0.63,0.63,0,0,1,.56.34l4,7.83,2.26,4.4L5.79,8.42A0.63,0.63,0,0,1,5.28,9.43ZM5.17,5.68L3.86,3.14,1.6-1.26v0c3,0.55,5.46,1.33,5.46,4A3.23,3.23,0,0,1,5.17,5.68Z' />",
+		"photo": "http://i.imgur.com/CSkWLfu.png"
+	}, {
+		"id": 2,
+		"label": "C",
+		"type": "categ",
+		"name": "Future Insurance ",
+		"description": "A huge amount of technologies are disrupting our daily lives and reshaping entire industries. They demand a rethinking of how insurance works and push it to become more transparent, less expensive, automatic, online and hassle-free.",
+		"color": "6caba2",
+		"icon": "<path d='M0-15A15,15,0,0,0-15,0,15,15,0,0,0,0,15,15,15,0,0,0,15,0,15,15,0,0,0,0-15ZM1.21-.52V5.42A3.58,3.58,0,0,1-2.38,9,3.57,3.57,0,0,1-6,5.42a1.19,1.19,0,0,1,1.2-1.19,1.19,1.19,0,0,1,1.2,1.19A1.2,1.2,0,0,0-2.38,6.6,1.2,1.2,0,0,0-1.17,5.42V-0.52H-9.48a10.38,10.38,0,0,1,.23-1.13,9.29,9.29,0,0,1,8.08-7.1V-8.83A1.18,1.18,0,0,1,0-10,1.18,1.18,0,0,1,1.21-8.83v0.08a9.27,9.27,0,0,1,8.06,7.1A10,10,0,0,1,9.48-.52H1.21Z'/>",
+		"photo": "http://i.imgur.com/UUGuEd0.png"
+	}, {
+		"id": 3,
+		"label": "D",
+		"type": "categ",
+		"name": "Leveraging Crowds",
+		"description": "Platforms provided by the Internet have enabled the exchange of resources, from the digital to physical, and allowed the nourishment of new economies. With sustainability, utility and community in mind, there has been a decisive shift from consumption and the concept of wealth has expanded.",
+		"color": "8f6498",
+		"icon": "<path d='M0.36-15A15,15,0,0,0-15-.36,15,15,0,0,0-.36,15,15,15,0,0,0,15,.36,15,15,0,0,0,.36-15ZM5.18,6a0.54,0.54,0,0,1-.39.44,0.64,0.64,0,0,1-.23,0A0.63,0.63,0,0,1,4.1,6.24,8,8,0,0,0-.82,3.83l0.92,4a1.85,1.85,0,0,1-.35,1.6,1.66,1.66,0,0,1-1.33.61A2,2,0,0,1-3.44,8.74c-0.12-.28-1.25-3.13-2.11-5.3C-7.69,3-9.12,1.84-9-1.08-8.93-5.77-5.16-5.68-.8-5.57A7.82,7.82,0,0,0,4.44-7.75a0.63,0.63,0,0,1,.69-0.14,0.54,0.54,0,0,1,.37.46ZM6.5,2.74L6.67-4.14A4.08,4.08,0,0,1,9.09-.64,4.08,4.08,0,0,1,6.5,2.74Z' />",
+		"photo": "http://i.imgur.com/Eo6eswJ.png"
+	}, {
+		"id": 4,
+		"label": "E",
+		"type": "categ",
+		"name": "Secured Networks",
+		"description": "Once an exclusively role of big corporations and governments, security is slowly been taking over by the network while cheaper sensors are enabling more trustworthy and better identification methods that can back it up.",
+		"color": "c6c704",
+		"icon": "<path d='M3.41,0.11H2.84V-2.71H3.41A0.57,0.57,0,0,0,4-3.28a0.6,0.6,0,0,0-.38-0.54L0.26-5.71a0.57,0.57,0,0,0-.51,0l-3.41,2a0.52,0.52,0,0,0-.3.6,0.57,0.57,0,0,0,.55.44h0.57V0.12H-3.41A0.58,0.58,0,0,0-4,.7a0.57,0.57,0,0,0,.57.56H3.41A0.56,0.56,0,0,0,4,.7,0.59,0.59,0,0,0,3.41.11Zm-4,0H-1.71V-2.71h1.14V0.13Zm2.27,0H0.57V-2.71H1.71V0.13Z'/><path d='M0-15A15,15,0,0,0-15,0,15,15,0,0,0,0,15,15,15,0,0,0,15,0,15,15,0,0,0,0-15ZM5.68,8.09H-5.69a0.57,0.57,0,0,1-.56-0.51A0.57,0.57,0,0,1-5.82,7l3.54-.69v-1c0.57,0,1.52,0,2.27,0s1.71,0,2.27,0v1L5.81,7A0.57,0.57,0,0,1,5.68,8.09ZM8.53,2.38a1.14,1.14,0,0,1-1,1.13A60.47,60.47,0,0,1,0,4a60.29,60.29,0,0,1-7.53-.5,1.14,1.14,0,0,1-1-1.13V-6.16a1.14,1.14,0,0,1,1-1.13A60.29,60.29,0,0,1,0-7.78a60.5,60.5,0,0,1,7.54.5,1.14,1.14,0,0,1,1,1.13V2.38Z'/>",
+		"photo": "http://i.imgur.com/6Vw4J2k.png"
+	}],
+	"industries": [{
+		"id": 0,
+		"label": "I00",
+		"name": "All"
+	}],
+	"clusters": [{
+		"id": 1,
+		"label": "A1",
+		"name": "",
+		"category": "0",
+		"description": "",
+		"icon": "<circle class='st0' cx='0' cy='0' r='12'/>"
+	}, {
+		"id": 2,
+		"label": "B1",
+		"name": "",
+		"category": "1",
+		"description": "",
+		"icon": "<circle class='st0' cx='0' cy='0' r='12'/>"
+	}, {
+		"id": 3,
+		"label": "C1",
+		"name": "",
+		"category": "2",
+		"description": "",
+		"icon": "<circle class='st0' cx='0' cy='0' r='12'/>"
+	}, {
+		"id": 4,
+		"label": "D1",
+		"name": "",
+		"category": "3",
+		"description": "",
+		"icon": "<circle class='st0' cx='0' cy='0' r='12'/>"
+	}, {
+		"id": 5,
+		"label": "E1",
+		"name": "",
+		"category": "4",
+		"description": "",
+		"icon": "<circle class='st0' cx='0' cy='0' r='12'/>"
+	}],
+	"companies": [{
+		"id": 0,
+		"name": "Facebook",
+		"description": "Create an account or log into Facebook. Connect with friends, family and other people you know. Share photos and videos, send messages and get updates.",
+		"url": "http://facebook.com",
+		"photo": "https://www.facebook.com/images/fb_icon_325x325.png"
+	}, {
+		"id": 1,
+		"name": "Magic",
+		"description": "Get whatever you want on demand with no hassle, through SMS. Send us a text message, and we'll get you anything you want, tip included. We'll order what you need from the appropriate service (e.g. DoorDash, Instacart, Postmates, etc.), and deal with them so you just automatically get what you want, like magic...",
+		"url": "https://getmagicnow.com",
+		"photo": "https://pbs.twimg.com/profile_images/569415029976358912/uabZUTEs.png"
+	}, {
+		"id": 2,
+		"name": "Quartz",
+		"description": "Read reviews, compare customer ratings, see screenshots, and learn more about Quartz • News in a whole new way. Download Quartz • News in a whole new way and enjoy it on your iPhone, iPad, and iPod touch.",
+		"url": "https://itunes.apple.com/us/app/quartz-news-in-a-whole-new-way/id1076683233",
+		"photo": "http://is1.mzstatic.com/image/thumb/Purple1/v4/d5/83/aa/d583aad2-1b65-5bb3-f2ed-a15c895e46a9/source/1200x630bf.jpg"
+	}, {
+		"id": 3,
+		"name": "Visa",
+		"description": "Visa Europe Collab is the new international innovation hub from Visa Europe. Working with a network of partners from across the digital and fintech ecosystem, Visa Europe Collab offers start-ups and technology entrepreneurs the insight, tools and connections to forge the technologies and services that will transform citizens’ interactions with payments.",
+		"url": "http://www.visaeuropecollab.com",
+		"photo": "http://static1.squarespace.com/static/54dbbff1e4b0e718c62bd117/t/555db601e4b0f085e3d27a78/1462434524010/?format=1000w"
+	}, {
+		"id": 4,
+		"name": "BTL Interbit",
+		"description": "With offices in Vancouver and London, Blockchain Tech LTD develops and invests in blockchain technology.",
+		"url": "http://btl.co",
+		"photo": "http://btl.co/assets/img/BTLlogo-grey-text.png"
+	}, {
+		"id": 5,
+		"name": "Bit Pesa",
+		"description": "BitPesa is a payment platform that offers individuals and businesses an easy way to make payments to and from sub-Saharan Africa.BitPesa accepts digital currency and provides its users with fiat currencies in return. We currently accept Bitcoin and delivered fiat currency directly to mobile phones in Kenya, Nigeria, Uganda, and Tanzania. We also sell Bitcoin in Kenya, Nigeria, and Uganda.BitPesa was launched on November 1, 2013 in Nairobi, Kenya, and also has offices in London and Lagos.",
+		"url": "https://www.bitpesa.co",
+		"photo": "https://www.bitpesa.co/assets/fb-logo-643483acdc630915f049c003c9f0cbf6.png"
+	}, {
+		"id": 6,
+		"name": "Starbucks",
+		"description": "Starbucks uses the highest quality arabica coffee as the base for its espresso drinks. Learn about our unique coffees and espresso drinks today.",
+		"url": "http://www.starbucks.com",
+		"photo": "http:///static/images/global/logo.png"
+	}, {
+		"id": 7,
+		"name": "Digital Currency Group",
+		"description": "The nexus of blockchain technology and finance.",
+		"url": "http://dcg.co",
+		"photo": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/189005-c37d3b491ea9c6ba3481444dd6a511c5-medium_jpg.jpg?buster=1436828652"
+	}, {
+		"id": 8,
+		"name": "MultiChain ",
+		"description": "MultiChain is a distributed database for financial transactions. It builds on the technology that powers bitcoin to enable private blockchains with managed permissions. MultiChain is optimized to help financial institutions, service providers and startups accelerate their exploration of blockchain technology.",
+		"url": "http://www.multichain.com",
+		"photo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1444021806/ha10abeqnkcn9vjl0wn2.png"
+	}, {
+		"id": 9,
+		"name": "Citi",
+		"description": "Citigroup is a diversified financial services holding company that provides various financial products and services. The company operates through two segments, Global Consumer Banking (GCB) and Institutional Clients Group (ICG). The GCB segment offers traditional banking services to retail customers through retail banking, commercial banking, Citi-branded cards, and Citi retail services. The ICG segment offers various banking, and financial products and services to corporate, institutional, public sector, and high-net-worth clients. This segment provides wholesale banking products and services, including fixed income and equity sales and trading, foreign exchange, prime brokerage, derivative services, equity and fixed income research, corporate lending, investment banking and advisory services, private banking, cash management, trade finance, and securities services.",
+		"url": "http://www.citi.com",
+		"photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Citi.svg/2000px-Citi.svg.png"
+	}, {
+		"id": 10,
+		"name": "Interledger ",
+		"description": "Payments across payment networks",
+		"url": "http://interledger.org",
+		"photo": "https://pbs.twimg.com/profile_images/651473315911958528/ak7d6Vgr.png"
+	}, {
+		"id": 11,
+		"name": "IBT ",
+		"description": "Digitizing and safegaurding traditional processes.",
+		"url": "http://ibt.tech",
+		"photo": "https://pbs.twimg.com/profile_images/687673962407575552/ctcjOtO-.png"
+	}, {
+		"id": 12,
+		"name": "Augur ",
+		"description": "Predict the future - crowdsourced. With GNOSIS. Based on the next generation crypto currency network Ethereum. Make complex predictions with an easy to use prediction market.",
+		"url": "https://augur.net",
+		"photo": "https://groupgnosis.com/static/landingpage/images/logo.dc687e0bc5f2.svg"
+	}, {
+		"id": 13,
+		"name": "Gnosis ",
+		"description": "Predict the future - crowdsourced. With GNOSIS. Based on the next generation crypto currency network Ethereum. Make complex predictions with an easy to use prediction market.",
+		"url": "https://groupgnosis.com",
+		"photo": "https://groupgnosis.com/static/landingpage/images/logo.dc687e0bc5f2.svg"
+	}, {
+		"id": 14,
+		"name": "Colu",
+		"description": "Creating, Storing and Managing Digital Assets Using Blockchain Technology",
+		"url": "https://www.colu.co",
+		"photo": "http://fintechinnovators.com/uploads/company/f4711e7e7f7affb938b5.png"
+	}, {
+		"id": 15,
+		"name": "Digital Asset ",
+		"description": "Digital Asset builds distributed, encrypted straight through processing tools. Our technology improves efficiency, security, compliance and settlement speed.",
+		"url": "https://digitalasset.com",
+		"photo": "https://media.licdn.com/media/AAEAAQAAAAAAAAK6AAAAJGQzMGFiNDVmLWI0NDAtNDczMC05MDAyLTAwYWZlNmRmYTdjMQ.png"
+	}, {
+		"id": 16,
+		"name": "Google",
+		"description": "Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking for.",
+		"url": "http://www.google.com",
+		"photo": "http://i.kinja-img.com/gawker-media/image/upload/s--pEKSmwzm--/c_scale,fl_progressive,q_80,w_800/1414228815325188681.jpg"
+	}, {
+		"id": 17,
+		"name": "Microsoft ",
+		"description": "Microsoft is an American multinational corporation that develops, manufactures, licenses, supports and sells computer software, consumer electronics and personal computers and services. Its best known software products are the Microsoft Windows line of operating systems, Microsoft Office office suite, and Internet Explorer web browser. Its flagship hardware products are Xbox game console and the Microsoft Surface series of tablets.",
+		"url": "http://www.microsoft.com",
+		"photo": "https://mran.microsoft.com/assets/img/MSFT_logo_rgb_C-Gray.3b156229.png"
+	}, {
+		"id": 18,
+		"name": "IBM ",
+		"description": "For more than a century IBM has been dedicated to every client's success and to creating innovations that matter for the world",
+		"url": "http://www.ibm.com",
+		"photo": "http://logok.org/wp-content/uploads/2014/06/IBM-logo-blue.png"
+	}, {
+		"id": 19,
+		"name": "ShoCard ",
+		"description": "Identity for a Mobile World",
+		"url": "https://shocard.com",
+		"photo": "https://shocard.com/wp-content/uploads/2015/05/ShoCard-Frontpage-Splash1.png"
+	}, {
+		"id": 20,
+		"name": "OneName",
+		"description": "The easiest way to start receiving bitcoins. Claim your Bitcoin username and show friends your profile on the whitepages directory for Bitcoin.",
+		"url": "https://onename.com",
+		"photo": "https://onename.com/static/images/onename-logo-1200x630.jpg"
+	}, {
+		"id": 21,
+		"name": "Ethereum ",
+		"description": "Ethereum is a decentralized platform for applications that run exactly as programmed without any chance of fraud, censorship or third-party interference.",
+		"url": "https://www.ethereum.org",
+		"photo": "https://ethereum.org/images/wallpaper-homestead.jpg"
+	}, {
+		"id": 22,
+		"name": "Youtube",
+		"description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+		"url": "http://youtube.com",
+		"photo": "https://s.ytimg.com/yts/img/yt_1200-vfl4C3T0K.png"
+	}, {
+		"id": 23,
+		"name": "Symbiont ",
+		"description": "Symbiont is a FinTech company focused on coupling traditional financial markets and the cryptographic technology that powers the Bitcoin currency. Its efforts will be centered around the creation of SMART SECURITIES™: self-executing digital contracts that are stored on a global, shared database called a “blockchain”.",
+		"url": "http://symbiont.io",
+		"photo": "http://symbiont.io/wp-content/uploads/2015/11/logo.png"
+	}, {
+		"id": 24,
+		"name": "DDIQ",
+		"description": "Decrease time to complete enhanced due diligence and make an informed decision faster. Cognitive computing for risk discovery.",
+		"url": "http://www.ddiq.com",
+		"photo": "https://www.ddiq.com/wp-content/uploads/2016/01/DDIQ-colour-transparent_bg.png"
+	}, {
+		"id": 25,
+		"name": "Apple",
+		"description": "Apple leads the world in innovation with iPhone, iPad, Mac, Apple Watch, iOS, OS X, watchOS and more. Visit the site to learn, buy, and get support.",
+		"url": "http://www.apple.com",
+		"photo": "https://www.apple.com/ac/structured-data/images/open_graph_logo.png?201605052101"
+	}, {
+		"id": 26,
+		"name": "AirBnB",
+		"description": "Rent unique accommodations from local hosts in 191+ countries. Feel at home anywhere you go in the world with Airbnb.",
+		"url": "http://airbnb.com",
+		"photo": "https://a2.muscache.com/airbnb/static/logos/belo-1200x630-a0d52af6aba9463c82017da13912f19f.png"
+	}, {
+		"id": 27,
+		"name": "Peerby",
+		"description": "Peerby is a Dutch startup that operates a peer-to-peer sharing service for products. Users can share or request items from people in their neighborhood online, via their mobile or via social media channels. The product was launched (beta) for Amsterdam in August 2012, but the team is rapidly expanding to other areas too.",
+		"url": "http://www.peerby.com",
+		"photo": "http://peerby.com/img/Peerby_quick_fix.png"
+	}, {
+		"id": 28,
+		"name": "Lyft",
+		"description": "Rideshare with Lyft. Lyft is your friend with a car, whenever you need one. Download the app and get a ride from a friendly driver within minutes.",
+		"url": "http://lyft.com",
+		"photo": "https://s3.amazonaws.com/lyft-assets/web/lyft-convenience-illo-1200x627.png"
+	}, {
+		"id": 29,
+		"name": "Ebay",
+		"description": "eBay is an online auction and e-commerce platform and marketplace that enables people and businesses to buy and sell a wide variety of goods and services worldwide. The platform connects millions of buyers with sellers globally utilizing PayPal to ensure secure transactions. It also operates specialized marketplaces such as StubHub, the world's largest ticket marketplace as well as eBay Classifieds sites which together have operations in more than 1,000 cities around the world.eBay products can be sold either via a silent auction in which users are able to input the maximum price they are willing to pay and for which the site will automatically increase bids as necessary up to that maximum, or via the Buy It Now feature that enables its users to purchase items at a set price.eBay products and companies include eBay Marketplace, Media Marketplace, PayPal, and various online classifieds sites.eBay was founded in September 1995 by Pierre Omidyar in San Jose, California.",
+		"url": "http://ebay.com",
+		"photo": "http://www.discountsforsale.com/wp-content/uploads/2015/12/ebay-coupons-2016.png"
+	}, {
+		"id": 30,
+		"name": "Uber",
+		"description": "We’re finding better ways for cities to move, work, and thrive. Download the app and get a ride in minutes. Or become a driver and earn money on your schedule.",
+		"url": "https://www.uber.com/",
+		"photo": "https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.0.173/d1a3f4spazzrp4.cloudfront.net/images/facebook-shareimage-1-c3462391c9.jpg"
+	}, {
+		"id": 31,
+		"name": "Curve ",
+		"description": "Curve combines all your credit and debit cards into one single payment card which is accepted everywhere MasterCard® works. Unlock multiple benefits to supercharge your existing payment cards.",
+		"url": "https://www.imaginecurve.com/",
+		"photo": "https://www.imaginecurve.com/assets/logo--curve-f365759883d7e3610efa5dc76c9c80b5e7052c02e1a51f61df8d351e29018f8f.svg"
+	}, {
+		"id": 32,
+		"name": "Coin",
+		"description": "Coin 2.0 is a smart payment device combining your credit, debit and gift cards into one. Make purchases with Coin for greater convenience, security and rewards.",
+		"url": "https://onlycoin.com/",
+		"photo": "https://www.merchantplus.com/wp-content/uploads/2014/04/OnlyCoin-Logo.png"
+	}, {
+		"id": 33,
+		"name": "Stratos ",
+		"description": "The Stratos Card consolidates your wallet with one smart, secure, & simple digital card. Combine your credit, debit, loyalty, gift, and membership cards with Stratos and leave them at home.",
+		"url": "https://stratoscard.com/",
+		"photo": "https://stratoscard.com//assets/facebook-share@2x-a904d3b4cc9263a2f27b5b76e8ef758a.png"
+	}, {
+		"id": 34,
+		"name": "IndieGogo",
+		"description": "As the largest global site for fundraisers, Indiegogo helps individuals, groups and non-profits raise money online to make their ideas a reality through crowdfunding. It's easy to start fundraising today.",
+		"url": "http://www.indiegogo.com",
+		"photo": "http://www.underconsideration.com/brandnew/archives/indiegogo_logo_detail.png"
+	}, {
+		"id": 35,
+		"name": "Kickstarter",
+		"description": "Kickstarter is the world's largest funding platform for creative projects. Every week, tens of thousands of people pledge millions of dollars to projects from the worlds of music, film, art, technology, design, games, fashion, food, publishing, and other creative fields. Since its launch on April 28th, 2009, more than five million people have pledged more than $900 million to projects by creators who always maintain full ownership and complete creative control of their work.",
+		"url": "https://www.kickstarter.com/",
+		"photo": "https://static.kickstarter.com/assets/site/social/ksr-hp-social-18363a83c0f7fd57f54e27802166cb673e74accbf4a7e0e0018875f7fb16f2fe.png"
+	}, {
+		"id": 36,
+		"name": "Crowfunder",
+		"description": "Crowdfunder is the leader in equity crowdfunding. Investors - gain access to trending equity crowdfunding deals. Entrepreneurs – start your crowdfunding campaign.",
+		"url": "http://www.crowdfunder.com",
+		"photo": "https://www.crowdfunder.com/img/cf-logo-facebook.jpg"
+	}, {
+		"id": 37,
+		"name": "StockTwits",
+		"description": "A financial communications platform for the investing community. Learn from other stock traders and get new ideas.",
+		"url": "http://stocktwits.com/",
+		"photo": "http://stocktwits.com/assets/badges/stocktwits200x200.png"
+	}, {
+		"id": 38,
+		"name": "Bloomberg Labs ",
+		"description": "Bloomberg Data Science applies methods from machine learning, natural language processing, and search to complex problems across the company.",
+		"url": "http://www.bloomberglabs.com/data-science/projects/sentiment-analysis-financial-news-social-media/",
+		"photo": "http://www.bloomberglabs.com/content/uploads/sites/2/2014/01/bloomberg-labs.jpg"
+	}, {
+		"id": 39,
+		"name": "Heckyl ",
+		"description": "Heckyl Provides Real Time Financial Information,News Analytics and Heatmaps to Get Exclusive Coverage of Markets, Companies and BusinessesOur goal is to provide high quality financial information that matters to 'You' in real time.We cover Forex, Commodities, over 15000 Public listed companies, a few hundred private companies & startups, along with the world top Private equities players, Hedge funds, Fund Managers and Venture capitalist firms.The beauty lies in its simplicity. Information is short and actionable, allowing a person to read several interesting bits of financial information from various sources at a glance.Discovery is a key focus of the site. It's important for people not to miss any important business event in the world. Using Heckyl it becomes simple to get the most relevant information that matter 'Only You' in real time.In essence, Heckyl helps you explore new ideas and keep pulse on the current business events/issues. Whether you are a short term trader, investor, or Fund Manager, and whether you prefer equities, forex, or commodities, you will find a wealth of information that matters to 'You' streaming at your fingertips.",
+		"url": "http://www.heckyl.com",
+		"photo": "http://techstory.in/wp-content/uploads/2015/01/logo.png"
+	}, {
+		"id": 40,
+		"name": "21",
+		"description": "Introducing the first Bitcoin computer. The 21 Bitcoin Computer is the first computer with native hardware and software support for the Bitcoin protocol.",
+		"url": "https://21.co/",
+		"photo": "https://assets.21.co/landing/img/opengraph.png"
+	}, {
+		"id": 41,
+		"name": "Transferwise ",
+		"description": "TransferWise lets expats, foreign students and businesses move money globally. The firm's pricing and operating model are a substantial departure from standard practice in the money transfer sector, providing customers with a lower-cost alternative to traditional means of moving money internationally.TransferWise was founded in London in March 2010 by Taavet Hinrikus and Kristo Kaarmann. Taavet was part of the small team that started Skype in 2003 and has recently worked with a number of startups as an angel investor and advisor. Kristo had a financial services background from Deloitte and PricewaterhouseCoopers.Institutional investors include IA Ventures, Index Ventures, Seedcamp and Kima Ventures. Strategic angels include Virgin Group Sir Richard Branson and PayPal founder Max Levchin.TransferWise is licensed and regulated by the UK Financial Services Authority.",
+		"url": "https://transferwise.com",
+		"photo": "http://moneytransfercomparison.com/wp-content/uploads/2014/11/cb_8aaf7d10806b06355d1c65e53ed59f08.png"
+	}, {
+		"id": 42,
+		"name": "Xoom ",
+		"description": "Xoom Corporation (Xoom.com) is a San Francisco-based online money transfer company that provides consumer remittance services to the Philippines, India, Latin America, Europe, Australia, Canada, and South Africa. The company was founded in 2001 and is backed by the venture firms Sequoia Capital, New Enterprise Associates, SVB Capital, and Fidelity Ventures.",
+		"url": "https://www.xoom.com",
+		"photo": "http://mms.businesswire.com/media/20150122006196/en/450124/5/Large_green_logo.jpg"
+	}, {
+		"id": 43,
+		"name": "Remitly",
+		"description": "Send Money to the Philippines, Send Money to India, or Send Money to Mexico with Remitly. Transfer Money Online Safely and Simply with Our 100% Satisfaction Guarantee.",
+		"url": "https://www.remitly.com",
+		"photo": "https://dqyag3aekzepn.cloudfront.net/images/logos/logo-full-horizontal-white_2062bbf73e88613dee8238428be77545.svg"
+	}, {
+		"id": 44,
+		"name": "Viv",
+		"description": "Viv is a global platform that enables developers to create an intelligent interface to anything. Viv is taught by the world, knows more than it is taught, and learns every day.",
+		"url": "http://viv.ai/",
+		"photo": "//d29ga2f1yx9xn3.cloudfront.net/images/og-viv-earth-c3184a16.jpg"
+	}, {
+		"id": 45,
+		"name": "Blockchain",
+		"description": "At Blockchain, their mission is to re-imagine how the world transacts. They build innovative software that makes using Bitcoin safe, easy, and secure for all consumers and businesses anywhere in the world.",
+		"url": "http://blockchain.com/",
+		"photo": "http://www.blockchainbunker.com/wp-content/uploads/2015/10/image-130902.jpg"
+	}, {
+		"id": 46,
+		"name": "Ripple",
+		"description": "Ripple’s distributed financial technology allows for banks around the world to directly transact with each other without the need for a central counterparty or correspondent.",
+		"url": "https://ripple.com/",
+		"photo": "https://ripple.com/wp-content/uploads/2014/10/mark.png"
+	}, {
+		"id": 47,
+		"name": "Consensys",
+		"description": "Consensus Systems (ConsenSys) is a venture production studio building decentralized applications and various developer and end-user tools for blockchain ecosystems, focusing primarily on Ethereum.",
+		"url": "https://consensys.net/",
+		"photo": "https://consensys.net/img/logo.svg"
+	}, {
+		"id": 48,
+		"name": "Provenance.Org",
+		"description": "Join Provenance to be a brand with authenticity and integrity: tell your story, discover how things are made and promote supply chain transparency.",
+		"url": "https://www.provenance.org/",
+		"photo": "https://assets.provenance.org/assets/modules/meta-transparency-361d9a1720ad6cd47ef5144e8504036d0b23c6074d3eb339baf83d42785c74aa.jpg"
+	}, {
+		"id": 49,
+		"name": "SkuChain",
+		"description": "Skuchain applies the cryptographic principles developed in the Bitcoin network to security and visibility for the global supply chain.As goods travel from manufacturers to distributors to consumers, the crucial electronic information of what the item is and where it came from becomes disconnected from the SKU itself. A blockchain offers a universal, secure ledger by which SKUs can attest to digitally to their orgins and attributes.",
+		"url": "http://www.skuchain.com/",
+		"photo": "http://www.skuchain.com/img/skc-gray.png"
+	}, {
+		"id": 50,
+		"name": "Elliptic",
+		"description": "We identify illicit activity on the Bitcoin blockchain and provide actionable intelligence to financial institutions and law enforcement agencies.",
+		"url": "https://www.elliptic.co/",
+		"photo": "https://www.elliptic.co/wp-content/uploads/2015/02/image-1.png"
+	}, {
+		"id": 52,
+		"name": "Umbrella LTC",
+		"description": "Umbrella Company is APSCo and Professional Passport approved.Umbrella Company help remove the stress of payroll, tax and administration.With our tax calculator we can provide a free illustration comparing your take home pay if paid PAYE, Contractor Umbrella or by running your own limited company (often called Personal Services Company or PSC).We help ensure you claim all appropriate allowable expenses to minimise your tax liability while offering a host of other benefits.We are a professional organisation offering value for money and we have a team of experienced and fully trained staff who are always keen to help.We offer a 100% HMRC Compliant Umbrella Company Service covering the whole of the UK and can also help Building Contractors get paid through our CIS Service.We have advised over 2,000 contractors in the last 12 months. Please visit our Testimonials section to see some of their feedback.",
+		"url": "https://bitcointalk.org/index.php?topic=687265.0",
+		"photo": "https://ip.bitcointalk.org/?u=https%3A%2F%2Fs3-us-west-1.amazonaws.com%2Fumbrellaholdings%2FNew%2BLogo%2FNew_Logo.png&t=563&c=Af992HOhSnMnLw"
+	}, {
+		"id": 53,
+		"name": "Verisk ",
+		"description": "ISO is a leading source of information about property/casualty insurance risk for a broad spectrum of commercial and personal lines of insurance.",
+		"url": "http://www.verisk.com/iso.html",
+		"photo": "http://cdn.octafinance.com/wp-content/uploads/logos/VeriskAnalytics-Inc-logo.jpg"
+	}, {
+		"id": 54,
+		"name": "AIG",
+		"description": "American International Group, Inc. (AIG) is a leading international insurance organization serving customers in 100 countries. AIG companies serve commercial, institutional, and individual customers through one of the most extensive worldwide property-casualty networks of any insurer. In addition, AIG companies are leading providers of life insurance and retirement services in the United States.",
+		"url": "http://www.aig.com",
+		"photo": "https://pbs.twimg.com/profile_images/523226011949740032/FaYE8a8k_400x400.png"
+	}, {
+		"id": 55,
+		"name": "Academy of Model Aeronautics",
+		"description": "Academy of Model Aeronautics is a model aviation association based in Muncie, Indiana, United States. It is a self-supporting, non-profit organization whose purpose is to promote development of model aviation as a recognized sport and worthwhile recreation activity.AMA sanctions more than 2,000 model competitions throughout the country each year, and certifies official model flying records on a national and international level. Being the chartering organization for more than 2,500 model airplane clubs across the country, AMA organizes the annual National Aeromodeling Championships, the world's largest model airplane competition. It also works with local governments, zoning boards, and parks departments to promote the interests of local chartered clubs.",
+		"url": "www.modelaircraft.org/",
+		"photo": "http://www.modelaircraft.org/images/AMA-stacked-logo-web.jpg"
+	}, {
+		"id": 56,
+		"name": "Nest",
+		"description": "NEST - Hong Kong's only full-service start up incubator, empowering entrepreneurs through capital, management, strategic insight and creative support.",
+		"url": "http://nest.vc",
+		"photo": "https://pbs.twimg.com/profile_images/675374966611791877/vBu5q5w8.png"
+	}, {
+		"id": 57,
+		"name": "Notion",
+		"description": "Notion is full home awareness - giving you the ability to monitor open doors, leaks, temperature, windows and much more",
+		"url": "http://getnotion.com",
+		"photo": "/images/notion-sensor-social.jpg"
+	}, {
+		"id": 58,
+		"name": "Rachio",
+		"description": "Rachio makes running your sprinklers easy and convenient while saving you water and money. It automatically creates a watering schedule that lowers your water bill and ensures the beautiful yard you want.",
+		"url": "http://rachio.com/",
+		"photo": "http://s3-us-west-2.amazonaws.com/rachio-media/marketing/social-media/rachio-social-graphic.jpg"
+	}, {
+		"id": 59,
+		"name": "Lemonade ",
+		"description": "We’ve redesigned insurance from the ground up to make it honest, instant and delightful",
+		"url": "http://www.lemonade.com/",
+		"photo": "http://www.lemonade.com/assets/lemonade-share-image-1d6c2380053d421a3069d9ee87025547.png"
+	}, {
+		"id": 60,
+		"name": "Metromile ",
+		"description": "Pay-per-mile insurance is an affordable insurance for low-mileage drivers. If you aren’t driving much, you shouldn’t be paying much.",
+		"url": "https://www.metromile.com/",
+		"photo": "https://dis73e6k6hel9.cloudfront.net/images/2015-01/gs-logo.png"
+	}, {
+		"id": 61,
+		"name": "OpenDoor",
+		"description": "Opendoor makes you a free offer on your home today, so you can sell on your schedule.",
+		"url": " https://www.opendoor.com/",
+		"photo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1418088241/eddchmqjko00cdz5alwa.png"
+	}, {
+		"id": 62,
+		"name": "Uproov",
+		"description": "World First. Blockchain App Prove photos, videos, audio, call recordings authentic / time stamped/geo location.Can't be manipulated.",
+		"url": "https://uproov.com/",
+		"photo": "https://pbs.twimg.com/profile_images/674735938795208704/sQd8CO9X.jpg"
+	}, {
+		"id": 63,
+		"name": "ProofofExistence.com",
+		"description": "Use our service to anonymously and securely store an online distributed proof of existence for any document. Your documents are NOT stored in our database or in the bitcoin blockchain, so you don't have to worry about your data being accessed by others.All we store is a cryptographic digest of the file, linked to the time in which you submitted the document. In this way, you can later certify that the data existed at that time. This is the first online service allowing you to publicly prove that you have certain information without revealing the data or yourself, with a decentralized certification based on the bitcoin network.The key advantages are anonymity, privacy, and getting a decentralized proof which can't be erased or modified by anyone (third parties or governments). Your document's existence is permanently validated by the blockchain even if this site is compromised or down, so you don't depend or need to trust any central authority. All previous data timestamping solutions lack this freedom.",
+		"url": "https://proofofexistence.com/",
+		"photo": "https://empoweredlaw.wordpress.com/2014/03/11/using-blockchain-technology-to-prove-existence-of-a-document/"
+	}, {
+		"id": 64,
+		"name": "BlockNotary",
+		"description": "Block Notary app allows you to store the digital fingerprint of your photos in the public ledger called the blockchain. Think of it as a notary for the digital age. The app is as simple as clicking the “Share” button.",
+		"url": "https://www.blocknotary.com/",
+		"photo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1433155083/affuo4vuezmofmdjsgwr.jpg"
+	}, {
+		"id": 65,
+		"name": "Quantopian ",
+		"description": "Quantopian is a crowd-sourced quantitative hedge fund.We provide capital, data and infrastructure for quants to research, code, test, and trade algorithmic investing strategies. We have an engaged community of 50,000 quants who discuss concepts and practice, and learn from peers and experts. We provide capital for our community to trade with, both through a monthly contest and through an allocation process for high-quality algorithms.For more information, visit https://www.quantopian.com. Follow us on Twitter @quantopian.",
+		"url": "https://www.quantopian.com/",
+		"photo": "https://media.licdn.com/media/p/6/000/1b0/20a/3df805f.png"
+	}, {
+		"id": 66,
+		"name": "Cyan Spring ",
+		"description": "Algorithmic Trading solutions for brokers and fund managers",
+		"url": "http://www.cyanspring.com/",
+		"photo": "http://www.cyanspring.com/images/art1.jpg"
+	}, {
+		"id": 67,
+		"name": "Jstock",
+		"description": "JStock makes it easy to track your stock investment. It provides well organized stock market information, to help you decide your best investment strategy.",
+		"url": "http://jstock.org",
+		"photo": "https://lh3.ggpht.com/i0snKN9_eMgGL_AkhJsfKIgYZ5xr8K_l6gER7VU_bk5QJWn9J6mPCBNFfN8IqdC9zQ=w300"
+	}, {
+		"id": 68,
+		"name": "Diebold ",
+		"description": "Diebold partners with customers to create unique solutions that solve complex business issues.",
+		"url": "http://www.diebold.com/",
+		"photo": "https://media.lovemondays.com.br/logos/cf9c97/diebold-original.png"
+	}, {
+		"id": 69,
+		"name": "ITAUTEC ",
+		"description": "Itautec is a Brazilian electronic company that was founded in 1979. The company is part of Itaúsa, which is one of the largest private Brazilian business group by sales volume.Itautec makes consumer electronics, banking and retail automation. The company has the tenth largest base of ATMs in the world, and the second in Latin America. Headquartered in São Paulo and with a manufacturing plant in the city of Jundiaí (SP), Itautec has 5,709 direct employees - 5,285 in Brazil and 424 abroad.Itautec is a well-known ATM, kiosk and computer manufacturer in the Brazilian and South American markets, and also has a key role in project deployment and IT services.",
+		"url": "http://www.itautec.com.br/",
+		"photo": "http://www.facil.com.br/assets/uploads/wt_blog_postagens/7210b-logo_itautec.jpg"
+	}, {
+		"id": 70,
+		"name": "Lenddo ",
+		"description": "Lenddo is the world's first online community that empowers the emerging middle class to use online social connections to demonstrate their creditworthiness and access affordable, life-improving financial services.",
+		"url": "https://www.lenddo.com/",
+		"photo": "https://pbs.twimg.com/profile_images/2236582701/LenddoLogo.png"
+	}, {
+		"id": 71,
+		"name": "Typescore ",
+		"description": "TypeScore uses Natural Language Processing (NLP) to help banks and online lenders assess credit risk.",
+		"url": "http://typescore.me/",
+		"photo": "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAXiAAAAJDYxMzczZjI4LTQzMTUtNDE1ZC05Njg1LWQwMTllOWYwZDE5MQ.png"
+	}, {
+		"id": 72,
+		"name": "NeoFinance ",
+		"description": "Neo’s unique credit assessment platform transforms credit decisioning process for lenders and consumers. Traditional credit decisioning involves scoring consumers without their knowledge. Neo puts the consumer back in the equation so the lender look beyond credit scores and can get to know the person. This allows more credit to be available to those who need it the most while increasing approvals and loan performance for lenders.",
+		"url": "https://neoverify.com/",
+		"photo": "https://neoverify.com/images/neo-logo-o.png"
+	}, {
+		"id": 73,
+		"name": "Stripe ",
+		"description": "Stripe is a suite of APIs that powers commerce for businesses of all sizes.",
+		"url": "https://stripe.com/",
+		"photo": "https://stripe.com/img/open-graph/logo.png?2"
+	}, {
+		"id": 74,
+		"name": "Klarna",
+		"description": "Klarna makes online shopping simple, we allow you to buy without the use of cards and only using top of the mind information",
+		"url": "https://www.klarna.com/",
+		"photo": "https://www.klarna.com/application/themes/klarna/assets/klarna-simplifying-buying.jpg"
+	}, {
+		"id": 75,
+		"name": "ALATION",
+		"description": "Alation was founded in 2012 when leading Ph.D. information retrieval engineers from Google, a designer from Apple and an executive from Oracle teamed up to empower people to easily access the data they need. Customers include some of the world’s largest organizations, with thousands of employees, petabytes of data and thousands of databases. Alation is based in sunny Redwood City, Calif., and funded by Andreessen Horowitz, Bloomberg Beta, Costanoa Venture Capital and Data Collective. For more information, visit alation.com.",
+		"url": "alation.com",
+		"photo": "https://alation.com/wp-content/uploads/2015/10/alation_logo_2015-01-5-w.png"
+	}, {
+		"id": 76,
+		"name": "Ayasdi",
+		"description": "Ayasdi is transforming how the world uses data to solve complex problems by automatically discovering and operationalizing insights from complex datasets. Founded in 2008 after a decade of DARPA and NSF funded research at Stanford, Ayasdi has been named as one of the most innovative companies in big data by Fortune, Fast Company and others. The company's advanced analytics solution combines machine learning with Topological Data Analysis (TDA), enabling users to extract subtle, often hidden insights from their data. Funded by Khosla Ventures, Institutional Venture Partners, GE Ventures, Citi Ventures, and FLOODGATE, Ayasdi's customers include General Electric, Citigroup, Anadarko, Boehringer Ingelheim, the University of California San Francisco (UCSF), Mercy, and Mount Sinai Hospital.Ayasdi helps the world's biggest and most sophisticated organizations discover breakthroughs that change how we all live and work.",
+		"url": "www.ayasdi.com",
+		"photo": "https://cdn.datafloq.com/vendor/logo/ayasdi-logo.jpg"
+	}, {
+		"id": 77,
+		"name": "Gogobot",
+		"description": "Discover where to stay, eat and play on your adventures and share your experiences with like minded people.",
+		"url": "https://www.gogobot.com/",
+		"photo": "https://cdn.gbot.me/img/fb_icon.jpg"
+	}, {
+		"id": 78,
+		"name": "Mastercard",
+		"description": "MasterCard provides payment processing products and solutions and related consulting services for consumers and businesses in the United States and internationally.The company offers credit, debit, prepaid, personal, commercial, chip, and contactless cards; loyalty and reward solutions; and cardholder benefits and services. It also provides payment processing solutions; and payment security and fraud management solutions to monitor, detect, and fight fraud through the transaction lifecycle. In addition, it offers payment-focused consulting, information, and outsourcing services to financial institutions and merchants; and franchising activities.MasterCard was formerly known as Interbank Card Association. The company was founded in 1966 and is headquartered in Purchase, New York. It has locations in Singapore, Australia, China, the United Arab Emirates, Egypt, Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Morocco, New Zealand, the Philippines, South Africa, Taiwan, Canada, Czech Republic, Germany, Greece, Hungary, Ireland, Italy, Poland, Portugal, Romania, the Russian Federation, Spain, Sweden, Switzerland, Turkey, the United Kingdom, Argentina, Brazil, Colombia, Peru, and Venezuela.",
+		"url": "http://www.mastercard.com",
+		"photo": "https://upload.wikimedia.org/wikipedia/commons/7/72/MasterCard_early_1990s_logo.png"
+	}, {
+		"id": 79,
+		"name": "Correlix  ",
+		"description": "Correlix, a leader in independent Latency Intelligence™ solutions, offers RaceTeam™, the leading latency management service providing real-time latency visibility for buy-side, sell-side and liquidity venues. Customers rely on Correlix to monitor, measure and minimize latency in trade execution and market data flows in real-time. The company's global client base encompasses the world's largest high frequency trading sell-side, buy-side and market centers as well as low-latency service providers. The majority of the large US exchanges are RaceTeam members, including CHX, EDGA, EDGX, NASDAQ, NASDAQ BX, NASDAQ PSX, NASDAQ PHLX, NYSE, ARCA, ARCA Options, AMEX, CBOE , C2, BATS BZX Exchange, BATS BYX Exchange and BATS Options.",
+		"url": "www.correlix.com",
+		"photo": "http://n6zgo3se7pe2sazc62u1v9qe.wpengine.netdna-cdn.com/wp-content/uploads/medici_companies/correlixLogo1.jpg"
+	}, {
+		"id": 80,
+		"name": "Gigamon ",
+		"description": "Gigamon develops intelligent network visibility solutions that monitor, manage and deliver end-to-end visibility across enterprise, data centers and service providers.",
+		"url": "https://www.gigamon.com/",
+		"photo": "https://www.gigamon.com/sites/default/files/gigamon-logo.jpg"
+	}, {
+		"id": 81,
+		"name": "Samsumg's Sami",
+		"description": "SAMI is a data exchange platform for IoT developers. Your devices and sensors - of any type, style or vendor - push their data to the cloud, where SAMI collects and standardizes it, then makes it available through web APIs. SAMI data platform lets you focus on innovative services and applications.",
+		"url": "https://www.samsungsami.io/",
+		"photo": "https://pbs.twimg.com/profile_images/575775393719828480/6lG9jK9j.jpeg"
+	}, {
+		"id": 82,
+		"name": "Fitbit",
+		"description": "Find your fit with Fitbit's family of fitness products that help you stay motivated and improve your health by tracking your activity, exercise, food, weight and sleep.",
+		"url": "http://www.fitbit.com",
+		"photo": "https://pbs.twimg.com/profile_images/684426513773531136/Tk5cdz9f.png"
+	}, {
+		"id": 83,
+		"name": "StickK ",
+		"description": "stickK.com is the product of three Yale University economists who believed that using contracts could be an effective way to help people accomplish their objectives. Users can create contracts around common resolutions (weight loss, stopping smoking, getting exercise) or create custom contracts. Depending on the contract, stickK.com users can put money on the contract, penalizing themselves financially if they can't come through as delivered.",
+		"url": "http://www.stickk.com/",
+		"photo": "http://escape-101.com/wp-content/uploads/2008/03/stickk.jpg"
+	}, {
+		"id": 84,
+		"name": "Wildflower",
+		"description": "Wildflower Health is building a mobile health engagement platform to improve healthcare quality and lower medical costs. Our team is passionate about harnessing user-centered design and technology to deliver products that drive smarter healthcare decisions. Over time, we aspire to leverage a unique set of analytics to deliver novel insights that improve treatment and cost-management in the clinical areas we support. We believe that innovative digital health solutions have the power to truly change healthcare.",
+		"url": "http://www.wildflowerhealth.com",
+		"photo": "http://static1.squarespace.com/static/5339e1a7e4b084aae2d8aded/t/53bad7eae4b09821ce6c2b36/1458928469844/?format=1000w"
+	}, {
+		"id": 85,
+		"name": "Betterment ",
+		"description": "Betterment is the smarter automated investing service that provides optimized investment returns for individual, IRA, Roth IRA & rollover 401(k) accounts",
+		"url": "https://www.betterment.com/",
+		"photo": "https://www.betterment.com/wp-content/uploads/2016/04/whatwedo_computer.jpg"
+	}, {
+		"id": 86,
+		"name": "WealthFront ",
+		"description": "Wealthfront is the largest and fastest growing automated investment service. It combines world-class financial expertise and leading edge technology to provide sophisticated investment management at prices affordable for everyone.The company is headquartered in Palo Alto, California, and received funding from Index Ventures, Ribbit Capital, Social+Capital Partnership, Greylock Partners, DAG Ventures and such angel investors as Marc Andreessen, Ben Horowitz and Jeff Jordan.",
+		"url": "https://www.wealthfront.com/",
+		"photo": "http://indexventures.com/sites/default/files/images/blog-post/Wealthfront%20copy_0.png"
+	}, {
+		"id": 87,
+		"name": "Verios ",
+		"description": "A solução mais inteligente para seus investimentos. Conheça os melhores investimentos. Comparação de fundos.",
+		"url": "https://verios.com.br/",
+		"photo": "https://verios.com.br/wp-content/themes/verios-site/images/ogimage.png"
+	}, {
+		"id": 88,
+		"name": "Lexis Nexis ",
+		"description": "Provider of legal, government, business and high-tech information sources. Learn more or login to your product now.",
+		"url": "http://www.lexisnexis.com/",
+		"photo": "http://11284-presscdn-0-40.pagely.netdna-cdn.com/wp-content/uploads/2014/09/LexisNexis.jpg"
+	}, {
+		"id": 89,
+		"name": "Staples",
+		"description": "Staples is office products company. They are committed to making it easy for customers around the globe to buy a wide range of office products, including supplies, technology, furniture, and business services. With $23 billion in sales, Staples serves businesses of all sizes and consumers in 27 countries throughout North and South America, Europe, Asia and Australia.",
+		"url": "www.staples.com",
+		"photo": "http://i.forbesimg.com/media/lists/companies/staples_416x416.jpg"
+	}, {
+		"id": 90,
+		"name": "NYMI ",
+		"description": "Nymi is a team of thinkers and innovators aimed at shaping the world of technology through biometrics, authentication technology, and their concept of identity.While they specialize in biometrics and authentication technology for consumer electronics, they also develop technology that uniquely utilizes gesture control, proximity detection, and application development.",
+		"url": "https://nymi.com/",
+		"photo": "http://p4.zdassets.com/hc/settings_assets/383723/200075615/yOAo3ZOQaOyocEyqhXxROA-Nymi_Name_Logo.png"
+	}, {
+		"id": 91,
+		"name": "Jawbone ",
+		"description": "Jawbone is creator of the revolutionary UP fitness tracker system and is a world-leader in consumer technology and wearable devices powered by data science.",
+		"url": "https://jawbone.com/",
+		"photo": "http://content.jawbone.com/static/socialmedia/fb/web/jawbone-logo.jpg"
+	}, {
+		"id": 92,
+		"name": "Misfit ",
+		"description": "Misfit invents and manufactures premium wearable computing products, such as the Shine and Flash.",
+		"url": "http://misfit.com/",
+		"photo": "http://mms.businesswire.com/media/20150106005071/pt/447161/5/Logo_Misfit_cmyk_100black.jpg"
+	}, {
+		"id": 93,
+		"name": "Seedrs",
+		"description": "Online investing opportunities in the best new startup businesses, and raise seed and angel investment, with top European equity crowdfunding site Seedrs.",
+		"url": "https://www.seedrs.com/",
+		"photo": "https://assets.seedrs.com/documents/seedrs_social_share.jpg"
+	}, {
+		"id": 94,
+		"name": "Crowdcube ",
+		"description": "Online investing via crowdfunding platform, raise business finance through Crowdcube, the world's first equity crowdfunding platform, online investing just got easier",
+		"url": "https://www.crowdcube.com/",
+		"photo": "http://www.fintechprofile.com/wp-content/uploads/2015/07/crowdcube-logo.jpg"
+	}, {
+		"id": 95,
+		"name": "Welltok ",
+		"description": "Optimizing Health, Maximizing Rewards. See how Welltok optimizes consumer health... and your business",
+		"url": "http://welltok.com/",
+		"photo": "https://pbs.twimg.com/profile_images/378800000856657135/zKJDlC8p.jpeg"
+	}, {
+		"id": 96,
+		"name": "IBM's Watson",
+		"description": "IBM Watson is a cognitive system enabling a new partnership between people and computers.",
+		"url": "http://www.ibm.com/smarterplanet/us/en/ibmwatson/",
+		"photo": "http://www.ibm.com/smarterplanet/us/en/ibmwatson/assets/img/og/ogimage-tech.jpg"
+	}, {
+		"id": 97,
+		"name": "NOKIA",
+		"description": "Welcome to Nokia – we focus on the human possibilities of technology to help people thrive.",
+		"url": "http://nokia.com",
+		"photo": "http://www2.nokia.com/sites/all/themes/nokia/images/default_og_image.jpg"
+	}, {
+		"id": 98,
+		"name": "HomeAway",
+		"description": "Find & book vacation rentals with HomeAway. Rent everything from cabins & condos to castles or villas. The whole house. The whole family. A whole vacation.",
+		"url": "http://www.homeaway.com",
+		"photo": "https://csvcus.homeaway.com/rsrcs/cdn-logos/1.11.1/bce/moniker/homeaway_us/logo.png"
+	}, {
+		"id": 100,
+		"name": "Docker ",
+		"description": "Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.",
+		"url": "http://www.docker.com/",
+		"photo": "http://www.docker.com/sites/default/files/social/docker-facebook-share.png"
+	}, {
+		"id": 101,
+		"name": "Batelle",
+		"description": "Every day, the people of Battelle apply science and technology to solving what matters most.",
+		"url": "http://www.battelle.org/",
+		"photo": "http://logonoid.com/images/battelle-logo.png"
+	}, {
+		"id": 102,
+		"name": "Axcient ",
+		"description": "Axcient is an entirely new type of cloud platform that eliminates data loss, keeps applications up and running, and makes sure that IT infrastructures never go down.Designed for today's always-on business, Axcient replaces legacy backup, business continuity, and disaster recovery software and hardware, and reduces the amount of expensive copy data in an organization by as much as 80%.By mirroring an entire business in the cloud, Axcient makes it simple to access and restore data from any device, failover IT systems, and virtualize your entire office with a click - all from a single deduplicated copy.Trusted by thousands of businesses to store and protect more than 10 billion files and applications, Axcient maximizes productivity, reduces cost, and eliminates risk.",
+		"url": "www.axcient.com",
+		"photo": "https://axcient.com/wp-content/uploads/2015/01/AxcientWordmark-PRINT-01.png"
+	}, {
+		"id": 103,
+		"name": "Penny ",
+		"description": "Meet Penny, your personal finance coach. Spend smarter, save more, live happier.",
+		"url": "https://www.pennyapp.io/",
+		"photo": "https://www.pennyapp.io/assets/og.png"
+	}, {
+		"id": 104,
+		"name": "Lucid ",
+		"description": "Lucid pioneered behavioral efficiency and occupant engagement technology in commercial buildings. The company is now endeavoring to transform the energy management industry with an operating system for buildings.Lucid's BuildingOS aggregates energy and water data from 150+ metering and building systems into one unified source, including building automation, submeters, lighting and plug load controls, and on-site generation.Lucid’s Building Dashboard enables energy reduction competitions, showcases real-time building performance and green features, and empowers occupants to become active participants in energy management.Lucid’s software is used by the world’s leading companies and institutions to manage thousands of buildings with $500 million in annual energy bills. Based in Oakland, California, Lucid is a privately held software company.",
+		"url": "http://www.lucid.ai/",
+		"photo": "https://lucidconnects.com/assets/img/case-study/lucid-logo-large.jpg"
+	}, {
+		"id": 105,
+		"name": "Open AI",
+		"description": "OpenAI is a non-profit artificial intelligence (AI) research company",
+		"url": "https://www.openai.com/",
+		"photo": "https://openai.com/images/social.jpg"
+	}, {
+		"id": 106,
+		"name": "Upstart ",
+		"description": "Data-driven marketplace lending platform. Better rates through better data. Check your rate in 2 minutes",
+		"url": "https://www.upstart.com/",
+		"photo": "https://d18lepvcgug567.cloudfront.net/static/beachfriends2.jpg"
+	}, {
+		"id": 107,
+		"name": "KIVA ",
+		"description": "Make a loan to an entrepreneur across the globe for as little as $25. Kiva is the world's first online lending platform connecting online lenders to entrepreneurs across the globe.",
+		"url": "https://www.kiva.org/",
+		"photo": "https://www.kiva.org/rgit668bb978491c95931a0e6e3a6ff1abf4f02cf487/img/fb_kivaloans_new.gif"
+	}, {
+		"id": 108,
+		"name": "ZOPA",
+		"description": "Zopa is the UK's largest peer-to-peer lending service. Zopa matches sensible borrowers looking for low rate loans with smart lenders looking for high interest on their money.",
+		"url": "http://www.zopa.com/",
+		"photo": "http://www.zopa.com/images/logos/zopa-logo_web_1024px.png"
+	}, {
+		"id": 109,
+		"name": "IBA Applications ",
+		"description": "IBSuite for Small-Ticket is ideal for creating microinsurance products, supporting a fully integrated value chain and a fully automated process",
+		"url": "http://www.ibapplications.com/en/small-ticket",
+		"photo": "http://iba1.wpengine.com/wp-content/uploads/2016/04/logo_IAB_4f-350-black-300x134.png"
+	}, {
+		"id": 110,
+		"name": "BitNation ",
+		"description": "Bitnation provides the same services traditional governments provides, from dispute resolution and insurance to security and much more.",
+		"url": "https://bitnation.co",
+		"photo": "http://cointelegraph.com/images/725_aHR0cDovL2NvaW50ZWxlZ3JhcGguY29tL3N0b3JhZ2UvdXBsb2Fkcy92aWV3L2RhYmU4OWNlN2EyMTczYmIwZDg1MjVlZTU5Y2QwZmE0LmpwZw==.jpg"
+	}, {
+		"id": 111,
+		"name": "Stampery ",
+		"description": "Create an immutable record of existence, integrity and ownership of your documents, business processes and communications leveraging the Blockchain",
+		"url": "https://stampery.com",
+		"photo": "https://stampery.com/app/rsc/screenshots/sm_thumbnail.png"
+	}, {
+		"id": 112,
+		"name": "Telefonica",
+		"description": "Telefónica es la primera multinacional española por capitalización bursátil y una de las mayores compañías de telecomunicaciones privadas del mundo. Está presente en 25 países. Telefónica tiene una fuerte presencia en España, Europa y Latinoamérica, donde la compañía concentra, fundamentalmente, su estrategia de crecimiento. Ofrece productos, servicios y soluciones de Telefonía móvil, Telefonía fija, y banda ancha para Internet. Productos y soluciones orientados a usuarios residenciales (hogar), Pymes, y grandes empresas. Se ofrece igualmente información para accionistas e inversores y medios de comunicación e información corporativa de Telefónica.",
+		"url": "http://www.telefonica.com",
+		"photo": "https://upload.wikimedia.org/wikipedia/en/b/b2/Telef%C3%B3nica_logo.png"
+	}, {
+		"id": 113,
+		"name": "Masternaut",
+		"description": "Masternaut UK Limited, doing business as Masternaut Three X, provides vehicle tracking and mobile solutions in the United Kingdom and Europe. It offers planning, tracking, and reporting solutions that enable to plan and schedule routes, track vehicles, deliveries and jobs, and communicate with mobile workers on the road. The companyâ€™s products include a M-Vehicle Tracking solution for monitoring driver position, progress, and hours; M-Hourtrak, a solution to record and monitor driver hours; M-Messenger that provides updates and alerts; M-Reports that provide reports of vehicle and driver activity, automated weekly timesheets, and reports detailing excessive time spent; M-Routing and Scheduling that enables automatic scheduling; M-Delivery, a planning software for vehicle and load management; M-Mobile Applications that provide contact between base and driver; and M-Navigation that offers voiced turn-by-turn directions, traffic alerts, and alternative route option for unexpected incidents. It also provides solutions, such as X-Schedule, a planning solution for increasing productivity; X-Service, a Web delivered service management solution; and X-Service Pro, a back-office integrated service management solution. It serves various industrial sectors, such as courier and express services, local government, sales and marketing, waste management, recovery, rail maintenance, distribution and logistics, service and maintenance, and newspaper distribution.Masternaut UK Limited was formerly known as Live Reply Ltd. and changed its name in September 2002. Masternaut UK Limited was incorporated in 2000 and is based in Leeds, the United Kingdom with additional offices in France and Europe. As of December 1, 2009, Masternaut UK Limited operates as a subsidiary of Masternaut International.",
+		"url": "http://www.masternaut.co.uk",
+		"photo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1397198170/5543e5d03e7e8f64a411caed9e982edb.jpg"
+	}, {
+		"id": 114,
+		"name": "Geotab",
+		"description": "Geotab’s fleet management software and GPS vehicle tracking devices are used by thousands of fleet managers to track over 450,000 vehicles. Request a free demo today!",
+		"url": "http://www.geotab.com/",
+		"photo": "https://www.artusmode.com/wp-content/uploads/2014/06/geotabC7EC4363A3736759998B3CE5.jpg"
+	}, {
+		"id": 115,
+		"name": "Amazon",
+		"description": "Amazon is an e-commerce retailer formed originally to provide consumers with products in two segments. It offers users with merchandise and content purchased for resale from vendors and those offered by third-party sellers.Operating in North American and International markets, Amazon provides its services through websites such as amazon.com and amazon.ca. It also enables authors, musicians, filmmakers, app developers, and others to publish and sell content via its branded websites.Amazon also provides Kindle Direct Publishing, an online platform that allows independent authors and publishers to make their books available in the Kindle Store. In addition, it provides co-branded credit card agreements and advertising services, serves developers and enterprises through Amazon Web Services, and manufactures and sells electronic devices.It offers Amazon Prime which is an annual membership program. It provides free shipping, streaming, and access to books to borrow and read on a Kindle device.Amazon was founded in 1994 and is headquartered in Seattle, Washington",
+		"url": "http://amazon.com",
+		"photo": "http://logok.org/wp-content/uploads/2015/01/Amazon-logo.png"
+	}, {
+		"id": 116,
+		"name": "Algorithmia",
+		"description": "Algorithmia makes applications smarter, by building a community around algorithm development, where state of the art algorithms are always live and accessible to anyone.",
+		"url": "http://www.algorithmia.com",
+		"photo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1397181177/0bb37aaab62bd32dbf0924f0b3e3d487.png"
+	}],
+	"references": [{
+		"id": 0,
+		"label": "The Future of UI Design? Old-School Text Messages | WIRED",
+		"url": "http://www.wired.com/2015/06/future-ui-design-old-school-text-messages/",
+		"description": "Texting is easy, familiar, and ubiquitous, so it makes sense that it could become the main channel of communication.",
+		"image_url": "http://www.wired.com/wp-content/uploads/2015/06/GettyImages-488632261.jpg"
+	}, {
+		"id": 1,
+		"label": "The Future of Conversational UI Belongs to Hybrid Interfaces — Medium",
+		"url": "https://medium.com/swlh/the-future-of-conversational-ui-belongs-to-hybrid-interfaces-8a228de0bdb5#.gx0iwcqll",
+		"description": "2016 is the year of everything conversational. Messaging apps are taking over the world and app store rankings with incr…",
+		"image_url": "https://cdn-images-1.medium.com/max/1200/1*vgMiTstFJG8nYmTSY0Od_g.png"
+	}, {
+		"id": 2,
+		"label": "Why Text-Based Commerce is the Future of Intelligent Assistance for Facebook and WeChat |",
+		"url": "http://opusresearch.net/wordpress/2016/01/07/why-text-based-chat-is-the-future-of-intelligent-assistance-for-facebook-and-wechat/",
+		"description": "As mobile becomes the preferred way of joining the connected world, will chat and text-based messaging apps be the primary user interface (UI) for intelligent",
+		"image_url": "http://opusresearch.net/wordpress/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+	}, {
+		"id": 3,
+		"label": "Why Visa Europe is Testing Remittances on the Blockchain",
+		"url": "http://www.coindesk.com/visa-europe-remittances-bitcoin-blockchain/",
+		"description": "Visa Europe discusses why it is using the bitcoin blockchain as part of its new proof-of-concept for the remittance market.",
+		"image_url": "http://media.coindesk.com/2015/11/visa-euros-e1448405415133.jpg"
+	}, {
+		"id": 4,
+		"label": "BTL Unveils Blockchain Remittance Technology Interbit - CCN: Financial Bitcoin & Cryptocurrency News",
+		"url": "https://www.cryptocoinsnews.com/btl-unveils-blockchain-remittance-technology-interbit/",
+		"description": "Adding to the fast developing ecosystem of businesses looking to leverage blockchain technology with remittances, BTL Group LTD. has announced that it will showcase its new blockchain technology.",
+		"image_url": ""
+	}, {
+		"id": 5,
+		"label": "The Coming Branded-Currency Revolution",
+		"url": "https://hbr.org/2013/07/the-coming-branded-currency-re/",
+		"description": "Coupons, loyalty points, and gift cards are about to converge into something powerful.",
+		"image_url": ""
+	}, {
+		"id": 6,
+		"label": "Paul Kemp-Robertson: Bitcoin. Sweat. Tide. Meet the future of branded currency. | TED Talk | TED.com",
+		"url": "https://www.ted.com/talks/paul_kemp_robertson_bitcoin_sweat_tide_meet_the_future_of_branded_currency?language=en",
+		"description": "Currency -- the bills and coins you carry in your wallet and in your bank account -- is founded on marketing, on the belief that banks and governments are trustworthy. Now, Paul Kemp-Robertson walks us through a new generation of currency, supported by that same marketing … but on behalf of a private brand. From Nike Sweat Points to bottles of Tide (which are finding an unexpected use in illegal markets), meet the non-bank future of currencies.",
+		"image_url": "https://pi.tedcdn.com/r/pe.tedcdn.com/images/ted/991a38e61a189f6b8cefd1ad14df7dbc3e5c8114_1600x1200.jpg?c=1050%2C550&w=1050"
+	}, {
+		"id": 7,
+		"label": "4 Hype-Free Predictions for Private Blockchains in 2016 - CoinDesk",
+		"url": "http://www.coindesk.com/four-boring-predictions-for-private-blockchains-in-2016/",
+		"description": "",
+		"image_url": "http://media.coindesk.com/2015/12/Man-with-paperclip-chain.jpg"
+	}, {
+		"id": 8,
+		"label": "On Public and Private Blockchains - Ethereum Blog",
+		"url": "https://blog.ethereum.org/2015/08/07/on-public-and-private-blockchains/",
+		"description": "",
+		"image_url": ""
+	}, {
+		"id": 9,
+		"label": "Public versus Private Blockchains",
+		"url": "http://bitfury.com/content/5-white-papers-research/public-vs-private-pt1-1.pdf",
+		"description": "",
+		"image_url": ""
+	}, {
+		"id": 10,
+		"label": "Ripple Releases Interledger to Connect Bank and Blockchain Worlds",
+		"url": "http://www.coindesk.com/ripple-interledger-connect-bank-blockchain/",
+		"description": "CoinDesk speaks to Ripple about Interledger, its new protocol aimed at connecting bank and blockchain ledgers.",
+		"image_url": "http://media.coindesk.com/2015/10/network-connections-e1444317168400.jpg"
+	}, {
+		"id": 11,
+		"label": "Interledger",
+		"url": "http://interledger.org/",
+		"description": "Payments across payment networks",
+		"image_url": ""
+	}, {
+		"id": 12,
+		"label": "Blockchained Technology: Escrow Services with Blockchain technology",
+		"url": "http://blockchained.blogspot.co.uk/2015/05/escrow-services-with-blockchain.html",
+		"description": "",
+		"image_url": "https://lh4.googleusercontent.com/zsyxNFMGWlqd0Ln0EpeBalL5XPrcwivjKn5P0TtL_cyxLkAetODjwV5esyAyl5NCs5hciWVB7mqr9LG9h21A-wK2jSwPxUC7cPf_MsKSLKQWNzd59TNACcEjRBp1VTI25FL7amk=w1200-h630-p-nu"
+	}, {
+		"id": 13,
+		"label": "Augur Bets on Blockchain-Powered Prediction Markets",
+		"url": "http://www.coindesk.com/augur-future-blockchain-prediction-market/",
+		"description": "Can the blockchain be used to build the first unstoppable prediction market? The six-person team behind Augur are betting the answer is 'yes'.",
+		"image_url": "http://media.coindesk.com/2015/02/Screen-Shot-2015-02-26-at-5.42.51-PM.png"
+	}, {
+		"id": 14,
+		"label": "Augur: a Decentralized, Open-Source Platform for Prediction Markets",
+		"url": "http://augur.link/augur.pdf",
+		"description": "Augur: a Decentralized, Open-Source Platform for Prediction Markets",
+		"image_url": ""
+	}, {
+		"id": 15,
+		"label": "Why & How Decentralized Prediction Markets Will Change Just About Everything. — Medium",
+		"url": "https://medium.com/@ConsenSys/why-how-decentralized-prediction-markets-will-change-just-about-everything-15ff02c98f7c#.5l75em2x5",
+		"description": "Excuse the superlatives. I’m usually a lot more guarded with these. However, the more I think about it, the more I feel …",
+		"image_url": "https://cdn-images-1.medium.com/max/1200/1*qa-kxGuND7kguIYxx-3cWQ.jpeg"
+	}, {
+		"id": 16,
+		"label": "Colu Launch Taps Bitcoin Blockchain to Digitize Assets, Starting with Music",
+		"url": "http://cointelegraph.com/news/colu-launch-taps-bitcoin-blockchain-to-digitize-assets-starting-with-music",
+		"description": "Colu, a platform using Bitcoin blockchain technology, today announced that it has beta launched its platform for developers.",
+		"image_url": "http://cointelegraph.com/images/725_aHR0cDovL2NvaW50ZWxlZ3JhcGguY29tL3N0b3JhZ2UvdXBsb2Fkcy92aWV3Lzk1YjlmZjliNTZiNGQ1MjUxNzdjZTU5OTZkYjIyYjA0LnBuZw==.jpg"
+	}, {
+		"id": 17,
+		"label": "Blockchain Technology as a Platform for digitization",
+		"url": "http://www.ey.com/Publication/vwLUAssets/EY-blockchain-technology-as-a-platform-for-digitization/$FILE/EY-blockchain-technology-as-a-platform-for-digitization.pdf",
+		"description": "",
+		"image_url": ""
+	}, {
+		"id": 18,
+		"label": "Quantum encryption means perfect security",
+		"url": "http://www.sans.org/reading-room/whitepapers/vpns/quantum-encryption-means-perfect-security-986",
+		"description": "",
+		"image_url": ""
+	}, {
+		"id": 19,
+		"label": "Quantum cryptography: Entanglement takes off | The Economist",
+		"url": "http://www.economist.com/blogs/babbage/2012/02/quantum-cryptography",
+		"description": "Quantum cryptography is set to go into orbit",
+		"image_url": "http://www.economist.com/sites/default/files/images/babbage.png"
+	}, {
+		"id": 20,
+		"label": "A breakthrough in quantum cryptography could make financial markets of the future cheat-proof — Quartz",
+		"url": "http://qz.com/143299/a-new-form-of-quantum-cryptography-could-make-financial-markets-of-the-future-cheat-proof/",
+		"description": "Demonstrating a feat that was until recently thought to be impossible, researchers in Geneva, Singapore, Cambridge and Waterloo, Ontario have 'unconditionally guaranteed' the security and sanctity of a message transmitted between two points on earth. Their work (pdf) could lead to impenetrable communications networks for financial trading, online voting, or an endless variety of other tasks...",
+		"image_url": "http://qzprod.files.wordpress.com/2013/11/eye-spy.jpg?quality=80&strip=all&w=1600"
+	}, {
+		"id": 21,
+		"label": "Blockchain Identity: Solving the Global Identification Crisis | Blockchain Agenda with Inside Bitcoins – News, Price, Events",
+		"url": "http://insidebitcoins.com/news/blockchain-identity-solving-the-global-identification-crisis/35028",
+		"description": "Blockchain news and the leading global blockchain & bitcoin events",
+		"image_url": "http://insidebitcoins.com/wp-content/uploads/2015/09/BlockchainIdentity-150x150.jpg"
+	}, {
+		"id": 22,
+		"label": "Crypto 2.0 Musings - Digital Identity on Blockchain",
+		"url": "https://www.linkedin.com/pulse/crypto-20-musings-digital-identity-blockchain-alex-batlin",
+		"description": "",
+		"image_url": "https://media.licdn.com/mpr/mpr/jc/AAEAAQAAAAAAAAPYAAAAJGUxOGIzNjA4LTdmZDYtNDY0Mi04ZjgxLWY2YjVhMzM2ZjdmNw.jpg"
+	}, {
+		"id": 23,
+		"label": "ShoCard's Quest to Secure Identity on the Blockchain",
+		"url": "http://www.coindesk.com/shocards-quest-secure-identity-blockchain/",
+		"description": "CoinDesk speaks to ShoCard CEO Armin Ebrahimi about his company's efforts to disrupt identity verification via the blockchain.",
+		"image_url": "http://media.coindesk.com/2015/07/17384822311_94a894b98d_o-1030x688.jpg"
+	}, {
+		"id": 24,
+		"label": "Smart Contracts' Are the Future of Blockchain | Bank Think",
+		"url": "http://www.americanbanker.com/bankthink/smart-contracts-are-the-future-of-blockchain-1078705-1.html",
+		"description": "A concept that predated bitcoin itself is becoming more than a thought exercise as blockchains explore ways to harness smart contracts for greater uses.",
+		"image_url": "http://cdn.americanbanker.com/media/newspics/derose-chris-250.jpg"
+	}, {
+		"id": 25,
+		"label": "The Idea of Smart Contracts",
+		"url": "http://szabo.best.vwh.net/smart_contracts_idea.html",
+		"description": "",
+		"image_url": ""
+	}, {
+		"id": 26,
+		"label": "What Are Smart Contracts? Cryptocurrency's Killer App | Fast Company | Business + Innovation",
+		"url": "http://www.fastcompany.com/3035723/app-economy/smart-contracts-could-be-cryptocurrencys-killer-app",
+		"description": "By giving computers control over contracts, we can make business more efficient and make the legal system more equitable.",
+		"image_url": "http://c.fastcompany.net/multisite_files/fastcompany/imagecache/620x350/poster/2014/09/3035723-poster-p-2-smart-contracts.jpg"
+	}, {
+		"id": 27,
+		"label": "IBMVoice: How Cognitive Computing Impacts Banks And Financial Markets",
+		"url": "http://www.forbes.com/sites/ibm/2015/11/09/how-cognitive-computing-impacts-banks-and-financial-markets/#39b6ba1525e5",
+		"description": "By Nicholas Drury and Sandipan Sarkar, IBM For the banking industry, cognitive computing has arrived, and its potential to revolutionize the financial services industry is enormous. Cognitive systems -- with the power to unleash a new era of innovation and growth -- are already helping institutions provide better customer service, uncover new [...]",
+		"image_url": "http://blogs-images.forbes.com/ibm/files/2015/10/iStock_000049292286_Small.jpg"
+	}, {
+		"id": 28,
+		"label": "Transforming  financial services",
+		"url": "http://public.dhe.ibm.com/common/ssi/ecm/bk/en/bkb03015usen/BKB03015USEN.PDF?",
+		"description": "",
+		"image_url": ""
+	}, {
+		"id": 29,
+		"label": "The intelligent enterprise: how businesses will use cognitive computing in 2015 | Information Age",
+		"url": "http://www.information-age.com/it-management/strategy-and-innovation/123458811/intelligent-enterprise-how-businesses-will-use-cognitive-computing-2015#sthash.BCLrDn9b.dpuf",
+		"description": "2014 was the year artificial intelligence made its first major forays into the enterprise world. But it's hard to get to the crux of exactly what these technologies can do for us- and how we can expect them to impact the way we do business in 2015 and beyond.",
+		"image_url": "http://www.information-age.com/sites/default/files/styles/article_portrait/public/field/image/cognitive%20computing.jpg?itok=Urulpo2G"
+	}, {
+		"id": 30,
+		"label": "Digital Wallets: End of the Beginning or Beginning of the End? | WIRED",
+		"url": "http://www.wired.com/insights/2015/02/digital-wallets-end-of-the-beginning-or-beginning-of-the-end",
+		"description": "Apple Pay is up and running and digital wallets are back in the limelight. Are merchants, consumers, and the market ready for mass adoption of digital wallets? Google Wallet’s poor early uptake comes to mind four years after its launch in 2011. We believe a combination of factors – part structural, part user experience –…",
+		"image_url": "http://www.wired.com/wp-content/uploads/2014/09/apple-pay-ft2.jpg"
+	}, {
+		"id": 31,
+		"label": "Peer-to-Peer Markets",
+		"url": "http://www.nber.org/papers/w21496.pdf",
+		"description": "",
+		"image_url": ""
+	}],
+	"connections": [{
+		"id": 0,
+		"tech1": 10006,
+		"tech2": 10050
+	}, {
+		"id": 1,
+		"tech1": 10001,
+		"tech2": 10030
+	}, {
+		"id": 2,
+		"tech1": 10035,
+		"tech2": 10034
+	}, {
+		"id": 3,
+		"tech1": 10048,
+		"tech2": 10005
+	}, {
+		"id": 4,
+		"tech1": 10008,
+		"tech2": 10011
+	}, {
+		"id": 5,
+		"tech1": 10028,
+		"tech2": 10023
+	}, {
+		"id": 6,
+		"tech1": 10015,
+		"tech2": 10015
+	}, {
+		"id": 7,
+		"tech1": 10011,
+		"tech2": 10012
+	}, {
+		"id": 8,
+		"tech1": 10042,
+		"tech2": 10033
+	}, {
+		"id": 9,
+		"tech1": 10038,
+		"tech2": 10025
+	}, {
+		"id": 10,
+		"tech1": 10046,
+		"tech2": 10022
+	}, {
+		"id": 11,
+		"tech1": 10020,
+		"tech2": 10011
+	}, {
+		"id": 12,
+		"tech1": 10034,
+		"tech2": 10042
+	}, {
+		"id": 13,
+		"tech1": 10034,
+		"tech2": 10012
+	}, {
+		"id": 14,
+		"tech1": 10014,
+		"tech2": 10037
+	}, {
+		"id": 15,
+		"tech1": 10010,
+		"tech2": 10009
+	}, {
+		"id": 16,
+		"tech1": 10022,
+		"tech2": 10006
+	}, {
+		"id": 17,
+		"tech1": 10035,
+		"tech2": 10005
+	}, {
+		"id": 18,
+		"tech1": 10019,
+		"tech2": 10014
+	}, {
+		"id": 19,
+		"tech1": 10017,
+		"tech2": 10013
+	}, {
+		"id": 20,
+		"tech1": 10034,
+		"tech2": 10038
+	}, {
+		"id": 21,
+		"tech1": 10045,
+		"tech2": 10041
+	}, {
+		"id": 22,
+		"tech1": 10042,
+		"tech2": 10033
+	}, {
+		"id": 23,
+		"tech1": 10025,
+		"tech2": 10041
+	}, {
+		"id": 24,
+		"tech1": 10012,
+		"tech2": 10047
+	}, {
+		"id": 25,
+		"tech1": 10019,
+		"tech2": 10028
+	}, {
+		"id": 26,
+		"tech1": 10015,
+		"tech2": 10037
+	}, {
+		"id": 27,
+		"tech1": 10043,
+		"tech2": 10046
+	}, {
+		"id": 28,
+		"tech1": 10020,
+		"tech2": 10037
+	}, {
+		"id": 29,
+		"tech1": 10043,
+		"tech2": 10034
+	}, {
+		"id": 30,
+		"tech1": 10001,
+		"tech2": 10006
+	}, {
+		"id": 31,
+		"tech1": 10021,
+		"tech2": 10013
+	}, {
+		"id": 32,
+		"tech1": 10025,
+		"tech2": 10050
+	}, {
+		"id": 33,
+		"tech1": 10035,
+		"tech2": 10046
+	}, {
+		"id": 34,
+		"tech1": 10007,
+		"tech2": 10009
+	}, {
+		"id": 35,
+		"tech1": 10038,
+		"tech2": 10020
+	}, {
+		"id": 36,
+		"tech1": 10045,
+		"tech2": 10014
+	}, {
+		"id": 37,
+		"tech1": 10007,
+		"tech2": 10032
+	}, {
+		"id": 38,
+		"tech1": 10023,
+		"tech2": 10016
+	}, {
+		"id": 39,
+		"tech1": 10041,
+		"tech2": 10003
+	}, {
+		"id": 40,
+		"tech1": 10002,
+		"tech2": 10023
+	}, {
+		"id": 41,
+		"tech1": 10039,
+		"tech2": 10030
+	}, {
+		"id": 42,
+		"tech1": 10020,
+		"tech2": 10046
+	}, {
+		"id": 43,
+		"tech1": 10049,
+		"tech2": 10049
+	}, {
+		"id": 44,
+		"tech1": 10043,
+		"tech2": 10039
+	}, {
+		"id": 45,
+		"tech1": 10013,
+		"tech2": 10044
+	}, {
+		"id": 46,
+		"tech1": 10048,
+		"tech2": 10045
+	}, {
+		"id": 47,
+		"tech1": 10024,
+		"tech2": 10017
+	}, {
+		"id": 48,
+		"tech1": 10025,
+		"tech2": 10014
+	}, {
+		"id": 49,
+		"tech1": 10032,
+		"tech2": 10016
+	}, {
+		"id": 50,
+		"tech1": 10013,
+		"tech2": 10003
+	}, {
+		"id": 51,
+		"tech1": 10047,
+		"tech2": 10001
+	}, {
+		"id": 52,
+		"tech1": 10026,
+		"tech2": 10041
+	}, {
+		"id": 53,
+		"tech1": 10007,
+		"tech2": 10031
+	}, {
+		"id": 54,
+		"tech1": 10021,
+		"tech2": 10025
+	}, {
+		"id": 55,
+		"tech1": 10031,
+		"tech2": 10041
+	}, {
+		"id": 56,
+		"tech1": 10043,
+		"tech2": 10015
+	}, {
+		"id": 57,
+		"tech1": 10012,
+		"tech2": 10034
+	}, {
+		"id": 58,
+		"tech1": 10038,
+		"tech2": 10041
+	}, {
+		"id": 59,
+		"tech1": 10022,
+		"tech2": 10044
+	}, {
+		"id": 60,
+		"tech1": 10003,
+		"tech2": 10041
+	}, {
+		"id": 61,
+		"tech1": 10050,
+		"tech2": 10048
+	}, {
+		"id": 62,
+		"tech1": 10017,
+		"tech2": 10047
+	}, {
+		"id": 63,
+		"tech1": 10011,
+		"tech2": 10035
+	}, {
+		"id": 64,
+		"tech1": 10046,
+		"tech2": 10035
+	}, {
+		"id": 65,
+		"tech1": 10025,
+		"tech2": 10005
+	}, {
+		"id": 66,
+		"tech1": 10040,
+		"tech2": 10032
+	}, {
+		"id": 67,
+		"tech1": 10024,
+		"tech2": 10012
+	}, {
+		"id": 68,
+		"tech1": 10007,
+		"tech2": 10035
+	}, {
+		"id": 69,
+		"tech1": 10023,
+		"tech2": 10048
+	}, {
+		"id": 70,
+		"tech1": 10026,
+		"tech2": 10018
+	}, {
+		"id": 71,
+		"tech1": 10031,
+		"tech2": 10025
+	}, {
+		"id": 72,
+		"tech1": 10050,
+		"tech2": 10045
+	}, {
+		"id": 73,
+		"tech1": 10030,
+		"tech2": 10027
+	}, {
+		"id": 74,
+		"tech1": 10037,
+		"tech2": 10030
+	}, {
+		"id": 75,
+		"tech1": 10035,
+		"tech2": 10014
+	}, {
+		"id": 76,
+		"tech1": 10047,
+		"tech2": 10049
+	}, {
+		"id": 77,
+		"tech1": 10012,
+		"tech2": 10002
+	}, {
+		"id": 78,
+		"tech1": 10024,
+		"tech2": 10006
+	}, {
+		"id": 79,
+		"tech1": 10040,
+		"tech2": 10045
+	}, {
+		"id": 80,
+		"tech1": 10025,
+		"tech2": 10002
+	}, {
+		"id": 81,
+		"tech1": 10010,
+		"tech2": 10023
+	}, {
+		"id": 82,
+		"tech1": 10040,
+		"tech2": 10040
+	}, {
+		"id": 83,
+		"tech1": 10038,
+		"tech2": 10019
+	}, {
+		"id": 84,
+		"tech1": 10018,
+		"tech2": 10046
+	}, {
+		"id": 85,
+		"tech1": 10001,
+		"tech2": 10039
+	}, {
+		"id": 86,
+		"tech1": 10008,
+		"tech2": 10035
+	}, {
+		"id": 87,
+		"tech1": 10049,
+		"tech2": 10012
+	}, {
+		"id": 88,
+		"tech1": 10041,
+		"tech2": 10044
+	}, {
+		"id": 89,
+		"tech1": 10001,
+		"tech2": 10031
+	}, {
+		"id": 90,
+		"tech1": 10048,
+		"tech2": 10048
+	}, {
+		"id": 91,
+		"tech1": 10011,
+		"tech2": 10033
+	}, {
+		"id": 92,
+		"tech1": 10034,
+		"tech2": 10004
+	}, {
+		"id": 93,
+		"tech1": 10043,
+		"tech2": 10037
+	}, {
+		"id": 94,
+		"tech1": 10006,
+		"tech2": 10011
+	}, {
+		"id": 95,
+		"tech1": 10047,
+		"tech2": 10011
+	}, {
+		"id": 96,
+		"tech1": 10043,
+		"tech2": 10007
+	}, {
+		"id": 97,
+		"tech1": 10016,
+		"tech2": 10005
+	}, {
+		"id": 98,
+		"tech1": 10038,
+		"tech2": 10048
+	}, {
+		"id": 99,
+		"tech1": 10022,
+		"tech2": 10045
+	}, {
+		"id": 100,
+		"tech1": 10017,
+		"tech2": 10041
+	}, {
+		"id": 101,
+		"tech1": 10044,
+		"tech2": 10044
+	}, {
+		"id": 102,
+		"tech1": 10002,
+		"tech2": 10050
+	}, {
+		"id": 103,
+		"tech1": 10033,
+		"tech2": 10015
+	}, {
+		"id": 104,
+		"tech1": 10013,
+		"tech2": 10018
+	}, {
+		"id": 105,
+		"tech1": 10041,
+		"tech2": 10010
+	}, {
+		"id": 106,
+		"tech1": 10035,
+		"tech2": 10034
+	}, {
+		"id": 107,
+		"tech1": 10047,
+		"tech2": 10021
+	}, {
+		"id": 108,
+		"tech1": 10017,
+		"tech2": 10019
+	}, {
+		"id": 109,
+		"tech1": 10022,
+		"tech2": 10049
+	}, {
+		"id": 110,
+		"tech1": 10001,
+		"tech2": 10044
+	}, {
+		"id": 111,
+		"tech1": 10028,
+		"tech2": 10006
+	}, {
+		"id": 112,
+		"tech1": 10050,
+		"tech2": 10012
+	}, {
+		"id": 113,
+		"tech1": 10014,
+		"tech2": 10025
+	}, {
+		"id": 114,
+		"tech1": 10015,
+		"tech2": 10034
+	}, {
+		"id": 115,
+		"tech1": 10046,
+		"tech2": 10020
+	}, {
+		"id": 116,
+		"tech1": 10027,
+		"tech2": 10045
+	}, {
+		"id": 117,
+		"tech1": 10024,
+		"tech2": 10028
+	}, {
+		"id": 118,
+		"tech1": 10040,
+		"tech2": 10021
+	}, {
+		"id": 119,
+		"tech1": 10007,
+		"tech2": 10040
+	}, {
+		"id": 120,
+		"tech1": 10032,
+		"tech2": 10018
+	}, {
+		"id": 121,
+		"tech1": 10039,
+		"tech2": 10045
+	}, {
+		"id": 122,
+		"tech1": 10045,
+		"tech2": 10016
+	}, {
+		"id": 123,
+		"tech1": 10050,
+		"tech2": 10001
+	}, {
+		"id": 124,
+		"tech1": 10037,
+		"tech2": 10038
+	}, {
+		"id": 125,
+		"tech1": 10029,
+		"tech2": 10047
+	}, {
+		"id": 126,
+		"tech1": 10048,
+		"tech2": 10047
+	}, {
+		"id": 127,
+		"tech1": 10019,
+		"tech2": 10007
+	}, {
+		"id": 128,
+		"tech1": 10013,
+		"tech2": 10028
+	}, {
+		"id": 129,
+		"tech1": 10027,
+		"tech2": 10031
+	}, {
+		"id": 130,
+		"tech1": 10007,
+		"tech2": 10026
+	}, {
+		"id": 131,
+		"tech1": 10013,
+		"tech2": 10006
+	}, {
+		"id": 132,
+		"tech1": 10033,
+		"tech2": 10005
+	}, {
+		"id": 133,
+		"tech1": 10049,
+		"tech2": 10037
+	}, {
+		"id": 134,
+		"tech1": 10003,
+		"tech2": 10019
+	}, {
+		"id": 135,
+		"tech1": 10013,
+		"tech2": 10035
+	}, {
+		"id": 136,
+		"tech1": 10034,
+		"tech2": 10027
+	}, {
+		"id": 137,
+		"tech1": 10022,
+		"tech2": 10021
+	}, {
+		"id": 138,
+		"tech1": 10005,
+		"tech2": 10009
+	}, {
+		"id": 139,
+		"tech1": 10031,
+		"tech2": 10031
+	}, {
+		"id": 140,
+		"tech1": 10026,
+		"tech2": 10037
+	}, {
+		"id": 141,
+		"tech1": 10018,
+		"tech2": 10023
+	}, {
+		"id": 142,
+		"tech1": 10036,
+		"tech2": 10050
+	}, {
+		"id": 143,
+		"tech1": 10008,
+		"tech2": 10045
+	}, {
+		"id": 144,
+		"tech1": 10028,
+		"tech2": 10009
+	}, {
+		"id": 145,
+		"tech1": 10009,
+		"tech2": 10033
+	}, {
+		"id": 146,
+		"tech1": 10012,
+		"tech2": 10006
+	}, {
+		"id": 147,
+		"tech1": 10013,
+		"tech2": 10026
+	}, {
+		"id": 148,
+		"tech1": 10042,
+		"tech2": 10001
+	}, {
+		"id": 149,
+		"tech1": 10038,
+		"tech2": 10025
+	}, {
+		"id": 150,
+		"tech1": 10034,
+		"tech2": 10004
+	}, {
+		"id": 151,
+		"tech1": 10021,
+		"tech2": 10044
+	}, {
+		"id": 152,
+		"tech1": 10039,
+		"tech2": 10006
+	}, {
+		"id": 153,
+		"tech1": 10045,
+		"tech2": 10025
+	}, {
+		"id": 154,
+		"tech1": 10041,
+		"tech2": 10030
+	}, {
+		"id": 155,
+		"tech1": 10024,
+		"tech2": 10035
+	}, {
+		"id": 156,
+		"tech1": 10025,
+		"tech2": 10010
+	}, {
+		"id": 157,
+		"tech1": 10001,
+		"tech2": 10022
+	}, {
+		"id": 158,
+		"tech1": 10032,
+		"tech2": 10009
+	}, {
+		"id": 159,
+		"tech1": 10038,
+		"tech2": 10022
+	}, {
+		"id": 160,
+		"tech1": 10034,
+		"tech2": 10001
+	}, {
+		"id": 161,
+		"tech1": 10036,
+		"tech2": 10009
+	}, {
+		"id": 162,
+		"tech1": 10016,
+		"tech2": 10030
+	}, {
+		"id": 163,
+		"tech1": 10037,
+		"tech2": 10008
+	}, {
+		"id": 164,
+		"tech1": 10010,
+		"tech2": 10037
+	}, {
+		"id": 165,
+		"tech1": 10023,
+		"tech2": 10030
+	}, {
+		"id": 166,
+		"tech1": 10014,
+		"tech2": 10029
+	}, {
+		"id": 167,
+		"tech1": 10044,
+		"tech2": 10033
+	}, {
+		"id": 168,
+		"tech1": 10029,
+		"tech2": 10005
+	}, {
+		"id": 169,
+		"tech1": 10032,
+		"tech2": 10007
+	}, {
+		"id": 170,
+		"tech1": 10008,
+		"tech2": 10021
+	}, {
+		"id": 171,
+		"tech1": 10049,
+		"tech2": 10008
+	}, {
+		"id": 172,
+		"tech1": 10013,
+		"tech2": 10005
+	}, {
+		"id": 173,
+		"tech1": 10004,
+		"tech2": 10039
+	}, {
+		"id": 174,
+		"tech1": 10002,
+		"tech2": 10012
+	}, {
+		"id": 175,
+		"tech1": 10041,
+		"tech2": 10038
+	}, {
+		"id": 176,
+		"tech1": 10004,
+		"tech2": 10013
+	}, {
+		"id": 177,
+		"tech1": 10011,
+		"tech2": 10023
+	}, {
+		"id": 178,
+		"tech1": 10026,
+		"tech2": 10009
+	}, {
+		"id": 179,
+		"tech1": 10009,
+		"tech2": 10040
+	}, {
+		"id": 180,
+		"tech1": 10027,
+		"tech2": 10027
+	}, {
+		"id": 181,
+		"tech1": 10049,
+		"tech2": 10024
+	}, {
+		"id": 182,
+		"tech1": 10049,
+		"tech2": 10044
+	}, {
+		"id": 183,
+		"tech1": 10029,
+		"tech2": 10024
+	}, {
+		"id": 184,
+		"tech1": 10039,
+		"tech2": 10034
+	}, {
+		"id": 185,
+		"tech1": 10041,
+		"tech2": 10002
+	}, {
+		"id": 186,
+		"tech1": 10026,
+		"tech2": 10034
+	}, {
+		"id": 187,
+		"tech1": 10007,
+		"tech2": 10025
+	}, {
+		"id": 188,
+		"tech1": 10002,
+		"tech2": 10020
+	}, {
+		"id": 189,
+		"tech1": 10022,
+		"tech2": 10012
+	}, {
+		"id": 190,
+		"tech1": 10017,
+		"tech2": 10037
+	}, {
+		"id": 191,
+		"tech1": 10024,
+		"tech2": 10035
+	}, {
+		"id": 192,
+		"tech1": 10034,
+		"tech2": 10042
+	}, {
+		"id": 193,
+		"tech1": 10025,
+		"tech2": 10004
+	}, {
+		"id": 194,
+		"tech1": 10017,
+		"tech2": 10050
+	}, {
+		"id": 195,
+		"tech1": 10027,
+		"tech2": 10041
+	}, {
+		"id": 196,
+		"tech1": 10017,
+		"tech2": 10009
+	}, {
+		"id": 197,
+		"tech1": 10046,
+		"tech2": 10018
+	}, {
+		"id": 198,
+		"tech1": 10021,
+		"tech2": 10016
+	}, {
+		"id": 199,
+		"tech1": 10042,
+		"tech2": 10039
+	}, {
+		"id": 200,
+		"tech1": 10005,
+		"tech2": 10001
+	}, {
+		"id": 201,
+		"tech1": 10029,
+		"tech2": 10018
+	}, {
+		"id": 202,
+		"tech1": 10039,
+		"tech2": 10031
+	}, {
+		"id": 203,
+		"tech1": 10019,
+		"tech2": 10017
+	}, {
+		"id": 204,
+		"tech1": 10043,
+		"tech2": 10021
+	}, {
+		"id": 205,
+		"tech1": 10049,
+		"tech2": 10042
+	}, {
+		"id": 206,
+		"tech1": 10049,
+		"tech2": 10038
+	}, {
+		"id": 207,
+		"tech1": 10018,
+		"tech2": 10046
+	}, {
+		"id": 208,
+		"tech1": 10006,
+		"tech2": 10018
+	}, {
+		"id": 209,
+		"tech1": 10038,
+		"tech2": 10039
+	}, {
+		"id": 210,
+		"tech1": 10040,
+		"tech2": 10012
+	}, {
+		"id": 211,
+		"tech1": 10018,
+		"tech2": 10040
+	}, {
+		"id": 212,
+		"tech1": 10047,
+		"tech2": 10010
+	}, {
+		"id": 213,
+		"tech1": 10005,
+		"tech2": 10034
+	}, {
+		"id": 214,
+		"tech1": 10050,
+		"tech2": 10016
+	}, {
+		"id": 215,
+		"tech1": 10035,
+		"tech2": 10014
+	}, {
+		"id": 216,
+		"tech1": 10032,
+		"tech2": 10010
+	}, {
+		"id": 217,
+		"tech1": 10042,
+		"tech2": 10033
+	}, {
+		"id": 218,
+		"tech1": 10026,
+		"tech2": 10049
+	}, {
+		"id": 219,
+		"tech1": 10045,
+		"tech2": 10012
+	}, {
+		"id": 220,
+		"tech1": 10037,
+		"tech2": 10018
+	}, {
+		"id": 221,
+		"tech1": 10013,
+		"tech2": 10018
+	}, {
+		"id": 222,
+		"tech1": 10048,
+		"tech2": 10027
+	}, {
+		"id": 223,
+		"tech1": 10046,
+		"tech2": 10013
+	}, {
+		"id": 224,
+		"tech1": 10004,
+		"tech2": 10007
+	}, {
+		"id": 225,
+		"tech1": 10015,
+		"tech2": 10025
+	}, {
+		"id": 226,
+		"tech1": 10001,
+		"tech2": 10025
+	}, {
+		"id": 227,
+		"tech1": 10004,
+		"tech2": 10023
+	}, {
+		"id": 228,
+		"tech1": 10001,
+		"tech2": 10030
+	}, {
+		"id": 229,
+		"tech1": 10028,
+		"tech2": 10037
+	}, {
+		"id": 230,
+		"tech1": 10023,
+		"tech2": 10015
+	}, {
+		"id": 231,
+		"tech1": 10007,
+		"tech2": 10017
+	}, {
+		"id": 232,
+		"tech1": 10021,
+		"tech2": 10018
+	}, {
+		"id": 233,
+		"tech1": 10007,
+		"tech2": 10008
+	}, {
+		"id": 234,
+		"tech1": 10037,
+		"tech2": 10019
+	}, {
+		"id": 235,
+		"tech1": 10002,
+		"tech2": 10028
+	}, {
+		"id": 236,
+		"tech1": 10026,
+		"tech2": 10002
+	}, {
+		"id": 237,
+		"tech1": 10027,
+		"tech2": 10006
+	}, {
+		"id": 238,
+		"tech1": 10020,
+		"tech2": 10034
+	}, {
+		"id": 239,
+		"tech1": 10045,
+		"tech2": 10014
+	}, {
+		"id": 240,
+		"tech1": 10003,
+		"tech2": 10026
+	}, {
+		"id": 241,
+		"tech1": 10036,
+		"tech2": 10040
+	}, {
+		"id": 242,
+		"tech1": 10037,
+		"tech2": 10020
+	}, {
+		"id": 243,
+		"tech1": 10030,
+		"tech2": 10034
+	}, {
+		"id": 244,
+		"tech1": 10021,
+		"tech2": 10038
+	}, {
+		"id": 245,
+		"tech1": 10028,
+		"tech2": 10033
+	}, {
+		"id": 246,
+		"tech1": 10025,
+		"tech2": 10040
+	}, {
+		"id": 247,
+		"tech1": 10044,
+		"tech2": 10035
+	}, {
+		"id": 248,
+		"tech1": 10005,
+		"tech2": 10008
+	}, {
+		"id": 249,
+		"tech1": 10045,
+		"tech2": 10008
+	}, {
+		"id": 250,
+		"tech1": 10024,
+		"tech2": 10007
+	}, {
+		"id": 251,
+		"tech1": 10002,
+		"tech2": 10042
+	}, {
+		"id": 252,
+		"tech1": 10023,
+		"tech2": 10044
+	}, {
+		"id": 253,
+		"tech1": 10047,
+		"tech2": 10050
+	}, {
+		"id": 254,
+		"tech1": 10020,
+		"tech2": 10015
+	}, {
+		"id": 255,
+		"tech1": 10010,
+		"tech2": 10005
+	}, {
+		"id": 256,
+		"tech1": 10011,
+		"tech2": 10023
+	}, {
+		"id": 257,
+		"tech1": 10006,
+		"tech2": 10022
+	}, {
+		"id": 258,
+		"tech1": 10020,
+		"tech2": 10022
+	}, {
+		"id": 259,
+		"tech1": 10009,
+		"tech2": 10001
+	}, {
+		"id": 260,
+		"tech1": 10049,
+		"tech2": 10025
+	}, {
+		"id": 261,
+		"tech1": 10002,
+		"tech2": 10020
+	}, {
+		"id": 262,
+		"tech1": 10047,
+		"tech2": 10046
+	}, {
+		"id": 263,
+		"tech1": 10010,
+		"tech2": 10019
+	}, {
+		"id": 264,
+		"tech1": 10005,
+		"tech2": 10027
+	}, {
+		"id": 265,
+		"tech1": 10039,
+		"tech2": 10040
+	}, {
+		"id": 266,
+		"tech1": 10004,
+		"tech2": 10010
+	}, {
+		"id": 267,
+		"tech1": 10045,
+		"tech2": 10014
+	}, {
+		"id": 268,
+		"tech1": 10029,
+		"tech2": 10012
+	}, {
+		"id": 269,
+		"tech1": 10005,
+		"tech2": 10038
+	}, {
+		"id": 270,
+		"tech1": 10013,
+		"tech2": 10032
+	}, {
+		"id": 271,
+		"tech1": 10039,
+		"tech2": 10024
+	}, {
+		"id": 272,
+		"tech1": 10027,
+		"tech2": 10017
+	}, {
+		"id": 273,
+		"tech1": 10031,
+		"tech2": 10009
+	}, {
+		"id": 274,
+		"tech1": 10013,
+		"tech2": 10005
+	}, {
+		"id": 275,
+		"tech1": 10026,
+		"tech2": 10011
+	}, {
+		"id": 276,
+		"tech1": 10044,
+		"tech2": 10028
+	}, {
+		"id": 277,
+		"tech1": 10008,
+		"tech2": 10018
+	}, {
+		"id": 278,
+		"tech1": 10044,
+		"tech2": 10001
+	}, {
+		"id": 279,
+		"tech1": 10005,
+		"tech2": 10044
+	}, {
+		"id": 280,
+		"tech1": 10043,
+		"tech2": 10034
+	}, {
+		"id": 281,
+		"tech1": 10018,
+		"tech2": 10049
+	}, {
+		"id": 282,
+		"tech1": 10019,
+		"tech2": 10023
+	}, {
+		"id": 283,
+		"tech1": 10040,
+		"tech2": 10020
+	}, {
+		"id": 284,
+		"tech1": 10041,
+		"tech2": 10043
+	}, {
+		"id": 285,
+		"tech1": 10035,
+		"tech2": 10026
+	}, {
+		"id": 286,
+		"tech1": 10039,
+		"tech2": 10046
+	}, {
+		"id": 287,
+		"tech1": 10001,
+		"tech2": 10002
+	}, {
+		"id": 288,
+		"tech1": 10013,
+		"tech2": 10007
+	}, {
+		"id": 289,
+		"tech1": 10015,
+		"tech2": 10044
+	}, {
+		"id": 290,
+		"tech1": 10045,
+		"tech2": 10011
+	}, {
+		"id": 291,
+		"tech1": 10050,
+		"tech2": 10006
+	}, {
+		"id": 292,
+		"tech1": 10002,
+		"tech2": 10010
+	}, {
+		"id": 293,
+		"tech1": 10011,
+		"tech2": 10044
+	}, {
+		"id": 294,
+		"tech1": 10014,
+		"tech2": 10032
+	}, {
+		"id": 295,
+		"tech1": 10036,
+		"tech2": 10033
+	}, {
+		"id": 296,
+		"tech1": 10018,
+		"tech2": 10006
+	}, {
+		"id": 297,
+		"tech1": 10009,
+		"tech2": 10032
+	}, {
+		"id": 298,
+		"tech1": 10017,
+		"tech2": 10005
+	}, {
+		"id": 299,
+		"tech1": 10016,
+		"tech2": 10007
+	}, {
+		"id": 300,
+		"tech1": 10039,
+		"tech2": 10036
+	}, {
+		"id": 301,
+		"tech1": 10033,
+		"tech2": 10029
+	}, {
+		"id": 302,
+		"tech1": 10048,
+		"tech2": 10015
+	}, {
+		"id": 303,
+		"tech1": 10011,
+		"tech2": 10047
+	}, {
+		"id": 304,
+		"tech1": 10029,
+		"tech2": 10031
+	}, {
+		"id": 305,
+		"tech1": 10007,
+		"tech2": 10047
+	}, {
+		"id": 306,
+		"tech1": 10044,
+		"tech2": 10031
+	}, {
+		"id": 307,
+		"tech1": 10020,
+		"tech2": 10040
+	}, {
+		"id": 308,
+		"tech1": 10046,
+		"tech2": 10002
+	}, {
+		"id": 309,
+		"tech1": 10039,
+		"tech2": 10010
+	}, {
+		"id": 310,
+		"tech1": 10029,
+		"tech2": 10031
+	}, {
+		"id": 311,
+		"tech1": 10048,
+		"tech2": 10037
+	}, {
+		"id": 312,
+		"tech1": 10046,
+		"tech2": 10013
+	}, {
+		"id": 313,
+		"tech1": 10039,
+		"tech2": 10011
+	}, {
+		"id": 314,
+		"tech1": 10042,
+		"tech2": 10024
+	}, {
+		"id": 315,
+		"tech1": 10017,
+		"tech2": 10004
+	}, {
+		"id": 316,
+		"tech1": 10025,
+		"tech2": 10048
+	}, {
+		"id": 317,
+		"tech1": 10014,
+		"tech2": 10022
+	}, {
+		"id": 318,
+		"tech1": 10040,
+		"tech2": 10009
+	}, {
+		"id": 319,
+		"tech1": 10017,
+		"tech2": 10031
+	}, {
+		"id": 320,
+		"tech1": 10024,
+		"tech2": 10050
+	}, {
+		"id": 321,
+		"tech1": 10018,
+		"tech2": 10036
+	}, {
+		"id": 322,
+		"tech1": 10034,
+		"tech2": 10044
+	}, {
+		"id": 323,
+		"tech1": 10034,
+		"tech2": 10049
+	}, {
+		"id": 324,
+		"tech1": 10022,
+		"tech2": 10016
+	}, {
+		"id": 325,
+		"tech1": 10049,
+		"tech2": 10032
+	}, {
+		"id": 326,
+		"tech1": 10047,
+		"tech2": 10032
+	}, {
+		"id": 327,
+		"tech1": 10019,
+		"tech2": 10037
+	}, {
+		"id": 328,
+		"tech1": 10015,
+		"tech2": 10005
+	}, {
+		"id": 329,
+		"tech1": 10011,
+		"tech2": 10015
+	}, {
+		"id": 330,
+		"tech1": 10039,
+		"tech2": 10001
+	}, {
+		"id": 331,
+		"tech1": 10045,
+		"tech2": 10047
+	}, {
+		"id": 332,
+		"tech1": 10030,
+		"tech2": 10011
+	}, {
+		"id": 333,
+		"tech1": 10035,
+		"tech2": 10004
+	}, {
+		"id": 334,
+		"tech1": 10028,
+		"tech2": 10041
+	}, {
+		"id": 335,
+		"tech1": 10006,
+		"tech2": 10044
+	}, {
+		"id": 336,
+		"tech1": 10050,
+		"tech2": 10039
+	}, {
+		"id": 337,
+		"tech1": 10002,
+		"tech2": 10028
+	}, {
+		"id": 338,
+		"tech1": 10047,
+		"tech2": 10029
+	}, {
+		"id": 339,
+		"tech1": 10050,
+		"tech2": 10028
+	}, {
+		"id": 340,
+		"tech1": 10010,
+		"tech2": 10011
+	}, {
+		"id": 341,
+		"tech1": 10010,
+		"tech2": 10050
+	}, {
+		"id": 342,
+		"tech1": 10013,
+		"tech2": 10036
+	}, {
+		"id": 343,
+		"tech1": 10020,
+		"tech2": 10050
+	}, {
+		"id": 344,
+		"tech1": 10042,
+		"tech2": 10007
+	}, {
+		"id": 345,
+		"tech1": 10035,
+		"tech2": 10036
+	}, {
+		"id": 346,
+		"tech1": 10021,
+		"tech2": 10025
+	}, {
+		"id": 347,
+		"tech1": 10021,
+		"tech2": 10015
+	}, {
+		"id": 348,
+		"tech1": 10029,
+		"tech2": 10005
+	}, {
+		"id": 349,
+		"tech1": 10037,
+		"tech2": 10025
+	}, {
+		"id": 350,
+		"tech1": 10001,
+		"tech2": 10005
+	}, {
+		"id": 351,
+		"tech1": 10012,
+		"tech2": 10010
+	}, {
+		"id": 352,
+		"tech1": 10026,
+		"tech2": 10039
+	}, {
+		"id": 353,
+		"tech1": 10038,
+		"tech2": 10040
+	}, {
+		"id": 354,
+		"tech1": 10043,
+		"tech2": 10028
+	}, {
+		"id": 355,
+		"tech1": 10009,
+		"tech2": 10028
+	}, {
+		"id": 356,
+		"tech1": 10003,
+		"tech2": 10024
+	}, {
+		"id": 357,
+		"tech1": 10046,
+		"tech2": 10009
+	}, {
+		"id": 358,
+		"tech1": 10043,
+		"tech2": 10015
+	}, {
+		"id": 359,
+		"tech1": 10032,
+		"tech2": 10002
+	}, {
+		"id": 360,
+		"tech1": 10011,
+		"tech2": 10032
+	}, {
+		"id": 361,
+		"tech1": 10028,
+		"tech2": 10032
+	}, {
+		"id": 362,
+		"tech1": 10041,
+		"tech2": 10024
+	}, {
+		"id": 363,
+		"tech1": 10012,
+		"tech2": 10034
+	}, {
+		"id": 364,
+		"tech1": 10023,
+		"tech2": 10049
+	}, {
+		"id": 365,
+		"tech1": 10043,
+		"tech2": 10026
+	}, {
+		"id": 366,
+		"tech1": 10007,
+		"tech2": 10026
+	}, {
+		"id": 367,
+		"tech1": 10047,
+		"tech2": 10016
+	}, {
+		"id": 368,
+		"tech1": 10029,
+		"tech2": 10026
+	}, {
+		"id": 369,
+		"tech1": 10044,
+		"tech2": 10004
+	}, {
+		"id": 370,
+		"tech1": 10047,
+		"tech2": 10028
+	}, {
+		"id": 371,
+		"tech1": 10010,
+		"tech2": 10014
+	}, {
+		"id": 372,
+		"tech1": 10034,
+		"tech2": 10017
+	}, {
+		"id": 373,
+		"tech1": 10042,
+		"tech2": 10005
+	}, {
+		"id": 374,
+		"tech1": 10006,
+		"tech2": 10016
+	}, {
+		"id": 375,
+		"tech1": 10030,
+		"tech2": 10013
+	}, {
+		"id": 376,
+		"tech1": 10050,
+		"tech2": 10049
+	}, {
+		"id": 377,
+		"tech1": 10020,
+		"tech2": 10004
+	}, {
+		"id": 378,
+		"tech1": 10043,
+		"tech2": 10004
+	}, {
+		"id": 379,
+		"tech1": 10010,
+		"tech2": 10034
+	}, {
+		"id": 380,
+		"tech1": 10034,
+		"tech2": 10049
+	}, {
+		"id": 381,
+		"tech1": 10016,
+		"tech2": 10036
+	}, {
+		"id": 382,
+		"tech1": 10002,
+		"tech2": 10030
+	}, {
+		"id": 383,
+		"tech1": 10035,
+		"tech2": 10001
+	}, {
+		"id": 384,
+		"tech1": 10033,
+		"tech2": 10036
+	}, {
+		"id": 385,
+		"tech1": 10032,
+		"tech2": 10050
+	}, {
+		"id": 386,
+		"tech1": 10043,
+		"tech2": 10005
+	}, {
+		"id": 387,
+		"tech1": 10004,
+		"tech2": 10027
+	}, {
+		"id": 388,
+		"tech1": 10036,
+		"tech2": 10032
+	}, {
+		"id": 389,
+		"tech1": 10012,
+		"tech2": 10047
+	}, {
+		"id": 390,
+		"tech1": 10030,
+		"tech2": 10036
+	}, {
+		"id": 391,
+		"tech1": 10028,
+		"tech2": 10040
+	}, {
+		"id": 392,
+		"tech1": 10046,
+		"tech2": 10023
+	}, {
+		"id": 393,
+		"tech1": 10028,
+		"tech2": 10035
+	}, {
+		"id": 394,
+		"tech1": 10007,
+		"tech2": 10049
+	}, {
+		"id": 395,
+		"tech1": 10038,
+		"tech2": 10029
+	}, {
+		"id": 396,
+		"tech1": 10005,
+		"tech2": 10014
+	}, {
+		"id": 397,
+		"tech1": 10040,
+		"tech2": 10043
+	}, {
+		"id": 398,
+		"tech1": 10050,
+		"tech2": 10015
+	}, {
+		"id": 399,
+		"tech1": 10017,
+		"tech2": 10009
+	}, {
+		"id": 400,
+		"tech1": 10023,
+		"tech2": 10012
+	}, {
+		"id": 401,
+		"tech1": 10042,
+		"tech2": 10048
+	}, {
+		"id": 402,
+		"tech1": 10038,
+		"tech2": 10027
+	}, {
+		"id": 403,
+		"tech1": 10047,
+		"tech2": 10024
+	}, {
+		"id": 404,
+		"tech1": 10045,
+		"tech2": 10012
+	}, {
+		"id": 405,
+		"tech1": 10029,
+		"tech2": 10019
+	}, {
+		"id": 406,
+		"tech1": 10010,
+		"tech2": 10050
+	}, {
+		"id": 407,
+		"tech1": 10035,
+		"tech2": 10045
+	}, {
+		"id": 408,
+		"tech1": 10046,
+		"tech2": 10012
+	}, {
+		"id": 409,
+		"tech1": 10037,
+		"tech2": 10032
+	}, {
+		"id": 410,
+		"tech1": 10020,
+		"tech2": 10031
+	}, {
+		"id": 411,
+		"tech1": 10002,
+		"tech2": 10002
+	}, {
+		"id": 412,
+		"tech1": 10020,
+		"tech2": 10031
+	}, {
+		"id": 413,
+		"tech1": 10004,
+		"tech2": 10017
+	}, {
+		"id": 414,
+		"tech1": 10046,
+		"tech2": 10048
+	}, {
+		"id": 415,
+		"tech1": 10015,
+		"tech2": 10007
+	}, {
+		"id": 416,
+		"tech1": 10009,
+		"tech2": 10003
+	}, {
+		"id": 417,
+		"tech1": 10031,
+		"tech2": 10011
+	}, {
+		"id": 418,
+		"tech1": 10032,
+		"tech2": 10025
+	}, {
+		"id": 419,
+		"tech1": 10017,
+		"tech2": 10017
+	}, {
+		"id": 420,
+		"tech1": 10026,
+		"tech2": 10035
+	}, {
+		"id": 421,
+		"tech1": 10023,
+		"tech2": 10022
+	}, {
+		"id": 422,
+		"tech1": 10036,
+		"tech2": 10014
+	}, {
+		"id": 423,
+		"tech1": 10027,
+		"tech2": 10008
+	}, {
+		"id": 424,
+		"tech1": 10047,
+		"tech2": 10023
+	}, {
+		"id": 425,
+		"tech1": 10050,
+		"tech2": 10044
+	}, {
+		"id": 426,
+		"tech1": 10003,
+		"tech2": 10034
+	}, {
+		"id": 427,
+		"tech1": 10022,
+		"tech2": 10006
+	}, {
+		"id": 428,
+		"tech1": 10037,
+		"tech2": 10001
+	}, {
+		"id": 429,
+		"tech1": 10050,
+		"tech2": 10048
+	}, {
+		"id": 430,
+		"tech1": 10047,
+		"tech2": 10011
+	}, {
+		"id": 431,
+		"tech1": 10004,
+		"tech2": 10012
+	}, {
+		"id": 432,
+		"tech1": 10016,
+		"tech2": 10033
+	}, {
+		"id": 433,
+		"tech1": 10024,
+		"tech2": 10013
+	}, {
+		"id": 434,
+		"tech1": 10001,
+		"tech2": 10022
+	}, {
+		"id": 435,
+		"tech1": 10045,
+		"tech2": 10026
+	}, {
+		"id": 436,
+		"tech1": 10012,
+		"tech2": 10004
+	}, {
+		"id": 437,
+		"tech1": 10028,
+		"tech2": 10012
+	}, {
+		"id": 438,
+		"tech1": 10031,
+		"tech2": 10017
+	}, {
+		"id": 439,
+		"tech1": 10028,
+		"tech2": 10015
+	}, {
+		"id": 440,
+		"tech1": 10026,
+		"tech2": 10042
+	}, {
+		"id": 441,
+		"tech1": 10045,
+		"tech2": 10030
+	}, {
+		"id": 442,
+		"tech1": 10002,
+		"tech2": 10043
+	}, {
+		"id": 443,
+		"tech1": 10012,
+		"tech2": 10027
+	}, {
+		"id": 444,
+		"tech1": 10025,
+		"tech2": 10044
+	}, {
+		"id": 445,
+		"tech1": 10039,
+		"tech2": 10050
+	}, {
+		"id": 446,
+		"tech1": 10017,
+		"tech2": 10020
+	}, {
+		"id": 447,
+		"tech1": 10006,
+		"tech2": 10030
+	}, {
+		"id": 448,
+		"tech1": 10025,
+		"tech2": 10028
+	}, {
+		"id": 449,
+		"tech1": 10030,
+		"tech2": 10021
+	}]
+}

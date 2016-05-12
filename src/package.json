@@ -5,10 +5,16 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "csv": "^0.4.6",
+    "csv-parse": "^1.1.0",
     "dragula": "^3.6.8",
     "elasticsearch": "^11.0.1",
+    "fibers": "^1.0.12",
     "meteor-node-stubs": "~0.2.0",
     "node-metainspector": "^1.2.0",
     "remove-markdown": "^0.1.0"
+  },
+  "devDependencies": {
+    "csv": "^0.4.6"
   }
 }
