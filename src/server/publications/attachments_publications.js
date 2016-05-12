@@ -1,4 +1,5 @@
 import { Technologies } from '../../imports/api/technologies/technologies';
+import { Projects } from '../../imports/api/projects/projects';
 
 Meteor.publishComposite('tabularAttachmentsList', function(tableName, ids, fields) {
   check(tableName, String);
