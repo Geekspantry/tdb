@@ -1,4 +1,5 @@
 //import { CollectionsSet } from '../../../imports/api/collections_set/collections_set';
+import { Projects } from '../../../imports/api/projects/projects';
 
 let projectsRoutes = FlowRouter.group({
   prefix: '/projects',

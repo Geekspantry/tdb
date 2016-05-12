@@ -3,7 +3,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { AutoForm } from 'meteor/aldeed:autoform';
 
 import { toastr } from 'meteor/chrismbeckett:toastr';
-
+import { Projects } from '../../../../api/projects/projects';
 import './projects_add.html';
 
 AutoForm.hooks({
@@ -15,6 +15,12 @@ AutoForm.hooks({
     onError(formType, error) {
       toastr.error(error.toString(), 'Error');
     },
+  }
+});
+
+Template.projectsAdd.helpers({
+  projectsCollection() {
+    return Projects;
   }
 });
 
