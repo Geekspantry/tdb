@@ -1,3 +1,6 @@
+import { Projects } from '../../../../imports/api/projects/projects';
+import { Technologies } from '../../../../imports/api/technologies/technologies';
+
 Template.attachmentAboutBox.helpers({
   user() {
     return Meteor.users.findOne({
