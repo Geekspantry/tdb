@@ -52,11 +52,15 @@ export const TechnologySchema = new SimpleSchema({
     custom: function() {
       const name = this.field('name').value;
       const tags = this.field('tags').value;
-      const synonyms = this.field('synonyms').value;
-      const projectsId = this.field('projectsId').value;
-      const organizationsId = this.field('organizationsId').value;
-      const attachmentsId = this.field('attachmentsId').value;
-      const technology = Technologies.findOne(this.docId);
+      const synonyms = this.field('synonyms').value || [];
+      const projectsId = this.field('projectsId').value || [];
+      const organizationsId = this.field('organizationsId').value || [];
+      const attachmentsId = this.field('attachmentsId').value || [];
+
+      let technology;
+      if (this.docId) {
+        technology = Technologies.findOne(this.docId);  
+      }
 
       try {
         if (this.value === 'review') {
@@ -69,7 +73,7 @@ export const TechnologySchema = new SimpleSchema({
             name,
             tags,
             synonyms,
-            images: technology.images
+            images: technology && technology.images || []
           });
 
           const description = TechnologiesDescriptions.findOne({
@@ -98,7 +102,7 @@ export const TechnologySchema = new SimpleSchema({
             name,
             tags,
             synonyms,
-            images: technology.images,
+            images: technology && technology.images || [],
             attachmentsId,
             projectsId,
             organizationsId
@@ -114,6 +118,7 @@ export const TechnologySchema = new SimpleSchema({
           }
         }
       } catch (e) {
+        console.error('[Status Validation Error]', e);
         const error = 'updateStatus' + e.details[0].name[0].toUpperCase() + e.details[0].name.substring(1);
         return error;
       }

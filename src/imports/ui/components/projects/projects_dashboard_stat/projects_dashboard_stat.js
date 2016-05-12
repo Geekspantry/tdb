@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Counts } from 'meteor/tmeasday:publish-counts';
-import { Projects } from '../../../../api/projects/Projects';
+import { Projects } from '../../../../api/projects/projects';
 
 import './projects_dashboard_stat.html';
 

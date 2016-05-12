@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { Projects } from '../../../../api/projects/Projects';
+import { Projects } from '../../../../api/projects/projects';
 //  import { Collections } from '../../../../api/collections/Collections';
 
 import './projects_entry.html';

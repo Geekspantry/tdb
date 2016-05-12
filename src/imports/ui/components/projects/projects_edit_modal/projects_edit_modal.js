@@ -1,5 +1,5 @@
 import { AutoForm } from 'meteor/aldeed:autoform';
-import { Projects } from '../../../../api/projects/Projects';
+import { Projects } from '../../../../api/projects/projects';
 import { toastr } from 'meteor/chrismbeckett:toastr';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 

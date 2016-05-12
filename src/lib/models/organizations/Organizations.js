@@ -1,10 +1,8 @@
+import { Projects } from '../../../imports/api/projects/projects';
+import { Technologies } from '../../../imports/api/technologies/technologies';
+
 Organizations = new Mongo.Collection('organizations');
 
-/**
- *
- * Schema
- *
- */
 Schemas.Organization = new SimpleSchema({
   name: {
     type: String,
@@ -23,12 +21,14 @@ Schemas.Organization = new SimpleSchema({
   foundingYear: {
     type: Number,
     esDriver: true,
-    logDriver: true
+    logDriver: true,
+    optional: true
   },
   country: {
     type: String,
     esDriver: true,
     logDriver: true,
+    optional: true,
     autoform: {
       type: 'countryFlags'
     }
@@ -38,6 +38,7 @@ Schemas.Organization = new SimpleSchema({
     esDriver: true,
     logDriver: true,
     allowedValues: ['academic', 'non-profit', 'governamental', 'private'],
+    optional: true,
     autoform: {
       type: 'selectize',
       options: [{
@@ -74,47 +75,11 @@ Schemas.Organization = new SimpleSchema({
       }
     }
   },
-  urls: {
-    type: [Schemas.Url],
+  url: {
+    type: String,
     logDriver: true,
     optional: true
   },
-/*  projectsId: {
-    type: [String],
-    optional: true,
-    label: 'Related Projects',
-    autoform: {
-      type: 'universe-select',
-      multiple: true,
-      uniPlaceholder: 'Search projects by title...',
-      options() {
-        return Projects.find().map((project) => {
-          return {
-            label: project.name,
-            value: project._id
-          };
-        });
-      }
-    }
-  },*/
-/*  technologiesId: {
-    type: [String],
-    optional: true,
-    label: 'Related Technologies',
-    autoform: {
-      type: 'universe-select',
-      multiple: true,
-      uniPlaceholder: 'Search technology by title...',
-      options() {
-        return Technologies.find().map((tech) => {
-          return {
-            label: tech.name,
-            value: tech._id
-          };
-        });
-      }
-    }
-  },*/
   attachmentsId: {
     type: [String],
     optional: true,
@@ -138,41 +103,16 @@ Schemas.Organization = new SimpleSchema({
 });
 
 
-/**
- *
- * Behaviours
- *
- */
 Organizations.attachSchema(Schemas.Organization);
 Organizations.attachBehaviour('timestampable');
 Meteor.isServer && Organizations.esDriver(esClient, 'organizations');
 
-
-/**
- *
- * Helpers
- *
- */
 Organizations.helpers({
-/*  getProjects() {
-    return Projects.find({
-      _id: {
-        $in: this.projectsId || []
-      }
-    });
-  },*/
   getProjects() {
     return Projects.find({
       organizationsId: this._id
     });
   },
-/*  technologies() {
-    return Technologies.find({
-      _id: {
-        $in: this.technologiesId || []
-      }
-    });
-  },*/
   technologies() {
     return Technologies.find({
       organizationsId: this._id

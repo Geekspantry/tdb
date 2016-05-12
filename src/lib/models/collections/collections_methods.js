@@ -1,4 +1,4 @@
-import { Projects } from '../../../imports/api/projects/Projects';
+import { Projects } from '../../../imports/api/projects/projects';
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {

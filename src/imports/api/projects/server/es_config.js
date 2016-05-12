@@ -1,3 +1,3 @@
-import { Projects } from '../Projects';
+import { Projects } from '../projects';
 
-Projects.esDriver(esClient, 'techdb', 'projects');
+Projects.esDriver(esClient, 'projects');

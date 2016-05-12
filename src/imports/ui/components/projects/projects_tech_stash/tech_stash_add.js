@@ -4,7 +4,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import 'meteor/chrismbeckett:toastr';
 
-import { Projects } from '../../../../api/projects/Projects';
+import { Projects } from '../../../../api/projects/projects';
 //  import { regex } from '../../../lib/regex_helpers/regex_helpers.js';
 import { pushTechnologiesStash } from '../../../../api/projects/methods.js';
 
