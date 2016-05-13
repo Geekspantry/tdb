@@ -1,9 +1,9 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
 import { Technologies } from './technologies.js';
-import {
-  TechnologySchema,
-} from './schema.js';
+import { TechnologySchema } from './schema.js';
+import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions.js';
+
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
@@ -28,7 +28,7 @@ export const update = new ValidatedMethod({
     modifier: { type: Object, blackbox: true }
   }).validator(),
   run({ _id, modifier }) {
-    // checkPermissions();
+    checkPermissions();
     return Technologies.update(_id, modifier);
   }
 });
@@ -40,9 +40,9 @@ export const remove = new ValidatedMethod({
   }).validator(),
   run({ _id }) {
     checkPermissions();
-    Technologies.remove({
-      _id: techId
-    });
+    this.unblock();
+    Technologies.remove({ _id: _id });
+    TechnologiesDescriptions.remove({ technologyId: _id });
   }
 });
 

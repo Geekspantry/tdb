@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { AutoForm } from 'meteor/aldeed:autoform';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
+import popups from '../../../../imports/ui/components/common/popups/popups';
 
 import { Technologies } from '../../../../imports/api/technologies/technologies';
 
@@ -23,7 +24,29 @@ Template.technologiesEdit.onCreated(function() {
   this.subscribe('attachments.quickList');
 });
 
-Template.technologiesEdit.events({});
+Template.technologiesEdit.events({
+  'click [data-action="delete"]': function(e, t) {
+    const _id = FlowRouter.getParam('id');
+    const tech = Technologies.findOne(_id);
+    const popupMessage =
+      `Are you sure you want to delete <b>${tech.name}</b>?
+ You will not be able to undo this action.`;
+
+    popups.removeConfirmation(popupMessage, () => {
+      toastr.info(`${tech.name} will be deleted in the next seconds`, 'Alert');
+      FlowRouter.go('technologies.dashboard');
+
+      Meteor.call('technologies.remove', { _id }, (err, res) => {
+        if (err) {
+          toastr.error(err.error, 'Error');
+          throw err;
+        }
+
+        toastr.success(`${tech.name} deleted!`, 'Success');
+      });
+    }, true);
+  }
+});
 
 Template.technologiesEdit.helpers({
   technologiesCollection: () => Technologies,
