@@ -1,6 +1,6 @@
 import 'meteor/kevohagan:sweetalert';
 
-function removeConfirmation(text = 'Are you sure you want to delete this?', callback) {
+function removeConfirmation(text = 'Are you sure you want to delete this?', callback, closeOnConfirm = false) {
   swal({
     title: 'Are you sure?',
     text: text,
@@ -8,7 +8,7 @@ function removeConfirmation(text = 'Are you sure you want to delete this?', call
     showCancelButton: true,
     confirmButtonColor: '#DD6B55',
     confirmButtonText: 'Yes',
-    closeOnConfirm: false,
+    closeOnConfirm: closeOnConfirm,
     html: true
   }, () => {
     callback();

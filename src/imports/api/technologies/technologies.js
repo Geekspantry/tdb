@@ -3,6 +3,7 @@ import { Mongo } from 'meteor/mongo';
 import { TechnologySchema } from './schema.js';
 import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions.js';
 import { DESCRIPTION_STATUS } from '../technologies_descriptions/schema';
+import { Projects} from '../projects/projects';
 
 export const Technologies = new Mongo.Collection('technologies');
 
