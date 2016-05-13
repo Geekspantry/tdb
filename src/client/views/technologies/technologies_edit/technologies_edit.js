@@ -45,6 +45,19 @@ Template.technologiesEdit.events({
         toastr.success(`${tech.name} deleted!`, 'Success');
       });
     }, true);
+  },
+  'click [data-action="cancel"]': function(e, t) {
+    swal({
+      title: 'Are you sure?',
+      text: 'Cancel <b>editing</b> will discard all your changes.',
+      type: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      closeOnConfirm: true,
+      html: true
+    }, () => {
+      FlowRouter.go('technologies.entry', { id: FlowRouter.getParam('id') });
+    });
   }
 });
 
