@@ -10,7 +10,6 @@ import { AutoForm } from 'meteor/aldeed:autoform';
 import { Technologies } from '../../../../api/technologies/technologies';
 import { TechnologiesDescriptions } from '../../../../api/technologies_descriptions/technologies_descriptions.js';
 
-import { publish, remove, update } from '../../../../api/technologies_descriptions/methods.js';
 import './technologies_descriptions_tabs.html';
 
 Template.technologiesDescriptionsTabs.onCreated(function() {
@@ -111,16 +110,22 @@ Template.technologiesDescriptionsTabs.events({
           longText: template.$('textarea[name="longText"]').val()
         }
       };
-      update.call({
+      Meteor.call('technologies_descriptions.update', {
         _id: description._id,
         modifier
       }, (updateErr, updateRes) => {
-        if (updateErr) throw updateErr;
-        publish.call({
+        if (updateErr) {
+          toastr.error(updateErr.error, 'Error');
+          throw updateErr;
+        }
+        Meteor.call('technologies_descriptions.publish', {
           technologyId: description.technologyId,
           descriptionId: description._id
         }, (publishErr, publishRes) => {
-          if (publishErr) throw publishErr;
+          if (publishErr) {
+            toastr.error(publishErr.error, 'Error');
+            throw publishErr;
+          }
           template.isEditing.set(false);
           return toastr.success('The description was <b>saved</b> and <b>published</b>!', 'Success');
         });
@@ -138,10 +143,13 @@ Template.technologiesDescriptionsTabs.events({
       closeOnConfirm: true,
       html: true
     }, () => {
-      remove.call({
+      Meteor.call('technologies_descriptions.remove', {
         descriptionId: template.currentId.get()
       }, (err, res) => {
-        if (err) throw err;
+        if (err) {
+          toastr.error(err.error, 'Error');
+          throw err;
+        }
         template.selectLastDescription();
         template.isEditing.set(false);
         return toastr.success('The description was removed', 'Success');

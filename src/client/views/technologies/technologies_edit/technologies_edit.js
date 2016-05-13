@@ -10,6 +10,7 @@ AutoForm.hooks({
   'update-technologies-form': {
     onSuccess() {
       toastr.success(`Technology updated successfully`, 'Success');
+      FlowRouter.go('technologies.entry', {id: FlowRouter.getParam('id') });
     },
     onError(formType, error) {
       toastr.error(error.toString(), 'Error');
