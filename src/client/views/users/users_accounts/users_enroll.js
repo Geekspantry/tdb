@@ -157,7 +157,7 @@ Template.enrollAccount.events({
         }
       });
 
-      return FlowRouter.go('search');
+      return FlowRouter.go('dashboard');
     });
   }
 });
