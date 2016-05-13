@@ -13,6 +13,7 @@ AutoForm.hooks({
       FlowRouter.go('technologies.entry', {id: FlowRouter.getParam('id') });
     },
     onError(formType, error) {
+      console.error(error);
       toastr.error(error.toString(), 'Error');
     },
   }
