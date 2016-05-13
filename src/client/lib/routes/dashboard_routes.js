@@ -5,11 +5,6 @@ FlowRouter.route('/', {
     BlazeLayout.render('defaultLayout', {
       main: 'mainDashboard'
     });
-  },
-  triggersEnter: [function(context, redirect) {
-    if (!Meteor.user()) {
-      redirect('/signin');
-    }
-  }],
+  }
 });
 
