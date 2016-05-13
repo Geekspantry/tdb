@@ -5,6 +5,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { AutoForm } from 'meteor/aldeed:autoform';
+import { TechnologiesDescriptions } from '../../../../api/technologies_descriptions/technologies_descriptions';
 
 import './technologies_descriptions_form.html';
 
@@ -31,5 +32,6 @@ Template.technologiesDescriptionsForm.events({
 });
 
 Template.technologiesDescriptionsForm.helpers({
+  technologiesDescriptionsCollection: () => TechnologiesDescriptions,
   shortTextCounter: () => Template.instance().shortTextCounter.get(),
 });

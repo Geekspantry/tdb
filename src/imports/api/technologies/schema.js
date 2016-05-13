@@ -1,6 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Technologies } from './technologies';
 import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions';
+import { Projects } from '../projects/projects';
 
 export const TechnologySchema = new SimpleSchema({
   techId: {
