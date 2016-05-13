@@ -65,6 +65,12 @@ export const remove = new ValidatedMethod({
     descriptionId: { type: String }
   }).validator(),
   run({ descriptionId }) {
-    return TechnologiesDescriptions.remove(descriptionId)
+    const description = TechnologiesDescriptions.findOne(descriptionId);
+
+    if (description.status === DESCRIPTION_STATUS.PUBLISHED) {
+      throw new Meteor.Error("Can't remove a published description");
+    }
+
+    return TechnologiesDescriptions.remove(descriptionId);
   },
 });
