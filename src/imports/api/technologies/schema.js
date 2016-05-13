@@ -1,6 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Technologies } from './technologies';
 import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions';
+import { Projects } from '../projects/projects';
 
 export const TechnologySchema = new SimpleSchema({
   techId: {
@@ -59,16 +60,27 @@ export const TechnologySchema = new SimpleSchema({
 
       let technology;
       if (this.docId) {
-        technology = Technologies.findOne(this.docId);  
+        technology = Technologies.findOne(this.docId);
       }
 
       try {
         if (this.value === 'review') {
           new SimpleSchema({
-            name: { type: String },
-            tags: { type: [String] },
-            synonyms: { type: [String] },
-            images: { type: [Schemas.Image] }
+            name: {
+              type: String
+            },
+            tags: {
+              type: [String],
+              minCount: 1
+            },
+            synonyms: {
+              type: [String],
+              minCount: 1
+            },
+            images: {
+              type: [Schemas.Image],
+              minCount: 1
+            }
           }).validate({
             name,
             tags,
@@ -77,27 +89,44 @@ export const TechnologySchema = new SimpleSchema({
           });
 
           const description = TechnologiesDescriptions.findOne({
-            technologyId: this.docId,
-            $or: [
-              { status: 'draft' },
-              { status: 'review' }
-            ]
+            technologyId: this.docId
           });
 
           if (!description) {
-            return 'updateStatusDescriptionDraftOrReview';
+            return 'Technologies_updateStatusDescriptionDraftOrReview';
           }
         }
 
         if (this.value === 'published') {
           new SimpleSchema({
-            name: { type: String },
-            tags: { type: [String] },
-            synonyms: { type: [String] },
-            images: { type: [Schemas.Image] },
-            attachmentsId: { type: [String] },
-            projectsId: { type: [String] },
-            organizationsId: { type: [String] },
+            name: {
+              type: String
+            },
+            tags: {
+              type: [String],
+              minCount: 1
+            },
+            synonyms: {
+              type: [String],
+              minCount: 1
+            },
+            images: {
+              type: [Schemas.Image],
+              minCount: 1
+            },
+            attachmentsId: {
+              type: [String],
+              minCount: 1
+            },
+            projectsId: {
+              type: [String],
+              optional: true,
+              minCount: 1
+            },
+            organizationsId: {
+              type: [String],
+              minCount: 1
+            },
           }).validate({
             name,
             tags,
@@ -114,12 +143,13 @@ export const TechnologySchema = new SimpleSchema({
           });
 
           if (!description) {
-            return 'updateStatusDescriptionPublished';
+            return 'Technologies_updateStatusDescriptionPublished';
           }
         }
       } catch (e) {
         console.error('[Status Validation Error]', e);
-        const error = 'updateStatus' + e.details[0].name[0].toUpperCase() + e.details[0].name.substring(1);
+        const error = 'Technologies_updateStatus' + e.details[0].name[0].toUpperCase() + e.details[0].name.substring(
+          1);
         return error;
       }
     }
@@ -278,12 +308,17 @@ export const TechnologyReviewSchema = new SimpleSchema({
   }
 });
 
-SimpleSchema.messages({ updateStatusName: 'Technology must have a name to be promoted to review or be published' });
-SimpleSchema.messages({ updateStatusTags: 'Technology must have at least one tag to be promoted to review or be published' });
-SimpleSchema.messages({ updateStatusSynonyms: 'Technology must have at least one synonym to be promoted to review or be published' });
-SimpleSchema.messages({ updateStatusImages: 'Technology must have at least one image to be promoted to review or be published' });
-SimpleSchema.messages({ updateStatusDescriptionDraftOrReview: 'Technology must have at least one draft or reviewed description to be promoted to review or be published' });
-SimpleSchema.messages({ updateStatusDescriptionPublished: 'Technology must have a published description to be published' });
-SimpleSchema.messages({ updateStatusProjectsId: 'Technology must have at least one related project to be published' });
-SimpleSchema.messages({ updateStatusOrganizationsId: 'Technology must have at least one related organization to be published' });
-SimpleSchema.messages({ updateStatusAttachmentsId: 'Technology must have at least one related attachment to be published' });
+SimpleSchema.messages({ Technologies_updateStatusName: 'Technology must have a name to be promoted to review or be published' });
+SimpleSchema.messages({ Technologies_updateStatusTags: 'Technology must have at least one tag to be promoted to review or be published' });
+SimpleSchema.messages({ Technologies_updateStatusSynonyms: 'Technology must have at least one synonym to be promoted to review or be published' });
+SimpleSchema.messages({ Technologies_updateStatusImages: 'Technology must have at least one image to be promoted to review or be published' });
+SimpleSchema.messages({ Technologies_updateStatusDescriptionDraftOrReview: 'Technology must have at least one description to be promoted to review' });
+SimpleSchema.messages({ Technologies_updateStatusDescriptionPublished: 'Technology must have a published description to be published' });
+SimpleSchema.messages({ Technologies_updateStatusProjectsId: 'Technology must have at least one related project to be published' });
+SimpleSchema.messages({ Technologies_updateStatusOrganizationsId: 'Technology must have at least one related organization to be published' });
+SimpleSchema.messages({ Technologies_updateStatusAttachmentsId: 'Technology must have at least one related attachment to be published' });
+SimpleSchema.messages({ Technologies_updateStatusNeedAdminOrEditor: 'Only Admins and Editors can update Technology Status. Keep the previous status to save your changes'});
+
+
+
+

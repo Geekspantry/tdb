@@ -1,9 +1,9 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
 import { Technologies } from './technologies.js';
-import {
-  TechnologySchema,
-} from './schema.js';
+import { TechnologySchema } from './schema.js';
+import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions.js';
+import { _ } from 'meteor/underscore';
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
@@ -16,7 +16,6 @@ export const insert = new ValidatedMethod({
   name: 'technologies.insert',
   validate: TechnologySchema.validator(),
   run(doc) {
-    // checkPermissions();
     return Technologies.insert(doc);
   }
 });
@@ -28,7 +27,22 @@ export const update = new ValidatedMethod({
     modifier: { type: Object, blackbox: true }
   }).validator(),
   run({ _id, modifier }) {
-    // checkPermissions();
+    // Anyone can create Technologies, but just Editors and Admins can change its status.
+    if (modifier.$set && modifier.$set.status) {
+
+      const technology = Technologies.findOne(_id);
+
+      if (technology.status !== modifier.$set.status) {
+        if (Roles.userIsInRole(Meteor.user(), ['viewer'])) {
+          throw new ValidationError([{
+              name: 'status',
+              type: 'Technologies_updateStatusNeedAdminOrEditor',
+            }],
+            'Only Admins and Editors can update Technology Status. Keep the previous status to save your changes'
+          );
+        }
+      }
+    }
     return Technologies.update(_id, modifier);
   }
 });
@@ -40,9 +54,10 @@ export const remove = new ValidatedMethod({
   }).validator(),
   run({ _id }) {
     checkPermissions();
-    Technologies.remove({
-      _id: techId
-    });
+
+    this.unblock();
+    Technologies.remove({ _id: _id });
+    TechnologiesDescriptions.remove({ technologyId: _id });
   }
 });
 
@@ -54,7 +69,6 @@ export const linkImage = new ValidatedMethod({
     imageId: { type: String }
   }).validator(),
   run({ _id, imageId }) {
-    checkPermissions();
     const technology = Technologies.findOne(_id);
 
     if (!technology) {
@@ -86,7 +100,6 @@ export const unlinkImage = new ValidatedMethod({
     imageId: { type: String }
   }).validator(),
   run({ _id, imageId }) {
-    checkPermissions();
     const technology = Technologies.findOne(_id);
     const image = technology.images.find(i => i.src === imageId);
 
@@ -117,6 +130,7 @@ export const updateShowcasedImage = new ValidatedMethod({
   }).validator(),
   run({ _id, imageId }) {
     checkPermissions();
+
     const technology = Technologies.findOne(_id);
     const currentShowcasedImage = technology.images.find(i => i.showcased);
 

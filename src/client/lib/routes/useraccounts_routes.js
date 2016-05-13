@@ -2,13 +2,10 @@ AccountsTemplates.configure({
   defaultLayout: 'defaultLayout',
   defaultLayoutRegions: {},
   defaultContentRegion: 'main',
-  onLogoutHook: function() {
-    FlowRouter.go('signin');
-  },
   hideSignInLink: true,
   hideSignUpLink: true,
   showLabels: false,
-  showForgotPasswordLink: true,
+  showForgotPasswordLink: true
 });
 
 AccountsTemplates.configureRoute('signIn', {
