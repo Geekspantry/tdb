@@ -1,6 +1,4 @@
-FlowRouter.triggers.enter([AccountsTemplates.ensureSignedIn], {
-  except: ['dashboard']
-});
+FlowRouter.triggers.enter([AccountsTemplates.ensureSignedIn]);
 
 FlowRouter.notFound = {
   action: function() {
