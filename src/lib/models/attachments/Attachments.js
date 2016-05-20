@@ -1,5 +1,6 @@
 Attachments = new Mongo.Collection('attachments');
-
+import { Projects } from '../../../imports/api/projects/projects.js';
+import { Technologies } from '../../../imports/api/technologies/technologies.js';
 
 // =================================
 // ======== Validations ============
@@ -48,7 +49,34 @@ SimpleSchema.messages({
 Attachments.helpers({
   isFromWeb() {
     return this.from === 'web';
-  }
+  },
+  getCreatedBy() {
+    return Meteor.users.findOne({
+      _id: this.createdBy
+    });
+  },
+  relatedProjects() {
+    return Projects.find({
+      attachmentsId: {
+        $in: [this._id]
+      }
+    });
+  },
+  relatedTechnologies() {
+    return Technologies.find({
+      attachmentsId: {
+        $in: [this._id]
+      }
+    });
+  },
+  relatedOrganizations() {
+    return Organizations.find({
+      attachmentsId: {
+        $in: [this._id]
+      }
+    });
+  },
+
 });
 
 // =================================

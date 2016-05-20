@@ -30,13 +30,6 @@ Meteor.publishComposite('attachments.single', function(attachmentId) {
     }
   };
 
-  let childOptions = {
-    fields: {
-      _id: true,
-      name: true,
-      attachmentsId: true
-    }
-  };
 
   return {
     find: function() {
@@ -53,15 +46,37 @@ Meteor.publishComposite('attachments.single', function(attachmentId) {
       }
     }, {
       find: function(attachment) {
-        return Projects.find(childQuery, childOptions);
+        return Projects.find(childQuery, {
+          fields: {
+            _id: true,
+            name: true,
+            status: true,
+            attachmentsId: true
+          }
+        });
       }
     }, {
       find: function(attachment) {
-        return Technologies.find(childQuery, childOptions);
+        return Technologies.find(childQuery, {
+          fields: {
+            _id: true,
+            name: true,
+            status: true,
+            evId: true,
+            attachmentsId: true
+          }
+        });
       },
     }, {
       find: function(attachment) {
-        return Organizations.find(childQuery, childOptions);
+        return Organizations.find(childQuery, {
+          fields: {
+            _id: true,
+            name: true,
+            type: true,
+            attachmentsId: true
+          }
+        });
       }
     }]
   };

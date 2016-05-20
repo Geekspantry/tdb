@@ -43,3 +43,11 @@ Template.registerHelper('techColor', function(status) {
   return ColorMap.tech.status[status] || ColorMap.tech.status.default;
 });
 
+
+Template.registerHelper('extendContext', function(data) {
+  var result = _.clone(this);
+  _.each(data.hash, function(value, key) {
+    result[key] = value;
+  })
+  return result;
+})
