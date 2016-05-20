@@ -1,6 +1,11 @@
 <template name="projectsAdd">
   {{#panel title="Create Project Form" }}
-    {{#autoForm collection=projectsCollection id="insertProjectsForm" type="method" meteormethod="Projects.methods.add" class="form-horizontal" }}
+    {{#autoForm 
+      collection=projectsCollection 
+      id="insertProjectsForm"
+      type="method" 
+      meteormethod="projects.insert"
+      class="form-horizontal" }}
       <h2>Basic Information</h2>
       <hr />    
       {{> afQuickField name="evId" label-class="col-sm-2" input-col-class="col-sm-9"}} 
