@@ -91,7 +91,7 @@ export const ProjectSchema = new SimpleSchema({
       type: 'universe-select',
       multiple: true,
       uniPlaceholder: 'Search by organization title...',
-      /*options: () => Organizations.quickList()*/
+      options: () => Organizations.quickList()
     }
   },
   attachmentsId: {
@@ -103,14 +103,14 @@ export const ProjectSchema = new SimpleSchema({
         type: 'universe-select',
         multiple: true,
         uniPlaceholder: 'Search attachments by title...',
-/*        options() {
+        options() {
           return Attachments.find().map((attachment) => {
             return {
               label: attachment.name,
               value: attachment._id
             };
           });
-        }*/
+        }
       }
     }
   },

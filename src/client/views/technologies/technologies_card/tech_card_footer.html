@@ -3,8 +3,8 @@
     {{#btnTooltip text="View Entry" onClick=onClickView}}
       <i class="fa fa-eye"></i>
     {{/btnTooltip}}
-    {{#btnTooltip text="Status is Review" }}
-      Review
+    {{#btnTooltip text=(concat "Status is " (capitalizeFirstLetter status)) }}
+      {{capitalizeFirstLetter status}}
     {{/btnTooltip}}
     {{#btnTooltip text=(concat attachmentsCount " attachments") }}
       <i class="{{Icons.collections.attachments}}"></i> {{attachmentsCount}}

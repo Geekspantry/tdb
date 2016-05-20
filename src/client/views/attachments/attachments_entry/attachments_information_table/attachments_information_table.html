@@ -1,0 +1,42 @@
+<template name="attachmentsInformationTable">
+  <table class="table small" data-template="attachments-information-table">
+  	<tbody>
+	    <tr>
+	      <td><b>Type</b></td>
+	      <td>
+	        <div class="label label-success">{{type}}</div>
+	      </td>
+	    </tr>
+	    <br>
+	    <tr>
+	      <td><b>From</b></td>
+	      <td>
+	        <div class="label label-default">{{from}}</div>
+	      </td>
+	    </tr>
+	    <br> {{#if isFromWeb}}
+	    <tr>
+	      <td><b>Web</b></td>
+	      <td><a href="{{web.sourceUrl}}" target="blank">Visit Page</a></td>
+	    </tr>
+	    {{else}}
+	    <tr>
+	      <td><b>File</b></td>
+	      <td>
+	        <a href="{{awsUrl}}" download>Download</a>
+	      </td>
+	    </tr>
+	    {{/if}}
+	    <br>
+	    <tr>
+	      <td><b>Upload Date</b></td>
+	      <td>{{moFormat createdAt 'DD/MM/YYYY'}}</td>
+	    </tr>
+	    <br>
+	    <tr>
+	      <td><b>Created By</b></td>
+	      <td> <a href="{{pathFor 'users.entry' id=getCreatedBy._id}}">{{> safeImg url=(getUserThumb (s3pathImages getCreatedBy.profile.imageId)) class="img-circle m-t-xs thumb-img"}} </a></td>
+	    </tr>
+    </tbody>
+  </table>
+</template>
