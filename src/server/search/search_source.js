@@ -124,7 +124,9 @@ SearchSource.defineSource('globalSearch', function(searchText, {
     }
   };
 
-  let search = esClient.prettySearch({
+  let prettySearchSync = Async.wrap(esClient.prettySearch);
+
+  let search = prettySearchSync({
     index: Meteor.settings.public.elasticSearch.index,
     type: types.join(','), // filter types
     body: {

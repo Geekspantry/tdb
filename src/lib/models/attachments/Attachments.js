@@ -196,3 +196,27 @@ Schemas.Attachment = new SimpleSchema({
 Attachments.attachSchema(Schemas.Attachment);
 Attachments.attachBehaviour('timestampable');
 Meteor.isServer && Attachments.esDriver(esClient, 'attachments');
+Meteor.isServer && Attachments.setMapping({
+  description: {
+    type: 'string'
+  },
+  from: {
+    type: 'string'
+  },
+  name: {
+    type: 'string'
+  },
+  type: {
+    type: 'string'
+  },
+  web: {
+    properties: {
+      sourceUrl: {
+        type: 'string'
+      },
+      thumbnailUrl: {
+        type: 'string'
+      }
+    }
+  }
+});

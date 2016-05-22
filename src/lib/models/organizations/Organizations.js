@@ -106,6 +106,26 @@ Schemas.Organization = new SimpleSchema({
 Organizations.attachSchema(Schemas.Organization);
 Organizations.attachBehaviour('timestampable');
 Meteor.isServer && Organizations.esDriver(esClient, 'organizations');
+Meteor.isServer && Organizations.setMapping({
+  country: {
+    type: 'string'
+  },
+  description: {
+    type: 'string'
+  },
+  foundingYear: {
+    type: 'long'
+  },
+  logo: {
+    type: 'string'
+  },
+  name: {
+    type: 'string'
+  },
+  type: {
+    type: 'string'
+  }
+});
 
 Organizations.helpers({
   getProjects() {
