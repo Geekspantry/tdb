@@ -14,7 +14,7 @@ function checkPermissions() {
 
 export const insert = new ValidatedMethod({
   name: 'organizations.insert',
-  validate: Schemas.Organization.validator(),
+  validate: OrganizationSchema.validator(),
   run(doc) {
     checkPermissions();
     return Organizations.insert(doc);
@@ -23,7 +23,7 @@ export const insert = new ValidatedMethod({
 
 export const update = new ValidatedMethod({
   name: 'organizations.update',
-  validate: Schemas.validatedMethodUpdateSchema.validator(),
+  validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
     checkPermissions();
     return Organizations.update(_id, modifier);
@@ -33,9 +33,7 @@ export const update = new ValidatedMethod({
 
 export const remove = new ValidatedMethod({
   name: 'organizations.remove',
-  validate: new SimpleSchema({
-    _id: { type: String }
-  }).validator(),
+  validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
     checkPermissions();
     return Organizations.remove({ _id: _id });

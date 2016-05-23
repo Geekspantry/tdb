@@ -4,6 +4,8 @@ import { TechnologySchema } from './schema.js';
 import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions.js';
 import { DESCRIPTION_STATUS } from '../technologies_descriptions/schema';
 import { Projects} from '../projects/projects';
+import { Organizations} from '../organizations/organizations';
+import { Attachments} from '../attachments/attachments';
 
 export const Technologies = new Mongo.Collection('technologies');
 

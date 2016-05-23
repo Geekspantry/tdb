@@ -1,8 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { Attachments } from './attachments';
+import { Attachments } from './attachments.js';
 
-
-Attachments.validations = {
+const validations = {
   expectedFileReference() {
     let from = this.field('from').value;
     // Non web references needs a file reference.
@@ -101,7 +100,7 @@ export const AttachmentSchema = new SimpleSchema({
   web: {
     optional: true,
     esDriver: true,
-    custom: Attachments.validations.expectedWebReference,
+    custom: validations.expectedWebReference,
     type: new SimpleSchema({
       sourceUrl: {
         type: String,
@@ -119,7 +118,7 @@ export const AttachmentSchema = new SimpleSchema({
   file: {
     optional: true,
     esDriver: true,
-    custom: Attachments.validations.expectedFileReference,
+    custom: validations.expectedFileReference,
 
     type: new SimpleSchema({
       _id: {
@@ -135,7 +134,7 @@ export const AttachmentSchema = new SimpleSchema({
         optional: true,
         type: String,
         regEx: SimpleSchema.RegEx.Url,
-        custom: Attachments.validations.expectedFileSourceUrl
+        custom: validations.expectedFileSourceUrl
       }
     }),
   }

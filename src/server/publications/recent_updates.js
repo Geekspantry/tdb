@@ -1,3 +1,5 @@
+import { Logs } from '/imports/api/logs/logs';
+
 const ALL_COLLECTIONS_CHAR = '*';
 const COUNTER_PREFIX = 'recentUpdatesCounter-';
 
