@@ -1,4 +1,4 @@
-Organizations.methods = {};
+/*Organizations.methods = {};
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
@@ -152,3 +152,4 @@ Meteor.methods({
     });
   }
 });
+*/

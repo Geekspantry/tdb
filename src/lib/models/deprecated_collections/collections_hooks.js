@@ -1,4 +1,4 @@
-import { Projects } from '../../../imports/api/projects/projects';
+/*import { Projects } from '../../../imports/api/projects/projects';
 
 Collections.after.insert(function(userId, doc) {
   let projectId = doc.projectId;
@@ -21,3 +21,4 @@ Collections.after.insert(function(userId, doc) {
     }
   });
 });
+*/

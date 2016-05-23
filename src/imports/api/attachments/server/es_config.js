@@ -1,4 +1,4 @@
-import { Projects } from '../projects';
+import { Attachments } from '../attachments';
 import esClient from '../../elastic_search/es_client.js';
 import { ElasticSearchTypeAPI } from '../../elastic_search/lib/elastic_search.js';
 
@@ -8,22 +8,32 @@ let mapping = {
   description: {
     type: 'string'
   },
-  image: {
+  from: {
     type: 'string'
   },
   name: {
     type: 'string'
   },
-  status: {
+  type: {
     type: 'string'
+  },
+  web: {
+    properties: {
+      sourceUrl: {
+        type: 'string'
+      },
+      thumbnailUrl: {
+        type: 'string'
+      }
+    }
   }
 };
 
 
-export const ProjectsES = new ElasticSearchTypeAPI({
+export const AttachmentsES = new ElasticSearchTypeAPI({
   esClient: esClient,
   index: index,
-  type: 'projects',
-  mongoCollection: Projects,
+  type: 'attachments',
+  mongoCollection: Attachments,
   mapping: mapping
 });

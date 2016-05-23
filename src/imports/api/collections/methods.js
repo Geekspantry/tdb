@@ -1,4 +1,9 @@
-import { Projects } from '../../../imports/api/projects/projects';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { ValidationError } from 'meteor/mdg:validation-error';
+
+import { CollectionSchema } from './schema.js';
+import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
+
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
@@ -7,23 +12,18 @@ function checkPermissions() {
   throw new Meteor.Error(403, 'Not authorized');
 }
 
-
-Collections.methods = {};
-
-Collections.methods.add = new ValidatedMethod({
-  name: 'Collections.methods.add',
-  validate: Schemas.Collection.validator(),
+export const insert = new ValidatedMethod({
+  name: 'collections.insert',
+  validate: CollectionSchema.validator(),
   run(doc) {
     checkPermissions();
     return Collections.insert(doc);
   }
 });
 
-Collections.methods.remove = new ValidatedMethod({
-  name: 'Collections.methods.remove',
-  validate: new SimpleSchema({
-    _id: { type: String }
-  }).validator(),
+export const remove = new ValidatedMethod({
+  name: 'collections.remove',
+  validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
     check(_id, String);
     checkPermissions();
@@ -38,8 +38,17 @@ Collections.methods.remove = new ValidatedMethod({
   }
 });
 
-Collections.methods.copy = new ValidatedMethod({
-  name: 'Collections.methods.copy',
+export const update = new ValidatedMethod({
+  name: 'collections.update',
+  validate: ValidatedMethodUpdateSchema.validator(),
+  run({ _id, modifier }) {
+    checkPermissions();
+    return Collections.update(_id, modifier);
+  }
+});
+
+export const copy = new ValidatedMethod({
+  name: 'collections.copy',
   validate: new SimpleSchema({
     _id: { type: String }
   }).validator(),
@@ -62,20 +71,8 @@ Collections.methods.copy = new ValidatedMethod({
 });
 
 
-Collections.methods.update = new ValidatedMethod({
-  name: 'Collections.methods.update',
-  validate: new SimpleSchema({
-    _id: { type: String },
-    modifier: { type: Object, blackbox: true }
-  }).validator(),
-  run({ _id, modifier }) {
-    checkPermissions();
-    return Collections.update(_id, modifier);
-  }
-});
-
-Collections.methods.pushTechnology = new ValidatedMethod({
-  name: 'Collections.methods.pushTechnology',
+export const addTechnology = new ValidatedMethod({
+  name: 'collections.addTechnology',
   validate({ collectionId, techId, position }) {
     check(collectionId, String);
     check(techId, String);
@@ -103,8 +100,8 @@ Collections.methods.pushTechnology = new ValidatedMethod({
   }
 });
 
-Collections.methods.pullTechnology = new ValidatedMethod({
-  name: 'Collections.methods.pullTechnology',
+export const removeTechnology = new ValidatedMethod({
+  name: 'collections.removeTechnology',
   validate({ source, techId }) {
     check(source, String);
     check(techId, String);
@@ -121,8 +118,8 @@ Collections.methods.pullTechnology = new ValidatedMethod({
 });
 
 
-Collections.methods.moveTechnology = new ValidatedMethod({
-  name: 'Collections.methods.moveTechnology',
+export const moveTechnology = new ValidatedMethod({
+  name: 'collections.moveTechnology',
   validate({ source, target, techId, position }) {
     check(source, String);
     check(target, String);

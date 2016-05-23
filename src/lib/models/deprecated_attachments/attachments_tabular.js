@@ -1,8 +1,8 @@
-TabularTables.Organizations = new Tabular.Table({
-  name: 'OrganizationsList',
-  collection: Organizations,
+/*TabularTables.Attachments = new Tabular.Table({
+  name: 'AttachmentsList',
+  collection: Attachments,
   sub: new SubsManager(),
-  pub: 'tabularOrganizationsList',
+  pub: 'tabularAttachmentsList',
   autoWidth: false,
   responsive: true,
   stateSave: true,
@@ -20,8 +20,9 @@ TabularTables.Organizations = new Tabular.Table({
     },
     {
       title: 'Actions',
-      tmpl: Meteor.isClient && Template.organizationsActions,
+      tmpl: Meteor.isClient && Template.attachmentsActions,
       width: '10%'
   }],
   bPaginate: true
 });
+*/

@@ -1,4 +1,4 @@
-import elasticsearch from 'elasticsearch';
+/*import elasticsearch from 'elasticsearch'; */
 //
 //  Allow SimpleSchema to have esDriver field
 //
@@ -7,6 +7,7 @@ SimpleSchema.extendOptions({
   esDriverTransformation: Match.Optional(Function)
 });
 
+/*
 if (Meteor.isServer) {
   //  ---------------------------------------------------------------------------------------
   //
@@ -281,3 +282,4 @@ if (Meteor.isServer) {
     });
   }
 }
+*/

@@ -1,4 +1,4 @@
-Attachments.methods = {};
+/*Attachments.methods = {};
 
 Attachments.methods.add = new ValidatedMethod({
   name: 'Attachments.methods.add',
@@ -30,3 +30,4 @@ Meteor.methods({
     throw new Meteor.Error(403, 'Not authorized');
   }
 });
+*/

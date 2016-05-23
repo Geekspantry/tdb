@@ -1,26 +1,12 @@
-/*
-import { Technologies } from '../../imports/api/technologies/technologies';
-import { Projects } from '../../imports/api/projects/projects';
+import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Counts } from 'meteor/tmeasday:publish-counts';
 
+import { Technologies } from '../../technologies/technologies.js';
+import { Projects } from '../../projects/projects';
+import { Organizations } from '../organizations';
 
-Meteor.publishComposite('tabularOrganizationsList', function(tableName, ids, fields) {
-  check(tableName, String);
-  check(ids, Array);
-  check(fields, Match.Optional(Object));
-  this.unblock();
-  return {
-    find() {
-      this.unblock();
-      return Organizations.find({
-        _id: {
-          $in: ids
-        }
-      }, {
-        fields: fields
-      });
-    },
-  };
-});
 
 Meteor.publishComposite('organizations.single', function(organizationId) {
   check(organizationId, String);
@@ -59,6 +45,7 @@ Meteor.publishComposite('organizations.single', function(organizationId) {
             _id: org.logo
           });
         }
+        return null;
       }
     }]
   };
@@ -109,4 +96,3 @@ Meteor.publish('organization-relations-counter', function(organizationId) {
     _id: organizationId
   }), { countFromFieldLength: 'attachmentsId' });
 });
-*/

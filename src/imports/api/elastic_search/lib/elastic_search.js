@@ -1,45 +1,16 @@
 import elasticsearch from 'elasticsearch';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Meteor } from 'meteor/meteor';
 
 const MODIFIER_OPERATIONS = ['$set', '$unset', '$inc', '$push', '$pull', '$pop',
   '$rename', '$pullAll', '$addToSet', '$bit'
 ];
 
-export class ElasticSearchIndexAPI {
-  constructor({ esClient, index }) {
-    this.esClient = esClient;
-    this.index = index;
-  }
-
-
-  _deleteIndex(callback) {
-    esClient.indices.delete({
-      index: this.index,
-    }, (err, res) => {
-      if (err) {
-        console.error('ElasticSearchIndexAPI error at deleteIndex:');
-        console.error(e.message);
-        callback(err, null);
-      }
-      callback(null, res);
-    })
-  }
-
-  _createIndex(callback) {
-    esClient.indices.create({
-      index: this.index,
-    }, (err, res) => {
-      if (err) {
-        console.error('ElasticSearchIndexAPI error at createIndex:');
-        console.error(e.message);
-        callback(err, null);
-      }
-      callback(null, res);
-    })
-  }
-}
 
 export class ElasticSearchTypeAPI {
   constructor({ esClient, index, type, mongoCollection, transformDoc, mapping }) {
+    console.log('executing cosntructor...');
+
     this.esClient = esClient;
     this.index = index;
     this.mongoCollection = mongoCollection;
@@ -49,9 +20,9 @@ export class ElasticSearchTypeAPI {
 
     this._extractKeysFromSimpleSchema();
     this._buildSchemaFromKeys();
-    this._setupHelpers()
+    this._setupHelpers();
     this._setupHooks();
-
+    this._setupMethods();
   }
 
   /**
@@ -75,6 +46,37 @@ export class ElasticSearchTypeAPI {
     return fields;
   }
 
+
+  _setupMethods() {
+    let self = this;
+    this.methods = {};
+    this.methods.putMapping = new ValidatedMethod({
+      name: `es.types.${self.type}.putMapping`,
+      validate: null,
+      run() {
+        if (!Roles.userIsInRole(Meteor.user(), ['admin'])) {
+          throw new Meteor.Error(403, 'not-authorized');
+        }
+
+        self.putMapping();
+      }
+    });
+
+    /**
+     * Reset Type
+     */
+     this.methods.bulkIndex = new ValidatedMethod({
+      name: `es.types.${self.type}.bulkIndex`,
+      validate: null,
+      run() {
+        if (!Roles.userIsInRole(Meteor.user(), ['admin'])) {
+          throw new Meteor.Error(403, 'not-authorized');
+        }
+
+        self.bulkIndex({});
+      }
+     });
+  }
   /**
    * SimpleSchema Integration
    */
@@ -84,8 +86,10 @@ export class ElasticSearchTypeAPI {
 
   _extractKeysFromSimpleSchema() {
     const simpleSchema = this.mongoCollection.simpleSchema().schema();
-    if (!simpleSchema) throw new Error(
+    if (!simpleSchema) {
+      throw new Error(
       'ElasticSearchAPI requires an attached SimpleSchema instance on the MongoCollection');
+    }
 
     let keys = [];
     //  grab keys that have esDriver: true
@@ -102,26 +106,25 @@ export class ElasticSearchTypeAPI {
     this.keys = keys;
   }
 
-
   /**
    * Doc preprocessing, before sending to elastic search
    */
   _cleanDoc(doc) {
     if (this.esSchema) {
-    	let newDoc = _.clone(doc)
+    	let newDoc = _.clone(doc);
       this.esSchema.clean(newDoc, {
         removeEmptyStrings: true
       });
       return newDoc;
     }
+    return doc;
   }
 
   _applyTransformDoc(doc, originalDoc) {
     if (this.transformDoc && typeof this.transformDoc === 'function') {
       return this.transformDoc(doc, originalDoc);
-    } else {
-      return doc;
     }
+    return doc;
   }
 
   _prepareDoc(doc) {
@@ -154,7 +157,7 @@ export class ElasticSearchTypeAPI {
             let id = this._id;
             self._removeDoc(id);
           }
-        }
+        };
       }
     });
   }
@@ -206,8 +209,6 @@ export class ElasticSearchTypeAPI {
   }
 
 
-
-
   /**
    * Hooks
    */
@@ -230,7 +231,7 @@ export class ElasticSearchTypeAPI {
     this.mongoCollection.after.update(function(userId, doc, fieldNames, modifier) {
       let docWithTransformations = this.transform();
 
-      let modifiedKeys = self._extractKeysFromModifier(modifier)
+      let modifiedKeys = self._extractKeysFromModifier(modifier);
 
       if (_.intersection(modifiedKeys, self.keys).length) {
         let id = docWithTransformations._id;
@@ -257,33 +258,30 @@ export class ElasticSearchTypeAPI {
     this._setupInsertHook();
   }
 
-
-
   /**
    * Public
    */
   bulkIndex(query) {
-    let self = this;
     let bulkBody = [];
 
-    this.mongoCollection.find(query).forEach(function(doc) {
+    this.mongoCollection.find(query).forEach((doc) => {
       bulkBody.push({
         index: {
-          _index: self.es.index,
-          _type: self.es.type,
+          _index: this.index,
+          _type: this.type,
           _id: doc._id,
         }
-      })
+      });
 
-      let preparedDoc = self._prepareDoc(doc);
+      let preparedDoc = this._prepareDoc(doc);
       delete preparedDoc._id;
 
-      bulkBody.push(finalDoc);
+      bulkBody.push(preparedDoc);
     });
 
     let bulkReq = {
       body: bulkBody
-    }
+    };
 
     this.esClient.bulk(bulkReq, (err, res) => {
       if (err) {
@@ -295,7 +293,7 @@ export class ElasticSearchTypeAPI {
 
 
   putMapping() {
-    this.client.indices.putMapping({
+    this.esClient.indices.putMapping({
       index: this.index,
       type: this.type,
       body: {
@@ -306,7 +304,7 @@ export class ElasticSearchTypeAPI {
         console.log(`ElasticSearchAPI error at putMapping ${this.type}`);
         console.log(err);
       }
-    })
+    });
   }
 
 }

@@ -1,6 +1,6 @@
 import { Technologies } from '../technologies.js';
 import esClient from '../../elastic_search/es_client.js';
-import { ElasticSearchTypeAPI } from '../../elastic_search/elastic_search.js';
+import { ElasticSearchTypeAPI } from '../../elastic_search/lib/elastic_search.js';
 
 let index = Meteor.settings.public.elasticSearch.index;
 
@@ -20,11 +20,10 @@ let mapping = {
   techId: {
     type: 'string'
   }
-}
+};
 
-let transformDoc = function(cleanedDoc, doc){
+function transformDoc(cleanedDoc, doc) {
   let publishedDescription = doc.getPublishedDescription();
-  
   if (publishedDescription && publishedDescription.longText) {
     cleanedDoc.description = TagStripper.strip(publishedDescription.longText);
     cleanedDoc.shortDescription = publishedDescription.shortText || '';
@@ -37,17 +36,15 @@ let transformDoc = function(cleanedDoc, doc){
     cleanedDoc.image = showcasedImage.src;
   }
   delete cleanedDoc.images;
-
-  console.log(cleanedDoc);
-  
   return cleanedDoc;
 }
 
 
-new ElasticSearchTypeAPI({
+export const TechnologiesES = new ElasticSearchTypeAPI({
   esClient: esClient,
   index: index,
   type: 'technologies',
   mongoCollection: Technologies,
-  transformDoc: transformDoc
+  transformDoc: transformDoc,
+  mapping: mapping
 });

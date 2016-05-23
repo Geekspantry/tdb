@@ -24,3 +24,9 @@ import '../../api/projects/server/publications.js';
 
 import '../../api/collections_set/methods.js';
 import '../../api/collections_set/server/publications.js';
+
+
+/**
+ * Elastic Search
+ */
+ import '../../api/elastic_search/index.js';

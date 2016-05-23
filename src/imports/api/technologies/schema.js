@@ -318,7 +318,3 @@ SimpleSchema.messages({ Technologies_updateStatusProjectsId: 'Technology must ha
 SimpleSchema.messages({ Technologies_updateStatusOrganizationsId: 'Technology must have at least one related organization to be published' });
 SimpleSchema.messages({ Technologies_updateStatusAttachmentsId: 'Technology must have at least one related attachment to be published' });
 SimpleSchema.messages({ Technologies_updateStatusNeedAdminOrEditor: 'Only Admins and Editors can update Technology Status. Keep the previous status to save your changes'});
-
-
-
-
