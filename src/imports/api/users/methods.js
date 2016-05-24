@@ -54,7 +54,7 @@ export const invite = new ValidatedMethod({
 export const updateRole = new ValidatedMethod({
   name: 'users.updateRole',
   validate({ userId, role }) {
-    check(targetUserId, String);
+    check(userId, String);
     check(role, String);
   },
   run({ userId, role }) {
@@ -110,11 +110,31 @@ export const addProject = new ValidatedMethod({
     check(projectId, String);
   },
   run({ userId, projectId }) {
-    if (Roles.userIsInRole(Meteor.userId, ['admin', 'editor'])) {
+    if (Roles.userIsInRole(Meteor.userId(), ['admin', 'editor'])) {
       return Meteor.users.update({
-        _id: targetUserId
+        _id: userId
       }, {
         $addToSet: {
+          projectsId: projectId
+        }
+      });
+    }
+    throw new Meteor.Error('not-authorized', 'Not authorized.');
+  }
+});
+
+export const removeProject = new ValidatedMethod({
+  name: 'users.removeProject',
+  validate({ userId, projectId }) {
+    check(userId, String);
+    check(projectId, String);
+  },
+  run({ userId, projectId }) {
+    if (Roles.userIsInRole(Meteor.userId(), ['admin', 'editor'])) {
+      return Meteor.users.update({
+        _id: userId
+      }, {
+        $pull: {
           projectsId: projectId
         }
       });

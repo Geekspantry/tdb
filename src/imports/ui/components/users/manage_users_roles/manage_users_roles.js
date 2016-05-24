@@ -1,4 +1,8 @@
-Template.manageUserRole.helpers({
+import { Template } from 'meteor/templating';
+import { Roles } from 'meteor/alanning:roles';
+import './manage_users_roles.html';
+
+Template.manageUsersRoles.helpers({
   users() {
     let result = SearchSources.userSearch.getTransformedData();
     return result;
@@ -13,6 +17,6 @@ Template.manageUserRole.helpers({
   }
 });
 
-Template.manageUserRole.onCreated(function() {
+Template.manageUsersRoles.onCreated(function() {
   this.subscribe('Users.roles');
 });

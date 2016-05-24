@@ -1,3 +1,6 @@
+import { Template } from 'meteor/templating';
+import './manage_user_projects.html';
+
 Template.manageUserProjects.helpers({
   projects() {
     return SearchSources.globalSearch.getTransformedData();

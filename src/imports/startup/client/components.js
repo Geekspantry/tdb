@@ -136,6 +136,8 @@ import '/imports/ui/components/collections/collections_edit/collections_edit';
  * Users
  */
 
+import '/imports/ui/components/users/manage_user_projects/manage_user_projects';
+import '/imports/ui/components/users/manage_user_projects/manage_user_projects_item';
 import '/imports/ui/components/users/users_card/users_card';
 import '/imports/ui/components/users/users_invite/users_invite';
 import '/imports/ui/components/users/users_dashboard/users_dashboard';
