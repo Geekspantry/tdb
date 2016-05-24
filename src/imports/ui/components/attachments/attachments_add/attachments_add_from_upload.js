@@ -1,3 +1,10 @@
+import { Template } from 'meteor/templating';
+import { AutoForm } from 'meteor/aldeed:autoform';
+import {Attachments } from '/imports/api/attachments/attachments';
+import 'meteor/chrismbeckett:toastr';
+
+import './attachments_add_from_upload.html';
+
 AutoForm.hooks({
   insertAttachmentFromUploadForm: {
     formToDoc(doc) {
@@ -14,6 +21,9 @@ AutoForm.hooks({
 });
 
 Template.attachmentsAddFromUpload.helpers({
+  attachmentsCollection() {
+    return Attachments;
+  },  
   attachmentFromUpload() {
     return Template.instance().attachment.get();
   },

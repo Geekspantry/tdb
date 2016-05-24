@@ -7,6 +7,7 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Projects } from '../projects.js';
 import { Technologies } from '../../technologies/technologies.js';
 import { CollectionsSet } from '../../collections_set/collections_set.js';
+import { Collections } from '/imports/api/collections/collections.js';
 
 /**
  * Publish as single project

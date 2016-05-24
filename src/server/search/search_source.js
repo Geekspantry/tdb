@@ -266,7 +266,7 @@ SearchSource.defineSource('userSearch', function(searchText, {
     }
   };
 
-  let searchSync = Async.wrap(esClient, 'search');
+  let syncSearch = Async.wrap(esClient, 'search');
 
   let search = syncSearch({
     index: Meteor.settings.public.elasticSearch.index,

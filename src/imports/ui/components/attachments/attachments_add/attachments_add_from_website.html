@@ -3,7 +3,8 @@
     <div class="col-xs-8">
       {{> searchMetadata onSuccess=onFetchMetadataSuccess}}
       {{#autoForm id="insertAttachmentFromWebForm" 
-        doc=attachmentFromWeb collection="Attachments" 
+        doc=attachmentFromWeb
+        collection=attachmentsCollection
         type="method" 
         meteormethod="Attachments.methods.add" 
         class="form-horizontal"}}

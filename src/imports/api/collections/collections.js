@@ -1,5 +1,7 @@
-Collections = new Mongo.Collection('collections');
-Collections.attachSchema(Schemas.Collection);
+import { CollectionSchema } from './schema.js';
+
+export const Collections = new Mongo.Collection('collections');
+Collections.attachSchema(CollectionSchema);
 Collections.attachBehaviour('timestampable');
 
 Collections.helpers({
