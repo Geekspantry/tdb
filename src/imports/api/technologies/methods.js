@@ -4,7 +4,6 @@ import { Technologies } from './technologies.js';
 import { TechnologySchema } from './schema.js';
 import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions.js';
 import { _ } from 'meteor/underscore';
-import { TechnologiesES } from './server/es_config.js';
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {

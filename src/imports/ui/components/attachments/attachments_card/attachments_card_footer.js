@@ -1,3 +1,7 @@
+import { Template } from 'meteor/templating';
+import { Counts } from 'meteor/tmeasday:publish-counts';
+import './attachments_card_footer.html';
+
 Template.attachmentsCardFooter.onCreated(function() {
   this.subscribe('attachment-relations-counter', this.data._id);
 });

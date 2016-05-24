@@ -1,8 +1,8 @@
 import { Template } from 'meteor/templating';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import popups from '../../common/popups/popups';
-import { CollectionsSet } from '../../../../api/collections_set/collections_set';
-import { remove } from '../../../../api/collections_set/methods.js';
+import { CollectionsSet } from '/imports/api/collections_set/collections_set';
+import { remove } from '/imports/api/collections_set/methods.js';
 import './collections_set_item.html';
 
 Template.collectionsSetItem.helpers({
@@ -19,9 +19,9 @@ Template.collectionsSetItem.events({
     popups.removeConfirmation(text, () => {
       remove.call({_id}, (err, res) => {
         if (err) {
-          popups.removeError();
+          toastr.error(err.toString(), 'Error');
         } else {
-          popups.removeSuccess(`The Collection set ${name} has been removed successfully.`);
+          toastr.success(`<b>${name}</b> deleted successfully.`, 'Success');
         }
       });
     });
@@ -39,7 +39,6 @@ Template.collectionsSetItem.events({
       _id
     }, (err, res) => {
       if (err) {
-        console.dir(err);
         toastr.error('Could not copy the collection', 'Error');
       } else {
         toastr.success('Collection copied!', 'Success');
@@ -54,9 +53,9 @@ Template.collectionsSetItem.events({
     popups.removeConfirmation(text, () => {
       Collections.methods.remove.call({_id}, (err, res) => {
         if (err) {
-          popups.removeError();
+          toastr.error(err.toString(), 'Error');
         } else {
-          popups.removeSuccess(`The collection ${name} has been removed successfully.`);
+          toastr.success(`<b>${name}</b> deleted successfully.`, 'Success');
         }
       });
     });

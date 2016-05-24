@@ -14,7 +14,7 @@ AutoForm.hooks({
       }
     },
     onSuccess() {
-      toastr.success('Collection created successfully: ' + this.insertDoc.name, 'Success');
+      toastr.success(`<b>${this.insertDoc.name}</b> created successfully`, 'Success');
       Modal.hide();
     },
     onError(formType, error) {

@@ -1,16 +1,35 @@
+import { Template } from 'meteor/templating';
 import popups from '/imports/ui/components/common/popups/popups';
-import { remove } from '/imports/api/technologies/methods';
+import { remove } from '/imports/api/attachments/methods';
 
-Template.techCard.onCreated(function() {
+import './attachments_card_tools';
+import './attachments_card_footer';
+import './attachments_card_desc';
+
+import './attachments_card.html';
+
+Template.attachmentsCard.onCreated(function() {
   this.state = new ReactiveVar();
 });
-Template.techCard.helpers({
+Template.attachmentsCard.helpers({
   isDeleted() {
     return Template.instance().state.get() === 'deleted';
+  },
+  fetchOptions() {
+    return {
+      type: 'fetch'
+    };
+  },
+  useBackground() {
+    // Apply background if is not from web and not a file image.
+    return this.from !== 'web' && (this.file && this.file.type.indexOf('image') !== 0);
+  },
+  isImage() {
+    return this.file.type.indexOf('image') === 0;
   }
 });
 
-Template.techCard.events({
+Template.attachmentsCard.events({
   'click .delete': function(event, template) {
     event.preventDefault();
 
@@ -32,3 +51,4 @@ Template.techCard.events({
     });
   }
 });
+

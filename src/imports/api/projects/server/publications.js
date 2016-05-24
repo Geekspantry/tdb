@@ -5,7 +5,9 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
 import { Projects } from '../projects.js';
-import { Technologies } from '../../technologies/technologies.js';
+import { Technologies } from '/imports/api/technologies/technologies.js';
+import { Organizations } from '/imports/api/organizations/organizations.js';
+
 import { CollectionsSet } from '../../collections_set/collections_set.js';
 import { Collections } from '/imports/api/collections/collections.js';
 
