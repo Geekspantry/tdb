@@ -1,3 +1,10 @@
+import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { AutoForm } from 'meteor/aldeed:autoform';
+import 'meteor/chrismbeckett:toastr';
+import { Organizations } from '/imports/api/organizations/organizations';
+import './organizations_add.html';
+
 AutoForm.hooks({
   insertOrganizationForm: {
     onSuccess() {
@@ -8,6 +15,10 @@ AutoForm.hooks({
         toastr.error(error.toString(), 'Error');
       },
   }
+});
+
+Template.organizationsAdd.helpers({
+  organizationsCollection: () => Organizations
 });
 
 Template.organizationsAdd.onCreated(function() {

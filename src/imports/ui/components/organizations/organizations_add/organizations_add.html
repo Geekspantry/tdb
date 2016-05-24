@@ -1,6 +1,11 @@
 <template name="organizationsAdd">
   {{#panel title="Create Organization Form"}}
-    {{#autoForm id="insertOrganizationForm" collection="Organizations" type="method" meteormethod="Organizations.methods.add" class="form-horizontal" }}
+    {{#autoForm 
+      id="insertOrganizationForm"
+      collection=organizationsCollection
+      type="method"
+      meteormethod="organizations.insert"
+      class="form-horizontal" }}
 
       <h2>Basic Information</h2>
       <hr />
