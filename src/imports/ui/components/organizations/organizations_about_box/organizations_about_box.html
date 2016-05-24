@@ -50,14 +50,16 @@
         <tr>
           <td>People</td>
           <td>
+            <div class="key-people-thumbs">
             {{#each keyPeople}}
               <a href="#">
-                {{> safeImg url=(c.url image width=38 height=38 type='fetch' crop='thumb' gravity='face') class='img-circle'}}
+                {{> safeImg url=(c.url image width=38 height=38 type='fetch' crop='thumb' gravity='face') class='img-circle' width=38 height=38}}
               </a>
             {{/each}}
             <a href="#" class="btn add-people" id="add-people">
               <i class="fa fa-plus"></i>
             </a>
+            </div>
           </td>
         </tr>
       </table>
