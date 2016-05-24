@@ -1,13 +1,9 @@
 import { Template } from 'meteor/templating';
 import popups from '/imports/ui/components/common/popups/popups';
-import { remove } from '/imports/api/attachments/methods';
 
-import './attachments_delete.html';
+import './delete_entity.html';
 
-Template.attachmentsDelete.onCreated(function() {
-
-})
-Template.attachmentsDelete.events({
+Template.deleteEntity.events({
   'click [data-action="delete"]': function(event, template) {
     event.preventDefault();
     
@@ -24,14 +20,14 @@ Template.attachmentsDelete.events({
     You will not be able to undo this action.`;
 
     popups.removeConfirmation(popupMessage, () => {
-      remove.call({ _id: _id }, (err, res) => {
+      method.call({ _id: _id }, (err, res) => {
         if (err) {
         	toastr.error(`Could not delete ${name}!`, 'Error');
         	errorCallback(err, null);
           return;
         }
 
-        toastr.success(`${name} deleted!`, 'Success');
+        toastr.success(`<b>${name}</b> deleted!`, 'Success');
         successCallback(null, res);
       });
     });

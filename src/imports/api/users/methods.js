@@ -6,7 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { Technologies } from '../technologies/technologies.js';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
-import { UserSchema } from './schema.js';
+import { UserSchema, InviteSchema } from './schema.js';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 function isProfileOwner(documentId) {
@@ -27,7 +27,8 @@ function checkPermissions() {
 export const invite = new ValidatedMethod({
   name: 'users.invite',
   validate: InviteSchema.validator(),
-  run({ email }) {
+  run(doc) {
+    console.log(doc);
     this.unblock();
 
     checkPermissions();
@@ -84,8 +85,8 @@ export const updateImage = new ValidatedMethod({
 export const remove = new ValidatedMethod({
   name: 'users.remove',
   validate: ValidatedMethodRemoveSchema.validator(),
-  run({ userId }) {
-    return Meteor.users.remove({ _id: userId });
+  run({ _id }) {
+    return Meteor.users.remove({ _id: _id });
   }
 });
 

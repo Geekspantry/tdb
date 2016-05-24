@@ -1,6 +1,6 @@
 const IMAGE_ASPECT_RATIO = 1;
 
-confirmDeleteUser = function(callback) {
+/*confirmDeleteUser = function(callback) {
     swal({
       title: 'Are you sure?',
       text: 'You will not be able to undo this action!',
@@ -10,7 +10,7 @@ confirmDeleteUser = function(callback) {
       confirmButtonText: 'Yes, delete it!',
       closeOnConfirm: false
     }, callback);
-};
+};*/
 
 Template.userAboutBox.events({
   'click #manage-user-role': function(e) {

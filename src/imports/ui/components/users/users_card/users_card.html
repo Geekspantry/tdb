@@ -1,4 +1,4 @@
-<template name="userCard">
+<template name="usersCard">
   {{#unless isDeleted}}
     <div class="contact-box">
       <div class="ibox-tools">
@@ -8,9 +8,12 @@
         <ul class="dropdown-menu dropdown-user">
           <li><a href="#" class="change-permissions"><i class="fa fa-key"></i> Change Permissions</a>
           </li>
-          <li><a href="#" class="edit"><i class="fa fa-edit"></i> Edit</a>
+          <li><a href="{{pathFor 'users.edit' id=_id}}"><i class="fa fa-edit"></i> Edit</a>
           </li>
-          <li><a href="#" class="delete"><i class="fa fa-trash"></i> Delete</a>
+          <li>
+            {{#deleteEntity deleteOptions}}
+              <i class="fa fa-trash"></i> Delete
+            {{/deleteEntity}}
           </li>
         </ul>
       </div>

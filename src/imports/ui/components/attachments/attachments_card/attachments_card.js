@@ -31,6 +31,7 @@ Template.attachmentsCard.helpers({
     let template = Template.instance();
     return {
       _id: template.data._id,
+      method: remove,
       name: TagStripper.strip(template.data.name),
       successCallback() {
         template.state.set('deleted');

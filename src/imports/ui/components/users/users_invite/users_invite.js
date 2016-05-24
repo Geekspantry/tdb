@@ -1,3 +1,8 @@
+import { AutoForm } from 'meteor/aldeed:autoform';
+import 'meteor/chrismbeckett:toastr';
+import { InviteSchema } from '/imports/api/users/schema.js';
+import './users_invite.html';
+
 AutoForm.hooks({
   inviteUsersForm: {
     onSuccess: function(formType, result) {
@@ -8,3 +13,8 @@ AutoForm.hooks({
     },
   }
 });
+
+
+Template.usersInvite.helpers({
+	inviteSchema: () => InviteSchema
+})

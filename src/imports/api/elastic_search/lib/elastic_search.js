@@ -85,11 +85,11 @@ export class ElasticSearchTypeAPI {
   }
 
   _extractKeysFromSimpleSchema() {
-    const simpleSchema = this.mongoCollection.simpleSchema().schema();
-    if (!simpleSchema) {
+    if (!this.mongoCollection.simpleSchema()) {
       throw new Error(
       'ElasticSearchAPI requires an attached SimpleSchema instance on the MongoCollection');
     }
+    const simpleSchema = this.mongoCollection.simpleSchema().schema();
 
     let keys = [];
     //  grab keys that have esDriver: true

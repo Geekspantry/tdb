@@ -1,4 +1,11 @@
-Template.userCard.events({
+import { Template } from 'meteor/templating';
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
+import popups from '/imports/ui/components/common/popups/popups';
+import { remove } from '/imports/api/users/methods';
+
+import './users_card.html';
+
+Template.usersCard.events({
   'click .link': function(e, t) {
     //FlowRouter.go(t.data.link);
   },
@@ -27,13 +34,13 @@ Template.userCard.events({
   }
 });
 
-Template.userCard.onCreated(function() {
+Template.usersCard.onCreated(function() {
   this.isDeleted = new ReactiveVar(false);
 
   // TODO: Need fix this sub
   this.subscribe('users.single', this.data._id);
 });
-Template.userCard.helpers({
+Template.usersCard.helpers({
   user() {
     return Meteor.users.findOne({
       _id: Template.instance().data._id
@@ -41,5 +48,18 @@ Template.userCard.helpers({
   },
   isDeleted() {
     return Template.instance().isDeleted.get();
+  },
+  deleteOptions() {
+    let template = Template.instance();
+    let name = template.data.profile.fullName || 'unknown';
+
+    return {
+      _id: template.data._id,
+      name: name,
+      method: remove,
+      successCallback() {
+        template.isDeleted.set(true);
+      }
+    };
   }
 });

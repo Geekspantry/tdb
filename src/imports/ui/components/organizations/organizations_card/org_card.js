@@ -5,7 +5,6 @@ import { remove } from '/imports/api/organizations/methods';
 import './org_card_tools';
 import './org_card_footer';
 import './org_card_desc';
-
 import './org_card.html';
 
 Template.orgCard.onCreated(function() {

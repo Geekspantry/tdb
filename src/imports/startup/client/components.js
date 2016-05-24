@@ -5,6 +5,7 @@
 import '/imports/ui/components/common/masonry_grid/masonry_grid';
 import '/imports/ui/components/common/recent_updates/recent_updates';
 import '/imports/ui/components/common/recent_updates/recent_updates_item';
+import '/imports/ui/components/common/delete_entity/delete_entity';
 
 
 
@@ -129,3 +130,17 @@ import '/imports/ui/components/collections_set/collections_set_list/collections_
 import '/imports/ui/components/collections/collections_add/collections_add';
 import '/imports/ui/components/collections/collections_edit/collections_edit';
 
+
+
+/**
+ * Users
+ */
+
+import '/imports/ui/components/users/users_card/users_card';
+import '/imports/ui/components/users/users_invite/users_invite';
+import '/imports/ui/components/users/users_dashboard/users_dashboard';
+import '/imports/ui/components/users/users_dashboard_stat/users_dashboard_stat';
+/*
+import '/imports/ui/components/users/collections_set_add/collections_set_add';
+import '/imports/ui/components/users/collections_set_entry/collections_set_entry';
+import '/imports/ui/components/users/collections_set_list/collections_set_list';*/
