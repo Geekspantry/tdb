@@ -1,3 +1,11 @@
+import { Template } from 'meteor/templating';
+import { AutoForm } from 'meteor/aldeed:autoform';
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
+import 'meteor/chrismbeckett:toastr';
+import { Collections } from '/imports/api/collections/collections';
+import './collections_edit.html';
+
+
 AutoForm.hooks({
   updateCollectionsForm: {
     onSuccess() {
@@ -15,6 +23,7 @@ Template.collectionsEdit.onCreated(function() {
 });
 
 Template.collectionsEdit.helpers({
+  collectionsCollection: () => Collections,
   collection() {
     return Collections.findOne({
       _id: Template.instance().data.collectionId

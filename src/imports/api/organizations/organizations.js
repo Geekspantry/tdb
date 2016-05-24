@@ -1,7 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 
 import { OrganizationSchema } from './schema.js';
-import { Projects } from '../projects/projects';
+import { Projects } from '/imports/api/projects/projects';
+import { Technologies } from '/imports/api/technologies/technologies';
+import { Attachments } from '/imports/api/attachments/attachments';
 
 export const Organizations = new Mongo.Collection('organizations');
 

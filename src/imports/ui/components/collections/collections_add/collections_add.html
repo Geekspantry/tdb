@@ -4,11 +4,11 @@
       {{> modalHeaderContent title="New Collection" icon="fa fa-plus" subtitle="You must save changes before closing."}}
     {{/modalHeader}}
     {{#autoForm 
-      collection="Collections" 
+      collection=collectionsCollection
       id="insertCollectionsForm" 
       type="method" 
       template="bootstrap3"
-      meteormethod="Collections.methods.add"
+      meteormethod="collections.insert"
       projectId=projectId
       collectionsSetId=collectionsSetId
       parentId=parentId}}

@@ -1,9 +1,15 @@
+import { Template } from 'meteor/templating';
+import {addTechnology, removeTechnology} from '/imports/api/organizations/methods.js';
+import { Technologies } from '/imports/api/technologies/technologies';
+
+import './manage_org_technologies_item.html';
+
 Template.manageOrgTechnologiesItem.helpers({
   inProject() {
     let organizationId = Template.instance().data.organizationId;
-    let inProject = Organizations.findOne({
-      _id: organizationId,
-      technologiesId: this._id
+    let inProject = Technologies.findOne({
+      organizationsId: organizationId,
+      _id: this._id
     });
 
     return inProject;
@@ -12,7 +18,7 @@ Template.manageOrgTechnologiesItem.helpers({
 
 Template.manageOrgTechnologies.events({
   'click .add-technology': function(e, t) {
-    Meteor.call('Organizations.methods.addTechnology', t.data.organizationId, this._id, function(error) {
+    addTechnology.call({orgId: t.data.organizationId, technologyId: this._id}, function(error) {
       if (error) {
         return toastr.error(error.toString(), 'Error');
       }
@@ -20,7 +26,7 @@ Template.manageOrgTechnologies.events({
     });
   },
   'click .remove-technology': function(e, t) {
-    Meteor.call('Organizations.methods.removeTechnology', t.data.organizationId, this._id, function(error) {
+    removeTechnology.call({orgId: t.data.organizationId, technologyId: this._id}, function(error) {
       if (error) {
         return toastr.error(error.toString(), 'Error');
       }

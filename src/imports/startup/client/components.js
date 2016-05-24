@@ -64,8 +64,20 @@ import '/imports/ui/components/organizations/technologies_images_item/technologi
 import '/imports/ui/components/organizations/technologies_information_card/technologies_information_card';
 import '/imports/ui/components/organizations/technologies_information_table/technologies_information_table';
 import '/imports/ui/components/organizations/technologies_status_form/technologies_status_form';*/
+
+import '/imports/ui/components/organizations/organizations_entry/manage_org_attachments';
+import '/imports/ui/components/organizations/organizations_entry/manage_org_attachments_item';
+import '/imports/ui/components/organizations/organizations_entry/manage_org_projects';
+import '/imports/ui/components/organizations/organizations_entry/manage_org_projects_item';
+import '/imports/ui/components/organizations/organizations_entry/manage_org_technologies';
+import '/imports/ui/components/organizations/organizations_entry/manage_org_technologies_item';
+import '/imports/ui/components/organizations/organizations_entry/organizations_attachments';
+import '/imports/ui/components/organizations/organizations_entry/organizations_entry';
+import '/imports/ui/components/organizations/organizations_entry/organizations_projects';
+import '/imports/ui/components/organizations/organizations_entry/organizations_technologies';
 import '/imports/ui/components/organizations/organizations_dashboard_stat/organizations_dashboard_stat';
 import '/imports/ui/components/organizations/organizations_card/org_card';
+import '/imports/ui/components/organizations/organizations_about_box/organizations_about_box';
 
 
 /**
@@ -95,3 +107,12 @@ import '/imports/ui/components/collections_set/collections_board/collections_boa
 import '/imports/ui/components/collections_set/collections_set_add/collections_set_add';
 import '/imports/ui/components/collections_set/collections_set_entry/collections_set_entry';
 import '/imports/ui/components/collections_set/collections_set_list/collections_set_list';
+
+
+/**
+ * Collections
+ */
+
+import '/imports/ui/components/collections/collections_add/collections_add';
+import '/imports/ui/components/collections/collections_edit/collections_edit';
+

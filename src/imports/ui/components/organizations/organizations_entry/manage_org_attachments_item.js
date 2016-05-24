@@ -1,3 +1,8 @@
+import { Template } from 'meteor/templating';
+import {addAttachment, removeAttachment} from '/imports/api/organizations/methods.js';
+import { Organizations } from '/imports/api/organizations/organizations';
+import './manage_org_attachments_item.html';
+
 Template.manageOrgAttachmentsItem.helpers({
   inAttachment() {
     let organizationId = Template.instance().data.organizationId;
@@ -12,7 +17,7 @@ Template.manageOrgAttachmentsItem.helpers({
 
 Template.manageOrgAttachmentsItem.events({
   'click .add-attachment': function(e, t) {
-    Meteor.call('Organizations.methods.addAttachment', t.data.organizationId, this._id, function(error) {
+    addAttachment.call({orgId: t.data.organizationId, attachmentId: this._id}, function(error) {
       if (error) {
         return toastr.error(error.toString(), 'Error');
       }
@@ -20,7 +25,7 @@ Template.manageOrgAttachmentsItem.events({
     });
   },
   'click .remove-attachment': function(e, t) {
-    Meteor.call('Organizations.methods.removeAttachment', t.data.organizationId, this._id, function(error) {
+    removeAttachment.call({orgId: t.data.organizationId, attachmentId: this._id}, function(error) {
       if (error) {
         return toastr.error(error.toString(), 'Error');
       }

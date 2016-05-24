@@ -1,3 +1,9 @@
+import { Template } from 'meteor/templating';
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
+import { setLogo } from '/imports/api/organizations/methods';
+
+import './organizations_about_box.html';
+
 const IMAGE_ASPECT_RATIO = 1;
 
 Template.orgAboutBox.events({
@@ -14,10 +20,9 @@ Template.orgAboutBox.events({
   'click .change-logo-image': function() {
     Modal.show('uploadFile', {
       onUpload(file) {
-        Meteor.call('Organizations.methods.setLogo', FlowRouter.getParam('id'), file._id);
+        setLogo.call({orgId: FlowRouter.getParam('id'), imageId: file._id});
       },
       crop: false
-      
     });
   }
 });

@@ -174,7 +174,7 @@ export class ElasticSearchTypeAPI {
     }, function(err, res) {
       if (err) {
         console.error('ElasticSearchAPI error at indexing:');
-        console.error(e.message);
+        console.error(err.message);
       }
     });
   }
@@ -190,7 +190,7 @@ export class ElasticSearchTypeAPI {
     }, function(err, res) {
       if (err) {
         console.error('ElasticSearchAPI error at update:');
-        console.error(e.message);
+        console.error(err.message);
       }
     });
   }
@@ -203,7 +203,7 @@ export class ElasticSearchTypeAPI {
     }, function(err, res) {
       if (err) {
         console.error('ElasticSearchAPI error at remove:');
-        console.error(e.message);
+        console.error(err.message);
       }
     });
   }
@@ -286,7 +286,7 @@ export class ElasticSearchTypeAPI {
     this.esClient.bulk(bulkReq, (err, res) => {
       if (err) {
         console.error('ElasticSearchAPI error at bulk:');
-        console.error(e.message);
+        console.error(err.message);
       }
     });
   }
@@ -301,8 +301,8 @@ export class ElasticSearchTypeAPI {
       }
     }, (err, res) => {
       if (err) {
-        console.log(`ElasticSearchAPI error at putMapping ${this.type}`);
-        console.log(err);
+        console.error(`ElasticSearchAPI error at putMapping ${this.type}`);
+        console.error(err.message);
       }
     });
   }

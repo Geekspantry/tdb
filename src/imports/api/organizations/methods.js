@@ -2,6 +2,9 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
 import { Organizations } from './organizations.js';
 import { OrganizationSchema } from './schema.js';
+import { Projects } from '/imports/api/projects/projects';
+import { Technologies } from '/imports/api/technologies/technologies';
+import { Attachments } from '/imports/api/attachments/attachments';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 
@@ -40,6 +43,7 @@ export const remove = new ValidatedMethod({
   }
 });
 
+// move to projects method
 export const addProject = new ValidatedMethod({
   name: 'organizations.addProject',
   validate({ orgId, projectId }) {
@@ -48,17 +52,17 @@ export const addProject = new ValidatedMethod({
   },
   run({ orgId, projectId }) {
     checkPermissions();
-    Organizations.update({
-      _id: orgId
+    Projects.update({
+      _id: projectId
     }, {
       $addToSet: {
-        projectsId: projectId
+        organizationsId: orgId
       }
     });
   }
 });
 
-
+// move to projects method
 export const removeProject = new ValidatedMethod({
   name: 'organizations.removeProject',
   validate({ orgId, projectId }) {
@@ -67,16 +71,17 @@ export const removeProject = new ValidatedMethod({
   },
   run({ orgId, projectId }) {
     checkPermissions();
-    return Organizations.update({
-      _id: orgId
+    return Projects.update({
+      _id: projectId
     }, {
       $pull: {
-        projectsId: projectId
+        organizationsId: orgId
       }
     });
   }
 });
 
+// move to technologies method
 export const addTechnology = new ValidatedMethod({
   name: 'organizations.addTechnology',
   validate({ orgId, technologyId }) {
@@ -85,16 +90,16 @@ export const addTechnology = new ValidatedMethod({
   },
   run({ orgId, technologyId }) {
     checkPermissions();
-    return Organizations.update({
-      _id: orgId
+    return Technologies.update({
+      _id: technologyId
     }, {
       $addToSet: {
-        technologiesId: techId
+        organizationsId: orgId
       }
     });
   }
 });
-
+// move to technologies method
 export const removeTechnology = new ValidatedMethod({
   name: 'organizations.removeTechnology',
   validate({ orgId, technologyId }) {
@@ -103,11 +108,11 @@ export const removeTechnology = new ValidatedMethod({
   },
   run({ orgId, technologyId }) {
     checkPermissions();
-    return Organizations.update({
-      _id: orgId
+    return Technologies.update({
+      _id: technologyId
     }, {
       $pull: {
-        technologiesId: techId
+        organizationsId: orgId
       }
     });
   }

@@ -1,3 +1,11 @@
+import { Template } from 'meteor/templating';
+import { AutoForm } from 'meteor/aldeed:autoform';
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
+import 'meteor/chrismbeckett:toastr';
+import { Collections } from '/imports/api/collections/collections';
+import './collections_add.html';
+
+
 AutoForm.hooks({
   insertCollectionsForm: {
     before: {
@@ -21,5 +29,11 @@ AutoForm.hooks({
     onError(formType, error) {
       toastr.error(error.toString(), 'Error');
     },
+  }
+});
+
+Template.collectionsAdd.helpers({
+  collectionsCollection() {
+    return Collections;
   }
 });

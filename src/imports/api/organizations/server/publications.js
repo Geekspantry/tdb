@@ -2,9 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Counts } from 'meteor/tmeasday:publish-counts';
-
-import { Technologies } from '../../technologies/technologies.js';
-import { Projects } from '../../projects/projects';
+import { Attachments } from '/imports/api/attachments/attachments.js';
+import { Technologies } from '/imports/api/technologies/technologies.js';
+import { Projects } from '/imports/api/projects/projects';
 import { Organizations } from '../organizations';
 
 

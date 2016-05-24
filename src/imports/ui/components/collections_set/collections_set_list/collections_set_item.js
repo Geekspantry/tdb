@@ -2,7 +2,8 @@ import { Template } from 'meteor/templating';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import popups from '../../common/popups/popups';
 import { CollectionsSet } from '/imports/api/collections_set/collections_set';
-import { remove } from '/imports/api/collections_set/methods.js';
+import { remove as removeCollectionSet } from '/imports/api/collections_set/methods.js';
+import { remove, copy } from '/imports/api/collections/methods.js';
 import './collections_set_item.html';
 
 Template.collectionsSetItem.helpers({
@@ -17,7 +18,7 @@ Template.collectionsSetItem.events({
     let _id = this._id;
     let text = `Are you sure you want to delete <b>${name}</b>? You will not be able to undo this action.`;
     popups.removeConfirmation(text, () => {
-      remove.call({_id}, (err, res) => {
+      removeCollectionSet.call({_id}, (err, res) => {
         if (err) {
           toastr.error(err.toString(), 'Error');
         } else {
@@ -35,7 +36,7 @@ Template.collectionsSetItem.events({
   'click [data-action="copy-collection"]': function(event, template) {
     event.preventDefault();
     let _id = this._id;
-    Collections.methods.copy.call({
+    copy.call({
       _id
     }, (err, res) => {
       if (err) {
@@ -51,7 +52,7 @@ Template.collectionsSetItem.events({
     let _id = this._id;
     let text = `Are you sure you want to delete <b>${name}</b>? You will not be able to undo this action.`;
     popups.removeConfirmation(text, () => {
-      Collections.methods.remove.call({_id}, (err, res) => {
+      remove.call({_id}, (err, res) => {
         if (err) {
           toastr.error(err.toString(), 'Error');
         } else {

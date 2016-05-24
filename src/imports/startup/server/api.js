@@ -41,6 +41,13 @@ import '/imports/api/attachments/server/publications.js';
 import '/imports/api/collections_set/methods.js';
 import '/imports/api/collections_set/server/publications.js';
 
+/**
+ * Collections
+ */
+
+import '/imports/api/collections/methods.js';
+import '/imports/api/collections/server/publications.js';
+
 
 /**
  * Elastic Search

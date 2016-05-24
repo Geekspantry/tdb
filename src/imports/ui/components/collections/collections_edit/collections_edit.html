@@ -5,11 +5,11 @@
     {{/modalHeader}}
     {{#if Template.subscriptionsReady}}
       {{#autoForm 
-        collection="Collections" 
+        collection=collectionsCollection
         id="updateCollectionsForm" 
         type="method-update" 
         template="bootstrap3"
-        meteormethod="Collections.methods.update" 
+        meteormethod="collections.update" 
         singleMethodArgument=true
         doc=collection}}
         {{#modalBody}}

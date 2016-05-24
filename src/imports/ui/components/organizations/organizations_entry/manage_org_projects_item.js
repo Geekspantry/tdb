@@ -1,9 +1,15 @@
+import { Template } from 'meteor/templating';
+import {addProject, removeProject} from '/imports/api/organizations/methods.js';
+import { Projects } from '/imports/api/projects/projects';
+
+import './manage_org_projects_item.html';
+
 Template.manageOrgProjectsItem.helpers({
   inProject() {
     let organizationId = Template.instance().data.organizationId;
-    let inProject = Organizations.findOne({
-      _id: organizationId,
-      projectsId: this._id
+    let inProject = Projects.findOne({
+      _id: this._id,
+      organizationsId: organizationId
     });
 
     return inProject;
@@ -12,7 +18,7 @@ Template.manageOrgProjectsItem.helpers({
 
 Template.manageOrgProjectsItem.events({
   'click .add-project': function(e, t) {
-    Meteor.call('Organizations.methods.addProject', t.data.organizationId, this._id, function(error) {
+    addProject.call({orgId: t.data.organizationId, projectId: this._id}, function(error) {
       if (error) {
         return toastr.error(error.toString(), 'Error');
       }
@@ -20,7 +26,7 @@ Template.manageOrgProjectsItem.events({
     });
   },
   'click .remove-project': function(e, t) {
-    Meteor.call('Organizations.methods.removeProject', t.data.organizationId, this._id, function(error) {
+    removeProject.call({orgId: t.data.organizationId, projectId: this._id}, function(error) {
       if (error) {
        return toastr.error('Error', error.toString());
       }

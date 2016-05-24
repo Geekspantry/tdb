@@ -1,3 +1,8 @@
+import { Template } from 'meteor/templating';
+import {FlowRouter} from 'meteor/kadira:flow-router';
+import { Organizations } from '/imports/api/organizations/organizations';
+import './organizations_entry.html';
+
 Template.organizationsEntry.helpers({
   org: function() {
     let org = Organizations.findOne({
