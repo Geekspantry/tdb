@@ -1,3 +1,10 @@
+import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { AutoForm } from 'meteor/aldeed:autoform';
+import 'meteor/chrismbeckett:toastr';
+import { Organizations } from '/imports/api/organizations/organizations';
+import './organizations_edit.html';
+
 AutoForm.hooks({
   updateOrganizationForm: {
     onSuccess() {
@@ -18,6 +25,7 @@ Template.organizationsEdit.onCreated(function() {
 });
 
 Template.organizationsEdit.helpers({
+  organizationsCollection: ()=> Organizations,
   organization() {
     return Organizations.findOne(FlowRouter.getParam('id'));
   }
