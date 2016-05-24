@@ -2,6 +2,25 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Organizations } from './organizations';
 import { Attachments } from '/imports/api/attachments/attachments';
 
+export const KeyPeopleSchema = new SimpleSchema({
+  _id: {
+    type: String,
+    optional: true
+  },
+  name: {
+    type: String
+  },
+  role: {
+    type: String
+  },
+  image: {
+    type: String,
+    autoform: {
+      type: 'url'
+    }
+  }
+});
+
 export const OrganizationSchema = new SimpleSchema({
   name: {
     type: String,
@@ -56,7 +75,7 @@ export const OrganizationSchema = new SimpleSchema({
     }
   },
   keyPeople: {
-    type: [Schemas.KeyPeople],
+    type: [KeyPeopleSchema],
     logDriver: true,
     optional: true
   },

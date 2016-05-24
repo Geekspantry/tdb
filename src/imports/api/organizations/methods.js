@@ -1,7 +1,7 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
 import { Organizations } from './organizations.js';
-import { OrganizationSchema } from './schema.js';
+import { OrganizationSchema, KeyPeopleSchema } from './schema.js';
 import { Projects } from '/imports/api/projects/projects';
 import { Technologies } from '/imports/api/technologies/technologies';
 import { Attachments } from '/imports/api/attachments/attachments';
@@ -156,14 +156,14 @@ export const removeAttachment = new ValidatedMethod({
 
 export const addKeyPeople = new ValidatedMethod({
   name: 'organizations.addKeyPeople',
-  validate({ orgId, peopleDoc }) {
-    check(peopleDoc, KeyPeopleSchema);
+  validate({ orgId, personDoc }) {
+    check(personDoc, KeyPeopleSchema);
     check(orgId, String);
   },
-  run({ orgId, peopleDoc }) {
+  run({ orgId, personDoc }) {
     if (Meteor.isServer) {
       chance = new Chance();
-      doc._id = chance.string();
+      personDoc._id = chance.string();
     }
 
     checkPermissions();
@@ -171,7 +171,7 @@ export const addKeyPeople = new ValidatedMethod({
       _id: orgId
     }, {
       $push: {
-        keyPeople: doc
+        keyPeople: personDoc
       }
     });
   }
@@ -179,18 +179,18 @@ export const addKeyPeople = new ValidatedMethod({
 
 export const removeKeyPeople = new ValidatedMethod({
   name: 'organziations.removeKeyPeople',
-  validate({ orgId, peopleId }) {
+  validate({ orgId, personId }) {
     check(orgId, String);
-    check(peopleId, String);
+    check(personId, String);
   },
-  run({ orgId, peopleId }) {
+  run({ orgId, personId }) {
     checkPermissions();
     return Organizations.update({
       _id: orgId
     }, {
       $pull: {
         keyPeople: {
-          _id: peopleId
+          _id: personId
         }
       }
     });

@@ -287,25 +287,6 @@ Schemas.Scenario = new SimpleSchema({
   }
 });
 
-Schemas.KeyPeople = new SimpleSchema({
-  _id: {
-    type: String,
-    optional: true
-  },
-  name: {
-    type: String
-  },
-  role: {
-    type: String
-  },
-  image: {
-    type: String,
-    autoform: {
-      type: 'url'
-    }
-  }
-});
-
 Schemas.Content = new SimpleSchema({
   type: {
     type: String

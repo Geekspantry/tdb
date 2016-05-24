@@ -65,6 +65,10 @@ import '/imports/ui/components/organizations/technologies_information_card/techn
 import '/imports/ui/components/organizations/technologies_information_table/technologies_information_table';
 import '/imports/ui/components/organizations/technologies_status_form/technologies_status_form';*/
 
+import '/imports/ui/components/organizations/organizations_manage_key_people/organizations_key_people_list';
+import '/imports/ui/components/organizations/organizations_manage_key_people/organizations_key_people_item';
+import '/imports/ui/components/organizations/organizations_manage_key_people/organizations_key_people_add';
+import '/imports/ui/components/organizations/organizations_manage_key_people/organizations_manage_key_people';
 import '/imports/ui/components/organizations/organizations_edit/organizations_edit';
 import '/imports/ui/components/organizations/organizations_add/organizations_add';
 import '/imports/ui/components/organizations/organizations_entry/manage_org_attachments';
