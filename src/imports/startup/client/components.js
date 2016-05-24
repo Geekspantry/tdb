@@ -83,6 +83,7 @@ import '/imports/ui/components/organizations/organizations_entry/organizations_p
 import '/imports/ui/components/organizations/organizations_entry/organizations_technologies';
 import '/imports/ui/components/organizations/organizations_dashboard_stat/organizations_dashboard_stat';
 import '/imports/ui/components/organizations/organizations_card/org_card';
+import '/imports/ui/components/organizations/organizations_about_box/organizations_information_table';
 import '/imports/ui/components/organizations/organizations_about_box/organizations_about_box';
 
 

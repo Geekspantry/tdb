@@ -2,13 +2,17 @@
   {{#unless isDeleted}}
     <div class="ibox card-box">
       <div class="ibox-content no-padding">
-        {{> orgCardTools}}
+        {{#unless hideTools}}
+          {{> orgCardTools}}
+        {{/unless}}
         <a href="{{pathFor 'organizations.entry' id=_id}}">
         {{> safeImg url=(getCloudinaryCard (s3pathImages logo)) class='img-responsive'}}
         </a> 
         <div class="card-body">
           {{> orgCardDesc}}
-          {{> orgCardFooter}}
+          {{#unless hideFooter}}
+            {{> orgCardFooter}}
+          {{/unless}}
         </div>
       </div>
     </div>

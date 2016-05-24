@@ -1,5 +1,16 @@
 <template name="orgAboutBox">
-  {{#panelContainer class='float-e-margins org-about-box' }}
+  {{> orgCard extendContext hideTools=true hideFooter=true}}          
+  {{> organizationsInformationTable}}
+  <a 
+    class="btn btn-primary btn-block btn-outline btn-sm" 
+    href="{{pathFor 'organizations.edit' id=_id}}">
+    Edit
+  </a>        
+</template>
+
+
+
+  <!-- {{#panelContainer class='float-e-margins org-about-box' }}
     {{#panelTitle}}
       <h3>
         <i class="{{Icons.collections.organizations}}"></i> {{name}}
@@ -64,5 +75,4 @@
         </tr>
       </table>
     {{/panelContent}}
-  {{/panelContainer}}
-</template>
+  {{/panelContainer}} -->

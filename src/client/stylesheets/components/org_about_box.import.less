@@ -1,4 +1,4 @@
-.org-about-box {
+/* .org-about-box {
   table {
     tr {
       border-bottom: 1px solid #ddd;
@@ -18,10 +18,16 @@
     margin: auto;
     cursor: pointer;
   }
-  .img-circle {
-    width: @people-img-size;
-    height: @people-img-size;
+
+
+} */
+
+
+[data-template="organizations-information-table"] {
+  .key-people-thumbs {
+    .flex
   }
+
   a.add-people {
     .img-circle;
     margin-bottom: 0;
@@ -33,9 +39,9 @@
     .inline-flex;
     .x-center-flex;
     .y-center-flex;
-  }
-
-  .key-people-thumbs {
-    .flex
-  }
+  }  
+  .img-circle {
+    width: @people-img-size;
+    height: @people-img-size;
+  }  
 }
