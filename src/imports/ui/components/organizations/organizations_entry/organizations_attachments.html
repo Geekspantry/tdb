@@ -12,22 +12,23 @@
       {{/panelTools}}
     {{/panelTitle}}
     {{#panelContent}}
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Attachment name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each attachments}}
-            <tr>
-              <td> 
-                <a href="{{pathFor 'attachments.entry' id=_id}}">{{name}}</a>
-              </td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
+<!--       <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Attachment name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each attachments}}
+      <tr>
+        <td> 
+          <a href="{{pathFor 'attachments.entry' id=_id}}">{{name}}</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table> -->
+      {{> masonryGrid items=attachments template='attachmentsCard'}}      
       <!-- <div class="feed-activity-list">
         {{#each attachments}}
         <div class="feed-element">

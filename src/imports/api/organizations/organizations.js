@@ -11,7 +11,7 @@ Organizations.attachSchema(OrganizationSchema);
 Organizations.attachBehaviour('timestampable');
 
 Organizations.helpers({
-  getProjects() {
+  getProjects() {  // refactor to --> projects
     return Projects.find({
       organizationsId: this._id
     });

@@ -12,20 +12,21 @@
       {{/panelTools}}          
     {{/panelTitle}}
     {{#panelContent}}
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Project Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each getProjects}}
-            <tr>
-              <td><a href="{{pathFor 'projects.edit' id=_id}}">{{name}}</a></td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
+<!--       <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Project Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each getProjects}}
+      <tr>
+        <td><a href="{{pathFor 'projects.edit' id=_id}}">{{name}}</a></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table> -->
+      {{> masonryGrid items=getProjects template='projectsCard'}}
     {{/panelContent}}
   {{/panelContainer}}
 </template>
