@@ -28,7 +28,7 @@
       {{> attachmentsFieldInput name="attachmentsId" }}
       <hr />
       
-       {{> editFormButtons buttonClass="col-sm-9" offsetClass="col-sm-offset-2" cancelPath='organizations.dashboard'}}
+       {{> editFormButtons buttonClass="col-sm-9" offsetClass="col-sm-offset-2" cancelPath=(pathFor 'organizations.entry' id=organization._id)}}
     {{/autoForm}}
     {{else}}
      <div class="modal-body">
