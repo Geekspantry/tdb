@@ -1,4 +1,4 @@
-<template name="attachmentsEdit">
+<template name="attachmentsEditModal">
   {{#modal}}
     {{#modalHeader}}
       {{> modalHeaderContent title="Edit Attachment" icon="fa fa-edit" subtitle="You must save changes before closing."}}
@@ -10,7 +10,7 @@
         type="method-update" 
         doc=attachment
         singleMethodArgument=true
-        meteormethod="Attachments.methods.update" 
+        meteormethod="attachments.update" 
         class="form-horizontal"}}
         {{#modalBody}}
 

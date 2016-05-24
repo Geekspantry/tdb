@@ -14,7 +14,7 @@ function checkPermissions() {
 
 
 export const insert = new ValidatedMethod({
-  name: 'Attachments.methods.add',
+  name: 'attachments.add',
   validate: AttachmentSchema.validator(),
   run(doc) {
     checkPermissions();
@@ -23,7 +23,7 @@ export const insert = new ValidatedMethod({
 });
 
 export const update = new ValidatedMethod({
-  name: 'Attachments.methods.update',
+  name: 'attachments.update',
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
     checkPermissions();

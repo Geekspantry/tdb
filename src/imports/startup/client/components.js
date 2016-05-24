@@ -99,6 +99,12 @@ import '/imports/ui/components/attachments/technologies_images_item/technologies
 import '/imports/ui/components/attachments/technologies_information_card/technologies_information_card';
 import '/imports/ui/components/attachments/technologies_information_table/technologies_information_table';
 import '/imports/ui/components/attachments/technologies_status_form/technologies_status_form';*/
+
+import '/imports/ui/components/attachments/attachments_delete/attachments_delete';
+import '/imports/ui/components/attachments/attachments_edit/attachments_edit';
+import '/imports/ui/components/attachments/attachments_about_box/attachments_about_box';
+import '/imports/ui/components/attachments/attachments_about_box/attachments_information_table';
+import '/imports/ui/components/attachments/attachments_entry/attachments_entry';
 import '/imports/ui/components/attachments/attachments_card/attachments_card';
 import '/imports/ui/components/attachments/attachments_add/attachments_add';
 import '/imports/ui/components/attachments/attachments_add/attachments_add_modal';

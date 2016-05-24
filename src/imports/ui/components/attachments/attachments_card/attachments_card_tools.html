@@ -28,7 +28,9 @@
   <a href="{{pathFor 'attachments.edit' _id=_id}}">Edit Attachment</a>
 </li> -->
       <li>
-        <a href="#" class='delete'>Delete Attachment</a>
+        {{#attachmentsDelete deleteOptions}}
+          Delete Attachment
+        {{/attachmentsDelete}}
       </li>
     </ul>
   </div>

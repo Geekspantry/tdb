@@ -1,0 +1,15 @@
+<template name="attachmentsAboutBox">
+  {{> attachmentsCard extendContext hideTools=true hideFooter=true}} {{> attachmentsInformationTable}}
+  <div class="row">
+    <div class="col-sm-6">
+      <a class="btn btn-primary btn-block btn-sm" href="{{pathFor 'attachments.edit' id=_id}}">
+        <i class="fa fa-edit"></i> Edit
+      </a>
+    </div>
+    <div class="col-sm-6">
+      {{#attachmentsDelete deleteOptions}}
+        <i class="fa fa-trash"></i> Remove
+      {{/attachmentsDelete}}
+    </div>
+  </div>
+</template>
