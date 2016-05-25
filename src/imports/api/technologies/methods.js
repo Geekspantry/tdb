@@ -7,20 +7,10 @@ import { _ } from 'meteor/underscore';
 import { LoggedInMixin } from 'meteor/tunifight:loggedin-mixin';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
-function checkPermissions() {
-  if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
-    return true;
-  }
-  throw new Meteor.Error(403, 'Not authorized');
-}
-
 function isAdminOrEditor() {
   return Roles.userIsInRole(Meteor.user(), ['admin', 'editor']);
 }
 
-function isLoggedIn() {
-  return !!Meteor.userId();
-}
 /**
  * Insert Technology
  *
