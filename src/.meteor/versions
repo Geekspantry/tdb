@@ -53,7 +53,7 @@ chrismbeckett:toastr@2.1.2_1
 cloudspider:icheck@1.0.2
 coffeescript@1.0.17
 comerc:autoform-selectize@2.3.0
-comerc:autoform-typeahead@1.0.5
+comerc:autoform-typeahead@1.0.6
 comerc:bs-typeahead@1.0.2
 copleykj:tagstripper@1.0.0
 danappelxx:hover.css@1.0.0
@@ -95,7 +95,7 @@ kadira:flow-router@2.12.1
 kevohagan:sweetalert@1.0.0
 lai:collection-extensions@0.2.1_1
 launch-screen@1.0.11
-lbee:moment-helpers@1.3.3
+lbee:moment-helpers@1.3.4
 lepozepo:cloudinary@4.1.3
 less@2.6.0
 livedata@1.0.18
@@ -110,7 +110,7 @@ mdg:validation-error@0.5.1
 meteor@1.1.14
 meteor-base@1.0.4
 meteorhacks:async@1.0.0
-meteorhacks:kadira@2.28.5
+meteorhacks:kadira@2.28.7
 meteorhacks:meteorx@1.4.1
 meteorhacks:picker@1.0.3
 meteorhacks:search-source@1.4.3
@@ -134,8 +134,9 @@ meteortoys:throttle@3.0.0
 meteortoys:toykit@3.0.4
 minifier-css@1.1.11
 minifier-js@1.1.11
+minifiers@1.1.7
 minimongo@1.0.16
-mizzao:timesync@0.3.4
+mizzao:timesync@0.4.0
 mizzao:user-status@0.6.6
 mobile-experience@1.0.4
 mobile-status-bar@1.0.12
@@ -148,7 +149,8 @@ mongo-livedata@1.0.12
 mpowaga:jquery-fileupload@9.11.2
 mpowaga:jquery-ui-widget@1.11.4
 mpowaga:string-template@0.1.0
-mquandalle:jade@0.4.1
+mquandalle:jade@0.4.9
+mquandalle:jade-compiler@0.4.5
 mquandalle:perfect-scrollbar@0.6.5_2
 mrt:jquery-raty@2.7.2
 msavin:jetsetter@2.0.0
@@ -186,13 +188,13 @@ sewdn:masked-input@1.0.6
 sha@1.0.7
 shcherbin:imagesloaded@3.1.8
 sjors:meteor-masonry@0.0.1
-softwarerero:accounts-t9n@1.3.3
+softwarerero:accounts-t9n@1.3.4
 spacebars@1.0.11
 spacebars-compiler@1.0.11
 srp@1.0.8
 standard-minifier-css@1.0.6
 standard-minifier-js@1.0.6
-tap:i18n@1.8.0
+tap:i18n@1.8.2
 tdb:autoform-tags@0.2.0
 templating@1.1.9
 templating-tools@1.0.4
@@ -208,8 +210,8 @@ useful:mongo-counter@0.1.0
 useraccounts:bootstrap@1.14.2
 useraccounts:core@1.14.2
 useraccounts:flow-routing@1.14.2
-vazco:universe-autoform-select@0.3.8
-vazco:universe-selectize@0.1.15
+vazco:universe-autoform-select@0.3.9
+vazco:universe-selectize@0.1.20
 velocityjs:velocityjs@1.2.1
 webapp@1.2.8
 webapp-hashing@1.0.9

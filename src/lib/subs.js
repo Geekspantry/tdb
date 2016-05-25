@@ -1,2 +1,0 @@
-/*subs = new SubsManager();
-*/
