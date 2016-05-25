@@ -83,19 +83,16 @@ export const remove = new ValidatedMethod({
     error: 'technologies.remove.not-logged-in',
   },
   checkRoles: {
-    roles: ['admin'],
+    roles: ['admin', 'editor'],
     rolesError: {
       error: 'technologies.remove.not-authorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
-    if (isAuthorized()) {
-      Technologies.remove({ _id: _id });
-      TechnologiesDescriptions.remove({ technologyId: _id }); // move to hooks?
-      return true;
-    }
-    throw new Meteor.Error('technologies.remove.not-authorized');
+    Technologies.remove({ _id: _id });
+    TechnologiesDescriptions.remove({ technologyId: _id }); // move to hooks?
+    return true;
   }
 });
 
