@@ -1,19 +1,13 @@
-<!--
-<template name="safeImg">
-  <img src="{{src}}" class="{{class}}">
-</template>
--->
-
 <template name="safeImg">
   {{#if url}}
     {{#if loadingImg}}
-      <!-- {{#if $and width height}}
+      {{#if $and width height}}
         <div style="width: {{width}}px; height: {{height}}px">
           {{> spinnerWave}}
         </div>
-      {{else}} -->
+      {{else}}
         {{> spinnerWave}}
-      <!-- {{/if}} -->
+      {{/if}}
     {{/if}}
     
     {{#unless error}}

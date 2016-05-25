@@ -2,9 +2,9 @@ import { Template } from 'meteor/templating';
 import { AutoForm } from 'meteor/aldeed:autoform';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-import popups from '../../../../imports/ui/components/common/popups/popups';
-
-import { Technologies } from '../../../../imports/api/technologies/technologies';
+import popups from '/imports/ui/components/common/popups/popups';
+import { Technologies } from '/imports/api/technologies/technologies';
+import { Organizations } from '/imports/api/organizations/organizations';
 
 AutoForm.hooks({
   'update-technologies-form': {

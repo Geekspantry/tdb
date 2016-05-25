@@ -1,3 +1,4 @@
+/*
 import { Technologies } from '../../imports/api/technologies/technologies';
 import { Projects } from '../../imports/api/projects/projects';
 
@@ -33,22 +34,12 @@ Meteor.publishComposite('organizations.single', function(organizationId) {
     },
     children: [{
       find(org) {
-        /*return org.projectsId && Projects.find({
-          _id: {
-            $in: org.projectsId
-          }
-        });*/
         return Projects.find({
           organizationsId: org._id
         });
       }
     }, {
       find(org) {
-/*        return org.technologiesId && Technologies.find({
-          _id: {
-            $in: org.technologiesId
-          }
-        });*/
         return Technologies.find({
           organizationsId: org._id
         });
@@ -118,3 +109,4 @@ Meteor.publish('organization-relations-counter', function(organizationId) {
     _id: organizationId
   }), { countFromFieldLength: 'attachmentsId' });
 });
+*/

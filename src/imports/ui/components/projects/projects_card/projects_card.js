@@ -3,8 +3,8 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { AutoForm } from 'meteor/aldeed:autoform';
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import { insert } from '../../../../api/projects/methods.js';
-import { popups } from '../../common/popups/popups';
+import { remove } from '/imports/api/projects/methods.js';
+import popups from '/imports/ui/components/common/popups/popups';
 
 import './projects_card_tools';
 import './projects_card_footer';
@@ -25,11 +25,17 @@ Template.projectsCard.helpers({
 Template.projectsCard.events({
   'click .delete': function(event, template) {
     event.preventDefault();
-    let text = `Are you sure you want to delete ${TagStripper.strip(template.data.name)}?`;
+    let strippedName = TagStripper.strip(template.data.name);
+    let text = `Are you sure you want to delete ${strippedName}?`;
+
     popups.removeConfirmation(text, () => {
-      insert.call(template.data._id, (err, res) => {
-        if (err) return removeError();
-        popups.removeSuccess();
+      remove.call({_id: template.data._id}, (err, res) => {
+        if (err) {
+          popups.removeError();
+          return;
+        }
+
+        toastr.success(`${strippedName} deleted!`, 'Success');
         template.state.set('deleted');
       });
     });

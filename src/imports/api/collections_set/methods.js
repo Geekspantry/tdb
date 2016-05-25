@@ -6,6 +6,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { Projects } from '../projects/projects';
 import { CollectionsSetSchema } from './schema.js';
 import { CollectionsSet } from './collections_set.js';
+import { Collections } from '/imports/api/collections/collections';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 function checkPermissions() {

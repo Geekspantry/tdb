@@ -1,0 +1,31 @@
+<template name="usersProjects">
+  {{#panelContainer class='float-e-margins' }}
+    {{#panelTitle}}
+      <h1>
+        <i class="{{Icons.collections.projects}}"></i> Projects Working
+      </h1>
+      {{#panelTools}}
+        <a href="#" id='manage-user-projects'>
+          <i class="fa fa-plus"></i>
+        </a>
+      {{/panelTools}}
+    {{/panelTitle}}
+    {{#panelContent}}
+      <!-- <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each projects}}
+            <tr>
+              <td><a href="{{pathFor 'projects.entry' id=_id}}">{{name}}</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table> -->
+      {{> masonryGrid items=projects template='projectsCard'}}
+    {{/panelContent}}
+  {{/panelContainer}}
+</template>

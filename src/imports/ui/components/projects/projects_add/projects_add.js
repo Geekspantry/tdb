@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { AutoForm } from 'meteor/aldeed:autoform';
 import 'meteor/chrismbeckett:toastr';
-import { Projects } from '../../../../api/projects/projects';
+import { Projects } from '/imports/api/projects/projects';
 import './projects_add.html';
 
 AutoForm.hooks({

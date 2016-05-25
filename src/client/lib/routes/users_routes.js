@@ -49,8 +49,5 @@ usersRoutes.route('/:id/edit', {
     BlazeLayout.render('defaultLayout', {
       main: 'usersEdit'
     });
-  },
-  subscriptions(params) {
-    this.register('user', subs.subscribe('user', params.id));
   }
 });

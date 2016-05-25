@@ -1,0 +1,1 @@
+import './attachments_information_table.html';

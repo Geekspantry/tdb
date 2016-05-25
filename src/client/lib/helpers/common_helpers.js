@@ -45,9 +45,13 @@ Template.registerHelper('techColor', function(status) {
 
 
 Template.registerHelper('extendContext', function(data) {
-  var result = _.clone(this);
+  let result = _.clone(this);
   _.each(data.hash, function(value, key) {
     result[key] = value;
-  })
+  });
   return result;
-})
+});
+
+Template.registerHelper('literalKey', function(key) {
+  return this[key];
+});

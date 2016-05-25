@@ -1,0 +1,70 @@
+<template name="attachmentsEntry">
+  {{#if Template.subscriptionsReady}}
+    {{#with attachment}}
+      <div class="row">
+        <div class="col-md-3">
+          {{> attachmentsAboutBox}}
+          <!-- {{> attachmentsCard extendContext hideTools=true hideFooter=true}}          
+          {{user._id}}
+          {{> attachmentsInformationTable}} -->
+        </div>
+        <div class="col-lg-9">
+          {{#panel title="Projects"}}
+            {{> masonryGrid items=relatedProjects template='projectsCard'}}
+          {{/panel}}
+          {{#panel title="Technologies"}}
+            {{> masonryGrid items=relatedTechnologies template='techCard'}}
+          {{/panel}}
+          {{#panel title="Organizations"}}
+            {{> masonryGrid items=relatedOrganizations template='orgCard'}}
+          {{/panel}}          
+        </div>
+      </div>
+    {{/with}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
+</template>
+
+
+<!--
+ <table class="table">
+        <tr>
+          <td><b>Type</b></td>
+          <td>
+            <div class="label label-success">{{type}}</div>
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td><b>From</b></td>
+          <td>
+            <div class="label label-default">{{from}}</div>
+          </td>
+        </tr>
+        <br>
+        {{#if isFromWeb}}
+          <tr>
+            <td><b>Web</b></td>
+            <td><a href="{{web.sourceUrl}}" target="blank">Visit Page</a></td>
+          </tr>
+        {{else}}
+          <tr>
+            <td><b>File</b></td>
+            <td>
+              <a href="{{awsUrl}}" download>Download</a>
+            </td>
+          </tr>
+        {{/if}}
+        <br>
+        <tr>
+          <td><b>Upload Date</b></td>
+          <td>{{moFormat createdAt 'DD/MM/YYYY'}}</td>
+        </tr>
+        <br>
+        <tr>
+          <td><b>Created By</b></td>
+          <td> <a href="{{pathFor 'users.entry' id=user._id}}">{{> safeImg url=(getUserThumb (s3pathImages user.profile.imageId)) class="img-circle m-t-xs link"}} </a></td>
+        </tr>
+      </table>
+-->

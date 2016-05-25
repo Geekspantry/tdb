@@ -4,6 +4,7 @@
 import { Mongo } from 'meteor/mongo';
 import { CollectionsSetSchema } from './schema.js';
 import { Projects } from '../projects/projects';
+import { Collections } from '/imports/api/collections/collections';
 
 export const CollectionsSet = new Mongo.Collection('collectionsSet');
 

@@ -1,3 +1,24 @@
+import esClient from '/imports/api/elastic_search/es_client';
+
+
+function processSearchResults(searchResults) {
+  let results = _.map(searchResults.hits.hits, function(hit) {
+    return _.extend(hit._source, {
+      _id: hit._id,
+      _type: hit._type,
+      _score: hit._score,
+      _highlight: hit.highlight
+    });
+  });
+
+  return {
+    results: results,
+    total: searchResults.hits.total,
+    took: searchResults.took
+  };
+}
+
+
 /**
  * SearchSouce globalSearch
  * get data from any source (in this case, esEngine)
@@ -124,9 +145,9 @@ SearchSource.defineSource('globalSearch', function(searchText, {
     }
   };
 
-  let prettySearchSync = Async.wrap(esClient.prettySearch);
+  let syncSearch = Async.wrap(esClient, 'search');
 
-  let search = prettySearchSync({
+  let search = syncSearch({
     index: Meteor.settings.public.elasticSearch.index,
     type: types.join(','), // filter types
     body: {
@@ -149,13 +170,15 @@ SearchSource.defineSource('globalSearch', function(searchText, {
     }
   });
 
+  let processedResults = processSearchResults(search);
+
   let metadata = {
-    total: search.total,
-    took: search.took
+    total: processedResults.total,
+    took: processedResults.took
   };
 
   return {
-    data: search.results,
+    data: processedResults.results,
     metadata: metadata
   };
 });
@@ -167,7 +190,6 @@ SearchSource.defineSource('userSearch', function(searchText, {
   emailBoost = 5,
   usernameBoost = 10
 } = {}) {
-
   searchText = searchText.toLowerCase();
   let words = searchText.trim().split(' ');
   let lastWord = words[words.length - 1] || '';
@@ -244,7 +266,9 @@ SearchSource.defineSource('userSearch', function(searchText, {
     }
   };
 
-  let search = esClient.prettySearch({
+  let syncSearch = Async.wrap(esClient, 'search');
+
+  let search = syncSearch({
     index: Meteor.settings.public.elasticSearch.index,
     type: 'users',
     body: {
@@ -260,14 +284,16 @@ SearchSource.defineSource('userSearch', function(searchText, {
     }
   });
 
+  let processedResults = processSearchResults(search);
+
   let metadata = {
-    total: search.total,
-    took: search.took
+    total: processedResults.total,
+    took: processedResults.took
   };
 
 
   return {
-    data: search.results,
+    data: processedResults.results,
     metadata: metadata
   };
 });

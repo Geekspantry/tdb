@@ -2,6 +2,9 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Technologies } from './technologies';
 import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions';
 import { Projects } from '../projects/projects';
+import { Organizations } from '../organizations/organizations';
+import { Attachments } from '../attachments/attachments';
+
 
 export const TechnologySchema = new SimpleSchema({
   techId: {
@@ -318,7 +321,3 @@ SimpleSchema.messages({ Technologies_updateStatusProjectsId: 'Technology must ha
 SimpleSchema.messages({ Technologies_updateStatusOrganizationsId: 'Technology must have at least one related organization to be published' });
 SimpleSchema.messages({ Technologies_updateStatusAttachmentsId: 'Technology must have at least one related attachment to be published' });
 SimpleSchema.messages({ Technologies_updateStatusNeedAdminOrEditor: 'Only Admins and Editors can update Technology Status. Keep the previous status to save your changes'});
-
-
-
-

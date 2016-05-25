@@ -156,6 +156,10 @@ export const updateShowcasedImage = new ValidatedMethod({
   }
 });
 
+
+
+
+
 // export const shouldUpdateStatus = new ValidatedMethod({
 //   name: 'technologies.shouldUpdateStatus',
 //   validate: new SimpleSchema({

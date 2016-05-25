@@ -1,0 +1,78 @@
+<template name="orgAboutBox">
+  {{> orgCard extendContext hideTools=true hideFooter=true}}          
+  {{> organizationsInformationTable}}
+  <a 
+    class="btn btn-primary btn-block btn-outline btn-sm" 
+    href="{{pathFor 'organizations.edit' id=_id}}">
+    Edit
+  </a>        
+</template>
+
+
+
+  <!-- {{#panelContainer class='float-e-margins org-about-box' }}
+    {{#panelTitle}}
+      <h3>
+        <i class="{{Icons.collections.organizations}}"></i> {{name}}
+      </h3>
+      {{#panelTools}}
+        <a href="#" id="org-edit">
+          <i class="fa fa-pencil"></i>
+        </a>
+      {{/panelTools}}
+    {{/panelTitle}}
+    {{#panelContent}}
+      {{#with logoImage}}
+          {{> safeImg 
+            url=(c.url (cloudinaryId 'images') width='500' height='500' crop='fill') class="img-responsive change-logo-image" 
+            width='500' height='500'}}
+        {{else}}
+          <img src="https://placehold.it/500x500" class="img-responsive change-logo-image" alt="organization-img">
+      {{/with}}
+    {{/panelContent}}
+    {{#panelContent}}
+      <div class="description">
+        <header>
+          <h4>Description</h4>
+          <p>
+            {{#if description}}
+              {{description}}
+            {{else}}
+              No description
+            {{/if}}
+          </p>
+        </header>
+      </div>
+    {{/panelContent}}
+    {{#panelContent}}
+      <table class="table">
+        <tr>
+          <td>Founding Year</td>
+          <td>{{foundingYear}}</td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td>{{{getCountryFlag country}}} {{getCountryName country}}</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td>{{{formatOrgType type true}}}</td>
+        </tr>
+        <tr>
+          <td>People</td>
+          <td>
+            <div class="key-people-thumbs">
+            {{#each keyPeople}}
+              <a href="#">
+                {{> safeImg url=(c.url image width=38 height=38 type='fetch' crop='thumb' gravity='face') class='img-circle' width=38 height=38}}
+              </a>
+            {{/each}}
+            <a href="#" class="btn add-people" id="add-people">
+              <i class="fa fa-plus"></i>
+            </a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    {{/panelContent}}
+  {{/panelContainer}} -->
