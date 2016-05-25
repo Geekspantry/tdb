@@ -41,6 +41,13 @@ Technologies.helpers({
       }
     });
   },
+  shortDescription() {
+    const publishedDescription = TechnologiesDescriptions.findOne({
+      technologyId: this._id,
+      status: DESCRIPTION_STATUS.PUBLISHED
+    });
+    return publishedDescription && publishedDescription.shortText;
+  },
   getPublishedDescription() {
     const publishedDescription = TechnologiesDescriptions.findOne({
       technologyId: this._id,

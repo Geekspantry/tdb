@@ -1,5 +1,6 @@
 <template name="projectsAboutBox">
-  <div class="ibox card-box cards-item">
+  {{> projectsCard extendContext hideTools=true hideFooter=true}}
+  <!-- <div class="ibox card-box cards-item">
     <div class="ibox-content no-padding card-label">
       {{> safeImg 
         url=(CloudinaryHelpers.aboutBox (s3pathImages image)) 
@@ -10,7 +11,7 @@
         <p>{{description}}</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <table class="table table-truncated">
     <tbody>
       <tr>
@@ -85,5 +86,17 @@
       </tr>
     </tbody>
   </table>
-  <a href="{{pathFor 'projects.edit' id=_id}}" class="btn btn-primary btn-block btn-outline btn-sm">Edit</a>
+  <div class="row">
+    <div class="col-sm-6">
+      <a class="btn btn-primary btn-block btn-sm" href="{{pathFor 'projects.edit' id=_id}}">
+        <i class="fa fa-edit"></i> Edit
+      </a>
+    </div>
+    <div class="col-sm-6">
+      {{#deleteEntity deleteOptions}}
+        <i class="fa fa-trash"></i> Remove
+      {{/deleteEntity}}
+    </div>
+  </div>    
+  
 </template>

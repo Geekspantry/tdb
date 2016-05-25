@@ -1,5 +1,6 @@
 <template name="attachmentsAboutBox">
-  {{> attachmentsCard extendContext hideTools=true hideFooter=true}} {{> attachmentsInformationTable}}
+  {{> attachmentsCard extendContext hideTools=true hideFooter=true}} 
+  {{> attachmentsInformationTable}}
   <div class="row">
     <div class="col-sm-6">
       <a class="btn btn-primary btn-block btn-sm" href="{{pathFor 'attachments.edit' id=_id}}">

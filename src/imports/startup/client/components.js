@@ -31,6 +31,7 @@ import '/imports/ui/components/technologies/technologies_images_item/technologie
 import '/imports/ui/components/technologies/technologies_information_card/technologies_information_card';
 import '/imports/ui/components/technologies/technologies_information_table/technologies_information_table';
 import '/imports/ui/components/technologies/technologies_status_form/technologies_status_form';
+import '/imports/ui/components/technologies/technologies_about_box/technologies_about_box';
 
 
 /**

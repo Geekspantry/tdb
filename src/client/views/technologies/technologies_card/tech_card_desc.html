@@ -1,7 +1,8 @@
 <template name="techCardDesc">
   <h5 class="card-name">
     <a href="{{pathFor 'technologies.entry' id=_id}}">
-      <span class="card-id">{{{techId}}}</span> {{{name}}}
+      <span class="card-id">{{{techId}}}</span> 
+      {{{name}}}
     </a>
   </h5>
   <div class="btn-group btn-xs btn-addons">
@@ -12,5 +13,9 @@
       <i class="{{Icons.collections.impact}}"></i> 4
     {{/btnTooltip}}
   </div>
-  <p>{{{shortDescription}}}</p>
+  {{#if shortDescription}}
+    <p>{{{shortDescription}}}</p>
+  {{else}}
+    <p><i>No description provided.</i></p>
+  {{/if}}
 </template>

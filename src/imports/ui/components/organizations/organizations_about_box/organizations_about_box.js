@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
-import { setLogo } from '/imports/api/organizations/methods';
-
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { setLogo, remove } from '/imports/api/organizations/methods';
 import './organizations_about_box.html';
 
 const IMAGE_ASPECT_RATIO = 1;
@@ -20,9 +20,25 @@ Template.orgAboutBox.events({
   'click .change-logo-image': function() {
     Modal.show('uploadFile', {
       onUpload(file) {
-        setLogo.call({orgId: FlowRouter.getParam('id'), imageId: file._id});
+        setLogo.call({ orgId: FlowRouter.getParam('id'), imageId: file._id });
       },
       crop: false
     });
   }
 });
+
+Template.orgAboutBox.helpers({
+  deleteOptions() {
+    let template = Template.instance();
+    return {
+      class: 'btn btn-danger btn-block btn-outline btn-sm',
+      _id: template.data._id,
+      method: remove,
+      name: template.data.name,
+      successCallback() {
+        FlowRouter.go('organizations.dashboard');
+      }
+    };
+  }
+});
+

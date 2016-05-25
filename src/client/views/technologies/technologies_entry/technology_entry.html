@@ -1,33 +1,29 @@
 <template name="technologiesEntry">
-  <div class="row">
-    {{#if Template.subscriptionsReady}}
-      <div class="col-lg-3">
-        {{> technologiesInformationCard tech}}
-        {{> technologiesInformationTable tech}}
-        <a 
-          class="btn btn-primary btn-block btn-outline btn-sm" 
-          href="{{pathFor 'technologies.edit' id=tech._id}}">
-          Edit
-        </a>
+  {{#if Template.subscriptionsReady}}
+    {{#with tech}}
+      <div class="row">
+        <div class="col-lg-3">
+          {{> technologiesAboutBox}}
+        </div>
+        <div class="col-lg-9">
+          {{#panel title="Description"}}
+            {{{renderMarkdown tech.getPublishedDescription.longText}}}
+          {{/panel}}
+          {{#panel title="Organizations"}}
+            {{#with tech.organizations}}
+              {{> masonryGrid items=tech.organizations template='orgCard'}}
+            {{/with}}
+          {{/panel}}
+          {{#panel title="Projects"}}
+            {{> masonryGrid items=tech.projects template='projectsCard'}}
+          {{/panel}}
+          {{#panel title="Attachments"}}
+            {{> masonryGrid items=tech.attachments template='attachmentsCard'}}
+          {{/panel}}
+        </div>
       </div>
-      <div class="col-lg-9">
-        {{#panel title="Description"}}
-          {{{renderMarkdown tech.getPublishedDescription.longText}}}
-        {{/panel}}
-        {{#panel title="Organizations"}}
-          {{#with tech.organizations}}
-            {{> masonryGrid items=tech.organizations template='orgCard'}}
-          {{/with}}
-        {{/panel}}
-        {{#panel title="Projects"}}
-          {{> masonryGrid items=tech.projects template='projectsCard'}}
-        {{/panel}}
-        {{#panel title="Attachments"}}
-          {{> masonryGrid items=tech.attachments template='attachmentsCard'}}
-        {{/panel}}
-      </div>
-    {{else}}
-      {{> spinnerWave}}
-    {{/if}}
-  </div>
+    {{/with}}
+  {{else}}
+    {{> spinnerWave}}
+  {{/if}}
 </template>
