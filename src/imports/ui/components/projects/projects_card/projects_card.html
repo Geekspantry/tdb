@@ -2,7 +2,21 @@
   {{#unless isDeleted}}
     <div class="ibox">
       <div class="ibox-content no-padding card-label">
-        {{> projectsCardTools}}
+        <div class="btn-group card-tools">
+          <button data-toggle="dropdown" class="btn btn-xs btn-white dropdown-toggle" aria-expanded="false">
+            <i class="{{Icons.collections.projects}}"></i> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="{{pathFor 'projects.edit' id=_id}}">Edit Project</a>
+            </li>
+            <li>
+              {{#deleteEntity deleteOptions}}
+                Delete Project
+              {{/deleteEntity}}
+            </li>
+          </ul>
+        </div>
         <a href="{{pathFor 'projects.entry' id=_id}}">
         {{> safeImg url=(getCloudinaryCard (s3pathImages image)) class='img-responsive'}}
         </a>

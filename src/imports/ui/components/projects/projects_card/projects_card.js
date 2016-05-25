@@ -19,25 +19,16 @@ Template.projectsCard.onCreated(function() {
 Template.projectsCard.helpers({
   isDeleted() {
     return Template.instance().state.get() === 'deleted';
-  }
-});
-
-Template.projectsCard.events({
-  'click .delete': function(event, template) {
-    event.preventDefault();
-    let strippedName = TagStripper.strip(template.data.name);
-    let text = `Are you sure you want to delete ${strippedName}?`;
-
-    popups.removeConfirmation(text, () => {
-      remove.call({_id: template.data._id}, (err, res) => {
-        if (err) {
-          popups.removeError();
-          return;
-        }
-
-        toastr.success(`${strippedName} deleted!`, 'Success');
+  },
+  deleteOptions() {
+    let template = Template.instance();
+    return {
+      _id: template.data._id,
+      method: remove,
+      name: TagStripper.strip(template.data.name),
+      successCallback() {
         template.state.set('deleted');
-      });
-    });
+      }
+    };
   }
 });
