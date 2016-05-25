@@ -1,15 +1,15 @@
 <template name="searchSourceDisplay">
   <div class="search-source-display-mode">
     {{> searchSource source=source options=options}} 
-    {{> searchDisplayMode id=displayMode}}
+    <!-- {{> searchDisplayMode id=displayMode}} -->
   </div>
 
-  {{#if $eq (getSearchDisplayMode displayMode) 'list'}}
-    Placeholder for ListView
-  {{/if}}
-  {{#if $eq (getSearchDisplayMode displayMode) 'grid'}}
-    {{> searchResults results=results onLayoutComplete=onLayoutComplete}}
-  {{/if}}
+<!--   {{#if $eq (getSearchDisplayMode displayMode) 'list'}}
+  Placeholder for ListView
+{{/if}} -->
+  <!-- {{#if $eq (getSearchDisplayMode displayMode) 'grid'}} -->
+  {{> searchResults results=results onLayoutComplete=onLayoutComplete}}
+  <!-- {{/if}} -->
   
   {{#if isLoading}}
     {{> spinnerWave}}

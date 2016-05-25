@@ -57,12 +57,18 @@ Template.searchSourceDisplay.helpers({
       let types;
 
       // If is a function that returns the array of entities
-      if (typeof t.data.types === 'function') {
-        types = t.data.types();
+
+      if (t.data.types) {
+        if (typeof t.data.types === 'function') {
+          types = t.data.types();
+        } else {
+          // If is an array like "attachments, organizations", mount the array
+          types = t.data.types.split(',').map(type => type.trim());
+        }
       } else {
-        // If is an array like "attachments, organizations", mount the array
-        types = t.data.types.split(',').map(type => type.trim());
+        types = [];
       }
+
 
       if (!Array.isArray(types)) {
         throw new Error('types should be an array');

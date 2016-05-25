@@ -1,10 +1,7 @@
 <template name="search">
   {{#panelContainer class='elastic-search' }}
     {{#panelContent}}
-      <div class="icons-row">
-        {{> selectEntities}}
-      </div>
-       {{> searchSourceDisplay source=SearchSources.globalSearch types=getTypes displayMode='mainSearch'}}
+       {{> searchSourceDisplay source=SearchSources.globalSearch displayMode='mainSearch'}}
     {{/panelContent}}
   {{/panelContainer}}
 </template>
