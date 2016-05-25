@@ -31,26 +31,34 @@ function checkPermissions() {
  */
 export const invite = new ValidatedMethod({
   name: 'users.invite',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'users.invite.not-logged-in',
+  },
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'users.invite.not-authorized',
+    }
+  },
   validate: InviteSchema.validator(),
   run(doc) {
     if (!this.isSimulation) {
-      if (isAdmin()) {
-        this.unblock();
-        chance = new Chance();
-        let password = chance.bb_pin();
-        let options = {
-          email: doc.email,
-          password: password,
-        };
+      this.unblock();
+      chance = new Chance();
+      let password = chance.bb_pin();
+      let options = {
+        email: doc.email,
+        password: password,
+      };
 
-        try {
-          let userId = Accounts.createUser(options);
-          Accounts.sendEnrollmentEmail(userId, doc.email);
-          Roles.addUsersToRoles(userId, doc.roles);
-          return true;
-        } catch (e) {
-          throw new Meteor.Error(e.toString());
-        }
+      try {
+        let userId = Accounts.createUser(options);
+        Accounts.sendEnrollmentEmail(userId, doc.email);
+        Roles.addUsersToRoles(userId, doc.roles);
+        return true;
+      } catch (e) {
+        throw new Meteor.Error(e.toString());
       }
     }
     return true;
@@ -64,15 +72,22 @@ export const invite = new ValidatedMethod({
  */
 export const updateRole = new ValidatedMethod({
   name: 'users.updateRole',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'users.updateRole.not-logged-in',
+  },
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'users.updateRole.not-authorized',
+    }
+  },
   validate({ userId, role }) {
     check(userId, String);
     check(role, String);
   },
   run({ userId, role }) {
-    if (isAdmin()) {
-      return Roles.setUserRoles(userId, role);
-    }
-    throw new Meteor.Error('not-authorized', 'users.updateRole.not-authorized');
+    return Roles.setUserRoles(userId, role);
   }
 });
 
@@ -83,6 +98,10 @@ export const updateRole = new ValidatedMethod({
  */
 export const updateImage = new ValidatedMethod({
   name: 'users.updateImage',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'users.updateImage.not-logged-in',
+  },
   validate({ userId, imageId }) {
     check(userId, String);
     check(imageId, String);
@@ -108,12 +127,19 @@ export const updateImage = new ValidatedMethod({
  */
 export const remove = new ValidatedMethod({
   name: 'users.remove',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'users.remove.not-logged-in',
+  },
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'users.remove.not-authorized',
+    }
+  },
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
-    if (isAdmin()) {
-      return Meteor.users.remove({ _id: _id });
-    }
-    throw new Meteor.Error('not-authorized', 'users.remove.not-authorized');
+    return Meteor.users.remove({ _id: _id });
   }
 });
 
@@ -124,6 +150,10 @@ export const remove = new ValidatedMethod({
  */
 export const updateProfile = new ValidatedMethod({
   name: 'users.updateProfile',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'users.updateProfile.not-logged-in',
+  },
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
     if (isAdmin() || isProfileOwner(_id)) {
@@ -142,6 +172,10 @@ export const updateProfile = new ValidatedMethod({
  */
 export const addProject = new ValidatedMethod({
   name: 'users.addProject',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'users.addProject.not-logged-in',
+  },
   validate({ userId, projectId }) {
     check(userId, String);
     check(projectId, String);
@@ -167,6 +201,10 @@ export const addProject = new ValidatedMethod({
  */
 export const removeProject = new ValidatedMethod({
   name: 'users.removeProject',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'users.addProject.not-logged-in',
+  },
   validate({ userId, projectId }) {
     check(userId, String);
     check(projectId, String);
