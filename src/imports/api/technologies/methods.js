@@ -4,6 +4,8 @@ import { Technologies } from './technologies.js';
 import { TechnologySchema } from './schema.js';
 import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions.js';
 import { _ } from 'meteor/underscore';
+import { LoggedInMixin } from 'meteor/tunifight:loggedin-mixin';
+import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
@@ -12,28 +14,50 @@ function checkPermissions() {
   throw new Meteor.Error(403, 'Not authorized');
 }
 
+function isAdminOrEditor() {
+  return Roles.userIsInRole(Meteor.user(), ['admin', 'editor']);
+}
+
+function isLoggedIn() {
+  return !!Meteor.userId();
+}
+/**
+ * Insert Technology
+ *
+ * Permissions: [logged in]
+ */
 export const insert = new ValidatedMethod({
   name: 'technologies.insert',
   validate: TechnologySchema.validator(),
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'technologies.insert.not-logged-in',
+  },
   run(doc) {
     return Technologies.insert(doc);
   }
 });
 
+/**
+ * Update Technology
+ *
+ * Permissions: [logged in]
+ * Special Permission: Only [admin, editor] can update "status"
+ * Shouldn't we move this to another method?
+ */
 export const update = new ValidatedMethod({
   name: 'technologies.update',
-  validate: new SimpleSchema({
-    _id: { type: String },
-    modifier: { type: Object, blackbox: true }
-  }).validator(),
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'technologies.update.not-logged-in',
+  },
+  validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
     // Anyone can create Technologies, but just Editors and Admins can change its status.
     if (modifier.$set && modifier.$set.status) {
-
       const technology = Technologies.findOne(_id);
-
       if (technology.status !== modifier.$set.status) {
-        if (Roles.userIsInRole(Meteor.user(), ['viewer'])) {
+        if (!isAdminOrEditor()) {
           throw new ValidationError([{
               name: 'status',
               type: 'Technologies_updateStatusNeedAdminOrEditor',
@@ -47,38 +71,59 @@ export const update = new ValidatedMethod({
   }
 });
 
+/**
+ * Remove Technology
+ *
+ * Permissions: [admin, editor]
+ */
 export const remove = new ValidatedMethod({
   name: 'technologies.remove',
-  validate: new SimpleSchema({
-    _id: { type: String }
-  }).validator(),
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'technologies.remove.not-logged-in',
+  },
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'technologies.remove.not-authorized',
+    }
+  },
+  validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
-    checkPermissions();
-
-    this.unblock();
-    Technologies.remove({ _id: _id });
-    TechnologiesDescriptions.remove({ technologyId: _id });
+    if (isAuthorized()) {
+      Technologies.remove({ _id: _id });
+      TechnologiesDescriptions.remove({ technologyId: _id }); // move to hooks?
+      return true;
+    }
+    throw new Meteor.Error('technologies.remove.not-authorized');
   }
 });
 
-
+/**
+ * Link Image to  Technology
+ *
+ * Permissions: [logged in]
+ */
 export const linkImage = new ValidatedMethod({
   name: 'technologies.linkImage',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'technologies.linkImage.not-logged-in',
+  },
   validate: new SimpleSchema({
     _id: { type: String },
     imageId: { type: String }
   }).validator(),
   run({ _id, imageId }) {
     const technology = Technologies.findOne(_id);
-
     if (!technology) {
-      throw new Meteor.Error(`Could not find a technology with _id ${_id}.`);
+      throw new Meteor.Error('technologies.linkImage.technology-not-found',
+        `Could not find a technology with _id ${_id}.`);
     }
-
     if (technology.images && technology.images.find(i => i.src === imageId)) {
-      throw new Meteor.Error('Image already linked with the given technology.');
+      throw new Meteor.Error('technologies.linkImage.image-already-linked',
+        'Image already linked with the given technology.');
     }
-
     // If is the first image, set as showcased.
     const showcased = !technology.images;
 
@@ -93,8 +138,17 @@ export const linkImage = new ValidatedMethod({
   }
 });
 
+/**
+ * Insert Technology
+ *
+ * Permissions: [logged in]
+ */
 export const unlinkImage = new ValidatedMethod({
   name: 'technologies.unlinkImage',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'technologies.unlinkImage.not-logged-in',
+  },
   validate: new SimpleSchema({
     _id: { type: String },
     imageId: { type: String }
@@ -104,7 +158,8 @@ export const unlinkImage = new ValidatedMethod({
     const image = technology.images.find(i => i.src === imageId);
 
     if (image.showcased) {
-      throw new Meteor.Error("Can't remove showcased image.");
+      throw new Meteor.Error('technologies.unlinkImage.cant-unlink-showcased',
+        'Can\'t remove showcased image.');
     }
 
     return Technologies.update(_id, {
@@ -121,16 +176,20 @@ export const unlinkImage = new ValidatedMethod({
  * - And then update the new image with the given imageId to true
  * @param {String} _id The technology _id
  * @param {String} imageId The image _id
+ *
+ * Permissions: [admin, editor]
  */
 export const updateShowcasedImage = new ValidatedMethod({
   name: 'technologies.updateShowcasedImage',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'technologies.updateShowcasedImage.not-logged-in',
+  },
   validate: new SimpleSchema({
     _id: { type: String },
     imageId: { type: String }
   }).validator(),
   run({ _id, imageId }) {
-    checkPermissions();
-
     const technology = Technologies.findOne(_id);
     const currentShowcasedImage = technology.images.find(i => i.showcased);
 

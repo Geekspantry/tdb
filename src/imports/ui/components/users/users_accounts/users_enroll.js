@@ -1,3 +1,6 @@
+import { Template } from 'meteor/templating';
+
+import './users_enroll.html';
 // Modified UserAccounts to our needs.
 // https://github.com/meteor-useraccounts/core/blob/master/lib/templates_helpers/at_pwd_form.js
 
@@ -92,7 +95,7 @@ Template.enrollAccount.events({
     // Possibly sets errors
     if (someError) {
       if (errList.length) {
-        AccountsTemplates.state.form.set("error", errList);
+        AccountsTemplates.state.form.set('error', errList);
       }
       AccountsTemplates.setDisabled(false);
       // reset reCaptcha form
@@ -124,17 +127,17 @@ Template.enrollAccount.events({
     if (AccountsTemplates.options.confirmPassword) {
       // Checks passwords for correct match
       if (password_again && password !== password_again) {
-        var pwd_again = AccountsTemplates.getField("password_again");
+        var pwd_again = AccountsTemplates.getField('password_again');
         if (pwd_again.negativeValidation)
           pwd_again.setError(AccountsTemplates.texts.errors.pwdMismatch);
         else
-          AccountsTemplates.state.form.set("error", [{
+          AccountsTemplates.state.form.set('error', [{
             field: pwd_again.getDisplayName(),
             err: AccountsTemplates.texts.errors.pwdMismatch
           }]);
         AccountsTemplates.setDisabled(false);
         //reset reCaptcha form
-        if (state === "signUp" && AccountsTemplates.options.showReCaptcha) {
+        if (state === 'signUp' && AccountsTemplates.options.showReCaptcha) {
           grecaptcha.reset();
         }
         return;

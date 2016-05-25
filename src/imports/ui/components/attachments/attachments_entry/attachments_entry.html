@@ -9,15 +9,23 @@
           {{> attachmentsInformationTable}} -->
         </div>
         <div class="col-lg-9">
-          {{#panel title="Projects"}}
-            {{> masonryGrid items=relatedProjects template='projectsCard'}}
-          {{/panel}}
-          {{#panel title="Technologies"}}
-            {{> masonryGrid items=relatedTechnologies template='techCard'}}
-          {{/panel}}
-          {{#panel title="Organizations"}}
-            {{> masonryGrid items=relatedOrganizations template='orgCard'}}
-          {{/panel}}          
+          <div class="row">
+            <div class="col-sm-12">
+              {{#panel title="Projects"}}
+                {{> masonryGrid items=relatedProjects template='projectsCard'}}
+              {{/panel}}              
+            </div>
+            <div class="col-sm-12">
+              {{#panel title="Technologies"}}
+                {{> masonryGrid items=relatedTechnologies template='techCard'}}
+              {{/panel}}              
+            </div>
+            <div class="col-sm-12">
+              {{#panel title="Organizations"}}
+                {{> masonryGrid items=relatedOrganizations template='orgCard'}}
+              {{/panel}}               
+            </div>
+          </div>
         </div>
       </div>
     {{/with}}
