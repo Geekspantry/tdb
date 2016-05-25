@@ -177,7 +177,7 @@ export const unlinkImage = new ValidatedMethod({
  * @param {String} _id The technology _id
  * @param {String} imageId The image _id
  *
- * Permissions: [admin, editor]
+ * Permissions: [logged in]
  */
 export const updateShowcasedImage = new ValidatedMethod({
   name: 'technologies.updateShowcasedImage',

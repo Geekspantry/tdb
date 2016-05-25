@@ -7,6 +7,10 @@ import { Technologies } from '/imports/api/technologies/technologies';
 import { Attachments } from '/imports/api/attachments/attachments';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
+function isAuthorized() {
+  return Roles.userIsInRole(Meteor.user(), ['admin', 'editor']);
+}
+
 /**
  * Insert Organization
  *
@@ -14,19 +18,12 @@ import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../sha
  */
 export const insert = new ValidatedMethod({
   name: 'organizations.insert',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.insert.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.insert.not-authorized',
-    }
-  },
   validate: OrganizationSchema.validator(),
   run(doc) {
-    return Organizations.insert(doc);
+    if (isAuthorized()) {
+      return Organizations.insert(doc);
+    }
+    throw new Meteor.Error('organizations.insert.not-authorized');
   }
 });
 
@@ -37,19 +34,12 @@ export const insert = new ValidatedMethod({
  */
 export const update = new ValidatedMethod({
   name: 'organizations.update',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.update.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.update.not-authorized',
-    }
-  },
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
-    return Organizations.update(_id, modifier);
+    if (isAuthorized()) {
+      return Organizations.update(_id, modifier);
+    }
+    throw new Meteor.Error('organizations.update.not-authorized');
   }
 });
 
@@ -60,19 +50,12 @@ export const update = new ValidatedMethod({
  */
 export const remove = new ValidatedMethod({
   name: 'organizations.remove',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.remove.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.remove.not-authorized',
-    }
-  },
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
-    return Organizations.remove({ _id: _id });
+    if (isAuthorized()) {
+      return Organizations.remove({ _id: _id });
+    }
+    throw new Meteor.Error('organizations.remove.not-authorized');
   }
 });
 
@@ -83,28 +66,21 @@ export const remove = new ValidatedMethod({
  */
 export const addProject = new ValidatedMethod({
   name: 'organizations.addProject',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.addProject.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.addProject.not-authorized',
-    }
-  },
   validate({ orgId, projectId }) {
     check(orgId, String);
     check(projectId, String);
   },
   run({ orgId, projectId }) {
-    return Projects.update({
-      _id: projectId
-    }, {
-      $addToSet: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Projects.update({
+        _id: projectId
+      }, {
+        $addToSet: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.addProject.not-authorized');
   }
 });
 
@@ -117,28 +93,21 @@ export const addProject = new ValidatedMethod({
  */
 export const removeProject = new ValidatedMethod({
   name: 'organizations.removeProject',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.removeProject.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.removeProject.not-authorized',
-    }
-  },
   validate({ orgId, projectId }) {
     check(orgId, String);
     check(projectId, String);
   },
   run({ orgId, projectId }) {
-    return Projects.update({
-      _id: projectId
-    }, {
-      $pull: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Projects.update({
+        _id: projectId
+      }, {
+        $pull: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.removeProject.not-authorized');
   }
 });
 
@@ -149,28 +118,21 @@ export const removeProject = new ValidatedMethod({
  */
 export const addTechnology = new ValidatedMethod({
   name: 'organizations.addTechnology',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.addTechnology.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.addTechnology.not-authorized',
-    }
-  },
   validate({ orgId, technologyId }) {
     check(orgId, String);
     check(technologyId, String);
   },
   run({ orgId, technologyId }) {
-    return Technologies.update({
-      _id: technologyId
-    }, {
-      $addToSet: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Technologies.update({
+        _id: technologyId
+      }, {
+        $addToSet: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.addTechnology.not-authorized');
   }
 });
 
@@ -182,28 +144,21 @@ export const addTechnology = new ValidatedMethod({
  */
 export const removeTechnology = new ValidatedMethod({
   name: 'organizations.removeTechnology',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.removeTechnology.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.removeTechnology.not-authorized',
-    }
-  },
   validate({ orgId, technologyId }) {
     check(orgId, String);
     check(technologyId, String);
   },
   run({ orgId, technologyId }) {
-    return Technologies.update({
-      _id: technologyId
-    }, {
-      $pull: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Technologies.update({
+        _id: technologyId
+      }, {
+        $pull: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.removeTechnology.not-authorized');
   }
 });
 
@@ -214,16 +169,6 @@ export const removeTechnology = new ValidatedMethod({
  */
 export const addAttachment = new ValidatedMethod({
   name: 'organizations.addAttachment',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.addAttachment.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.addAttachment.not-authorized',
-    }
-  },
   validate({ orgId, attachmentId }) {
     check(attachmentId, String);
     check(orgId, String);
@@ -249,16 +194,6 @@ export const addAttachment = new ValidatedMethod({
  */
 export const removeAttachment = new ValidatedMethod({
   name: 'organizations.removeAttachment',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.removeAttachment.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.removeAttachment.not-authorized',
-    }
-  },
   validate({ orgId, attachmentId }) {
     check(attachmentId, String);
     check(orgId, String);
@@ -284,31 +219,24 @@ export const removeAttachment = new ValidatedMethod({
  */
 export const addKeyPeople = new ValidatedMethod({
   name: 'organizations.addKeyPeople',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.addKeyPeople.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.addKeyPeople.not-authorized',
-    }
-  },
   validate({ orgId, personDoc }) {
     check(personDoc, KeyPeopleSchema);
     check(orgId, String);
   },
   run({ orgId, personDoc }) {
     if (!this.isSimulartion) {
-      chance = new Chance();
-      personDoc._id = chance.string();
-      return Organizations.update({
-        _id: orgId
-      }, {
-        $push: {
-          keyPeople: personDoc
-        }
-      });
+      if (isAuthorized()) {
+        chance = new Chance();
+        personDoc._id = chance.string();
+        return Organizations.update({
+          _id: orgId
+        }, {
+          $push: {
+            keyPeople: personDoc
+          }
+        });
+      }
+      throw new Meteor.Error('organizations.addKeyPeople.not-authorized');
     }
 
     return true;
@@ -322,30 +250,23 @@ export const addKeyPeople = new ValidatedMethod({
  */
 export const removeKeyPeople = new ValidatedMethod({
   name: 'organziations.removeKeyPeople',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.removeKeyPeople.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.removeKeyPeople.not-authorized',
-    }
-  },
   validate({ orgId, personId }) {
     check(orgId, String);
     check(personId, String);
   },
   run({ orgId, personId }) {
-    return Organizations.update({
-      _id: orgId
-    }, {
-      $pull: {
-        keyPeople: {
-          _id: personId
+    if (isAuthorized()) {
+      return Organizations.update({
+        _id: orgId
+      }, {
+        $pull: {
+          keyPeople: {
+            _id: personId
+          }
         }
-      }
-    });
+      });
+    }
+    throw new Meteor.Error('organizations.removeKeyPeople.not-authorized');
   }
 });
 
@@ -357,27 +278,20 @@ export const removeKeyPeople = new ValidatedMethod({
  */
 export const setLogo = new ValidatedMethod({
   name: 'organizations.setLogo',
-  mixins: [LoggedInMixin],
-  checkLoggedInError: {
-    error: 'organizations.setLogo.not-logged-in',
-  },
-  checkRoles: {
-    roles: ['admin', 'editor'],
-    rolesError: {
-      error: 'organizations.setLogo.not-authorized',
-    }
-  },
   validate({ orgId, imageId }) {
     check(orgId, String);
     check(imageId, String);
   },
   run({ orgId, imageId }) {
-    return Organizations.update({
-      _id: orgId
-    }, {
-      $set: {
-        logo: imageId
-      }
-    });
+    if (isAuthorized()) {
+      return Organizations.update({
+        _id: orgId
+      }, {
+        $set: {
+          logo: imageId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.setLogo.not-authorized');
   }
 });
