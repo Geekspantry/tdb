@@ -31,15 +31,17 @@
           </li>
         </ul>
         <ul class="nav navbar-top-links navbar-right">
-          <li class="{{isActiveRoute regex='users'}}">
+          <li class="{{getUsersDashboardClass}}">
             <a href="{{pathFor 'users.dashboard'}}">
               <span class="fa fa-users"></span>
             </a>
           </li>
-          <li>
-            <span class="m-r-sm text-muted welcome-message">
-              {{currentUser.identification}}
-            </span>
+          <li class="{{getCurrentUserClass}}">
+            <a href="{{pathFor 'users.entry' id=currentUser._id}}">
+              <span class="m-r-sm text-muted welcome-message">
+                {{currentUser.identification}}
+              </span>
+            </a>
           </li>
           <li>
             <a href="#" id="logout"><span class="fa fa-sign-out"></span></a>
