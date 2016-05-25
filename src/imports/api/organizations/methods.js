@@ -7,43 +7,63 @@ import { Technologies } from '/imports/api/technologies/technologies';
 import { Attachments } from '/imports/api/attachments/attachments';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
-
-function checkPermissions() {
-  if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
-    return true;
-  }
-  throw new Meteor.Error(403, 'Not authorized');
+function isAuthorized() {
+  return Roles.userIsInRole(Meteor.user(), ['admin', 'editor']);
 }
 
+/**
+ * Insert Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const insert = new ValidatedMethod({
   name: 'organizations.insert',
   validate: OrganizationSchema.validator(),
   run(doc) {
-    checkPermissions();
-    return Organizations.insert(doc);
+    if (isAuthorized()) {
+      return Organizations.insert(doc);
+    }
+    throw new Meteor.Error('organizations.insert.not-authorized');
   }
 });
 
+/**
+ * Update Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const update = new ValidatedMethod({
   name: 'organizations.update',
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
-    checkPermissions();
-    return Organizations.update(_id, modifier);
+    if (isAuthorized()) {
+      return Organizations.update(_id, modifier);
+    }
+    throw new Meteor.Error('organizations.update.not-authorized');
   }
 });
 
-
+/**
+ * Remove Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const remove = new ValidatedMethod({
   name: 'organizations.remove',
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
-    checkPermissions();
-    return Organizations.remove({ _id: _id });
+    if (isAuthorized()) {
+      return Organizations.remove({ _id: _id });
+    }
+    throw new Meteor.Error('organizations.remove.not-authorized');
   }
 });
 
-// move to projects method
+/**
+ * Add Organization to Project
+ *
+ * Permissions: [admin, editor]
+ */
 export const addProject = new ValidatedMethod({
   name: 'organizations.addProject',
   validate({ orgId, projectId }) {
@@ -51,18 +71,26 @@ export const addProject = new ValidatedMethod({
     check(projectId, String);
   },
   run({ orgId, projectId }) {
-    checkPermissions();
-    Projects.update({
-      _id: projectId
-    }, {
-      $addToSet: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Projects.update({
+        _id: projectId
+      }, {
+        $addToSet: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.addProject.not-authorized');
   }
 });
 
 // move to projects method
+
+/**
+ * Remove Organization from Project
+ *
+ * Permissions: [admin, editor]
+ */
 export const removeProject = new ValidatedMethod({
   name: 'organizations.removeProject',
   validate({ orgId, projectId }) {
@@ -70,18 +98,24 @@ export const removeProject = new ValidatedMethod({
     check(projectId, String);
   },
   run({ orgId, projectId }) {
-    checkPermissions();
-    return Projects.update({
-      _id: projectId
-    }, {
-      $pull: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Projects.update({
+        _id: projectId
+      }, {
+        $pull: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.removeProject.not-authorized');
   }
 });
 
-// move to technologies method
+/**
+ * Add Organization to Technology
+ *
+ * Permissions: [admin, editor]
+ */
 export const addTechnology = new ValidatedMethod({
   name: 'organizations.addTechnology',
   validate({ orgId, technologyId }) {
@@ -89,17 +123,25 @@ export const addTechnology = new ValidatedMethod({
     check(technologyId, String);
   },
   run({ orgId, technologyId }) {
-    checkPermissions();
-    return Technologies.update({
-      _id: technologyId
-    }, {
-      $addToSet: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Technologies.update({
+        _id: technologyId
+      }, {
+        $addToSet: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.addTechnology.not-authorized');
   }
 });
+
 // move to technologies method
+/**
+ * Remove Organization from Technology
+ *
+ * Permissions: [admin, editor]
+ */
 export const removeTechnology = new ValidatedMethod({
   name: 'organizations.removeTechnology',
   validate({ orgId, technologyId }) {
@@ -107,17 +149,24 @@ export const removeTechnology = new ValidatedMethod({
     check(technologyId, String);
   },
   run({ orgId, technologyId }) {
-    checkPermissions();
-    return Technologies.update({
-      _id: technologyId
-    }, {
-      $pull: {
-        organizationsId: orgId
-      }
-    });
+    if (isAuthorized()) {
+      return Technologies.update({
+        _id: technologyId
+      }, {
+        $pull: {
+          organizationsId: orgId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.removeTechnology.not-authorized');
   }
 });
 
+/**
+ * Add Attachment to Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const addAttachment = new ValidatedMethod({
   name: 'organizations.addAttachment',
   validate({ orgId, attachmentId }) {
@@ -125,17 +174,24 @@ export const addAttachment = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, attachmentId }) {
-    checkPermissions();
-    return Organizations.update({
-      _id: orgId
-    }, {
-      $addToSet: {
-        attachmentsId: attachmentId
-      }
-    });
+    if (isAuthorized()) {
+      return Organizations.update({
+        _id: orgId
+      }, {
+        $addToSet: {
+          attachmentsId: attachmentId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.addAttachment.not-authorized');
   }
 });
 
+/**
+ * Remove Attachment from Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const removeAttachment = new ValidatedMethod({
   name: 'organizations.removeAttachment',
   validate({ orgId, attachmentId }) {
@@ -143,17 +199,24 @@ export const removeAttachment = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, attachmentId }) {
-    checkPermissions();
-    return Organizations.update({
-      _id: orgId
-    }, {
-      $pull: {
-        attachmentsId: attachmentId
-      }
-    });
+    if (isAuthorized()) {
+      return Organizations.update({
+        _id: orgId
+      }, {
+        $pull: {
+          attachmentsId: attachmentId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.removeAttachment.not-authorized');
   }
 });
 
+/**
+ * Add KeyPeople to Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const addKeyPeople = new ValidatedMethod({
   name: 'organizations.addKeyPeople',
   validate({ orgId, personDoc }) {
@@ -161,22 +224,30 @@ export const addKeyPeople = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, personDoc }) {
-    if (Meteor.isServer) {
-      chance = new Chance();
-      personDoc._id = chance.string();
+    if (!this.isSimulartion) {
+      if (isAuthorized()) {
+        chance = new Chance();
+        personDoc._id = chance.string();
+        return Organizations.update({
+          _id: orgId
+        }, {
+          $push: {
+            keyPeople: personDoc
+          }
+        });
+      }
+      throw new Meteor.Error('organizations.addKeyPeople.not-authorized');
     }
 
-    checkPermissions();
-    return Organizations.update({
-      _id: orgId
-    }, {
-      $push: {
-        keyPeople: personDoc
-      }
-    });
+    return true;
   }
 });
 
+/**
+ * Remove KeyPeople from Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const removeKeyPeople = new ValidatedMethod({
   name: 'organziations.removeKeyPeople',
   validate({ orgId, personId }) {
@@ -184,19 +255,27 @@ export const removeKeyPeople = new ValidatedMethod({
     check(personId, String);
   },
   run({ orgId, personId }) {
-    checkPermissions();
-    return Organizations.update({
-      _id: orgId
-    }, {
-      $pull: {
-        keyPeople: {
-          _id: personId
+    if (isAuthorized()) {
+      return Organizations.update({
+        _id: orgId
+      }, {
+        $pull: {
+          keyPeople: {
+            _id: personId
+          }
         }
-      }
-    });
+      });
+    }
+    throw new Meteor.Error('organizations.removeKeyPeople.not-authorized');
   }
 });
 
+
+/**
+ * Set Logo for Organization
+ *
+ * Permissions: [admin, editor]
+ */
 export const setLogo = new ValidatedMethod({
   name: 'organizations.setLogo',
   validate({ orgId, imageId }) {
@@ -204,13 +283,15 @@ export const setLogo = new ValidatedMethod({
     check(imageId, String);
   },
   run({ orgId, imageId }) {
-    checkPermissions();
-    return Organizations.update({
-      _id: orgId
-    }, {
-      $set: {
-        logo: imageId
-      }
-    });
+    if (isAuthorized()) {
+      return Organizations.update({
+        _id: orgId
+      }, {
+        $set: {
+          logo: imageId
+        }
+      });
+    }
+    throw new Meteor.Error('organizations.setLogo.not-authorized');
   }
 });

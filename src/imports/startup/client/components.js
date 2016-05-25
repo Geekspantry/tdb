@@ -89,6 +89,7 @@ import '/imports/ui/components/attachments/attachments_add/attachments_add';
 import '/imports/ui/components/attachments/attachments_add/attachments_add_modal';
 import '/imports/ui/components/attachments/attachments_field_input/attachments_field_input';
 import '/imports/ui/components/attachments/attachments_dashboard_stat/attachments_dashboard_stat';
+import '/imports/ui/components/attachments/attachments_dashboard/attachments_dashboard';
 
 
 /**
@@ -123,3 +124,6 @@ import '/imports/ui/components/users/users_card/users_card';
 import '/imports/ui/components/users/users_invite/users_invite';
 import '/imports/ui/components/users/users_dashboard/users_dashboard';
 import '/imports/ui/components/users/users_dashboard_stat/users_dashboard_stat';
+import '/imports/ui/components/users/users_accounts/users_login';
+import '/imports/ui/components/users/users_accounts/users_enroll';
+import '/imports/ui/components/users/users_accounts/users_reset_password';

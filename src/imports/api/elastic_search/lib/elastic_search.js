@@ -9,7 +9,7 @@ const MODIFIER_OPERATIONS = ['$set', '$unset', '$inc', '$push', '$pull', '$pop',
 
 export class ElasticSearchTypeAPI {
   constructor({ esClient, index, type, mongoCollection, transformDoc, mapping }) {
-    console.log('executing cosntructor...');
+    console.log('ElasticSearchType API Constructor: ' + type);
 
     this.esClient = esClient;
     this.index = index;

@@ -36,7 +36,7 @@ export class ElasticSearchIndexAPI {
     });
   }
   _deleteIndex(callback) {
-    esClient.indices.delete({
+    this.esClient.indices.delete({
       index: this.index,
     }, (err, res) => {
       if (err) {
@@ -49,7 +49,7 @@ export class ElasticSearchIndexAPI {
   }
 
   _createIndex(callback) {
-    esClient.indices.create({
+    this.esClient.indices.create({
       index: this.index,
     }, (err, res) => {
       if (err) {

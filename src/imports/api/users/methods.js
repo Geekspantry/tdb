@@ -24,34 +24,44 @@ function checkPermissions() {
   throw new Meteor.Error('not-authorized', 'Not authorized');
 }
 
+/**
+ * Invite User
+ *
+ * Permissions: [admin]
+ */
 export const invite = new ValidatedMethod({
   name: 'users.invite',
   validate: InviteSchema.validator(),
   run(doc) {
     if (!this.isSimulation) {
-      this.unblock();
+      if (isAdmin()) {
+        this.unblock();
+        chance = new Chance();
+        let password = chance.bb_pin();
+        let options = {
+          email: doc.email,
+          password: password,
+        };
 
-      checkPermissions();
-
-      chance = new Chance();
-      let password = chance.bb_pin();
-      let options = {
-        email: doc.email,
-        password: password,
-      };
-
-      try {
-        let userId = Accounts.createUser(options);
-        Accounts.sendEnrollmentEmail(userId, doc.email);
-        Roles.addUsersToRoles(userId, doc.roles);
-        return true;
-      } catch (e) {
-        throw new Meteor.Error(e.toString());
+        try {
+          let userId = Accounts.createUser(options);
+          Accounts.sendEnrollmentEmail(userId, doc.email);
+          Roles.addUsersToRoles(userId, doc.roles);
+          return true;
+        } catch (e) {
+          throw new Meteor.Error(e.toString());
+        }
       }
     }
+    return true;
   }
 });
 
+/**
+ * Update Role
+ *
+ * Permissions: [admin]
+ */
 export const updateRole = new ValidatedMethod({
   name: 'users.updateRole',
   validate({ userId, role }) {
@@ -59,11 +69,18 @@ export const updateRole = new ValidatedMethod({
     check(role, String);
   },
   run({ userId, role }) {
-    checkPermissions();
-    return Roles.setUserRoles(userId, role);
+    if (isAdmin()) {
+      return Roles.setUserRoles(userId, role);
+    }
+    throw new Meteor.Error('not-authorized', 'users.updateRole.not-authorized');
   }
 });
 
+/**
+ * Update Image
+ *
+ * Permissions: [admin, owner]
+ */
 export const updateImage = new ValidatedMethod({
   name: 'users.updateImage',
   validate({ userId, imageId }) {
@@ -71,26 +88,40 @@ export const updateImage = new ValidatedMethod({
     check(imageId, String);
   },
   run({ userId, imageId }) {
-    checkPermissions();
-
-    return Meteor.users.update({
-      _id: userId
-    }, {
-      $set: {
-        'profile.imageId': imageId
-      }
-    });
+    if (isAdmin() || isProfileOwner(userId)) {
+      return Meteor.users.update({
+        _id: userId
+      }, {
+        $set: {
+          'profile.imageId': imageId
+        }
+      });
+    }
+    throw new Meteor.Error('not-authorized', 'users.updateImage.not-authorized');
   }
 });
 
+/**
+ * Remove User
+ *
+ * Permissions: [admin]
+ */
 export const remove = new ValidatedMethod({
   name: 'users.remove',
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
-    return Meteor.users.remove({ _id: _id });
+    if (isAdmin()) {
+      return Meteor.users.remove({ _id: _id });
+    }
+    throw new Meteor.Error('not-authorized', 'users.remove.not-authorized');
   }
 });
 
+/**
+ * Update Profile
+ *
+ * Permissions: [admin, owner]
+ */
 export const updateProfile = new ValidatedMethod({
   name: 'users.updateProfile',
   validate: ValidatedMethodUpdateSchema.validator(),
@@ -104,6 +135,11 @@ export const updateProfile = new ValidatedMethod({
   }
 });
 
+/**
+ * Add Project to User
+ *
+ * Permissions: [admin, owner]
+ */
 export const addProject = new ValidatedMethod({
   name: 'users.addProject',
   validate({ userId, projectId }) {
@@ -111,7 +147,7 @@ export const addProject = new ValidatedMethod({
     check(projectId, String);
   },
   run({ userId, projectId }) {
-    if (Roles.userIsInRole(Meteor.userId(), ['admin', 'editor'])) {
+    if (isAdmin() || isProfileOwner(userId)) {
       return Meteor.users.update({
         _id: userId
       }, {
@@ -124,6 +160,11 @@ export const addProject = new ValidatedMethod({
   }
 });
 
+/**
+ * Remove Project from User
+ *
+ * Permissions: [admin, owner]
+ */
 export const removeProject = new ValidatedMethod({
   name: 'users.removeProject',
   validate({ userId, projectId }) {
@@ -131,7 +172,7 @@ export const removeProject = new ValidatedMethod({
     check(projectId, String);
   },
   run({ userId, projectId }) {
-    if (Roles.userIsInRole(Meteor.userId(), ['admin', 'editor'])) {
+    if (isAdmin() || isProfileOwner(userId)) {
       return Meteor.users.update({
         _id: userId
       }, {
