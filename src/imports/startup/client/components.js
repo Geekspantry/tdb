@@ -8,9 +8,6 @@ import '/imports/ui/components/common/recent_updates/recent_updates';
 import '/imports/ui/components/common/recent_updates/recent_updates_item';
 import '/imports/ui/components/common/delete_entity/delete_entity';
 
-
-
-
 /**
  * Pages
  */
@@ -58,15 +55,6 @@ import '/imports/ui/components/projects/projects_tech_stash/tech_stash_add_item'
  * Organizations
  */
 
-/*import '/imports/ui/components/organizations/technologies_descriptions_form/technologies_descriptions_form';
-import '/imports/ui/components/organizations/technologies_descriptions_panel/technologies_descriptions_panel';
-import '/imports/ui/components/organizations/technologies_descriptions_tabs/technologies_descriptions_tabs';
-import '/imports/ui/components/organizations/technologies_images_input/technologies_images_input';
-import '/imports/ui/components/organizations/technologies_images_item/technologies_images_item';
-import '/imports/ui/components/organizations/technologies_information_card/technologies_information_card';
-import '/imports/ui/components/organizations/technologies_information_table/technologies_information_table';
-import '/imports/ui/components/organizations/technologies_status_form/technologies_status_form';*/
-
 import '/imports/ui/components/organizations/organizations_manage_key_people/organizations_key_people_list';
 import '/imports/ui/components/organizations/organizations_manage_key_people/organizations_key_people_item';
 import '/imports/ui/components/organizations/organizations_manage_key_people/organizations_key_people_add';
@@ -88,20 +76,9 @@ import '/imports/ui/components/organizations/organizations_card/org_card';
 import '/imports/ui/components/organizations/organizations_about_box/organizations_information_table';
 import '/imports/ui/components/organizations/organizations_about_box/organizations_about_box';
 
-
 /**
  * Attachments
  */
-
-/*import '/imports/ui/components/attachments/technologies_descriptions_form/technologies_descriptions_form';
-import '/imports/ui/components/attachments/technologies_descriptions_panel/technologies_descriptions_panel';
-import '/imports/ui/components/attachments/technologies_descriptions_tabs/technologies_descriptions_tabs';
-import '/imports/ui/components/attachments/technologies_images_input/technologies_images_input';
-import '/imports/ui/components/attachments/technologies_images_item/technologies_images_item';
-import '/imports/ui/components/attachments/technologies_information_card/technologies_information_card';
-import '/imports/ui/components/attachments/technologies_information_table/technologies_information_table';
-import '/imports/ui/components/attachments/technologies_status_form/technologies_status_form';*/
-
 import '/imports/ui/components/attachments/attachments_delete/attachments_delete';
 import '/imports/ui/components/attachments/attachments_edit/attachments_edit';
 import '/imports/ui/components/attachments/attachments_about_box/attachments_about_box';
@@ -117,7 +94,6 @@ import '/imports/ui/components/attachments/attachments_dashboard_stat/attachment
 /**
  * CollectionsSet
  */
-
 import '/imports/ui/components/collections_set/collections_board/collections_board';
 import '/imports/ui/components/collections_set/collections_set_add/collections_set_add';
 import '/imports/ui/components/collections_set/collections_set_entry/collections_set_entry';
@@ -127,29 +103,23 @@ import '/imports/ui/components/collections_set/collections_set_list/collections_
 /**
  * Collections
  */
-
 import '/imports/ui/components/collections/collections_add/collections_add';
 import '/imports/ui/components/collections/collections_edit/collections_edit';
-
-
 
 /**
  * Users
  */
-
 import '/imports/ui/components/users/users_edit/users_edit_bio';
 import '/imports/ui/components/users/users_edit/users_edit_contact_info';
 import '/imports/ui/components/users/users_edit/users_edit_information';
 import '/imports/ui/components/users/users_entry/users_projects';
 import '/imports/ui/components/users/users_about_box/users_about_box';
 import '/imports/ui/components/users/users_entry/users_entry';
+import '/imports/ui/components/users/manage_users_roles/manage_users_roles';
+import '/imports/ui/components/users/manage_users_roles/manage_users_roles_item';
 import '/imports/ui/components/users/manage_user_projects/manage_user_projects';
 import '/imports/ui/components/users/manage_user_projects/manage_user_projects_item';
 import '/imports/ui/components/users/users_card/users_card';
 import '/imports/ui/components/users/users_invite/users_invite';
 import '/imports/ui/components/users/users_dashboard/users_dashboard';
 import '/imports/ui/components/users/users_dashboard_stat/users_dashboard_stat';
-/*
-import '/imports/ui/components/users/collections_set_add/collections_set_add';
-import '/imports/ui/components/users/collections_set_entry/collections_set_entry';
-import '/imports/ui/components/users/collections_set_list/collections_set_list';*/

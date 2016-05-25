@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Roles } from 'meteor/alanning:roles';
-import { updateRoles } from '/imports/api/users/methods';
+import { updateRole } from '/imports/api/users/methods';
 import './manage_users_roles_item.html';
 
 Template.manageUsersRolesItem.helpers({
@@ -41,7 +41,7 @@ Template.manageUsersRolesItem.events({
     let name = Template.instance().data.fullName;
 
     if (Template.instance().data.role !== role) {
-      updateRoles.call({ userId: userId, role: role }, function(err, res) {
+      updateRole.call({ userId: userId, role: role }, function(err, res) {
         if (err) {
           toastr.error(err.toString());
           return;

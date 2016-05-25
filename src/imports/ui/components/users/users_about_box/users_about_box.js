@@ -10,9 +10,9 @@ import './users_about_box.html';
 const IMAGE_ASPECT_RATIO = 1;
 
 Template.usersAboutBox.events({
-  'click #manage-user-role': function(e) {
+  'click [data-action="manage-roles"]': function(e) {
     e.preventDefault();
-    Modal.show('manageUserRole');
+    Modal.show('manageUsersRoles');
   },
   'click #edit-info': function(e) {
     e.preventDefault();
