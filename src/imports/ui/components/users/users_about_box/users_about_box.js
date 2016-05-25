@@ -1,37 +1,34 @@
+import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
+import { remove } from '/imports/api/users/methods';
+
+import './users_about_box.html';
+
+
 const IMAGE_ASPECT_RATIO = 1;
 
-/*confirmDeleteUser = function(callback) {
-    swal({
-      title: 'Are you sure?',
-      text: 'You will not be able to undo this action!',
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#DD6B55',
-      confirmButtonText: 'Yes, delete it!',
-      closeOnConfirm: false
-    }, callback);
-};*/
-
-Template.userAboutBox.events({
+Template.usersAboutBox.events({
   'click #manage-user-role': function(e) {
     e.preventDefault();
     Modal.show('manageUserRole');
   },
   'click #edit-info': function(e) {
     e.preventDefault();
-    Modal.show('editInformation', {
+    Modal.show('usersEditInformation', {
       userId: this._id
     });
   },
   'click #edit-contact': function(e) {
     e.preventDefault();
-    Modal.show('editContactInfo', {
+    Modal.show('usersEditContactInfo', {
       user: this
     });
   },
   'click #edit-bio': function(e) {
     e.preventDefault();
-    Modal.show('editBio', {
+    Modal.show('usersEditBio', {
       user: this
     });
   },
@@ -45,21 +42,38 @@ Template.userAboutBox.events({
       crop: false
     });
   },
-  'click #delete-user': function() {
+/*  'click #delete-user': function() {
     confirmDeleteUser(() => {
       Meteor.call('Users.methods.remove', this._id, (err, res) => {
         if (err) {
-          return toastr.error(err.toString(), 'Error');
+          toastr.error(err.toString(), 'Error');
+          return;
         }
         toastr.success('User removed successfully', 'Success');
         FlowRouter.go('users.dashboard');
       });
     });
-  },
+  },*/
   'mouseenter .update-picture-icon': function() {
     $('.change-profile-image a').fadeIn();
   },
   'mouseleave .change-profile-image': function() {
     $('.change-profile-image a').fadeOut();
+  }
+});
+
+
+Template.usersAboutBox.helpers({
+  deleteOptions() {
+    let template = Template.instance();
+    return {
+      class: 'btn btn-danger btn-block btn-outline btn-sm',
+      _id: template.data._id,
+      method: remove,
+      name: template.data.name,
+      successCallback() {
+        FlowRouter.go('users.dashboard');
+      }
+    };
   }
 });

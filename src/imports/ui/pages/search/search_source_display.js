@@ -19,8 +19,11 @@ Template.searchSourceDisplay.onCreated(function() {
   };
 
   this.autorun(() => {
-    let metadata = SearchSources.globalSearch.getMetadata();
-    if (!metadata || !metadata.total) return this.size.set(DEFAULT_SIZE);
+    let metadata = this.data.source.getMetadata();
+    if (!metadata || !metadata.total) {
+      this.size.set(DEFAULT_SIZE);
+      return;
+    }
     let hasMoreData = metadata && metadata.total > this.size.get();
     if (this.loaded.get() === this.size.get()) {
       if (isScrollOnBottom()) {

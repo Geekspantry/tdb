@@ -1,4 +1,4 @@
-<template name="userAboutBox">
+<template name="usersAboutBox">
   {{#panelContainer class='float-e-margins user-about-box' }}
     {{#panelTitle}}
       <h1>
@@ -139,7 +139,9 @@
       </h1>
     {{/panelTitle}}
     {{#panelContent}}
-      <button class="btn btn-danger btn-block" id="delete-user"> Delete User </button>
+      {{#deleteEntity deleteOptions}}
+        <i class="fa fa-trash"></i> Remove
+      {{/deleteEntity}}
     {{/panelContent}}
   {{/panelContainer}}
 </template>

@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { UserSchema } from './schema.js';
+import { Projects }  from '/imports/api/projects/projects';
 
 Meteor.users.attachSchema(UserSchema);
 Meteor.users.attachBehaviour('timestampable');

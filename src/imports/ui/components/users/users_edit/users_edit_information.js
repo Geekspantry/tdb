@@ -1,3 +1,9 @@
+import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
+import { Template } from 'meteor/templating';
+import { Meteor } from 'meteor/meteor';
+
+import './users_edit_information.html';
+
 AutoForm.hooks({
   updateUserInformationForm: {
     onSuccess() {
@@ -11,10 +17,10 @@ AutoForm.hooks({
 });
 
 
-Template.editInformation.onRendered(function() {
+Template.usersEditInformation.onRendered(function() {
   this.subscribe('users.info', this.data.userId);
 });
-Template.editInformation.helpers({
+Template.usersEditInformation.helpers({
   user() {
     return Meteor.users.findOne(Template.instance().data.userId);
   }

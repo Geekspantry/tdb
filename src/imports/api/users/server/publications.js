@@ -63,7 +63,9 @@ Meteor.publishComposite('users.single', function(userId) {
             }
           }, {
             fields: {
-              name: 1
+              name: 1,
+              status: 1,
+              description: 1
             }
           });
         }

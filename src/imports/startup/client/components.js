@@ -136,6 +136,12 @@ import '/imports/ui/components/collections/collections_edit/collections_edit';
  * Users
  */
 
+import '/imports/ui/components/users/users_edit/users_edit_bio';
+import '/imports/ui/components/users/users_edit/users_edit_contact_info';
+import '/imports/ui/components/users/users_edit/users_edit_information';
+import '/imports/ui/components/users/users_entry/users_projects';
+import '/imports/ui/components/users/users_about_box/users_about_box';
+import '/imports/ui/components/users/users_entry/users_entry';
 import '/imports/ui/components/users/manage_user_projects/manage_user_projects';
 import '/imports/ui/components/users/manage_user_projects/manage_user_projects_item';
 import '/imports/ui/components/users/users_card/users_card';

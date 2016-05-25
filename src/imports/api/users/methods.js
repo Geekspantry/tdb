@@ -28,25 +28,26 @@ export const invite = new ValidatedMethod({
   name: 'users.invite',
   validate: InviteSchema.validator(),
   run(doc) {
-    console.log(doc);
-    this.unblock();
+    if (!this.isSimulation) {
+      this.unblock();
 
-    checkPermissions();
+      checkPermissions();
 
-    chance = new Chance();
-    let password = chance.bb_pin();
-    let options = {
-      email: doc.email,
-      password: password,
-    };
+      chance = new Chance();
+      let password = chance.bb_pin();
+      let options = {
+        email: doc.email,
+        password: password,
+      };
 
-    try {
-      let userId = Accounts.createUser(options);
-      Accounts.sendEnrollmentEmail(userId, doc.email);
-      Roles.addUsersToRoles(userId, doc.roles);
-      return true;
-    } catch (e) {
-      throw new Meteor.Error(e.toString());
+      try {
+        let userId = Accounts.createUser(options);
+        Accounts.sendEnrollmentEmail(userId, doc.email);
+        Roles.addUsersToRoles(userId, doc.roles);
+        return true;
+      } catch (e) {
+        throw new Meteor.Error(e.toString());
+      }
     }
   }
 });
@@ -90,13 +91,13 @@ export const remove = new ValidatedMethod({
   }
 });
 
-export const update = new ValidatedMethod({
-  name: 'users.update',
+export const updateProfile = new ValidatedMethod({
+  name: 'users.updateProfile',
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
     if (isAdmin() || isProfileOwner(_id)) {
       return Meteor.users.update({
-        _id: documentId
+        _id: _id
       }, modifier);
     }
     throw new Meteor.Error('not-authorized', 'Not authorized.');
