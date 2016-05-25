@@ -2,10 +2,7 @@
 //
 //  Allow SimpleSchema to have esDriver field
 //
-SimpleSchema.extendOptions({
-  esDriver: Match.Optional(Boolean),
-  esDriverTransformation: Match.Optional(Function)
-});
+
 
 /*
 if (Meteor.isServer) {

@@ -1,6 +1,6 @@
-/*Readiness = new Mongo.Collection('readiness');
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-Schemas.Readiness = new SimpleSchema({
+export const ImpactSchema = new SimpleSchema({
   userId: {
     type: String,
     autoform: {
@@ -16,8 +16,7 @@ Schemas.Readiness = new SimpleSchema({
   expertise: {
     type: Number
   },
-  answers: {
-    type: [Schemas.Answer]
+  industries: {
+    type: Object
   }
 });
-*/

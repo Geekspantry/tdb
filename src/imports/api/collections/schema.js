@@ -1,3 +1,6 @@
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { DescriptionSchema } from '/imports/api/lib/schemas/description_schema';
+
 export const CollectionDescriptionWithStarSchema = new SimpleSchema([
   {
     status: {
@@ -8,17 +11,17 @@ export const CollectionDescriptionWithStarSchema = new SimpleSchema([
       }
     }
   },
-  Schemas.Description.pick(['userId', 'createdAt', 'longText'])
+  DescriptionSchema.pick(['userId', 'createdAt', 'longText'])
 ]);
 
-export const CollectionDescriptionSchema = Schemas.Description.pick(['userId', 'createdAt', 'status', 'longText']);
+export const CollectionDescriptionSchema = DescriptionSchema.pick(['userId', 'createdAt', 'status', 'longText']);
 
 export const CollectionSchema = new SimpleSchema({
   name: {
     type: String
   },
   description: {
-    type: Schemas.CollectionDescriptionSchema
+    type: CollectionDescriptionSchema
   },
   projectId: {
     type: String

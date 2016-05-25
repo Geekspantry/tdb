@@ -4,7 +4,11 @@ import { TechnologiesDescriptions } from '../technologies_descriptions/technolog
 import { Projects } from '../projects/projects';
 import { Organizations } from '../organizations/organizations';
 import { Attachments } from '../attachments/attachments';
-
+import { ContextualDescriptionSchema } from '/imports/api/lib/schemas/description_schema.js';
+import { ImageSchema } from '/imports/api/lib/schemas/image_schema.js';
+import { UrlSchema } from '/imports/api/lib/schemas/url_schema.js';
+import { ReadinessSchema } from '/imports/api/lib/schemas/readiness_schema.js';
+import { ImpactSchema } from '/imports/api/lib/schemas/impact_schema.js';
 
 export const TechnologySchema = new SimpleSchema({
   techId: {
@@ -81,7 +85,7 @@ export const TechnologySchema = new SimpleSchema({
               minCount: 1
             },
             images: {
-              type: [Schemas.Image],
+              type: [ImageSchema],
               minCount: 1
             }
           }).validate({
@@ -114,7 +118,7 @@ export const TechnologySchema = new SimpleSchema({
               minCount: 1
             },
             images: {
-              type: [Schemas.Image],
+              type: [ImageSchema],
               minCount: 1
             },
             attachmentsId: {
@@ -165,27 +169,27 @@ export const TechnologySchema = new SimpleSchema({
     }
   },
   contextualDescription: {
-    type: [Schemas.contextualDescription],
+    type: [ContextualDescriptionSchema],
     label: 'Contextual Descriptions',
     optional: true
   },
   images: {
-    type: [Schemas.Image],
+    type: [ImageSchema],
     optional: true
   },
   urls: {
-    type: [Schemas.Url],
+    type: [UrlSchema],
     optional: true
   },
   readiness: {
-    type: [Schemas.Readiness],
+    type: [ReadinessSchema],
     optional: true,
     autoform: {
       omit: true
     }
   },
   impact: {
-    type: [Schemas.Impact],
+    type: [ImpactSchema],
     optional: true
   },
   attachmentsId: {
@@ -295,7 +299,7 @@ export const TechnologyReviewSchema = new SimpleSchema({
     }
   },
   images: {
-    type: [Schemas.Image],
+    type: [ImageSchema],
   },
   attachmentsId: {
     type: [String],
