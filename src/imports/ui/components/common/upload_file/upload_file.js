@@ -1,3 +1,10 @@
+import { Template } from 'meteor/templating';
+import { MeteorCamera } from 'meteor/mdg:camera-constraints';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { updateImage } from '/imports/api/users/methods';
+
+import './upload_file.html';
+
 const TAKE_PICTURE_QUALITY = 100;
 const TAKE_PICTURE_WIDTH = 640;
 const TAKE_PICTURE_HEIGHT = 360;
@@ -22,7 +29,8 @@ Template.uploadFile.events({
 
     let uploadedImage = Images.insert(imgData, function(err, fileObj) {
       if (err) {
-        return toastr.error('Some error occurred', 'Error');
+        toastr.error('Some error occurred', 'Error');
+        return;
       }
       tmpl.data.onStartUpload(fileObj);
 
@@ -45,9 +53,9 @@ Template.uploadFile.events({
       height: TAKE_PICTURE_HEIGHT
     }, (err, data) => {
       if (err) {
-        return toastr.error('Error taking photo', 'Error');
+        toastr.error('Error taking photo', 'Error');
+        return;
       }
-
       tmpl.currentImage.set(data);
     });
   }
@@ -62,22 +70,6 @@ Template.uploadFile.onCreated(function() {
 
 
   let tmpl = this;
-  /*
-  this.autorun(() => {
-    let uploadingImage = this.uploadingImage.get();
-    if (uploadingImage) {
-      let cursor = Images.find({_id: uploadingImage});
-      let fetch = cursor.fetch();
-      if (fetch && fetch[0]) {
-        let file = fetch[0];
-        if (file.isUploaded()) {
-          tmpl.data.onUpload(file);
-          Modal.hide();
-        }
-      }
-    }
-  });
-  */
 });
 
 Template.uploadFile.helpers({

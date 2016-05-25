@@ -1,3 +1,8 @@
+import { Template } from 'meteor/templating';
+import { MeteorCamera } from 'meteor/mdg:camera-constraints';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { updateImage } from '/imports/api/users/methods';
+
 Template.usersChangeImage.events({
   'change #select-image': function(e, tmpl) {
     let file = e.target.files[0];
@@ -12,9 +17,10 @@ Template.usersChangeImage.events({
     if (!file) return;
     let uploadedImage = Images.insert(file, function(err, fileObj) {
       if (err) {
-        return toastr.error('Some error occurred', 'Error');
+        toastr.error('Some error occurred', 'Error');
+        return;
       }
-      Meteor.call('Users.methods.setUserImage', FlowRouter.getParam('id'), fileObj._id);
+      updateImage.call({userId: FlowRouter.getParam('id'), imageId: fileObj._id});
 
       let cursor = Images.find(fileObj._id);
       let liveQuery = cursor.observe({
@@ -23,7 +29,8 @@ Template.usersChangeImage.events({
             liveQuery.stop();
             Meteor.setTimeout(() => {
               Modal.hide();
-              return toastr.success('File uploaded!', 'Success');
+              toastr.success('File uploaded!', 'Success');
+              return;
             }, 1000);
           }
         }

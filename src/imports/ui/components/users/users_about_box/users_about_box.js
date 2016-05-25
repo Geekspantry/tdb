@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Meteor } from 'meteor/meteor';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
-import { remove } from '/imports/api/users/methods';
+import { remove, updateImage } from '/imports/api/users/methods';
 
 import './users_about_box.html';
 
@@ -37,7 +37,7 @@ Template.usersAboutBox.events({
       onStartUpload(file) {},
       onUpload(file) {
         toastr.success('Upload finished', 'Success');
-        Meteor.call('Users.methods.setUserImage', FlowRouter.getParam('id'), file._id);
+        updateImage.call({userId: FlowRouter.getParam('id'), imageId: file._id});
       },
       crop: false
     });

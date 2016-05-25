@@ -2,6 +2,7 @@
  * Common
  */
 
+import '/imports/ui/components/common/upload_file/upload_file';
 import '/imports/ui/components/common/masonry_grid/masonry_grid';
 import '/imports/ui/components/common/recent_updates/recent_updates';
 import '/imports/ui/components/common/recent_updates/recent_updates_item';
