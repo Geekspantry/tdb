@@ -1,3 +1,7 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Attachments } from '/imports/api/attachments/attachments';
+
 let attachmentsRoutes = FlowRouter.group({
   prefix: '/attachments',
   name: 'attachments'

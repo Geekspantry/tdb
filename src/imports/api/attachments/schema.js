@@ -1,7 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Attachments } from './attachments.js';
 
-console.log('loading attachments schema');
+
 const validations = {
   expectedFileReference() {
     let from = this.field('from').value;

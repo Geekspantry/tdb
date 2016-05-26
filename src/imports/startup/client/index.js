@@ -5,6 +5,12 @@
 // Attach cloudinaryId to FS
 
 /**
+ * Routes
+ */
+
+ import './routes';
+ 
+/**
  * Client
  */
 

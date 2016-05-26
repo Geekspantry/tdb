@@ -2,6 +2,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
 import { Collections } from './collections.js';
 import { CollectionSchema } from './schema.js';
+import { _ } from 'meteor/underscore';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 

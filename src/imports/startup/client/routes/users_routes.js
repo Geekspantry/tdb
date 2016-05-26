@@ -1,3 +1,7 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Meteor } from 'meteor/meteor';
+
 let usersRoutes = FlowRouter.group({
   prefix: '/users',
 });

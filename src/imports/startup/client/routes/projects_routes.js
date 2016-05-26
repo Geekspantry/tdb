@@ -1,5 +1,7 @@
-//import { CollectionsSet } from '../../../imports/api/collections_set/collections_set';
-// import { Projects } from '../../../imports/api/projects/projects';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Projects } from '/imports/api/projects/projects';
+import { CollectionsSet } from '/imports/api/collections_set/collections_set';
 
 let projectsRoutes = FlowRouter.group({
   prefix: '/projects',
