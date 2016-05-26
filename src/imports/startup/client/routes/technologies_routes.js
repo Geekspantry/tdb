@@ -1,3 +1,7 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Technologies } from '/imports/api/technologies/technologies';
+
 let technologiesRoutes = FlowRouter.group({
   prefix: '/technologies',
   name: 'Technologies'
