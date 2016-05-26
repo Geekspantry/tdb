@@ -1,5 +1,5 @@
 import { Files } from '/imports/api/files/server/files';
-import { Images } from '/imports/api/images/server/images';
+import { Images } from '/imports/api/images/images';
 
 Meteor.methods({
   // Need to be on the server to avoid CORS.
