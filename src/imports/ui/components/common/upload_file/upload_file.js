@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { MeteorCamera } from 'meteor/mdg:camera-constraints';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { updateImage } from '/imports/api/users/methods';
+import { Images } from '/imports/api/images/images';
 
 import './upload_file.html';
 

@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { UserSchema } from './schema.js';
 import { Projects }  from '/imports/api/projects/projects';
 
+import { Images } from '/imports/api/images/images';
+
 Meteor.users.attachSchema(UserSchema);
 Meteor.users.attachBehaviour('timestampable');
 

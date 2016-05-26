@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Projects } from '/imports/api/projects/projects';
+import { Images } from '/imports/api/images/images';
 
 Meteor.publish('users.enrollAccount', function(token) {
   check(token, String);
