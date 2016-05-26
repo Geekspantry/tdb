@@ -1,4 +1,16 @@
 /**
+ * Images
+ */
+ import '/imports/api/images/images.js';
+ import '/imports/api/images/server/publications.js';
+
+ /**
+ * Files
+ */
+ import '/imports/api/files/server/files.js';
+ import '/imports/api/files/server/publications.js';
+
+/**
  * Technologies
  */
 
@@ -61,3 +73,22 @@ import '/imports/api/collections/server/publications.js';
  * Elastic Search
  */
  import '/imports/api/elastic_search/index.js';
+
+
+/**
+ * Search Source
+ */
+ import '/imports/api/search_source/server/search_source.js';
+
+/**
+ * Metadata
+ */
+
+import '/imports/api/meta_inspector/methods.js';
+
+
+/**
+ * Upload File/Image From Url
+ */
+
+ import '/imports/api/upload_from_url/methods.js';

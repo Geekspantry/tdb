@@ -1,4 +1,6 @@
 import MetaInspector from 'node-metainspector';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
+
 
 function fetch(remoteUrl, callback) {
   let client = new MetaInspector(remoteUrl, {
@@ -21,8 +23,16 @@ function fetch(remoteUrl, callback) {
 }
 
 
-Meteor.methods({
-  getMetadataFromUrl: function(url) {
+export const getMetadataFromUrl = new ValidatedMethod({
+  name: 'metadata.getMetadataFromUrl',
+  validate({ url }) {
+    check(url, String);
+  },
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'metadata.getMetadataFromUrl.not-logged-in',
+  },
+  run({ url }) {
     if (!this.isSimulation) {
       check(url, String);
       try {

@@ -1,6 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Organizations } from './organizations';
 import { Attachments } from '/imports/api/attachments/attachments';
+import { Images } from '/imports/api/images/images.js';
 
 export const KeyPeopleSchema = new SimpleSchema({
   _id: {
@@ -87,7 +88,7 @@ export const OrganizationSchema = new SimpleSchema({
     autoform: {
       afFieldInput: {
         type: 'fileUpload',
-        collection: 'Images',
+        collection: 'images',
         label: 'Choose file',
         //  uploadProgressTemplate: 'customProgressBar'
       }

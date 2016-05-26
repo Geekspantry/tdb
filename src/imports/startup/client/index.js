@@ -15,7 +15,7 @@ import './autoform_scope.js';
 // Configure Autoform
 import './autoform_config.js';
 // Configure Cloudinary
-import './autoform_config.js';
+import './cloudinary_config.js';
 // Configure Toastr
 import './toastr_config.js';
 // Import Components

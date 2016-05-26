@@ -1,27 +1,7 @@
-Meteor.methods({
-  /*
-  uploadImagesFromUrls: function(urls){
-    check(urls, [String])
-    function uploadImages(urls, callback) {
-      let images = [];
-      urls.forEach((link) => {
-        Meteor.call('uploadImageFromUrl', link, (error, fileId) => {
-          images.push({
-            src: fileId,
-            description: 'No Description',
-            showcased: false
-          });
-        });
-      });
-      // This guy don't wait the loop ends...
-      callback(null, images);
-    }
+import { Files } from '/imports/api/files/server/files';
+import { Images } from '/imports/api/images/server/images';
 
-    let uploadImagesSync = Async.wrap(uploadImages);
-    return uploadImagesSync;
-  },
-  */
-  
+Meteor.methods({
   // Need to be on the server to avoid CORS.
   uploadImageFromUrl: function(url) {
     this.unblock();

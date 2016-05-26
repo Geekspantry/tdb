@@ -11,3 +11,7 @@ let collections = {
 };
 
 Template.registerHelper('Collections', () => collections);
+
+/*import { Images } from '/imports/api/images/images';
+window.Images = Images;
+*/

@@ -299,7 +299,7 @@ export const addKeyPeople = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, personDoc }) {
-    if (!this.isSimulartion) {
+    if (!this.isSimulation) {
       chance = new Chance();
       personDoc._id = chance.string();
       return Organizations.update({
