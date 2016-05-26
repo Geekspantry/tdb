@@ -41,7 +41,7 @@ export class ElasticSearchIndexAPI {
     }, (err, res) => {
       if (err) {
         console.error('ElasticSearchIndexAPI error at deleteIndex:');
-        console.error(e.message);
+        console.error(err.message);
         callback(err, null);
       }
       callback(null, res);
@@ -54,7 +54,7 @@ export class ElasticSearchIndexAPI {
     }, (err, res) => {
       if (err) {
         console.error('ElasticSearchIndexAPI error at createIndex:');
-        console.error(e.message);
+        console.error(err.message);
         callback(err, null);
       }
       callback(null, res);
