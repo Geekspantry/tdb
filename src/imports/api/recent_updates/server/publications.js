@@ -1,7 +1,11 @@
+import { Meteor } from 'meteor/meteor';
+import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Logs } from '/imports/api/logs/logs';
 
 const ALL_COLLECTIONS_CHAR = '*';
 const COUNTER_PREFIX = 'recentUpdatesCounter-';
+
+console.log('publishing...');
 
 Meteor.publish('recentUpdates', function(selector, counterId, limit) {
   check(selector, Object);
@@ -20,7 +24,7 @@ Meteor.publish('recentUpdates', function(selector, counterId, limit) {
     });
   }
   this.ready();
-  return true;
+  return null;
 });
 
 

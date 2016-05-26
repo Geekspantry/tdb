@@ -5,7 +5,6 @@ import './technologies_about_box.html';
 Template.technologiesAboutBox.helpers({
   deleteOptions() {
     let template = Template.instance();
-    console.log(template.data);
     return {
       class: 'btn btn-danger btn-block btn-outline btn-sm',
       _id: template.data._id,

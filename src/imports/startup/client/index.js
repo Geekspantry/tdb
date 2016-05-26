@@ -1,16 +1,30 @@
 // Attach Schema to Users
-import '/imports/api/users/users';
+//import '/imports/api/users/users';
 // Configure Simpleschema
 //	import '../../config/simpleschema_config.js';
 // Attach cloudinaryId to FS
-import '../../config/fs.js';
+
+/**
+ * Client
+ */
+
+import '/imports/api/technologies/technologies.js';
+import '/imports/api/attachments/attachments.js';
+import '/imports/api/organizations/organizations.js';
+import '/imports/api/projects/projects.js';
+import '/imports/api/users/users.js';
+
+// Common Code
+import '../common/fs.js';
 // Attach QuickList
-import '../../config/quick_list.js';
+import '../common/quick_list.js';
 // Configure CollectionBehaviours
-import '../../config/collection_behaviours_config.js';
-// Attach esDriver to Mongo.Collection
-import '../../config/es_driver.js';
+import '../common/collection_behaviours_config.js';
+// Attach logDriver to Mongo.Collection
+import '../common/log_driver.js';
 // Register Collections on Template helpers
+
+// Client specific
 import './autoform_scope.js';
 // Configure Autoform
 import './autoform_config.js';
@@ -18,6 +32,8 @@ import './autoform_config.js';
 import './cloudinary_config.js';
 // Configure Toastr
 import './toastr_config.js';
+// Import Log Driver config
+import './log_config.js';
 // Import Components
 import './components.js';
 

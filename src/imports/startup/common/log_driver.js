@@ -1,3 +1,6 @@
+import { _ } from 'meteor/underscore';
+import { Mongo } from 'meteor/mongo';
+
 const OPERATION_INSERT = 'insert';
 const OPERATION_REMOVE = 'remove';
 const OPERATION_UPDATE = 'update';
