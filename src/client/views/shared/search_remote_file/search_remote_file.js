@@ -1,3 +1,7 @@
+import { Template } from 'meteor/templating';
+import { Meteor } from 'meteor/meteor';
+import { Files } from '/imports/api/files/files.js';
+
 Template.searchRemoteFile.events({
   'click .btn-download': function(e, t) {
     let url = $('#search-remote-url').val();

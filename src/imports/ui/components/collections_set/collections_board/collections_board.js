@@ -2,8 +2,8 @@ import { Template } from 'meteor/templating';
 import popups from '../../common/popups/popups';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { Technologies } from '../../../../api/technologies/technologies';
-
+import { Technologies } from '/imports/api/technologies/technologies';
+import { remove } from '/imports/api/collections/methods.js';
 import './collections_board.html';
 
 Template.collectionsBoard.events({
@@ -14,11 +14,11 @@ Template.collectionsBoard.events({
     let _id = this._id;
     let text = `Are you sure you want to delete <b>${name}</b>? You will not be able to undo this action.`;
     popups.removeConfirmation(text, () => {
-      Collections.methods.remove.call({_id}, (err, res) => {
+     remove.call({_id}, (err, res) => {
         if (err) {
-          popups.removeError();
+          toastr(err.toString(), 'Error');
         } else {
-          popups.removeSuccess(`The ${type} ${name} has been removed successfully.`);
+          toastr.success(`<b>${name}</b> has been removed successfully.`, 'Success');
         }
       });
     });

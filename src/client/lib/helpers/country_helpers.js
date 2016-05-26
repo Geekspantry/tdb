@@ -1,3 +1,5 @@
+import { Countries } from '/imports/resources/resources';
+
 Template.registerHelper('getCountryName', (code) => {
   return code && Countries[code.toLowerCase()] || 'Unknown';
 });

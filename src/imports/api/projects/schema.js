@@ -4,6 +4,8 @@
 
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Projects } from './projects';
+import { Organizations } from '/imports/api/organizations/organizations';
+import { Attachments } from '/imports/api/attachments/attachments';
 import { StashedTechSchema } from '../shared/schemas';
 
 export const ProjectSchema = new SimpleSchema({
@@ -103,14 +105,7 @@ export const ProjectSchema = new SimpleSchema({
         type: 'universe-select',
         multiple: true,
         uniPlaceholder: 'Search attachments by title...',
-        options() {
-          return Attachments.find().map((attachment) => {
-            return {
-              label: attachment.name,
-              value: attachment._id
-            };
-          });
-        }
+        options: () => Attachments.quickList()
       }
     }
   },

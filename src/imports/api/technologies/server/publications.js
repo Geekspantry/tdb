@@ -7,6 +7,8 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Technologies } from '../technologies.js';
 import { TechnologiesDescriptions } from '../../technologies_descriptions/technologies_descriptions';
 import { Projects } from '../../projects/projects';
+import { Organizations } from '../../organizations/organizations';
+import { Attachments } from '../../attachments/attachments';
 
 /**
  * Publish as single technology

@@ -1,0 +1,60 @@
+<template name="attachmentsCard">
+  {{#unless isDeleted}}
+    <div class="ibox card-box">
+      <div class="ibox-content no-padding">
+        {{#unless hideTools}}
+          <div class="btn-group card-tools">
+            <button data-toggle="dropdown" class="btn btn-xs btn-white dropdown-toggle" aria-expanded="false">
+              <i class="{{Icons.collections.attachments}}"></i> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <!--
+              <li>
+                <a href="#">Add to Project</a>
+              </li>
+              <li>
+                <a href="#">Add to Collection</a>
+              </li>
+              <li>
+                <a href="#">Add an Attachment</a>
+              </li>
+              <li>
+                <a href="#">Change status</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">Add a comment</a>
+              </li>
+              <li>
+                <a href="#">Edit status</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="{{pathFor 'attachments.edit' _id=_id}}">Edit Attachment</a>
+              </li> 
+              -->
+              <li>
+                {{#deleteEntity deleteOptions}}
+                  Delete Attachment
+                {{/deleteEntity}}
+              </li>
+            </ul>
+          </div>
+        {{/unless}}
+        <a href="{{pathFor 'attachments.entry' id=_id}}">
+        {{#if useBackground}}
+          <img src="/img/rsz_attachment-background.jpg" class="img-responsive" alt="">
+        {{/if}}
+        {{> attachmentThumbnail attachment=this class="card" width=600 height=400 crop='fill'}}
+        </a> 
+        <div class="card-body">
+          {{> attachmentsCardDesc}}
+
+          {{#unless hideFooter}}
+            {{> attachmentsCardFooter}}
+          {{/unless}}
+        </div>
+      </div>
+    </div>
+  {{/unless}}    
+</template>

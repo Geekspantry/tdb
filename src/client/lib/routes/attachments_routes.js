@@ -35,9 +35,6 @@ attachmentsRoutes.route('/:id/entry', {
     });
     return attachment && attachment.name;
   },
-  subscriptions(params) {
-    this.register('attachments.single', subs.subscribe('attachments.single', params.id));
-  },
   action() {
     BlazeLayout.render('defaultLayout', {
       main: 'attachmentsEntry'
@@ -53,8 +50,5 @@ attachmentsRoutes.route('/:id/edit', {
     BlazeLayout.render('defaultLayout', {
       main: 'attachmentsEdit'
     });
-  },
-  subscriptions(params) {
-    this.register('attachment', subs.subscribe('attachment', params.id));
   }
 });

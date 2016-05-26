@@ -1,3 +1,6 @@
+import { Template } from 'meteor/templating';
+import { Files } from '/imports/api/files/files';
+
 Template.smartInputFile.events({
   'change .browse': function(e, t) {
     let file = e.target.files[0];

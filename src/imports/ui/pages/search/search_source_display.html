@@ -1,0 +1,26 @@
+<template name="searchSourceDisplay">
+  <div class="search-source-display-mode">
+    {{> searchSource source=source options=options}} 
+    <!-- {{> searchDisplayMode id=displayMode}} -->
+  </div>
+
+<!--   {{#if $eq (getSearchDisplayMode displayMode) 'list'}}
+  Placeholder for ListView
+{{/if}} -->
+  <!-- {{#if $eq (getSearchDisplayMode displayMode) 'grid'}} -->
+  {{> searchResults results=results onLayoutComplete=onLayoutComplete}}
+  <!-- {{/if}} -->
+  
+  {{#if isLoading}}
+    {{> spinnerWave}}
+  {{/if}}
+
+  {{#unless results}}
+    <div class="row">
+      <div class="empty-message">
+        <i class='fa fa-search'></i>
+        <h3> Search for something to see the results</h3>
+      </div>  
+    </div>
+  {{/unless}}
+</template>

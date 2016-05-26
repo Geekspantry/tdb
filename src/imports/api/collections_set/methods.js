@@ -6,6 +6,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { Projects } from '../projects/projects';
 import { CollectionsSetSchema } from './schema.js';
 import { CollectionsSet } from './collections_set.js';
+import { Collections } from '/imports/api/collections/collections';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
 function checkPermissions() {
@@ -15,27 +16,56 @@ function checkPermissions() {
   throw new Meteor.Error(403, 'Not authorized');
 }
 
-
+/**
+ * Insert Collections Set
+ *
+ * Permissions: [admin, editor]
+ */
 export const insert = new ValidatedMethod({
   name: 'collectionsSet.insert',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'collectionsSet.insert.not-logged-in',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'collectionsSet.insert.not-authorized',
+    }
+  },
   validate: CollectionsSetSchema.validator(),
   run(doc) {
     return CollectionsSet.insert(doc);
   }
 });
 
+/**
+ * Remove Collections Set
+ *
+ * Permissions: [admin, editor]
+ */
 export const remove = new ValidatedMethod({
   name: 'collectionsSet.remove',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'collectionsSet.remove.not-logged-in',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'collectionsSet.remove.not-authorized',
+    }
+  },
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
     check(_id, String);
-    checkPermissions();
-    CollectionsSet.remove({
-      _id: _id
-    });
     // Delete all the Collections inside of it.
     Collections.remove({
       collectionsSetId: _id
+    });
+
+    return CollectionsSet.remove({
+      _id: _id
     });
   }
 });

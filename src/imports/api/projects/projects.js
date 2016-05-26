@@ -1,10 +1,12 @@
 /**
  * Projects Collection
  */
-
+import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { ProjectSchema } from './schema.js';
-import { CollectionsSet } from '../collections_set/collections_set';
+import { CollectionsSet } from '/imports/api/collections_set/collections_set';
+import { Organizations } from '/imports/api/organizations/organizations';
+import { Technologies } from '/imports/api/technologies/technologies';
 
 export const Projects = new Mongo.Collection('projects');
 

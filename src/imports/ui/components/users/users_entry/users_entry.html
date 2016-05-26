@@ -1,0 +1,23 @@
+<template name="usersEntry">
+  {{#if Template.subscriptionsReady}}
+    {{#with user}}
+      <div class="row">
+        <div class="col-md-3">
+          {{> usersAboutBox }}
+        </div>
+        <div class="col-xs-12 col-md-9">
+          <div class="row">
+            <div class="col-md-12">
+              {{> recentUpdates selector=userSelector counterId='userUpdates' initialCount=40}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              {{> usersProjects}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/with}}
+  {{/if}}
+</template>

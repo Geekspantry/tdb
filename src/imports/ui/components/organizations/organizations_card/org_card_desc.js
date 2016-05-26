@@ -1,0 +1,1 @@
+import './org_card_desc.html';

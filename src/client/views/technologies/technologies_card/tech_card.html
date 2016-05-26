@@ -2,13 +2,32 @@
   {{#unless isDeleted}}
     <div class="ibox">
       <div class="ibox-content no-padding card-label panel-{{techColor status}}">
-        {{> techCardTools}}
+        {{#unless hideTools}}
+          <div class="btn-group card-tools">
+            <button data-toggle="dropdown" class="btn btn-xs btn-white dropdown-toggle" aria-expanded="false">
+              <i class="{{Icons.collections.technologies}}"></i> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{pathFor 'technologies.edit' id=_id}}">Edit technology</a>
+              </li>
+              <li>
+                {{#deleteEntity deleteOptions}}
+                  Delete technology
+                {{/deleteEntity}}
+              </li>
+            </ul>
+          </div>
+        {{/unless}}
         <a href="{{pathFor 'technologies.entry' id=_id}}">
         {{> safeImg url=(getCloudinaryCard (s3pathImages image)) class='img-responsive'}}
         </a> 
-        <div class="card-description">
+        <div class="card-body">
           {{> techCardDesc}}
-          {{> techCardFooter}}
+
+          {{#unless hideFooter}}
+            {{> techCardFooter}}
+          {{/unless}}
         </div>
       </div>
     </div>

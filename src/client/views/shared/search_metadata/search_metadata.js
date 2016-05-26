@@ -1,9 +1,9 @@
-
+import { getMetadataFromUrl } from '/imports/api/meta_inspector/methods.js';
 
 const FETCH_ERRORS = {
   NOT_FOUND: 'ENOTFOUND',
   CONNECTION_REFUSED: 'ECONNREFUSED'
-}
+};
 
 Template.searchMetadata.events({
   'click .btn-fetch': _.throttle(function(e, t) {
@@ -11,7 +11,7 @@ Template.searchMetadata.events({
 
     t.status.set(SEARCH_STATUS.LOADING);
     $(e.target).button('loading');
-    Meteor.call('getMetadataFromUrl', url, function(err, res) {
+    getMetadataFromUrl.call({ url }, function(err, res) {
       if (err) {
         $(e.target).button('reset');
         t.status.set(SEARCH_STATUS.ERROR);
@@ -29,7 +29,6 @@ Template.searchMetadata.events({
         $(e.target).button('reset');
         t.status.set(SEARCH_STATUS.SUCCESS);
         t.data.onSuccess(res);
-
       }
     });
   }, 250)

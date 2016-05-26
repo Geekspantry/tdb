@@ -1,0 +1,19 @@
+<template name="attachmentsCardFooter">
+  <div class="btn-group card-footer">
+    {{#btnTooltip text="View Entry" onClick=onClickView}}
+      <i class="fa fa-eye"></i>
+    {{/btnTooltip}}
+    {{#btnTooltip text=(capitalizeFirstLetter type) }}
+      {{capitalizeFirstLetter type}}
+    {{/btnTooltip}}
+    {{#btnTooltip text=(concat technologiesCount " technologies") }}
+      <i class="{{Icons.collections.technologies}}"></i> {{technologiesCount}}
+    {{/btnTooltip}}
+    {{#btnTooltip text=(concat organizationsCount " organizations") }}
+      <i class="{{Icons.collections.organizations}}"></i> {{organizationsCount}}
+    {{/btnTooltip}}
+    {{#btnTooltip text=(concat projectsCount " projects") }}
+      <i class="{{Icons.collections.projects}}"></i> {{projectsCount}}
+    {{/btnTooltip}}
+  </div>  
+</template>

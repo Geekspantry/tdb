@@ -1,9 +1,13 @@
 import { Mongo } from 'meteor/mongo';
 
 import { TechnologySchema } from './schema.js';
-import { TechnologiesDescriptions } from '../technologies_descriptions/technologies_descriptions.js';
-import { DESCRIPTION_STATUS } from '../technologies_descriptions/schema';
-import { Projects} from '../projects/projects';
+
+import { Projects} from '/imports/api/projects/projects';
+import { Organizations} from '/imports/api/organizations/organizations';
+import { Attachments} from '/imports/api/attachments/attachments';
+import { Collections} from '/imports/api/collections/collections';
+import { TechnologiesDescriptions } from '/imports/api/technologies_descriptions/technologies_descriptions.js';
+import { DESCRIPTION_STATUS } from '/imports/api/technologies_descriptions/schema';
 
 export const Technologies = new Mongo.Collection('technologies');
 
@@ -37,18 +41,18 @@ Technologies.helpers({
       }
     });
   },
+  shortDescription() {
+    const publishedDescription = TechnologiesDescriptions.findOne({
+      technologyId: this._id,
+      status: DESCRIPTION_STATUS.PUBLISHED
+    });
+    return publishedDescription && publishedDescription.shortText;
+  },
   getPublishedDescription() {
     const publishedDescription = TechnologiesDescriptions.findOne({
       technologyId: this._id,
       status: DESCRIPTION_STATUS.PUBLISHED
     });
-
-    if (!publishedDescription) {
-      return {
-        shortText: "There's no published description for this technology",
-        longText: "There's no published description for this technology"
-      };
-    }
 
     return publishedDescription;
   },
