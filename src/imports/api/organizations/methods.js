@@ -229,16 +229,13 @@ export const addAttachment = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, attachmentId }) {
-    if (isAuthorized()) {
-      return Organizations.update({
-        _id: orgId
-      }, {
-        $addToSet: {
-          attachmentsId: attachmentId
-        }
-      });
-    }
-    throw new Meteor.Error('organizations.addAttachment.not-authorized');
+    return Organizations.update({
+      _id: orgId
+    }, {
+      $addToSet: {
+        attachmentsId: attachmentId
+      }
+    });
   }
 });
 
@@ -264,16 +261,13 @@ export const removeAttachment = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, attachmentId }) {
-    if (isAuthorized()) {
-      return Organizations.update({
-        _id: orgId
-      }, {
-        $pull: {
-          attachmentsId: attachmentId
-        }
-      });
-    }
-    throw new Meteor.Error('organizations.removeAttachment.not-authorized');
+    return Organizations.update({
+      _id: orgId
+    }, {
+      $pull: {
+        attachmentsId: attachmentId
+      }
+    });
   }
 });
 
