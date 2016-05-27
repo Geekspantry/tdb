@@ -4,6 +4,7 @@
 
 import { Template } from 'meteor/templating';
 import { FS } from 'meteor/cfs:gridfs';
+import { Images} from '/imports/api/images/images';
 
 import './technologies_images_input.html';
 
