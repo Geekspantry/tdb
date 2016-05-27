@@ -42,16 +42,17 @@ Template.technologiesImagesInput.onCreated(function() {
   this.file = new ReactiveVar; // File from the client
   this.fileObj = new ReactiveVar; // File from the server
   this.isUploading = new ReactiveVar;
+  this.fileObjId = new ReactiveVar();
 
   this.autorun(() => {
-    let fileObj = this.fileObj.get();
-    if (fileObj) {
-      this.subscribe('images.single', this.fileObj.get()._id);
+    let id = this.fileObjId.get();
+    if (!id) return;
 
-      let uploadedFile = Images.findOne(fileObj._id, { fields: { copies: 1 } });
-      if (uploadedFile && uploadedFile.hasStored('images')) {
-        this.onUploadSuccess(uploadedFile);
-      }
+    let f = Images.findOne(id);
+
+    if (f && f.hasStored('images')) {
+      this.onUploadSuccess(f);
+      this.fileObjId.set(null);
     }
   });
 
@@ -61,12 +62,14 @@ Template.technologiesImagesInput.onCreated(function() {
   this.startUpload = (file) => {
     this.isUploading.set(true);
     Images.insert(file, (err, fileObj) => {
-      if (err) return this.onUploadError(err);
+      if (err) {
+        this.onUploadError(err);
+        return;
+      }
 
-      // fileObj is just a reference, doesn't mean
-      // that is uploaded.
-      this.fileObj.set(fileObj);
-      return this.onUploadBegin(fileObj);
+      this.onUploadBegin(fileObj);
+      this.subscribe('images.single', fileObj._id);
+      this.fileObjId.set(fileObj._id);
     });
   };
 
