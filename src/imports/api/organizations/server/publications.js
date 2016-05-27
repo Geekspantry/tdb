@@ -6,6 +6,7 @@ import { Attachments } from '/imports/api/attachments/attachments.js';
 import { Technologies } from '/imports/api/technologies/technologies.js';
 import { Projects } from '/imports/api/projects/projects';
 import { Organizations } from '../organizations';
+import { Images } from '/imports/api/images/images';
 
 
 Meteor.publishComposite('organizations.single', function(organizationId) {

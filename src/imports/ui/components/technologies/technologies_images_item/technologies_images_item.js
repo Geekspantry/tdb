@@ -7,6 +7,7 @@
  * }
  */
 
+import { Images } from '/imports/api/images/images';
 import { Template } from 'meteor/templating';
 import './technologies_images_item.html';
 

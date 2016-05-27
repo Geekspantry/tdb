@@ -9,6 +9,7 @@ import { TechnologiesDescriptions } from '../../technologies_descriptions/techno
 import { Projects } from '../../projects/projects';
 import { Organizations } from '../../organizations/organizations';
 import { Attachments } from '../../attachments/attachments';
+import { Images } from '/imports/api/images/images';
 
 /**
  * Publish as single technology
