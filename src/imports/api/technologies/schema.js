@@ -76,14 +76,6 @@ export const TechnologySchema = new SimpleSchema({
             name: {
               type: String
             },
-            tags: {
-              type: [String],
-              minCount: 1
-            },
-            synonyms: {
-              type: [String],
-              minCount: 1
-            },
             images: {
               type: [ImageSchema],
               minCount: 1
@@ -108,14 +100,6 @@ export const TechnologySchema = new SimpleSchema({
           new SimpleSchema({
             name: {
               type: String
-            },
-            tags: {
-              type: [String],
-              minCount: 1
-            },
-            synonyms: {
-              type: [String],
-              minCount: 1
             },
             images: {
               type: [ImageSchema],
