@@ -15,17 +15,19 @@
           <div style="position: fixed; width: 22.5%">
             {{> technologiesInformationCard tech}}
 
-            <div class="ibox">
-              <div class="ibox-content">
-                <div class="row"></div>
-                {{> afQuickField name="status" type="select-radio-inline" label-class="col-sm-1" input-col-class="col-sm-12"}}
-                <div class="btn-group">
-                  <button type="submit" class="btn btn-sm btn-primary" data-action="save">Save</button>
-                  <button type="button" class="btn btn-sm btn-outline btn-primary" data-action="cancel">Cancel</button>
-                  <button type="button" class="btn btn-sm btn-outline btn-primary" data-action="delete">Delete</button>
-                </div>    
+            {{#if isInRole 'admin, editor'}}
+              <div class="ibox">
+                <div class="ibox-content">
+                  <div class="row"></div>
+                  {{> afQuickField name="status" type="select-radio-inline" label-class="col-sm-1" input-col-class="col-sm-12"}}
+                  <div class="btn-group">
+                    <button type="submit" class="btn btn-sm btn-primary" data-action="save">Save</button>
+                    <button type="button" class="btn btn-sm btn-outline btn-primary" data-action="cancel">Cancel</button>
+                    <button type="button" class="btn btn-sm btn-outline btn-primary" data-action="delete">Delete</button>
+                  </div>    
+                </div>
               </div>
-            </div>
+            {{/if}}
           </div>
         </div>
         <div class="col-lg-9">
