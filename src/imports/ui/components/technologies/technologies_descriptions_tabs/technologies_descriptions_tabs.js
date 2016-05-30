@@ -115,7 +115,7 @@ Template.technologiesDescriptionsTabs.events({
         modifier
       }, (updateErr, updateRes) => {
         if (updateErr) {
-          toastr.error(updateErr.error, 'Error');
+          toastr.error(updateErr.reason, 'Error');
           throw updateErr;
         }
         Meteor.call('technologies_descriptions.publish', {
@@ -123,7 +123,7 @@ Template.technologiesDescriptionsTabs.events({
           descriptionId: description._id
         }, (publishErr, publishRes) => {
           if (publishErr) {
-            toastr.error(publishErr.error, 'Error');
+            toastr.error(publishErr.reason, 'Error');
             throw publishErr;
           }
           template.isEditing.set(false);
@@ -147,7 +147,7 @@ Template.technologiesDescriptionsTabs.events({
         descriptionId: template.currentId.get()
       }, (err, res) => {
         if (err) {
-          toastr.error(err.error, 'Error');
+          toastr.error(err.reason, 'Error');
           throw err;
         }
         template.selectLastDescription();
@@ -170,7 +170,7 @@ Template.technologiesDescriptionsTabs.events({
     Meteor.call('technologies_descriptions.insert', currentDescription, (err, res) => {
       if (err) {
         console.error(err);
-        toastr.error(err.error, 'Error');
+        toastr.error(err.reason, 'Error');
       }else {
         toastr.success('The description was copied as draft', 'Success');
       }
