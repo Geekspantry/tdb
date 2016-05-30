@@ -155,7 +155,27 @@ Template.technologiesDescriptionsTabs.events({
         return toastr.success('The description was removed', 'Success');
       });
     });
-  }
+  },
+  'click [data-action="copy"]': function (event, template) {
+    const currentDescription = TechnologiesDescriptions.findOne(template.currentId.get());
+
+    // Clean properties to be a fresh description
+    delete currentDescription._id;
+    delete currentDescription.createdAt;
+    delete currentDescription.createdBy;
+    delete currentDescription.updatedAt;
+    delete currentDescription.updatedBy;
+    currentDescription.status = 'draft';
+
+    Meteor.call('technologies_descriptions.insert', currentDescription, (err, res) => {
+      if (err) {
+        console.error(err);
+        toastr.error(err.error, 'Error');
+      }else {
+        toastr.success('The description was copied as draft', 'Success');
+      }
+    });
+  },
 });
 
 Template.technologiesDescriptionsTabs.helpers({
