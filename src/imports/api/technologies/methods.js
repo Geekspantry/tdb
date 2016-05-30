@@ -23,6 +23,12 @@ export const insert = new ValidatedMethod({
   checkLoggedInError: {
     error: 'technologies.insert.not-logged-in',
   },
+  checkRoles: {
+    roles: ['admin', 'editor', 'researcher'],
+    rolesError: {
+      error: 'technologies.insert.notAuthorized',
+    }
+  },
   run(doc) {
     return Technologies.insert(doc);
   }
@@ -41,22 +47,14 @@ export const update = new ValidatedMethod({
   checkLoggedInError: {
     error: 'technologies.update.not-logged-in',
   },
+  checkRoles: {
+    roles: ['admin', 'editor', 'researcher'],
+    rolesError: {
+      error: 'technologies.update.notAuthorized',
+    }
+  },
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
-    // Anyone can create Technologies, but just Editors and Admins can change its status.
-    if (modifier.$set && modifier.$set.status) {
-      const technology = Technologies.findOne(_id);
-      if (technology.status !== modifier.$set.status) {
-        if (!isAdminOrEditor()) {
-          throw new ValidationError([{
-              name: 'status',
-              type: 'Technologies_updateStatusNeedAdminOrEditor',
-            }],
-            'Only Admins and Editors can update Technology Status. Keep the previous status to save your changes'
-          );
-        }
-      }
-    }
     return Technologies.update(_id, modifier);
   }
 });
@@ -75,7 +73,7 @@ export const remove = new ValidatedMethod({
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'technologies.remove.not-authorized',
+      error: 'technologies.remove.notAuthorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),
@@ -96,6 +94,12 @@ export const linkImage = new ValidatedMethod({
   mixins: [LoggedInMixin],
   checkLoggedInError: {
     error: 'technologies.linkImage.not-logged-in',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor', 'researcher'],
+    rolesError: {
+      error: 'technologies.linkImage.notAuthorized',
+    }
   },
   validate: new SimpleSchema({
     _id: { type: String },
@@ -136,6 +140,12 @@ export const unlinkImage = new ValidatedMethod({
   checkLoggedInError: {
     error: 'technologies.unlinkImage.not-logged-in',
   },
+   checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'technologies.unlinkImage.notAuthorized',
+    }
+  },
   validate: new SimpleSchema({
     _id: { type: String },
     imageId: { type: String }
@@ -171,6 +181,12 @@ export const updateShowcasedImage = new ValidatedMethod({
   mixins: [LoggedInMixin],
   checkLoggedInError: {
     error: 'technologies.updateShowcasedImage.not-logged-in',
+  },
+   checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'technologies.updateShowcasedImage.notAuthorized',
+    }
   },
   validate: new SimpleSchema({
     _id: { type: String },
