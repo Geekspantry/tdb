@@ -13,9 +13,11 @@
       <i class="{{Icons.collections.impact}}"></i> 4
     {{/btnTooltip}}
   </div>
-  {{#if shortDescription}}
-    <p>{{{shortDescription}}}</p>
-  {{else}}
-    <p><i>No description provided.</i></p>
-  {{/if}}
+  <div class="description">
+    {{#if shortDescription}}
+      <p>{{{shortDescription}}}</p>
+    {{else}}
+      <p><i>No description provided.</i></p>
+    {{/if}}  
+  </div>
 </template>
