@@ -37,7 +37,7 @@ export const TechnologyDescriptionSchema = new SimpleSchema({
   shortText: {
     type: String,
     label: 'Summary',
-    max: 140,
+    max: 300,
     autoform: {
       afFieldInput: {
         type: 'textarea',
