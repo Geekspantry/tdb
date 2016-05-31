@@ -155,7 +155,7 @@ export const unlinkImage = new ValidatedMethod({
     const image = technology.images.find(i => i.src === imageId);
 
     if (image.showcased) {
-      throw new Meteor.Error('technologies.unlinkImage.cant-unlink-showcased',
+      throw new Meteor.Error('technologies.unlinkImage.showcasedImage',
         'Can\'t remove showcased image.');
     }
 
