@@ -2,13 +2,24 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { Technologies } from '../technologies/technologies';
 import { TechnologiesDescriptions } from './technologies_descriptions.js';
 import { TechnologyDescriptionSchema, DESCRIPTION_STATUS } from './schema.js';
-
+import { LoggedInMixin } from 'meteor/tunifight:loggedin-mixin';
 /**
  * Insert a new technology description
  */
 export const insert = new ValidatedMethod({
   name: 'technologies_descriptions.insert',
+  mixins: [LoggedInMixin],
   validate: TechnologyDescriptionSchema.validator(),
+  checkLoggedInError: {
+    error: 'notLogged',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'notAllowed',
+      message: 'Just Admins and Editors can add a description.'
+    }
+  },
   run(doc) {
     return TechnologiesDescriptions.insert(doc);
   },
@@ -22,11 +33,27 @@ export const insert = new ValidatedMethod({
  */
 export const publish = new ValidatedMethod({
   name: 'technologies_descriptions.publish',
+  mixins: [LoggedInMixin],
   validate: new SimpleSchema({
     technologyId: { type: String },
     descriptionId: { type: String }
   }).validator(),
+  checkLoggedInError: {
+    error: 'notLogged',
+
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'notAllowed',
+      message: 'Just Admins and Editors publish a description.'
+    }
+  },
   run({ technologyId, descriptionId }) {
+    let tech = Technologies.findOne({
+      _id: technologyId
+    });
+
     const publishedDescription = TechnologiesDescriptions.findOne({
       technologyId: technologyId,
       status: DESCRIPTION_STATUS.PUBLISHED
@@ -45,15 +72,28 @@ export const publish = new ValidatedMethod({
         status: DESCRIPTION_STATUS.PUBLISHED
       }
     });
+
+    !this.isSimulation && tech.esHelpers().index();
   }
 });
 
 export const update = new ValidatedMethod({
   name: 'technologies_descriptions.update',
+  mixins: [LoggedInMixin],
   validate: new SimpleSchema({
     _id: { type: String },
     modifier: { type: Object, blackbox: true }
   }).validator(),
+  checkLoggedInError: {
+    error: 'notLogged',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'notAllowed',
+      message: 'Just Admins and Editors update a description.'
+    }
+  },
   run({ _id, modifier }) {
     return TechnologiesDescriptions.update(_id, modifier);
   },
@@ -61,9 +101,20 @@ export const update = new ValidatedMethod({
 
 export const remove = new ValidatedMethod({
   name: 'technologies_descriptions.remove',
+  mixins: [LoggedInMixin],
   validate: new SimpleSchema({
     descriptionId: { type: String }
   }).validator(),
+  checkLoggedInError: {
+    error: 'notLogged',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'notAllowed',
+      message: 'Just Admins and Editors remove a description.'
+    }
+  },
   run({ descriptionId }) {
     const description = TechnologiesDescriptions.findOne(descriptionId);
 

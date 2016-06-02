@@ -30,3 +30,21 @@ Template.technologiesDashboardStat.helpers({
     });
   }
 });
+
+Template.technologiesDashboardStat.events({
+  'click [data-action="click-published"]'(e, t) {
+    if (t.data.onClickPublished) {
+      t.data.onClickPublished();
+    }
+  },
+  'click [data-action="click-review"]'(e, t) {
+    if (t.data.onClickReview) {
+     t.data.onClickReview();
+    }
+  },
+  'click [data-action="click-draft"]'(e, t) {
+    if (t.data.onClickDraft) {
+      t.data.onClickDraft();
+    }
+  }
+});

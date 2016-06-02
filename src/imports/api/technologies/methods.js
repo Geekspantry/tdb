@@ -21,7 +21,13 @@ export const insert = new ValidatedMethod({
   validate: TechnologySchema.validator(),
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.insert.not-logged-in',
+    error: 'technologies.insert.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor', 'researcher'],
+    rolesError: {
+      error: 'technologies.insert.notAuthorized',
+    }
   },
   run(doc) {
     return Technologies.insert(doc);
@@ -39,24 +45,16 @@ export const update = new ValidatedMethod({
   name: 'technologies.update',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.update.not-logged-in',
+    error: 'technologies.update.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor', 'researcher'],
+    rolesError: {
+      error: 'technologies.update.notAuthorized',
+    }
   },
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
-    // Anyone can create Technologies, but just Editors and Admins can change its status.
-    if (modifier.$set && modifier.$set.status) {
-      const technology = Technologies.findOne(_id);
-      if (technology.status !== modifier.$set.status) {
-        if (!isAdminOrEditor()) {
-          throw new ValidationError([{
-              name: 'status',
-              type: 'Technologies_updateStatusNeedAdminOrEditor',
-            }],
-            'Only Admins and Editors can update Technology Status. Keep the previous status to save your changes'
-          );
-        }
-      }
-    }
     return Technologies.update(_id, modifier);
   }
 });
@@ -70,12 +68,12 @@ export const remove = new ValidatedMethod({
   name: 'technologies.remove',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.remove.not-logged-in',
+    error: 'technologies.remove.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'technologies.remove.not-authorized',
+      error: 'technologies.remove.notAuthorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),
@@ -95,7 +93,13 @@ export const linkImage = new ValidatedMethod({
   name: 'technologies.linkImage',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.linkImage.not-logged-in',
+    error: 'technologies.linkImage.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor', 'researcher'],
+    rolesError: {
+      error: 'technologies.linkImage.notAuthorized',
+    }
   },
   validate: new SimpleSchema({
     _id: { type: String },
@@ -134,7 +138,13 @@ export const unlinkImage = new ValidatedMethod({
   name: 'technologies.unlinkImage',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.unlinkImage.not-logged-in',
+    error: 'technologies.unlinkImage.notLoggedIn',
+  },
+   checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'technologies.unlinkImage.notAuthorized',
+    }
   },
   validate: new SimpleSchema({
     _id: { type: String },
@@ -145,7 +155,7 @@ export const unlinkImage = new ValidatedMethod({
     const image = technology.images.find(i => i.src === imageId);
 
     if (image.showcased) {
-      throw new Meteor.Error('technologies.unlinkImage.cant-unlink-showcased',
+      throw new Meteor.Error('technologies.unlinkImage.showcasedImage',
         'Can\'t remove showcased image.');
     }
 
@@ -170,7 +180,13 @@ export const updateShowcasedImage = new ValidatedMethod({
   name: 'technologies.updateShowcasedImage',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.updateShowcasedImage.not-logged-in',
+    error: 'technologies.updateShowcasedImage.notLoggedIn',
+  },
+   checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'technologies.updateShowcasedImage.notAuthorized',
+    }
   },
   validate: new SimpleSchema({
     _id: { type: String },

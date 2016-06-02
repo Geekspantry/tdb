@@ -1,0 +1,21 @@
+<template name="manageTechProjects">
+  {{#manageModal icon=Icons.collections.projects title='Manage Technology\'s Projects'}}
+    {{#if Template.subscriptionsReady}}
+      {{> searchSource source=SearchSources.globalSearch options=getOptions}}
+        {{#perfectScrollbar}}
+          <table class="table manage-table">
+            <tbody>
+              {{#each projects}}
+                {{> manageTechProjectsItem
+                  techId=../techId
+                  _id=_id
+                  name=name}}
+              {{/each}}
+            </tbody>
+          </table>
+        {{/perfectScrollbar}}
+    {{else}}
+      {{> spinner}}
+    {{/if}}
+  {{/manageModal}}
+</template>

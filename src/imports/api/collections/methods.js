@@ -5,14 +5,6 @@ import { CollectionSchema } from './schema.js';
 import { _ } from 'meteor/underscore';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
-
-function checkPermissions() {
-  if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
-    return true;
-  }
-  throw new Meteor.Error(403, 'Not authorized');
-}
-
 /**
  * Insert Collection
  *
@@ -22,12 +14,12 @@ export const insert = new ValidatedMethod({
   name: 'collections.insert',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collections.insert.not-logged-in',
+    error: 'collections.insert.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collections.insert.not-authorized',
+      error: 'collections.insert.notAuthorized',
     }
   },
   validate: CollectionSchema.validator(),
@@ -45,12 +37,12 @@ export const remove = new ValidatedMethod({
   name: 'collections.remove',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collections.remove.not-logged-in',
+    error: 'collections.remove.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collections.remove.not-authorized',
+      error: 'collections.remove.notAuthorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),
@@ -75,12 +67,12 @@ export const update = new ValidatedMethod({
   name: 'collections.update',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collections.update.not-logged-in',
+    error: 'collections.update.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collections.update.not-authorized',
+      error: 'collections.update.notAuthorized',
     }
   },
   validate: ValidatedMethodUpdateSchema.validator(),
@@ -98,12 +90,12 @@ export const copy = new ValidatedMethod({
   name: 'collections.copy',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collections.copy.not-logged-in',
+    error: 'collections.copy.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collections.copy.not-authorized',
+      error: 'collections.copy.notAuthorized',
     }
   },
   validate({_id}) {
@@ -134,12 +126,12 @@ export const addTechnology = new ValidatedMethod({
   name: 'collections.addTechnology',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collections.addTechnology.not-logged-in',
+    error: 'collections.addTechnology.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collections.addTechnology.not-authorized',
+      error: 'collections.addTechnology.notAuthorized',
     }
   },
   validate({ collectionId, techId, position }) {
@@ -179,12 +171,12 @@ export const removeTechnology = new ValidatedMethod({
   name: 'collections.removeTechnology',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collections.removeTechnology.not-logged-in',
+    error: 'collections.removeTechnology.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collections.removeTechnology.not-authorized',
+      error: 'collections.removeTechnology.notAuthorized',
     }
   },
   validate({ source, techId }) {
@@ -212,12 +204,12 @@ export const moveTechnology = new ValidatedMethod({
   name: 'collections.moveTechnology',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collections.moveTechnology.not-logged-in',
+    error: 'collections.moveTechnology.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collections.moveTechnology.not-authorized',
+      error: 'collections.moveTechnology.notAuthorized',
     }
   },
   validate({ source, target, techId, position }) {

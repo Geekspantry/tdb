@@ -30,7 +30,7 @@ export const getMetadataFromUrl = new ValidatedMethod({
   },
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'metadata.getMetadataFromUrl.not-logged-in',
+    error: 'metadata.getMetadataFromUrl.notLoggedIn',
   },
   run({ url }) {
     if (!this.isSimulation) {

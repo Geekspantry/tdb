@@ -1,11 +1,20 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
-import { Organizations } from './organizations.js';
-import { OrganizationSchema, KeyPeopleSchema } from './schema.js';
+
 import { Projects } from '/imports/api/projects/projects';
 import { Technologies } from '/imports/api/technologies/technologies';
 import { Attachments } from '/imports/api/attachments/attachments';
-import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
+import { Organizations } from './organizations.js';
+
+import {
+  OrganizationSchema,
+  KeyPeopleSchema
+} from './schema.js';
+
+import {
+  ValidatedMethodUpdateSchema,
+  ValidatedMethodRemoveSchema
+} from '../shared/schemas';
 
 /**
  * Insert Organization
@@ -16,12 +25,12 @@ export const insert = new ValidatedMethod({
   name: 'organizations.insert',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.insert.not-logged-in',
+    error: 'organizations.insert.notLoggedIn',
   },
   checkRoles: {
-    roles: ['admin', 'editor'],
+    roles: ['admin', 'editor', 'researcher'],
     rolesError: {
-      error: 'organizations.insert.not-authorized',
+      error: 'organizations.insert.notAuthorized',
     }
   },
   validate: OrganizationSchema.validator(),
@@ -39,12 +48,12 @@ export const update = new ValidatedMethod({
   name: 'organizations.update',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.update.not-logged-in',
+    error: 'organizations.update.notLoggedIn',
   },
   checkRoles: {
-    roles: ['admin', 'editor'],
+    roles: ['admin', 'editor', 'researcher'],
     rolesError: {
-      error: 'organizations.update.not-authorized',
+      error: 'organizations.update.notAuthorized',
     }
   },
   validate: ValidatedMethodUpdateSchema.validator(),
@@ -62,12 +71,12 @@ export const remove = new ValidatedMethod({
   name: 'organizations.remove',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.remove.not-logged-in',
+    error: 'organizations.remove.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'organizations.remove.not-authorized',
+      error: 'organizations.remove.notAuthorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),
@@ -85,12 +94,12 @@ export const addProject = new ValidatedMethod({
   name: 'organizations.addProject',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.addProject.not-logged-in',
+    error: 'organizations.addProject.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'organizations.addProject.not-authorized',
+      error: 'organizations.addProject.notAuthorized',
     }
   },
   validate({ orgId, projectId }) {
@@ -119,12 +128,12 @@ export const removeProject = new ValidatedMethod({
   name: 'organizations.removeProject',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.removeProject.not-logged-in',
+    error: 'organizations.removeProject.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'organizations.removeProject.not-authorized',
+      error: 'organizations.removeProject.notAuthorized',
     }
   },
   validate({ orgId, projectId }) {
@@ -142,21 +151,22 @@ export const removeProject = new ValidatedMethod({
   }
 });
 
+// =============================================
+// TODO: Move this relation methods to technology
+// =============================================
 /**
  * Add Organization to Technology
- *
- * Permissions: [admin, editor]
  */
 export const addTechnology = new ValidatedMethod({
   name: 'organizations.addTechnology',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.addTechnology.not-logged-in',
+    error: 'organizations.addTechnology.notLoggedIn',
   },
   checkRoles: {
-    roles: ['admin', 'editor'],
+    roles: ['admin', 'editor', 'researcher'],
     rolesError: {
-      error: 'organizations.addTechnology.not-authorized',
+      error: 'organizations.addTechnology.notAuthorized',
     }
   },
   validate({ orgId, technologyId }) {
@@ -174,22 +184,19 @@ export const addTechnology = new ValidatedMethod({
   }
 });
 
-// move to technologies method
 /**
  * Remove Organization from Technology
- *
- * Permissions: [admin, editor]
  */
 export const removeTechnology = new ValidatedMethod({
   name: 'organizations.removeTechnology',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.removeTechnology.not-logged-in',
+    error: 'organizations.removeTechnology.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'organizations.removeTechnology.not-authorized',
+      error: 'organizations.removeTechnology.notAuthorized',
     }
   },
   validate({ orgId, technologyId }) {
@@ -209,19 +216,17 @@ export const removeTechnology = new ValidatedMethod({
 
 /**
  * Add Attachment to Organization
- *
- * Permissions: [admin, editor]
  */
 export const addAttachment = new ValidatedMethod({
   name: 'organizations.addAttachment',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.addAttachment.not-logged-in',
+    error: 'organizations.addAttachment.notLoggedIn',
   },
   checkRoles: {
-    roles: ['admin', 'editor'],
+    roles: ['admin', 'editor', 'researcher'],
     rolesError: {
-      error: 'organizations.addAttachment.not-authorized',
+      error: 'organizations.addAttachment.notAuthorized',
     }
   },
   validate({ orgId, attachmentId }) {
@@ -229,34 +234,29 @@ export const addAttachment = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, attachmentId }) {
-    if (isAuthorized()) {
-      return Organizations.update({
-        _id: orgId
-      }, {
-        $addToSet: {
-          attachmentsId: attachmentId
-        }
-      });
-    }
-    throw new Meteor.Error('organizations.addAttachment.not-authorized');
+    return Organizations.update({
+      _id: orgId
+    }, {
+      $addToSet: {
+        attachmentsId: attachmentId
+      }
+    });
   }
 });
 
 /**
  * Remove Attachment from Organization
- *
- * Permissions: [admin, editor]
  */
 export const removeAttachment = new ValidatedMethod({
   name: 'organizations.removeAttachment',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.removeAttachment.not-logged-in',
+    error: 'organizations.removeAttachment.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'organizations.removeAttachment.not-authorized',
+      error: 'organizations.removeAttachment.notAuthorized',
     }
   },
   validate({ orgId, attachmentId }) {
@@ -264,34 +264,29 @@ export const removeAttachment = new ValidatedMethod({
     check(orgId, String);
   },
   run({ orgId, attachmentId }) {
-    if (isAuthorized()) {
-      return Organizations.update({
-        _id: orgId
-      }, {
-        $pull: {
-          attachmentsId: attachmentId
-        }
-      });
-    }
-    throw new Meteor.Error('organizations.removeAttachment.not-authorized');
+    return Organizations.update({
+      _id: orgId
+    }, {
+      $pull: {
+        attachmentsId: attachmentId
+      }
+    });
   }
 });
 
 /**
  * Add KeyPeople to Organization
- *
- * Permissions: [admin, editor]
  */
 export const addKeyPeople = new ValidatedMethod({
   name: 'organizations.addKeyPeople',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.addKeyPeople.not-logged-in',
+    error: 'organizations.addKeyPeople.notLoggedIn',
   },
   checkRoles: {
-    roles: ['admin', 'editor'],
+    roles: ['admin', 'editor', 'researcher'],
     rolesError: {
-      error: 'organizations.addKeyPeople.not-authorized',
+      error: 'organizations.addKeyPeople.notAuthorized',
     }
   },
   validate({ orgId, personDoc }) {
@@ -317,19 +312,17 @@ export const addKeyPeople = new ValidatedMethod({
 
 /**
  * Remove KeyPeople from Organization
- *
- * Permissions: [admin, editor]
  */
 export const removeKeyPeople = new ValidatedMethod({
-  name: 'organziations.removeKeyPeople',
+  name: 'organizations.removeKeyPeople',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.removeKeyPeople.not-logged-in',
+    error: 'organizations.removeKeyPeople.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'organizations.removeKeyPeople.not-authorized',
+      error: 'organizations.removeKeyPeople.notAuthorized',
     }
   },
   validate({ orgId, personId }) {
@@ -352,19 +345,17 @@ export const removeKeyPeople = new ValidatedMethod({
 
 /**
  * Set Logo for Organization
- *
- * Permissions: [admin, editor]
  */
 export const setLogo = new ValidatedMethod({
   name: 'organizations.setLogo',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'organizations.setLogo.not-logged-in',
+    error: 'organizations.setLogo.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'organizations.setLogo.not-authorized',
+      error: 'organizations.setLogo.notAuthorized',
     }
   },
   validate({ orgId, imageId }) {

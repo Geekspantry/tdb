@@ -4,9 +4,11 @@
       {{{name}}}
     </a>
   </h5>
-  {{#if description}}
-    <p>{{{description}}}</p>
-  {{else}}
-    <p><i>No description provided.</i></p>
-  {{/if}}
+  <div class="card-description">
+    {{#if description}}
+      <p>{{{description}}}</p>
+    {{else}}
+      <p><i>No description provided.</i></p>
+    {{/if}}   
+  </div>
 </template>

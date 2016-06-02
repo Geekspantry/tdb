@@ -51,6 +51,7 @@ import '/imports/api/organizations/server/publications.js';
  * Users
  */
 import '/imports/api/users/users.js';
+import '/imports/api/users/mixins.js';
 import '/imports/api/users/methods.js';
 import '/imports/api/users/server/es_config.js';
 import '/imports/api/users/log_config.js';
@@ -65,6 +66,15 @@ import '/imports/api/attachments/methods.js';
 import '/imports/api/attachments/server/es_config.js';
 import '/imports/api/attachments/log_config.js';
 import '/imports/api/attachments/server/publications.js';
+
+/**
+ * Feedbacks
+ */
+
+import '/imports/api/feedbacks/feedbacks.js';
+import '/imports/api/feedbacks/methods.js';
+import '/imports/api/feedbacks/server/publications.js';
+import '/imports/api/feedbacks/server/hooks.js';
 
 /**
  * CollectionsSet

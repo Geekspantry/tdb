@@ -25,12 +25,12 @@ export const insert = new ValidatedMethod({
   name: 'collectionsSet.insert',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collectionsSet.insert.not-logged-in',
+    error: 'collectionsSet.insert.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collectionsSet.insert.not-authorized',
+      error: 'collectionsSet.insert.notAuthorized',
     }
   },
   validate: CollectionsSetSchema.validator(),
@@ -48,12 +48,12 @@ export const remove = new ValidatedMethod({
   name: 'collectionsSet.remove',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'collectionsSet.remove.not-logged-in',
+    error: 'collectionsSet.remove.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'collectionsSet.remove.not-authorized',
+      error: 'collectionsSet.remove.notAuthorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),

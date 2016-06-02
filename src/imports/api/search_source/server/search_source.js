@@ -44,6 +44,7 @@ SearchSource.defineSource('globalSearch', function(searchText, {
   nameFuzziness = 2,
   descriptionBoost = 1,
   descriptionFuzziness = 1,
+  techStatus = '',
   techIdBoost = 200,
   excludeIds = []
 }) {
@@ -124,19 +125,52 @@ SearchSource.defineSource('globalSearch', function(searchText, {
     }
   };
 
-  let filter = {};
+  let filter = {
+    bool: {}
+  };
+  let mustQ = [];
+  let mustNotQ = [];
 
-  if (excludeIds.length) {
-    filter = {
-      bool: {
-        must_not: [{
-          ids: {
-            values: excludeIds
-          }
-        }]
+
+  if (techStatus) {
+    mustQ.push({
+      term: {
+        status: techStatus
       }
-    };
+    });
   }
+
+  if (excludeIds) {
+    mustNotQ.push({
+      ids: {
+        values: excludeIds
+      }
+    });
+  }
+
+  if (mustQ) {
+    filter.bool.must = mustQ;
+  }
+
+  if (mustNotQ) {
+    filter.bool.must_not = mustNotQ;
+  }
+  // //if (excludeIds.length) {
+  // // must_not: [{
+  // //   ids: {
+  // //     values: excludeIds
+  // //   }
+  // // }],
+  // // must: [{
+  // //   term: {
+  // //     status: techStatus
+  // //   }
+  // // }]
+  //   filter = {
+  //     bool: {}
+  //   };
+  //  }
+
 
   let finalQuery = {
     filtered: {

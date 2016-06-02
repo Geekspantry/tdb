@@ -53,8 +53,10 @@ Template.searchSourceDisplay.helpers({
   },
   options() {
     let t = Template.instance();
+
     return function() {
       let types;
+      let extraOptions;
 
       // If is a function that returns the array of entities
 
@@ -69,6 +71,15 @@ Template.searchSourceDisplay.helpers({
         types = [];
       }
 
+      if (t.data.extraOptions) {
+        if (typeof t.data.extraOptions === 'function') {
+          extraOptions = t.data.extraOptions();
+        } else {
+          extraOptions = t.data.extraOptions;
+        }
+      } else {
+        extraOptions = {};
+      }
 
       if (!Array.isArray(types)) {
         throw new Error('types should be an array');
@@ -76,7 +87,8 @@ Template.searchSourceDisplay.helpers({
 
       return {
         size: t.size.get(),
-        types: types
+        types: types,
+        ...extraOptions
       };
     };
   },

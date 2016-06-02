@@ -8,6 +8,8 @@ import '/imports/ui/components/common/recent_updates/recent_updates';
 import '/imports/ui/components/common/recent_updates/recent_updates_item';
 import '/imports/ui/components/common/delete_entity/delete_entity';
 
+import '/imports/ui/components/feedback/feedback.js';
+
 /**
  * Pages
  */
@@ -32,6 +34,9 @@ import '/imports/ui/components/technologies/technologies_information_card/techno
 import '/imports/ui/components/technologies/technologies_information_table/technologies_information_table';
 import '/imports/ui/components/technologies/technologies_status_form/technologies_status_form';
 import '/imports/ui/components/technologies/technologies_about_box/technologies_about_box';
+
+import '/imports/ui/components/technologies/technologies_manage_projects/manage_tech_projects.js';
+import '/imports/ui/components/technologies/technologies_manage_projects/manage_tech_projects_item.js';
 
 
 /**

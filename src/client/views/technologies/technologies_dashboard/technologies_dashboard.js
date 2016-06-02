@@ -15,6 +15,33 @@ Template.technologiesDashboard.helpers({
     return {
       collection: 'technologies'
     };
+  },
+  extraOptions() {
+    return () => {
+      return {
+        techStatus: FlowRouter.getQueryParam('techStatus')
+      };
+    };
+  },
+  onClickReview() {
+    return () => {
+      FlowRouter.setQueryParams({
+        techStatus: 'review'
+      });
+    };
+  },
+  onClickDraft() {
+    return () => {
+      FlowRouter.setQueryParams({
+        techStatus: 'draft'
+      });
+    };
+  },
+  onClickPublished() {
+    return () => {
+      FlowRouter.setQueryParams({
+        techStatus: 'published'
+      });
+    };
   }
 });
-
