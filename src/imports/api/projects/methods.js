@@ -7,15 +7,8 @@ import { Technologies } from '../technologies/technologies.js';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
 import { ProjectSchema } from './schema.js';
+import { LoggedInMixin } from 'meteor/tunifight:loggedin-mixin';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
-
-function checkPermissions() {
-  if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
-    return true;
-  }
-  throw new Meteor.Error('not-authorized', 'Not authorized');
-}
-
 
 /**
  * CRUD Operations
@@ -27,27 +20,54 @@ function checkPermissions() {
  */
 export const insert = new ValidatedMethod({
   name: 'projects.insert',
+  mixins: [LoggedInMixin],
   validate: ProjectSchema.validator(),
+  checkLoggedInError: {
+    error: 'projects.insert.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'projects.insert.notAuthorized',
+    }
+  },
   run(doc) {
-    checkPermissions();
     return Projects.insert(doc);
   }
 });
 
 export const update = new ValidatedMethod({
   name: 'projects.update',
+  mixins: [LoggedInMixin],
   validate: ValidatedMethodUpdateSchema.validator(),
+  checkLoggedInError: {
+    error: 'projects.update.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'projects.update.notAuthorized',
+    }
+  },
   run({ _id, modifier }) {
-    checkPermissions();
     return Projects.update(_id, modifier);
   }
 });
 
 export const remove = new ValidatedMethod({
   name: 'projects.remove',
+  mixins: [LoggedInMixin],
   validate: ValidatedMethodRemoveSchema.validator(),
+  checkLoggedInError: {
+    error: 'projects.remove.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'projects.remove.notAuthorized',
+    }
+  },
   run({ _id }) {
-    checkPermissions();
     Projects.remove({
       _id: _id
     });
@@ -67,6 +87,16 @@ export const remove = new ValidatedMethod({
 
 export const pushTechnologiesStash = new ValidatedMethod({
   name: 'projects.pushTechnologiesStash',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'projects.pushTechnologiesStash.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'projects.pushTechnologiesStash.notAuthorized',
+    }
+  },
   validate({ projectId, techId }) {
     check(projectId, String);
     check(techId, String);
@@ -119,6 +149,16 @@ export const pushTechnologiesStash = new ValidatedMethod({
 
 export const pullTechnologiesStash = new ValidatedMethod({
   name: 'projects.pullTechnologiesStash',
+  mixins: [LoggedInMixin],
+  checkLoggedInError: {
+    error: 'projects.pushTechnologiesStash.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin', 'editor'],
+    rolesError: {
+      error: 'projects.pushTechnologiesStash.notAuthorized',
+    }
+  },
   validate({ projectId, techId }) {
     check(projectId, String);
     check(techId, String);

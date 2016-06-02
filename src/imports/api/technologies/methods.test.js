@@ -171,7 +171,7 @@ if (Meteor.isServer) {
 
       it('just admin and editors can update showcased image', function() {
         assert.equal('technologies.updateShowcasedImage', updateShowcasedImage.name)
-        assert.sameMembers(['admin', 'editor'], updateShowcasedImages.checkRoles.roles);
+        assert.sameMembers(['admin', 'editor'], updateShowcasedImage.checkRoles.roles);
       })
     })
   });
