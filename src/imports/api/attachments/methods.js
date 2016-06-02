@@ -9,17 +9,15 @@ import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../sha
 
 /**
  * Insert Attachment
- *
- * Permissions: [admin, editor]
  */
 export const insert = new ValidatedMethod({
-  name: 'attachments.add',
+  name: 'attachments.insert',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
     error: 'attachments.insert.notLoggedIn',
   },
   checkRoles: {
-    roles: ['admin', 'editor'],
+    roles: ['admin', 'editor', 'researcher'],
     rolesError: {
       error: 'attachments.insert.notAuthorized',
     }
@@ -32,8 +30,6 @@ export const insert = new ValidatedMethod({
 
 /**
  * Update Attachment
- *
- * Permissions: [admin, editor]
  */
 export const update = new ValidatedMethod({
   name: 'attachments.update',
@@ -55,8 +51,6 @@ export const update = new ValidatedMethod({
 
 /**
  * Remove Attachment
- *
- * Permissions: [admin, editor]
  */
 export const remove = new ValidatedMethod({
   name: 'attachments.remove',
@@ -72,6 +66,6 @@ export const remove = new ValidatedMethod({
   },
   validate: ValidatedMethodRemoveSchema.validator(),
   run({_id}) {
-    return Attachments.remove({ _id: _id });
+    return Attachments.remove(_id);
   }
 });
