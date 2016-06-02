@@ -8,14 +8,34 @@
         {{#panel title="Description"}}
           {{{renderMarkdown tech.getPublishedDescription.longText}}}
         {{/panel}}
+
+        <!-- Technologie's Organizations -->
         {{#panel title="Organizations"}}
           {{#with tech.organizations}}
             {{> masonryGrid items=tech.organizations template='orgCard'}}
           {{/with}}
         {{/panel}}
-        {{#panel title="Projects"}}
-          {{> masonryGrid items=tech.projects template='projectsCard'}}
-        {{/panel}}
+
+        <!-- Technologie's Projects -->
+        {{#panelContainer class='float-e-margins' }}
+          {{#panelTitle}}
+            <h1>
+              <i class="{{Icons.collections.projects}}"></i>
+              Related Project's stash
+            </h1>
+            {{#panelTools}}
+              <a href="#" data-action='manage-tech-projects'>
+                <i class="fa fa-plus"></i>
+              </a>
+            {{/panelTools}}
+          {{/panelTitle}}
+          {{#panelContent}}
+            {{> masonryGrid items=tech.projects template='projectsCard'}}
+          {{/panelContent}}
+        {{/panelContainer}}
+
+
+        <!-- Technologie's Attachments -->
         {{#panel title="Attachments"}}
           {{> masonryGrid items=tech.attachments template='attachmentsCard'}}
         {{/panel}}

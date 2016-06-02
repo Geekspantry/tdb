@@ -1,15 +1,15 @@
 <template name="technologiesEdit">
   <div class="row" data-template="technologies-edit-page">
     {{#if Template.subscriptionsReady}}
-      {{#autoForm 
+      {{#autoForm
         id="update-technologies-form"
-        class="form-horizontal" 
+        class="form-horizontal"
         collection=technologiesCollection
-        doc=tech 
+        doc=tech
         type="method-update"
         meteormethod="technologies.update"
         singleMethodArgument=true
-        validation="submit"}} 
+        validation="submit"}}
 
         <div class="col-lg-3">
           <div style="position: fixed; width: 22.5%">
@@ -24,7 +24,7 @@
                     <button type="submit" class="btn btn-sm btn-primary" data-action="save">Save</button>
                     <button type="button" class="btn btn-sm btn-outline btn-primary" data-action="cancel">Cancel</button>
                     <button type="button" class="btn btn-sm btn-outline btn-primary" data-action="delete">Delete</button>
-                  </div>    
+                  </div>
                 </div>
               </div>
             {{/if}}
@@ -55,13 +55,13 @@
               <div class="col-sm-10">
                 <div class="row">
                   <div class="col-sm-3">
-                    {{> technologiesImagesInput 
+                    {{> technologiesImagesInput
                       _id=tech._id
-                      onUploadSuccess=onUploadSuccess}}        
+                      onUploadSuccess=onUploadSuccess}}
                   </div>
                   {{#each tech.images}}
                     <div class="col-sm-3 image-items">
-                      {{> technologiesImagesItem 
+                      {{> technologiesImagesItem
                         image=this
                         technologyId=tech._id
                         width=180
@@ -71,7 +71,7 @@
                 </div>
               </div>
             </div>
-            
+
             {{> afQuickField name="tags" label-class="col-sm-2" input-col-class="col-sm-10"}}
             <div class="col-sm-10 col-sm-offset-2" style="margin-top:-37px; padding-left:5px">
               <span class="help-block m-b-none">
@@ -83,14 +83,14 @@
           {{> technologiesDescriptionsPanel tech}}
 
           {{#panel title="Relations"}}
-            {{> afQuickField name="organizationsId" label-class="col-sm-2" input-col-class="col-sm-9"}} 
-            {{> afQuickField name="projectsId" label-class="col-sm-2" input-col-class="col-sm-9"}} 
+            {{> afQuickField name="organizationsId" label-class="col-sm-2" input-col-class="col-sm-9"}}
+            {{!-- {{> afQuickField name="projectsId" label-class="col-sm-2" input-col-class="col-sm-9"}}  --}}
             {{> attachmentsFieldInput name="attachmentsId" }}
           {{/panel}}
         </div>
       {{/autoForm}}
     {{else}}
       {{> spinnerWave}}
-    {{/if}} 
+    {{/if}}
   </div>
 </template>

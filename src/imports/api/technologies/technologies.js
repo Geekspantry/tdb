@@ -28,11 +28,14 @@ Technologies.helpers({
     });
   },
   projects() {
+    // return Projects.find({
+    //   _id: {
+    //     $in: this.projectsId || []
+    //   }
+    // });
     return Projects.find({
-      _id: {
-        $in: this.projectsId || []
-      }
-    });
+      'technologiesStash.technologyId': this._id
+    })
   },
   attachments() {
     return Attachments.find({

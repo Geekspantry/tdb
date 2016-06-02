@@ -1,0 +1,19 @@
+<template name="manageTechProjectsItem">
+  <tr class="manage-table-item">
+    <td>{{{name}}}</td>
+    <td>
+      {{#if inProject}}
+        <button class="btn btn-primary btn-xs">
+          <i class='fa fa-check'></i>
+        </button>
+        <button class="btn btn-danger remove-project btn-xs">
+          <i class='fa fa-trash'></i>
+        </button>
+      {{else}}
+        <button class="btn btn-default add-project btn-xs">
+          <i class='fa fa-check'></i>
+        </button>
+      {{/if}}
+    </td>
+  </tr>
+</template>

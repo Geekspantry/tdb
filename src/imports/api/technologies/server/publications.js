@@ -74,7 +74,9 @@ Meteor.publishComposite('technologies.single', function(technologyId, options = 
   if (options.projects) {
     children.push({
       find(technology) {
-        return Projects.find({ _id: { $in: technology.projectsId || [] } });
+        return Projects.find({
+          'technologiesStash.technologyId': technology._id
+        })
       }
     });
   }

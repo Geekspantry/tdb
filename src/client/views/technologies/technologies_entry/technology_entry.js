@@ -13,3 +13,11 @@ Template.technologiesEntry.onCreated(function() {
 Template.technologiesEntry.helpers({
   tech: () => Technologies.findOne(FlowRouter.getParam('id')),
 });
+
+Template.technologiesEntry.events({
+  'click [data-action="manage-tech-projects"]'(e, t) {
+    Modal.show('manageTechProjects', {
+      techId: FlowRouter.getParam('id')
+    });
+  }
+})

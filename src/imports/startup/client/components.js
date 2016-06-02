@@ -33,6 +33,9 @@ import '/imports/ui/components/technologies/technologies_information_table/techn
 import '/imports/ui/components/technologies/technologies_status_form/technologies_status_form';
 import '/imports/ui/components/technologies/technologies_about_box/technologies_about_box';
 
+import '/imports/ui/components/technologies/technologies_manage_projects/manage_tech_projects.js';
+import '/imports/ui/components/technologies/technologies_manage_projects/manage_tech_projects_item.js';
+
 
 /**
  * Projects
