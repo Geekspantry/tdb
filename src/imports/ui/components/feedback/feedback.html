@@ -1,8 +1,8 @@
 <template name="feedback">
   <div class="theme-config">
-    <div class="theme-config-box {{getFeedbackShowClass}}">
+    <div class="theme-config-box {{#if isOpen}}show{{/if}}">
       <div class="spin-icon">
-        <i class="fa fa-support fa-spin"></i>
+        <i class="fa fa-support {{#if isOpen}}fa-spin{{/if}}"></i>
       </div>
       <div class="skin-setttings">
         <div class="title">Configuration</div>

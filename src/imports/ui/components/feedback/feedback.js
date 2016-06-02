@@ -19,8 +19,8 @@ Template.feedback.onCreated(function() {
 
 
 Template.feedback.helpers({
-  getFeedbackShowClass() {
-    return Session.get('showFeedback') ? 'show' : '';
+  isOpen() {
+    return !!Session.get('showFeedback');
   },
   feedbacksCollection() {
     return Feedbacks;

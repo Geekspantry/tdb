@@ -74,7 +74,7 @@ import '/imports/api/attachments/server/publications.js';
 import '/imports/api/feedbacks/feedbacks.js';
 import '/imports/api/feedbacks/methods.js';
 import '/imports/api/feedbacks/server/publications.js';
-
+import '/imports/api/feedbacks/server/hooks.js';
 
 /**
  * CollectionsSet

@@ -10,7 +10,7 @@ Feedbacks.attachBehaviour('timestampable');
 
 Feedbacks.helpers({
   user() {  // refactor to --> projects
-    return Meteor.users.find({
+    return Meteor.users.findOne({
       _id: this.userId
     });
   },
