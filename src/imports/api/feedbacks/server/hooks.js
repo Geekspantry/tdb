@@ -1,6 +1,8 @@
 import { Feedbacks } from '../feedbacks.js';
 
 Feedbacks.after.insert(function(userId, doc) {
+	this.unblock();
+	
 	let transformedDoc = this.transform();
 
 	let user = transformedDoc.user();
