@@ -68,6 +68,15 @@ import '/imports/api/attachments/log_config.js';
 import '/imports/api/attachments/server/publications.js';
 
 /**
+ * Feedbacks
+ */
+
+import '/imports/api/feedbacks/feedbacks.js';
+import '/imports/api/feedbacks/methods.js';
+import '/imports/api/feedbacks/server/publications.js';
+
+
+/**
  * CollectionsSet
  */
 

@@ -8,6 +8,8 @@ import '/imports/ui/components/common/recent_updates/recent_updates';
 import '/imports/ui/components/common/recent_updates/recent_updates_item';
 import '/imports/ui/components/common/delete_entity/delete_entity';
 
+import '/imports/ui/components/feedback/feedback.js';
+
 /**
  * Pages
  */
