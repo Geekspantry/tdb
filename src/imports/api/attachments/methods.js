@@ -16,12 +16,12 @@ export const insert = new ValidatedMethod({
   name: 'attachments.add',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'attachments.insert.not-logged-in',
+    error: 'attachments.insert.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'attachments.insert.not-authorized',
+      error: 'attachments.insert.notAuthorized',
     }
   },
   validate: AttachmentSchema.validator(),
@@ -39,12 +39,12 @@ export const update = new ValidatedMethod({
   name: 'attachments.update',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'attachments.update.not-logged-in',
+    error: 'attachments.update.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'attachments.update.not-authorized',
+      error: 'attachments.update.notAuthorized',
     }
   },
   validate: ValidatedMethodUpdateSchema.validator(),
@@ -62,12 +62,12 @@ export const remove = new ValidatedMethod({
   name: 'attachments.remove',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'attachments.remove.not-logged-in',
+    error: 'attachments.remove.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
     rolesError: {
-      error: 'attachments.remove.not-authorized',
+      error: 'attachments.remove.notAuthorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),

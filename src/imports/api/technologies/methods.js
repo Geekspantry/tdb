@@ -21,7 +21,7 @@ export const insert = new ValidatedMethod({
   validate: TechnologySchema.validator(),
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.insert.not-logged-in',
+    error: 'technologies.insert.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor', 'researcher'],
@@ -45,7 +45,7 @@ export const update = new ValidatedMethod({
   name: 'technologies.update',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.update.not-logged-in',
+    error: 'technologies.update.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor', 'researcher'],
@@ -68,7 +68,7 @@ export const remove = new ValidatedMethod({
   name: 'technologies.remove',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.remove.not-logged-in',
+    error: 'technologies.remove.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor'],
@@ -93,7 +93,7 @@ export const linkImage = new ValidatedMethod({
   name: 'technologies.linkImage',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.linkImage.not-logged-in',
+    error: 'technologies.linkImage.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin', 'editor', 'researcher'],
@@ -138,7 +138,7 @@ export const unlinkImage = new ValidatedMethod({
   name: 'technologies.unlinkImage',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.unlinkImage.not-logged-in',
+    error: 'technologies.unlinkImage.notLoggedIn',
   },
    checkRoles: {
     roles: ['admin', 'editor'],
@@ -180,7 +180,7 @@ export const updateShowcasedImage = new ValidatedMethod({
   name: 'technologies.updateShowcasedImage',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'technologies.updateShowcasedImage.not-logged-in',
+    error: 'technologies.updateShowcasedImage.notLoggedIn',
   },
    checkRoles: {
     roles: ['admin', 'editor'],

@@ -55,7 +55,7 @@ export class ElasticSearchTypeAPI {
       validate: null,
       run() {
         if (!Roles.userIsInRole(Meteor.user(), ['admin'])) {
-          throw new Meteor.Error(403, 'not-authorized');
+          throw new Meteor.Error(403, 'notAuthorized');
         }
 
         self.putMapping();
@@ -70,7 +70,7 @@ export class ElasticSearchTypeAPI {
       validate: null,
       run() {
         if (!Roles.userIsInRole(Meteor.user(), ['admin'])) {
-          throw new Meteor.Error(403, 'not-authorized');
+          throw new Meteor.Error(403, 'notAuthorized');
         }
 
         self.bulkIndex({});

@@ -21,7 +21,7 @@ function checkPermissions() {
   if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
     return true;
   }
-  throw new Meteor.Error('not-authorized', 'Not authorized');
+  throw new Meteor.Error('notAuthorized', 'Not authorized');
 }
 
 /**
@@ -33,12 +33,12 @@ export const invite = new ValidatedMethod({
   name: 'users.invite',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.invite.not-logged-in',
+    error: 'users.invite.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin'],
     rolesError: {
-      error: 'users.invite.not-authorized',
+      error: 'users.invite.notAuthorized',
     }
   },
   validate: InviteSchema.validator(),
@@ -74,12 +74,12 @@ export const updateRole = new ValidatedMethod({
   name: 'users.updateRole',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.updateRole.not-logged-in',
+    error: 'users.updateRole.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin'],
     rolesError: {
-      error: 'users.updateRole.not-authorized',
+      error: 'users.updateRole.notAuthorized',
     }
   },
   validate({ userId, role }) {
@@ -100,7 +100,7 @@ export const updateImage = new ValidatedMethod({
   name: 'users.updateImage',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.updateImage.not-logged-in',
+    error: 'users.updateImage.notLoggedIn',
   },
   validate({ userId, imageId }) {
     check(userId, String);
@@ -116,7 +116,7 @@ export const updateImage = new ValidatedMethod({
         }
       });
     }
-    throw new Meteor.Error('not-authorized', 'users.updateImage.not-authorized');
+    throw new Meteor.Error('notAuthorized', 'users.updateImage.notAuthorized');
   }
 });
 
@@ -129,12 +129,12 @@ export const remove = new ValidatedMethod({
   name: 'users.remove',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.remove.not-logged-in',
+    error: 'users.remove.notLoggedIn',
   },
   checkRoles: {
     roles: ['admin'],
     rolesError: {
-      error: 'users.remove.not-authorized',
+      error: 'users.remove.notAuthorized',
     }
   },
   validate: ValidatedMethodRemoveSchema.validator(),
@@ -152,7 +152,7 @@ export const updateProfile = new ValidatedMethod({
   name: 'users.updateProfile',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.updateProfile.not-logged-in',
+    error: 'users.updateProfile.notLoggedIn',
   },
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
@@ -161,7 +161,7 @@ export const updateProfile = new ValidatedMethod({
         _id: _id
       }, modifier);
     }
-    throw new Meteor.Error('not-authorized', 'Not authorized.');
+    throw new Meteor.Error('notAuthorized', 'Not authorized.');
   }
 });
 
@@ -174,7 +174,7 @@ export const addProject = new ValidatedMethod({
   name: 'users.addProject',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.addProject.not-logged-in',
+    error: 'users.addProject.notLoggedIn',
   },
   validate({ userId, projectId }) {
     check(userId, String);
@@ -190,7 +190,7 @@ export const addProject = new ValidatedMethod({
         }
       });
     }
-    throw new Meteor.Error('not-authorized', 'Not authorized.');
+    throw new Meteor.Error('notAuthorized', 'Not authorized.');
   }
 });
 
@@ -203,7 +203,7 @@ export const removeProject = new ValidatedMethod({
   name: 'users.removeProject',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.addProject.not-logged-in',
+    error: 'users.addProject.notLoggedIn',
   },
   validate({ userId, projectId }) {
     check(userId, String);
@@ -219,6 +219,6 @@ export const removeProject = new ValidatedMethod({
         }
       });
     }
-    throw new Meteor.Error('not-authorized', 'Not authorized.');
+    throw new Meteor.Error('notAuthorized', 'Not authorized.');
   }
 });

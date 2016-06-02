@@ -16,7 +16,7 @@ import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../sha
  * @param {String} doc The Project doc to be Inserted
  * @param {String} _id The Project _id to be Updated or Removed
  * @param {String} modifier The modifier for Update operations
- * @throws {Meteor.error('not-authorized')} If [User is either not logged in OR not administrator OR not editor]
+ * @throws {Meteor.error('notAuthorized')} If [User is either not logged in OR not administrator OR not editor]
  */
 export const insert = new ValidatedMethod({
   name: 'projects.insert',
@@ -82,7 +82,7 @@ export const remove = new ValidatedMethod({
  * @param {String} techId The Technology _id
  * @throws {Meteor.error('tech-already-on-stash')} If [Technology is already on stash]
  * @throws {Meteor.error('tech-not-found')} If [Technology is not found on the server]
- * @throws {Meteor.error('not-authorized')} If [User is either not logged in OR not administrator OR not editor]
+ * @throws {Meteor.error('notAuthorized')} If [User is either not logged in OR not administrator OR not editor]
  */
 
 export const pushTechnologiesStash = new ValidatedMethod({
@@ -144,7 +144,7 @@ export const pushTechnologiesStash = new ValidatedMethod({
  * - It will decrement the technologiesStashCount
  * @param {String} projectId The Project _id
  * @param {String} techId The Technology _id
- * @throws {Meteor.error('not-authorized')} If [User is either not logged in OR not administrator OR not editor]
+ * @throws {Meteor.error('notAuthorized')} If [User is either not logged in OR not administrator OR not editor]
  */
 
 export const pullTechnologiesStash = new ValidatedMethod({
