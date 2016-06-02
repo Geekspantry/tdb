@@ -141,38 +141,38 @@ if (Meteor.isServer) {
 
         assert.equal(1, tech.images.length);
       });
+      
+      describe('persmissions', function() {
+        it('just admin, editor and researcher can insert', function() {
+          assert.equal('technologies.insert', insert.name)
+          assert.sameMembers(['admin', 'editor', 'researcher'], insert.checkRoles.roles);
+        })
+
+        it('just admin, editor and researcher can update', function() {
+          assert.equal('technologies.update', update.name)
+          assert.sameMembers(['admin', 'editor', 'researcher'], update.checkRoles.roles);
+        })
+
+        it('just admin, editor and researcher can link image', function() {
+          assert.equal('technologies.linkImage', linkImage.name)
+          assert.sameMembers(['admin', 'editor', 'researcher'], linkImage.checkRoles.roles);
+        })
+
+        it('just admin and editor can unlink image', function() {
+          assert.equal('technologies.unlinkImage', unlinkImage.name)
+          assert.sameMembers(['admin', 'editor'], unlinkImage.checkRoles.roles);
+        })
+
+        it('just admin and editor can remove', function() {
+          assert.equal('technologies.remove', remove.name)
+          assert.sameMembers(['admin', 'editor'], remove.checkRoles.roles);
+        })
+
+        it('just admin and editors can update showcased image', function() {
+          assert.equal('technologies.updateShowcasedImage', updateShowcasedImage.name)
+          assert.sameMembers(['admin', 'editor'], updateShowcasedImage.checkRoles.roles);
+        })
+      })
     });
-
-    describe('persmissions', function() {
-      it('just admin, editor and researcher can insert', function() {
-        assert.equal('technologies.insert', insert.name)
-        assert.sameMembers(['admin', 'editor', 'researcher'], insert.checkRoles.roles);
-      })
-
-      it('just admin, editor and researcher can update', function() {
-        assert.equal('technologies.update', update.name)
-        assert.sameMembers(['admin', 'editor', 'researcher'], update.checkRoles.roles);
-      })
-
-      it('just admin, editor and researcher can link image', function() {
-        assert.equal('technologies.linkImage', linkImage.name)
-        assert.sameMembers(['admin', 'editor', 'researcher'], linkImage.checkRoles.roles);
-      })
-
-      it('just admin and editor can unlink image', function() {
-        assert.equal('technologies.unlinkImage', unlinkImage.name)
-        assert.sameMembers(['admin', 'editor'], unlinkImage.checkRoles.roles);
-      })
-
-      it('just admin and editor can remove', function() {
-        assert.equal('technologies.remove', remove.name)
-        assert.sameMembers(['admin', 'editor'], remove.checkRoles.roles);
-      })
-
-      it('just admin and editors can update showcased image', function() {
-        assert.equal('technologies.updateShowcasedImage', updateShowcasedImage.name)
-        assert.sameMembers(['admin', 'editor'], updateShowcasedImage.checkRoles.roles);
-      })
-    })
   });
 }
