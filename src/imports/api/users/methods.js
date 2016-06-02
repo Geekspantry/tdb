@@ -6,23 +6,20 @@ import { Meteor } from 'meteor/meteor';
 import { Technologies } from '../technologies/technologies.js';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
-import { UserSchema, InviteSchema } from './schema.js';
-import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
-function isProfileOwner(documentId) {
-  return Meteor.userId() === documentId;
-}
+import { ProfileOwnerMixin } from './mixins.js';
 
-function isAdmin() {
-  return Roles.userIsInRole(Meteor.user(), ['admin']);
-}
+import {
+  UserSchema,
+  InviteSchema
+} from './schema.js';
 
-function checkPermissions() {
-  if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
-    return true;
-  }
-  throw new Meteor.Error('notAuthorized', 'Not authorized');
-}
+import {
+  ValidatedMethodUpdateSchema,
+  ValidatedMethodRemoveSchema
+} from '../shared/schemas';
+
+
 
 /**
  * Invite User
@@ -93,12 +90,16 @@ export const updateRole = new ValidatedMethod({
 
 /**
  * Update Image
- *
- * Permissions: [admin, owner]
  */
 export const updateImage = new ValidatedMethod({
   name: 'users.updateImage',
-  mixins: [LoggedInMixin],
+  mixins: [LoggedInMixin, ProfileOwnerMixin],
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'users.updateImage.notAuthorized',
+    }
+  },
   checkLoggedInError: {
     error: 'users.updateImage.notLoggedIn',
   },
@@ -107,23 +108,18 @@ export const updateImage = new ValidatedMethod({
     check(imageId, String);
   },
   run({ userId, imageId }) {
-    if (isAdmin() || isProfileOwner(userId)) {
-      return Meteor.users.update({
-        _id: userId
-      }, {
-        $set: {
-          'profile.imageId': imageId
-        }
-      });
-    }
-    throw new Meteor.Error('notAuthorized', 'users.updateImage.notAuthorized');
+    return Meteor.users.update({
+      _id: userId
+    }, {
+      $set: {
+        'profile.imageId': imageId
+      }
+    });
   }
 });
 
 /**
  * Remove User
- *
- * Permissions: [admin]
  */
 export const remove = new ValidatedMethod({
   name: 'users.remove',
@@ -139,36 +135,33 @@ export const remove = new ValidatedMethod({
   },
   validate: ValidatedMethodRemoveSchema.validator(),
   run({ _id }) {
-    return Meteor.users.remove({ _id: _id });
+    return Meteor.users.remove(_id);
   }
 });
 
 /**
  * Update Profile
- *
- * Permissions: [admin, owner]
  */
 export const updateProfile = new ValidatedMethod({
   name: 'users.updateProfile',
-  mixins: [LoggedInMixin],
+  mixins: [LoggedInMixin, ProfileOwnerMixin],
   checkLoggedInError: {
     error: 'users.updateProfile.notLoggedIn',
   },
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'users.updateProfile.notAuthorized',
+    }
+  },
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
-    if (isAdmin() || isProfileOwner(_id)) {
-      return Meteor.users.update({
-        _id: _id
-      }, modifier);
-    }
-    throw new Meteor.Error('notAuthorized', 'Not authorized.');
+    return Meteor.users.update(_id, modifier);
   }
 });
 
 /**
  * Add Project to User
- *
- * Permissions: [admin, owner]
  */
 export const addProject = new ValidatedMethod({
   name: 'users.addProject',
@@ -176,49 +169,53 @@ export const addProject = new ValidatedMethod({
   checkLoggedInError: {
     error: 'users.addProject.notLoggedIn',
   },
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'users.addProject.notAuthorized',
+    }
+  },
   validate({ userId, projectId }) {
     check(userId, String);
     check(projectId, String);
   },
   run({ userId, projectId }) {
-    if (isAdmin() || isProfileOwner(userId)) {
-      return Meteor.users.update({
-        _id: userId
-      }, {
-        $addToSet: {
-          projectsId: projectId
-        }
-      });
-    }
-    throw new Meteor.Error('notAuthorized', 'Not authorized.');
+    return Meteor.users.update({
+      _id: userId
+    }, {
+      $addToSet: {
+        projectsId: projectId
+      }
+    });
   }
 });
 
 /**
  * Remove Project from User
- *
- * Permissions: [admin, owner]
  */
 export const removeProject = new ValidatedMethod({
   name: 'users.removeProject',
   mixins: [LoggedInMixin],
   checkLoggedInError: {
-    error: 'users.addProject.notLoggedIn',
+    error: 'users.removeProject.notLoggedIn',
+  },
+  checkRoles: {
+    roles: ['admin'],
+    rolesError: {
+      error: 'users.removeProject.notAuthorized',
+    }
   },
   validate({ userId, projectId }) {
     check(userId, String);
     check(projectId, String);
   },
   run({ userId, projectId }) {
-    if (isAdmin() || isProfileOwner(userId)) {
-      return Meteor.users.update({
-        _id: userId
-      }, {
-        $pull: {
-          projectsId: projectId
-        }
-      });
-    }
-    throw new Meteor.Error('notAuthorized', 'Not authorized.');
+    return Meteor.users.update({
+      _id: userId
+    }, {
+      $pull: {
+        projectsId: projectId
+      }
+    });
   }
 });
