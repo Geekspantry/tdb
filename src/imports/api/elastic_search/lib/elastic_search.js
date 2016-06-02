@@ -140,21 +140,22 @@ export class ElasticSearchTypeAPI {
     let self = this;
     this.mongoCollection.helpers({
       esHelpers() {
+        let docRef = this;
         return {
           index() {
-            let id = this._id;
-            let preparedDoc = self._prepareDoc(this);
+            let id = docRef._id;
+            let preparedDoc = self._prepareDoc(docRef);
             self._indexDoc(id, preparedDoc);
           },
           update() {
-            let id = this._id;
-            let preparedDoc = self._prepareDoc(this);
+            let id = docRef._id;
+            let preparedDoc = self._prepareDoc(docRef);
             delete preparedDoc._id;
 
             self._updateDoc(id, preparedDoc);
           },
           remove() {
-            let id = this._id;
+            let id = docRef._id;
             self._removeDoc(id);
           }
         };

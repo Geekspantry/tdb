@@ -50,6 +50,10 @@ export const publish = new ValidatedMethod({
     }
   },
   run({ technologyId, descriptionId }) {
+    let tech = Technologies.findOne({
+      _id: technologyId
+    });
+
     const publishedDescription = TechnologiesDescriptions.findOne({
       technologyId: technologyId,
       status: DESCRIPTION_STATUS.PUBLISHED
@@ -68,6 +72,8 @@ export const publish = new ValidatedMethod({
         status: DESCRIPTION_STATUS.PUBLISHED
       }
     });
+
+    !this.isSimulation && tech.esHelpers().index();
   }
 });
 

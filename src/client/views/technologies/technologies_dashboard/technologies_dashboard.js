@@ -13,8 +13,7 @@ Template.technologiesDashboard.helpers({
   },
   techSelector() {
     return {
-      collection: 'technologies',
-      techStatus: 'draft'
+      collection: 'technologies'
     };
   },
   extraOptions() {
