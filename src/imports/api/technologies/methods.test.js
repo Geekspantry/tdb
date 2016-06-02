@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Random } from 'meteor/random';
 import { assert } from 'meteor/practicalmeteor:chai';
 import { resetDatabase } from 'meteor/xolvio:cleaner'
+import StubCollections from 'meteor/hwillson:stub-collections';
 
 import '../../startup/common/simpleschema_config.js'
 import { Technologies } from './technologies.js';
@@ -13,8 +14,6 @@ import {
   unlinkImage,
   updateShowcasedImage
 } from './methods.js';
-
-
 
 if (Meteor.isServer) {
   describe('technologies', function() {
@@ -112,15 +111,15 @@ if (Meteor.isServer) {
       });
 
       it('should set the second image as showcased', function() {
-         let tech = Technologies.findOne(techId);
+        let tech = Technologies.findOne(techId);
 
-         updateShowcasedImage._execute({userId}, {
+        updateShowcasedImage._execute({ userId }, {
           _id: techId,
           imageId: tech.images[1].src
-         })
+        })
 
-         tech = Technologies.findOne(techId);
-         assert.isTrue(tech.images[1].showcased);
+        tech = Technologies.findOne(techId);
+        assert.isTrue(tech.images[1].showcased);
       })
 
       it('should not unlink image if is showcased', function() {
@@ -143,5 +142,37 @@ if (Meteor.isServer) {
         assert.equal(1, tech.images.length);
       });
     });
+
+    describe('persmissions', function() {
+      it('just admin, editor and researcher can insert', function() {
+        assert.equal('technologies.insert', insert.name)
+        assert.sameMembers(['admin', 'editor', 'researcher'], insert.checkRoles.roles);
+      })
+
+      it('just admin, editor and researcher can update', function() {
+        assert.equal('technologies.update', update.name)
+        assert.sameMembers(['admin', 'editor', 'researcher'], update.checkRoles.roles);
+      })
+
+      it('just admin, editor and researcher can link image', function() {
+        assert.equal('technologies.linkImage', linkImage.name)
+        assert.sameMembers(['admin', 'editor', 'researcher'], linkImage.checkRoles.roles);
+      })
+
+      it('just admin and editor can unlink image', function() {
+        assert.equal('technologies.unlinkImage', unlinkImage.name)
+        assert.sameMembers(['admin', 'editor'], unlinkImage.checkRoles.roles);
+      })
+
+      it('just admin and editor can remove', function() {
+        assert.equal('technologies.remove', remove.name)
+        assert.sameMembers(['admin', 'editor'], remove.checkRoles.roles);
+      })
+
+      it('just admin and editors can update showcased image', function() {
+        assert.equal('technologies.updateShowcasedImage', updateShowcasedImage.name)
+        assert.sameMembers(['admin', 'editor'], updateShowcasedImages.checkRoles.roles);
+      })
+    })
   });
 }
