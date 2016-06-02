@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { Technologies } from '../../../../imports/api/technologies/technologies';
+import { Technologies } from '/imports/api/technologies/technologies';
 
 Template.technologiesEntry.onCreated(function() {
   this.subscribe('technologies.single', FlowRouter.getParam('id'), {

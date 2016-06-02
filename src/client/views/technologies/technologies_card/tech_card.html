@@ -20,7 +20,7 @@
           </div>
         {{/unless}}
         <a href="{{pathFor 'technologies.entry' id=_id}}">
-        {{> safeImg url=(getCloudinaryCard (s3pathImages image)) class='img-responsive'}}
+        {{> safeImg url=(getCloudinaryCard (s3pathImages getShowcasedImage.src)) class='img-responsive'}}
         </a> 
         <div class="card-body">
           {{> techCardDesc}}
