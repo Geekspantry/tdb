@@ -1,11 +1,12 @@
 import { Feedbacks } from '../feedbacks.js';
 
+const TO_EMAIL = 'tdb@envisioning.io';
+const FROM_EMAIL = 'tdb@envisioning.io';
 Feedbacks.after.insert(function(userId, doc) {
 	let transformedDoc = this.transform();
 
 	let user = transformedDoc.user();
 	let userIdentification = user && user.identification() || doc.userId;
-
 	let formattedDate = moment(doc.createdAt).format('MMMM Do YYYY, h:mm:ss a');
 	let html = `
 	<p><b>User</b>: ${userIdentification}<p>
@@ -17,8 +18,8 @@ Feedbacks.after.insert(function(userId, doc) {
 	`;
 
 	Email.send({
-		to: 'rafael.correia.poli@gmail.com',
-		from: 'feedback@envisioning.io',
+		to: TO_EMAIL,
+		from: FROM_EMAIL,
 		subject: 'New Feedback',
 		html: html
 	});
