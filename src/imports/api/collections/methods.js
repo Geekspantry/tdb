@@ -5,14 +5,6 @@ import { CollectionSchema } from './schema.js';
 import { _ } from 'meteor/underscore';
 import { ValidatedMethodUpdateSchema, ValidatedMethodRemoveSchema } from '../shared/schemas';
 
-
-function checkPermissions() {
-  if (Roles.userIsInRole(Meteor.user(), ['admin', 'editor'])) {
-    return true;
-  }
-  throw new Meteor.Error(403, 'Not authorized');
-}
-
 /**
  * Insert Collection
  *
