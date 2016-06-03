@@ -7,7 +7,7 @@
           {{> orgCard}}
         {{/if}}
         {{#if $eq _type 'technologies'}}
-            {{> techCard}}
+            {{> techCard extendContext fromES=true}}
         {{/if}}
         {{#if $eq _type 'projects'}}
             {{> projectsCard}}
