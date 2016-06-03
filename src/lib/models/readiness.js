@@ -1,4 +1,4 @@
-Readiness = new Mongo.Collection('readiness');
+/*Readiness = new Mongo.Collection('readiness');
 
 Schemas.Readiness = new SimpleSchema({
   userId: {
@@ -20,3 +20,4 @@ Schemas.Readiness = new SimpleSchema({
     type: [Schemas.Answer]
   }
 });
+*/

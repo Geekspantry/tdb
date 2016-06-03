@@ -7,6 +7,9 @@ import { Counts } from 'meteor/tmeasday:publish-counts';
 import { Technologies } from '../technologies.js';
 import { TechnologiesDescriptions } from '../../technologies_descriptions/technologies_descriptions';
 import { Projects } from '../../projects/projects';
+import { Organizations } from '../../organizations/organizations';
+import { Attachments } from '../../attachments/attachments';
+import { Images } from '/imports/api/images/images';
 
 /**
  * Publish as single technology
@@ -71,7 +74,9 @@ Meteor.publishComposite('technologies.single', function(technologyId, options = 
   if (options.projects) {
     children.push({
       find(technology) {
-        return Projects.find({ _id: { $in: technology.projectsId || [] } });
+        return Projects.find({
+          'technologiesStash.technologyId': technology._id
+        })
       }
     });
   }

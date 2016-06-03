@@ -1,0 +1,16 @@
+<template name="technologiesAboutBox">
+	{{> techCard extendContext hideTools=true hideFooter=true}}
+	{{> technologiesInformationTable}}
+  <div class="row">
+    <div class="col-sm-6">
+      <a class="btn btn-primary btn-block btn-sm" href="{{pathFor 'technologies.edit' id=_id}}">
+        <i class="fa fa-edit"></i> Edit
+      </a>
+    </div>
+    <div class="col-sm-6">
+      {{#deleteEntity deleteOptions}}
+        <i class="fa fa-trash"></i> Remove
+      {{/deleteEntity}}
+    </div>
+  </div>	
+</template>

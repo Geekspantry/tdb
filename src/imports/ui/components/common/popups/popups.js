@@ -1,6 +1,6 @@
 import 'meteor/kevohagan:sweetalert';
 
-function removeConfirmation(text = 'Are you sure you want to delete this?', callback, closeOnConfirm = false) {
+function removeConfirmation(text = 'Are you sure you want to delete this?', callback, closeOnConfirm = true) {
   swal({
     title: 'Are you sure?',
     text: text,
@@ -16,11 +16,21 @@ function removeConfirmation(text = 'Are you sure you want to delete this?', call
 }
 
 function removeSuccess(text = 'Your document has been deleted.') {
-  swal('Deleted!', text, 'success');
+  swal({
+    title: 'Deleted!',
+    text: text,
+    type: 'success',
+    closeOnConfirm: true
+  });
 }
 
 function removeError(text = 'Something went wrong and your document has not been deleted.') {
-  swal('Error!', text, 'error');
+  swal({
+    title: 'Error!',
+    text: text,
+    type: 'error',
+    closeOnConfirm: true
+  });
 }
 
 export default {

@@ -1,0 +1,40 @@
+<template name="feedback">
+  <div class="theme-config">
+    <div class="theme-config-box {{#if isOpen}}show{{/if}}">
+      <div class="spin-icon">
+        <i class="fa fa-support {{#if isOpen}}fa-spin{{/if}}"></i>
+      </div>
+      <div class="skin-setttings">
+        <div class="title">Configuration</div>
+        <div class="feedback-body">
+          <div class="feedback-help">
+            <p>
+              Hi First name, this is a quick help menu. 
+              If you're stuck somewhere, found a bug, have a feature request or some feedback, please use the form bellow to contact us. 
+              We strongly suggest that you take a look at the documentation for this project, it is located <a href="https://docs.google.com/document/d/1NZw-mX0NqXxc20tJwez0LNvc_pPwpOn4BY1LOanNhc8/edit">here</a>.
+            </p>
+          </div>
+          <div class="feedback-form">
+            {{#autoForm 
+              id="insertFeedbacksForm"
+              collection=feedbacksCollection
+              type="method"
+              meteormethod="feedbacks.insert"
+              template="bootstrap3"
+              }}
+
+
+              {{> afQuickField name="type"}} 
+              {{> afQuickField name="message" placeholder=getPlaceholder}} 
+              {{> afQuickField name="score" label="How are you feeling about TDB so far?"}} 
+
+              <button type="submit" class="btn btn-primary btn-lg">
+                Send Feedback
+              </button>
+            {{/autoForm}}     
+          </div>   
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

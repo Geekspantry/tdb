@@ -25,6 +25,7 @@ Template.techStash.helpers({
       _id: this.projectId
     });
     let filter = Template.instance().filter.get();
+    if (!project.technologiesStash) return [];
     return project.technologiesStash.filter(stash => multiWordRegex(filter).test(stash.techName));
   },
   getTechnology() {

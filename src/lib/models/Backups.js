@@ -1,9 +1,9 @@
-Backups = new Mongo.Collection('Backups');
+/*Backups = new Mongo.Collection('Backups');*/
 
 /*                                      */
 /*                SCHEMA                */
 /*                                      */
-
+/*
 Backups.Schema = new SimpleSchema({
     model: {
       type: String
@@ -20,25 +20,25 @@ Backups.Schema = new SimpleSchema({
     }
 });
 Backups.attachSchema(Backups.Schema);
-Backups.attachBehaviour('timestampable');
+Backups.attachBehaviour('timestampable');*/
 
 
 /*                                      */
 /*                EXTENSÕES             */
 /*                                      */
 
-
+/*
 Backups.quickList = function(modelo,docId) {
     return this.find({modelo:modelo, docId:docId}).map(function (c) {
         return {label: formatarData(c.data), value: c._id};
     });
-};
+};*/
 
 /*                                      */
 /*                SEGURANÇA             */
 /*                                      */
 
-if (Meteor.isServer) {
+/*if (Meteor.isServer) {
   Backups.allow({
     insert : function () {
       return true;
@@ -50,13 +50,13 @@ if (Meteor.isServer) {
       return true;
     }
   });
-}
+}*/
 
 /*                                      */
 /*                HELPERS               */
 /*                                      */
 
-Backups.helpers({
+/*Backups.helpers({
   link:function(){
     return FlowRouter.path('areas.view',{id:this._id});
   },
@@ -66,3 +66,4 @@ Backups.helpers({
 });
 
 
+*/

@@ -1,6 +1,9 @@
 import dragula from 'dragula';
 import { Template } from 'meteor/templating';
-import { CollectionsSet } from '../../../../api/collections_set/collections_set';
+import { CollectionsSet } from '/imports/api/collections_set/collections_set';
+import { Collections } from '/imports/api/collections/collections';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { addTechnology, removeTechnology, moveTechnology } from '/imports/api/collections/methods.js';
 import { Modal } from 'meteor/peppelg:bootstrap-3-modal';
 import 'meteor/chrismbeckett:toastr';
 
@@ -60,7 +63,7 @@ Template.collectionsSetEntry.onCreated(function() {
       // stash ---> collection
       if (targetType === 'collection' && sourceType === 'stash') {
         let targetCollection = $(target).data('collection');
-        Collections.methods.pushTechnology.call({
+        addTechnology.call({
           collectionId: targetCollection,
           techId: techId,
           position: position
@@ -77,7 +80,7 @@ Template.collectionsSetEntry.onCreated(function() {
         let sourceCollection = $(source).data('collection');
         let targetCollection = $(target).data('collection');
 
-        Collections.methods.moveTechnology.call({
+        moveTechnology.call({
           source: sourceCollection,
           target: targetCollection,
           techId: techId,
@@ -94,7 +97,7 @@ Template.collectionsSetEntry.onCreated(function() {
       let techId = $(el).data('technology-id');
       let sourceCollection = $(source).data('collection');
 
-      Collections.methods.pullTechnology.call({
+      removeTechnology.call({
         source: sourceCollection,
         techId: techId
       }, (err, res) => {

@@ -3,7 +3,7 @@
     {{#btnTooltip text="View Entry" onClick=onClickView}}
       <i class="fa fa-eye"></i>
     {{/btnTooltip}}
-    {{#btnTooltip text="Active" }}
+    {{#btnTooltip text=(capitalizeFirstLetter status) }}
       {{capitalizeFirstLetter status}}
     {{/btnTooltip}}
     {{#btnTooltip text=(concat collectionsCount " technologies") }}

@@ -2,7 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { CollectionsSet } from '../collections_set.js';
 import { Projects } from '../../projects/projects.js';
-import { Technologies } from '../../technologies/technologies.js';
+import { Technologies } from '/imports/api/technologies/technologies.js';
+import { Collections } from '/imports/api/collections/collections.js';
 
 Meteor.publishComposite('collectionsSet.single', function(collectionsSetId) {
   check(collectionsSetId, String);

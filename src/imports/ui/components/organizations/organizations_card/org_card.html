@@ -1,0 +1,34 @@
+<template name="orgCard">
+  {{#unless isDeleted}}
+    <div class="ibox">
+      <div class="ibox-content no-padding">
+        {{#unless hideTools}}
+          <div class="btn-group card-tools">
+            <button data-toggle="dropdown" class="btn btn-xs btn-white dropdown-toggle" aria-expanded="false">
+              <i class="{{Icons.collections.organizations}}"></i> <span class="caret"></span>
+            </button>    
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{pathFor 'organizations.edit' id=_id}}">Edit organization</a>
+              </li>
+              <li>
+                {{#deleteEntity deleteOptions}}
+                  Delete organization
+                {{/deleteEntity}}
+              </li>
+            </ul>
+          </div>
+        {{/unless}}
+        <a href="{{pathFor 'organizations.entry' id=_id}}">
+        {{> safeImg url=(getCloudinaryCard (s3pathImages logo)) class='img-responsive'}}
+        </a> 
+        <div class="card-body">
+          {{> orgCardDesc}}
+          {{#unless hideFooter}}
+            {{> orgCardFooter}}
+          {{/unless}}
+        </div>
+      </div>
+    </div>
+  {{/unless}}  
+</template>

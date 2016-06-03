@@ -2,8 +2,8 @@ import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 import popups from '../../common/popups/popups';
 
-import { Technologies } from '../../../../api/technologies/technologies';
-import { pullTechnologiesStash } from '../../../../api/projects/methods.js';
+import { Technologies } from '/imports/api/technologies/technologies';
+import { pullTechnologiesStash } from '/imports/api/projects/methods.js';
 import './tech_stash_item.html';
 
 
@@ -26,10 +26,14 @@ Template.techStashItem.events({
     let pData = Template.instance().parent().data;
     let projectId = pData.projectId;
     let techId = this._id;
-    popups.removeConfirmation(this.name, () => {
+    let popupMessage = `Are you sure you want to remove <b>${this.name}</b> from stash?`;
+    popups.removeConfirmation(popupMessage, () => {
       pullTechnologiesStash.call({projectId, techId}, (err, res) => {
-        if (err) return popups.removeError(err.toString(), 'Error');
-        popups.removeSuccess();
+        if (err) {
+          popups.removeError(err.toString(), 'Error');
+          return;
+        }
+        toastr.success(`<b>${this.name}</b> removed from stash!`, 'Success');
       });
     });
   }

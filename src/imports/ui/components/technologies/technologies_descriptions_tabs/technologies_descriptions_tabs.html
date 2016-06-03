@@ -37,7 +37,12 @@
                         </i>
                       </small> 
                     </p>
-                    <button type="button" class="btn btn-primary btn-outline btn-sm btn-block" data-action="show-form">Edit</button>
+                    {{#if isStatusPublished currentDescription.status}}
+                      <button type="button" class="btn btn-primary btn-outline btn-sm btn-block" data-action="copy">Copy as Draft</button>
+                    {{else}}
+                      <button type="button" class="btn btn-primary btn-outline btn-sm btn-block" data-action="show-form">Edit</button>
+                    {{/if}}
+                    
                   </div>
                 </div> 
               {{/if}}
