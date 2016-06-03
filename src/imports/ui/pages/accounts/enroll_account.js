@@ -43,6 +43,12 @@ Template.enrollAccount.helpers({
     });
     return user && user.emails[0].address;
   },
+  isValidToken() {
+    let user = Meteor.users.findOne({
+      'services.password.reset.token': AccountsTemplates.getparamToken()
+    });
+    return user !== undefined;
+  }
 });
 
 Template.enrollAccount.onCreated(function() {
