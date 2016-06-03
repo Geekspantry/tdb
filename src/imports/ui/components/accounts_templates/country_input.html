@@ -1,0 +1,7 @@
+<template name="countryInput">
+  <select {{atts}} class="form-control">
+    {{#each this.items}}
+        <option {{optionAtts}}>{{this.label}}</option>
+    {{/each}}
+  </select>	
+</template>

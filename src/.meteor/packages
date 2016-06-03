@@ -121,3 +121,5 @@ practicalmeteor:mocha
 xolvio:cleaner
 hwillson:stub-collections
 ziarno:restrict-mixin
+meteorhacks:ssr
+jss:flag-icon

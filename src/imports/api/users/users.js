@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { UserSchema } from './schema.js';
-import { Projects }  from '/imports/api/projects/projects';
+import { Projects } from '/imports/api/projects/projects';
 
 import { Images } from '/imports/api/images/images';
 
@@ -12,11 +12,11 @@ Meteor.users.helpers({
     let roles = Roles.getRolesForUser(this._id);
     return roles[0];
   },
-/*  link() {
-    return FlowRouter.path('usersEntry', {
-      id: this._id
-    });
-  },*/
+  /*  link() {
+      return FlowRouter.path('usersEntry', {
+        id: this._id
+      });
+    },*/
   identification(priority = ['fullName', 'username', 'email']) {
     let foundIdentification = 'unknown';
     _.some(priority, (p) => {
@@ -59,3 +59,4 @@ Meteor.users.helpers({
     });
   }
 });
+

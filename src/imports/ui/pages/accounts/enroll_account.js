@@ -1,17 +1,32 @@
-import { Template } from 'meteor/templating';
-
-import './users_enroll.html';
 // Modified UserAccounts to our needs.
 // https://github.com/meteor-useraccounts/core/blob/master/lib/templates_helpers/at_pwd_form.js
+
+import { Template } from 'meteor/templating';
+import { _ } from 'meteor/underscore';
+import { moment } from 'meteor/momentjs:moment';
+
+import './enroll_account.html';
 
 Template.enrollAccount.helpers({
   disabled() {
     return AccountsTemplates.disabled();
   },
-  fields() {
-    return _.filter(AccountsTemplates.getFields(), function(s) {
-      return s._id !== 'email';
-    });
+  groups() {
+    return _.unique(AccountsTemplates.getFields()
+      .filter(field => _.isString(field.displayGroup))
+      .map(field => field.displayGroup));
+  },
+  fieldsByGroup(group) {
+    return AccountsTemplates.getFields()
+      .filter(field => field.displayGroup === group)
+  },
+  fieldById(_id) {
+    return AccountsTemplates.getFields()
+      .find(field => field._id === _id);
+  },
+  passwordFields() {
+    return AccountsTemplates.getFields()
+      .filter(field => _.isUndefined(field.displayGroup) && field._id !== "email")
   },
   showForgotPasswordLink() {
     return false;
@@ -28,10 +43,16 @@ Template.enrollAccount.helpers({
     });
     return user && user.emails[0].address;
   },
+  isValidToken() {
+    let user = Meteor.users.findOne({
+      'services.password.reset.token': AccountsTemplates.getparamToken()
+    });
+    return user !== undefined;
+  }
 });
 
 Template.enrollAccount.onCreated(function() {
-  this.subscribe('user.enrollAccount', AccountsTemplates.getparamToken());
+  this.subscribe('users.enrollAccount', AccountsTemplates.getparamToken());
 });
 
 Template.enrollAccount.events({
@@ -58,6 +79,7 @@ Template.enrollAccount.events({
       }
 
       let fieldId = field._id;
+
       let rawValue = field.getValue(t);
       let value = field.fixValue(rawValue);
       // Possibly updates the input value
@@ -114,6 +136,13 @@ Template.enrollAccount.events({
     let username_and_email = formData.username_and_email;
     let firstName = formData.firstName;
     let lastName = formData.lastName;
+    let country = formData.country;
+    let birthday = formData.birthday;
+    let city = formData.city;
+    let slack = formData.slack;
+    let twitter = formData.twitter;
+    let personal = formData.personal;
+
     // Clears profile data removing username, email, and pwd
     delete formData.current_password;
     delete formData.email;
@@ -123,6 +152,12 @@ Template.enrollAccount.events({
     delete formData.username_and_email;
     delete formData.firstName;
     delete formData.lastName;
+    delete formData.country;
+    delete formData.birthday;
+    delete formData.city;
+    delete formData.slack;
+    delete formData.twitter;
+    delete formData.personal;
 
     if (AccountsTemplates.options.confirmPassword) {
       // Checks passwords for correct match
@@ -156,7 +191,13 @@ Template.enrollAccount.events({
       }, {
         $set: {
           'profile.firstName': firstName,
-          'profile.lastName': lastName
+          'profile.lastName': lastName,
+          'profile.country': country,
+          'profile.birth': moment(birthday).toDate(),
+          'profile.address': city,
+          'profile.contactInfo.twitter': twitter,
+          'profile.contactInfo.slack': slack,
+          'profile.contactInfo.personal': personal
         }
       });
 

@@ -6,6 +6,8 @@ import { Images } from '/imports/api/images/images';
 
 Meteor.publish('users.enrollAccount', function(token) {
   check(token, String);
+
+  console.log('Subscribing token');
   return Meteor.users.find({
     'services.password.reset.token': token
   });
