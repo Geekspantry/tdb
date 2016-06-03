@@ -3,11 +3,9 @@
  */
 
 import { Meteor } from 'meteor/meteor';
-import { Technologies } from '../technologies/technologies.js';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { ValidationError } from 'meteor/mdg:validation-error';
-
-import { ProfileOwnerMixin } from './mixins.js';
+import { RestrictMixin } from 'meteor/ziarno:restrict-mixin';
 
 import {
   UserSchema,
@@ -19,7 +17,9 @@ import {
   ValidatedMethodRemoveSchema
 } from '../shared/schemas';
 
-
+function isOwner(_id) {
+  return _id === this.userId;
+}
 
 /**
  * Invite User
@@ -93,7 +93,7 @@ export const updateRole = new ValidatedMethod({
  */
 export const updateImage = new ValidatedMethod({
   name: 'users.updateImage',
-  mixins: [LoggedInMixin, ProfileOwnerMixin],
+  mixins: [LoggedInMixin],
   checkRoles: {
     roles: ['admin'],
     rolesError: {
@@ -108,6 +108,9 @@ export const updateImage = new ValidatedMethod({
     check(imageId, String);
   },
   run({ userId, imageId }) {
+    if (!isOwner())
+      throw new Meteor.Error('users.updateImage.notAuthorized');
+
     return Meteor.users.update({
       _id: userId
     }, {
@@ -144,7 +147,7 @@ export const remove = new ValidatedMethod({
  */
 export const updateProfile = new ValidatedMethod({
   name: 'users.updateProfile',
-  mixins: [LoggedInMixin, ProfileOwnerMixin],
+  mixins: [LoggedInMixin],
   checkLoggedInError: {
     error: 'users.updateProfile.notLoggedIn',
   },
@@ -156,6 +159,9 @@ export const updateProfile = new ValidatedMethod({
   },
   validate: ValidatedMethodUpdateSchema.validator(),
   run({ _id, modifier }) {
+    if (!isOwner())
+      throw new Meteor.Error('users.updateProfile.notAuthorized');
+
     return Meteor.users.update(_id, modifier);
   }
 });

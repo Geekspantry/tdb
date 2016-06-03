@@ -36,6 +36,9 @@ import './autoform_scope.js';
 import './autoform_config.js';
 // Configure Cloudinary
 import './cloudinary_config.js';
+
+import './config/accounts_templates';
+
 // Configure Toastr
 import './toastr_config.js';
 // Import Log Driver config

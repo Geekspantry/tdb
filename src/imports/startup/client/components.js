@@ -19,6 +19,14 @@ import '/imports/ui/pages/search/search_source_display'; //	move to components
 import '/imports/ui/pages/search/select_entities'; //	move to components
 
 /**
+ * Accounts
+ */
+import '/imports/ui/components/accounts_templates/birthday_input';
+import '/imports/ui/components/accounts_templates/country_input';
+
+
+
+/**
  * Technologies
  */
 
@@ -126,5 +134,4 @@ import '/imports/ui/components/users/users_invite/users_invite';
 import '/imports/ui/components/users/users_dashboard/users_dashboard';
 import '/imports/ui/components/users/users_dashboard_stat/users_dashboard_stat';
 import '/imports/ui/components/users/users_accounts/users_login';
-import '/imports/ui/components/users/users_accounts/users_enroll';
 import '/imports/ui/components/users/users_accounts/users_reset_password';
