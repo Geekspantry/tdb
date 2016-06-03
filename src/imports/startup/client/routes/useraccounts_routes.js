@@ -2,6 +2,9 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import { AccountsTemplates } from 'meteor/useraccounts:core';
 
+import '/imports/ui/pages/accounts/enroll_account';  
+
+
 AccountsTemplates.configure({
   defaultLayout: 'defaultLayout',
   defaultLayoutRegions: {},

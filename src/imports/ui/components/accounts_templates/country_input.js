@@ -1,4 +1,36 @@
-COUNTRIES = [
+import { Template } from 'meteor/templating';
+import './country_input.html';
+
+// AutoForm.addInputType("countryFlags", {
+//   template: "countryFlags",
+//   valueOut: function () {
+//     if (this[0].selectize) {
+//       return this[0].selectize.getValue();
+//     }
+//   },
+//   contextAdjust: function (context) {    
+//     context.atts.autocomplete = 'off';
+//     var itemAtts = _.clone(context.atts);
+//     context.items = [];
+
+//     // add default option
+//     context.items.push({
+//       name: context.name,
+//       label: (!_.isUndefined(context.atts.firstOption) && typeof context.atts.firstOption === 'string' ? 
+//                   context.atts.firstOption : 'Select an option'),
+//       value: '',
+//       _id: '',
+//       selected: false,
+//       atts: itemAtts
+//     });
+
+//     return context;
+
+//   }
+// });
+// 
+
+const countries = [
   { code: 'ad', name: 'Andorra' },
   { code: 'ae', name: 'United Arab Emirates' },
   { code: 'af', name: 'Afghanistan' },
@@ -249,3 +281,51 @@ COUNTRIES = [
   { code: 'zm', name: 'Zambia' },
   { code: 'zw', name: 'Zimbabwe' }
 ];
+
+
+Template.countryInput.helpers({
+  optionAtts: function() {
+    var item = this
+    var atts = {
+      value: item.value
+    };
+    if (item.selected) {
+      atts.selected = '';
+    }
+    return atts;
+  },
+  atts: function() {
+    var atts = _.clone(this.atts);
+    return atts;
+  },
+});
+
+Template.countryInput.events({
+  "click .selectized": function(event) {
+    $(event.toElement).next().children(":first-child").children("input:first").focus();
+  }
+});
+
+Template.countryInput.rendered = function() {
+  this.$('select').selectize({
+    maxItems: 1,
+    labelField: 'name',
+    valueField: 'code',
+    searchField: ['name', 'code'],
+    options: countries,
+    placeholder: 'Where you from?',
+    items: [Template.currentData().value],
+    render: {
+      item(item, escape) {
+        return `<div><span class="flag-icon flag-icon-${escape(item.code)}"></span>&nbsp;${escape(item.name)}</div>`;
+      },
+      option(item, escape) {
+        return `<div><span class="flag-icon flag-icon-${escape(item.code)}"></span>&nbsp;${escape(item.name)}</div>`;
+      }
+    },
+  });
+};
+
+Template.countryInput.destroyed = function() {
+  this.$('select')[0].selectize.destroy();
+};

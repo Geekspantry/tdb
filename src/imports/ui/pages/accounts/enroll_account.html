@@ -1,0 +1,47 @@
+<template name="enrollAccount">
+  <div class="loginscreen animated fadeInDown" style="width: 350px; margin:0 auto;" data-template="enrollAccount">
+    <img src="/img/logo-login.png" class='logo-login'>
+    {{#if Template.subscriptionsReady}}  
+     <div class="text-center">
+        <h3>Complete your registration on TDB</h3>
+        <p>TDB, or Technology Database is an Envisioning project for describing and analysing technologies.</p>
+      </div>
+      <div class="enroll-form">
+        <form role="form" novalidate action="#" method="POST">
+
+          {{#if showError}}
+  		      {{> atError}}
+          {{/if}}
+          <fieldset {{disabled}}>            
+
+            <h3 class="text-center">Credentials</h3>
+            <div class="form-group">
+              <input type="text" class="form-control" value="{{email}}" disabled>
+            </div>
+            {{#each passwordFields}}
+              {{> atInput}}
+            {{/each}}
+            {{#each groups}}
+              <h3 class="text-center">{{this}}</h3>
+              {{#each fieldsByGroup this}}
+                {{> atInput}}
+              {{/each}}
+            {{/each}}
+            {{#if showReCaptcha}}
+              {{> atReCaptcha}}
+            {{/if}}
+            {{#if showForgotPasswordLink}}
+              {{> atPwdLink}}
+            {{/if}}
+            {{> atPwdFormBtn}}
+          </fieldset>
+        </form>
+      </div>
+      {{else}}
+      <div class="text-center">
+        <h3>Validating Signup Token</h3>
+        {{> spinnerCircle}}
+      </div>
+    {{/if}}
+  </div>
+</template>

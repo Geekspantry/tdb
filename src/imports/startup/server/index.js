@@ -23,7 +23,7 @@ import './kadira_config.js';
 // Configure Cloudinary
 import './cloudinary_config.js';
 // Configure UserAccounts
-import './useraccounts_config.js';
+import './config/accounts.js';
 // Attach cloudinaryId to FS
 // Defines all the collections, publications and methods that the application provides as an API to the client.
 import './api.js';

@@ -26,6 +26,10 @@ export const ContactInfoSchema = new SimpleSchema({
     type: String,
     esDriver: true,
     optional: true
+  },
+  personal: {
+    type: String,
+    optional: true
   }
 });
 

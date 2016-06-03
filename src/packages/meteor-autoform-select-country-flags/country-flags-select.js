@@ -39,7 +39,7 @@ Template.countryFlags.helpers({
   },  
   atts: function () {    
     var atts = _.clone(this.atts);
-    atts = AutoForm.Utility.addClass(atts, 'form-control');
+    // atts = AutoForm.Utility.addClass(atts, 'form-control');
     return atts;
   },
 });
